@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>B-TITAN | GS Digital Academy</title>
+<title>B-TITAN | GS Digital Academy Information Hub</title>
 
 <meta name="description"
 content="B-TITAN Complete Information Hub by GS Digital Academy. Learn, Understand, Build and Grow.">
@@ -63,7 +63,7 @@ section{
     margin:12px auto 0;
 }
 
-/* NAVBAR */
+/* ================= NAVBAR ================= */
 
 .navbar{
     position:sticky;
@@ -79,6 +79,7 @@ section{
     display:flex;
     align-items:center;
     justify-content:space-between;
+    gap:20px;
 }
 
 .brand{
@@ -97,6 +98,7 @@ section{
     object-fit:contain;
     border:2px solid #e8c35a;
     background:#000;
+    padding:2px;
 }
 
 .brand-text{
@@ -128,7 +130,7 @@ section{
     color:#e8c35a;
 }
 
-/* HERO */
+/* ================= HERO ================= */
 
 .hero{
     min-height:calc(100vh - 72px);
@@ -210,7 +212,7 @@ section{
     transform:translateY(-3px);
 }
 
-/* HERO CARD */
+/* ================= HERO CARD ================= */
 
 .hero-card{
     padding:35px;
@@ -229,7 +231,7 @@ section{
     justify-content:center;
     align-items:center;
     gap:18px;
-    margin-bottom:22px;
+    margin-bottom:24px;
 }
 
 .hero-logo{
@@ -240,6 +242,7 @@ section{
     border:2px solid #e8c35a;
     background:#000;
     padding:5px;
+    box-shadow:0 0 35px rgba(232,195,90,.15);
 }
 
 .hero-card h3{
@@ -278,7 +281,7 @@ section{
     font-size:10px;
 }
 
-/* ABOUT */
+/* ================= ABOUT ================= */
 
 .about{
     background:#090909;
@@ -309,7 +312,7 @@ section{
     font-weight:bold;
 }
 
-/* FEATURES */
+/* ================= FEATURES ================= */
 
 .features-grid{
     display:grid;
@@ -345,7 +348,7 @@ section{
     font-size:13px;
 }
 
-/* RESOURCES */
+/* ================= RESOURCES ================= */
 
 .resources{
     background:#090909;
@@ -408,7 +411,7 @@ section{
     font-size:12px;
 }
 
-/* STEPS */
+/* ================= STEPS ================= */
 
 .steps-grid{
     display:grid;
@@ -443,7 +446,7 @@ section{
     font-size:13px;
 }
 
-/* CTA */
+/* ================= CTA ================= */
 
 .cta{
     padding:90px 0;
@@ -470,7 +473,7 @@ section{
     margin:0 auto 25px;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 
 footer{
     border-top:1px solid #1c1c1c;
@@ -495,7 +498,7 @@ footer p{
     font-size:12px;
 }
 
-/* MOBILE */
+/* ================= MOBILE ================= */
 
 @media(max-width:850px){
 
@@ -584,13 +587,13 @@ footer p{
         text-align:center;
     }
 
+    .logo-row{
+        gap:10px;
+    }
+
     .hero-logo{
         width:85px;
         height:85px;
-    }
-
-    .logo-row{
-        gap:10px;
     }
 }
 </style>
@@ -598,15 +601,17 @@ footer p{
 
 <body>
 
-<!-- NAVBAR -->
+<!-- ================= NAVBAR ================= -->
 
 <nav class="navbar">
+
 <div class="container nav-inner">
 
 <a href="#" class="brand">
 
-<img src="gsda-logo.png"
-alt="GS Digital Academy">
+<img
+src="file_000000008d988211a261c1c99b9ffe2c.jpg"
+alt="GS Digital Academy Logo">
 
 <div class="brand-text">
 GS DIGITAL ACADEMY
@@ -623,10 +628,11 @@ GS DIGITAL ACADEMY
 </div>
 
 </div>
+
 </nav>
 
 
-<!-- HERO -->
+<!-- ================= HERO ================= -->
 
 <header class="hero">
 
@@ -652,12 +658,14 @@ and blockchain education.
 
 <div class="hero-buttons">
 
-<a href="#resources"
+<a
+href="#resources"
 class="btn btn-gold">
 EXPLORE RESOURCES
 </a>
 
-<a href="https://btitan.net/register?id=10203"
+<a
+href="https://btitan.net/register?id=10203"
 target="_blank"
 rel="noopener noreferrer"
 class="btn btn-outline">
@@ -669,17 +677,19 @@ JOIN B-TITAN
 </div>
 
 
-<!-- LOGOS -->
+<!-- ================= TWO LOGOS ================= -->
 
 <div class="hero-card">
 
 <div class="logo-row">
 
-<img src="btitan-logo.png"
+<img
+src="file_0000000071288211a783f84d1417ffcd.jpg"
 alt="B-TITAN Logo"
 class="hero-logo">
 
-<img src="gsda-logo.png"
+<img
+src="file_000000008d988211a261c1c99b9ffe2c.jpg"
 alt="GS Digital Academy Logo"
 class="hero-logo">
 
@@ -719,7 +729,7 @@ GS Digital Academy • Complete Information Hub
 </header>
 
 
-<!-- ABOUT -->
+<!-- ================= ABOUT ================= -->
 
 <section id="about" class="about">
 
@@ -792,7 +802,7 @@ B-TITAN INFORMATION HUB
 </section>
 
 
-<!-- FEATURES -->
+<!-- ================= FEATURES ================= -->
 
 <section>
 
@@ -850,7 +860,7 @@ Use the available resources to build your digital knowledge.
 </section>
 
 
-<!-- RESOURCES -->
+<!-- ================= RESOURCES ================= -->
 
 <section id="resources" class="resources">
 
@@ -883,13 +893,8 @@ Direct access to the most important B-TITAN resources.
 <div class="resource-icon">📄</div>
 
 <div>
-
 <h3>B-TITAN Complete Plan</h3>
-
-<p>
-Read the complete plan information.
-</p>
-
+<p>Read the complete plan information.</p>
 </div>
 
 </div>
@@ -905,7 +910,7 @@ OPEN PDF
 </div>
 
 
-<!-- BLOCKCHAIN ID -->
+<!-- BLOCKCHAIN ID VIDEO -->
 
 <div class="resource">
 
@@ -914,13 +919,8 @@ OPEN PDF
 <div class="resource-icon">🔗</div>
 
 <div>
-
 <h3>Blockchain Se ID Kaise Lagaye</h3>
-
-<p>
-Watch the ID process video.
-</p>
-
+<p>Watch the ID process video.</p>
 </div>
 
 </div>
@@ -945,13 +945,8 @@ WATCH VIDEO
 <div class="resource-icon">🎬</div>
 
 <div>
-
 <h3>Complete Plan Video</h3>
-
-<p>
-Understand the complete plan.
-</p>
-
+<p>Understand the complete plan.</p>
 </div>
 
 </div>
@@ -976,13 +971,8 @@ WATCH
 <div class="resource-icon">⚡</div>
 
 <div>
-
 <h3>How to Activate ID</h3>
-
-<p>
-Step-by-step activation information.
-</p>
-
+<p>Step-by-step activation information.</p>
 </div>
 
 </div>
@@ -998,7 +988,7 @@ ACTIVATE
 </div>
 
 
-<!-- GSDA -->
+<!-- GSDA HUB -->
 
 <div class="resource">
 
@@ -1007,13 +997,8 @@ ACTIVATE
 <div class="resource-icon">🌐</div>
 
 <div>
-
 <h3>GS Digital Academy Hub</h3>
-
-<p>
-Open the complete GSDA resource hub.
-</p>
-
+<p>Open the complete GSDA resource hub.</p>
 </div>
 
 </div>
@@ -1029,7 +1014,7 @@ OPEN HUB
 </div>
 
 
-<!-- JOIN -->
+<!-- JOINING -->
 
 <div class="resource">
 
@@ -1038,13 +1023,8 @@ OPEN HUB
 <div class="resource-icon">🚀</div>
 
 <div>
-
 <h3>B-TITAN Joining</h3>
-
-<p>
-Registration with Referral ID 10203.
-</p>
-
+<p>Registration with Referral ID 10203.</p>
 </div>
 
 </div>
@@ -1059,6 +1039,7 @@ JOIN NOW
 
 </div>
 
+
 </div>
 
 </div>
@@ -1066,7 +1047,7 @@ JOIN NOW
 </section>
 
 
-<!-- HOW IT WORKS -->
+<!-- ================= HOW IT WORKS ================= -->
 
 <section id="steps">
 
@@ -1090,54 +1071,35 @@ Start with knowledge. Understand before making a decision.
 <div class="steps-grid">
 
 <div class="step">
-
 <div class="step-number">01</div>
-
 <h3>Learn</h3>
-
 <p>
 Read the plan and explore the available information.
 </p>
-
 </div>
 
-
 <div class="step">
-
 <div class="step-number">02</div>
-
 <h3>Understand</h3>
-
 <p>
 Watch the videos and understand the process.
 </p>
-
 </div>
 
-
 <div class="step">
-
 <div class="step-number">03</div>
-
 <h3>Activate</h3>
-
 <p>
 Follow the activation guide when ready.
 </p>
-
 </div>
 
-
 <div class="step">
-
 <div class="step-number">04</div>
-
 <h3>Build & Grow</h3>
-
 <p>
 Continue learning and building your digital knowledge.
 </p>
-
 </div>
 
 </div>
@@ -1147,7 +1109,7 @@ Continue learning and building your digital knowledge.
 </section>
 
 
-<!-- CTA -->
+<!-- ================= CTA ================= -->
 
 <section id="join" class="cta">
 
@@ -1164,8 +1126,7 @@ Start by understanding the information, watching the
 guides and exploring the available resources.
 </p>
 
-<div class="hero-buttons"
-style="justify-content:center;">
+<div class="hero-buttons" style="justify-content:center;">
 
 <a
 href="https://btitan.net/register?id=10203"
@@ -1190,7 +1151,7 @@ VIEW RESOURCES
 </section>
 
 
-<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
