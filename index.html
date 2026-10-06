@@ -7,7 +7,7 @@
 <title>GS Digital Academy | B-TITAN Information Hub</title>
 
 <meta name="description"
-content="GS Digital Academy - B-TITAN Information, Learning and Resource Hub">
+content="GS Digital Academy - B-TITAN Complete Information Hub">
 
 <style>
 *{
@@ -22,8 +22,8 @@ html{
 
 body{
     font-family:Arial,Helvetica,sans-serif;
-    background:#07182f;
     color:#fff;
+    background:#06172f;
     line-height:1.6;
 }
 
@@ -37,7 +37,7 @@ a{
 }
 
 .gold{
-    color:#f4ca55;
+    color:#f5cb55;
 }
 
 /* ================= NAVBAR ================= */
@@ -46,13 +46,13 @@ a{
     position:sticky;
     top:0;
     z-index:1000;
-    background:rgba(4,17,36,.95);
+    background:rgba(4,18,39,.96);
     backdrop-filter:blur(15px);
-    border-bottom:1px solid rgba(244,202,85,.25);
+    border-bottom:1px solid rgba(245,203,85,.25);
 }
 
 .nav-inner{
-    min-height:82px;
+    min-height:78px;
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -61,28 +61,29 @@ a{
 .brand{
     display:flex;
     align-items:center;
-    gap:13px;
+    gap:12px;
     color:#fff;
 }
 
 .brand img{
-    width:58px;
-    height:58px;
+    width:52px;
+    height:52px;
     object-fit:contain;
-    border-radius:14px;
-    border:2px solid #f4ca55;
-    background:#06152b;
-    padding:4px;
+    border-radius:12px;
+    border:2px solid #f5cb55;
+    padding:3px;
+    background:#07182f;
 }
 
-.brand-title{
-    font-size:20px;
+.brand-name{
+    font-size:18px;
     font-weight:900;
+    letter-spacing:.5px;
 }
 
-.brand-title small{
+.brand-name small{
     display:block;
-    color:#f4ca55;
+    color:#f5cb55;
     font-size:8px;
     letter-spacing:2px;
 }
@@ -93,42 +94,74 @@ a{
 }
 
 .nav-links a{
-    color:#c5d1e2;
+    color:#c5d2e4;
     font-size:13px;
     font-weight:bold;
 }
 
 .nav-links a:hover{
-    color:#f4ca55;
+    color:#f5cb55;
 }
 
 /* ================= HERO ================= */
 
 .hero{
-    min-height:calc(100vh - 82px);
+    min-height:calc(100vh - 78px);
     display:flex;
     align-items:center;
-
     background:
-    radial-gradient(circle at 10% 20%,rgba(36,108,190,.35),transparent 30%),
-    radial-gradient(circle at 90% 80%,rgba(244,202,85,.12),transparent 28%),
+    radial-gradient(circle at 12% 18%,rgba(36,112,205,.32),transparent 30%),
+    radial-gradient(circle at 88% 78%,rgba(245,203,85,.13),transparent 28%),
     linear-gradient(135deg,#06152d,#0b315d,#06152d);
 }
 
 .hero-grid{
     display:grid;
-    grid-template-columns:1.1fr .9fr;
+    grid-template-columns:1.08fr .92fr;
     align-items:center;
     gap:60px;
-    padding:75px 0;
+    padding:70px 0;
+}
+
+/* ================= HERO BRAND ================= */
+
+.hero-brand{
+    margin-bottom:24px;
+}
+
+.hero-brand h2{
+    font-size:clamp(42px,5.5vw,70px);
+    line-height:1;
+    font-weight:1000;
+    letter-spacing:-2px;
+    text-transform:uppercase;
+}
+
+.hero-brand h2 span{
+    color:#f5cb55;
+}
+
+.hero-brand-line{
+    width:95px;
+    height:4px;
+    margin:13px 0;
+    border-radius:10px;
+    background:linear-gradient(90deg,#f5cb55,#fff0a5);
+}
+
+.hero-brand p{
+    color:#aebfd3;
+    font-size:12px;
+    font-weight:bold;
+    letter-spacing:3px;
 }
 
 .badge{
     display:inline-block;
     padding:9px 17px;
-    border:1px solid rgba(244,202,85,.55);
+    border:1px solid rgba(245,203,85,.55);
     border-radius:50px;
-    color:#f4ca55;
+    color:#f5cb55;
     font-size:11px;
     font-weight:bold;
     letter-spacing:2px;
@@ -136,20 +169,20 @@ a{
 }
 
 .hero h1{
-    font-size:clamp(45px,6vw,75px);
-    line-height:1.02;
+    font-size:clamp(43px,6vw,72px);
+    line-height:1.03;
     letter-spacing:-2px;
 }
 
 .hero h1 span{
-    color:#f4ca55;
+    color:#f5cb55;
 }
 
 .hero-text{
     max-width:620px;
     color:#b7c6d9;
     font-size:17px;
-    margin:23px 0 30px;
+    margin:22px 0 30px;
 }
 
 .buttons{
@@ -177,63 +210,86 @@ a{
 .btn-gold{
     color:#06152d;
     background:linear-gradient(135deg,#d7ad39,#ffe58b,#d3aa3d);
-    box-shadow:0 10px 30px rgba(244,202,85,.15);
+    box-shadow:0 10px 30px rgba(245,203,85,.16);
 }
 
 .btn-outline{
-    color:#f4ca55;
-    border:1px solid #f4ca55;
+    color:#f5cb55;
+    border:1px solid #f5cb55;
     background:transparent;
 }
 
 /* ================= HERO CARD ================= */
 
 .hero-card{
-    padding:35px 25px;
+    padding:34px 25px;
     border-radius:28px;
     text-align:center;
-
     background:
     linear-gradient(145deg,
-    rgba(31,82,145,.70),
-    rgba(4,20,43,.90));
-
-    border:1px solid rgba(244,202,85,.30);
-    box-shadow:0 30px 80px rgba(0,0,0,.4);
+    rgba(28,76,137,.72),
+    rgba(4,20,43,.94));
+    border:1px solid rgba(245,203,85,.32);
+    box-shadow:0 30px 80px rgba(0,0,0,.45);
 }
 
-.logo-row{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:18px;
-    margin-bottom:25px;
-}
+/* GSDA BIG LOGO TOP */
 
-.hero-logo{
-    width:125px;
-    height:125px;
+.gsda-logo{
+    width:145px;
+    height:145px;
     object-fit:contain;
-    border-radius:20px;
-    background:#06152b;
-    border:2px solid #f4ca55;
-    padding:6px;
+    display:block;
+    margin:0 auto 18px;
+    border-radius:22px;
+    border:3px solid #f5cb55;
+    background:#06152d;
+    padding:7px;
+    box-shadow:0 0 45px rgba(245,203,85,.18);
 }
 
 .hero-card h2{
-    font-size:28px;
+    color:#fff;
+    font-size:27px;
+    font-weight:1000;
+    letter-spacing:.5px;
+}
+
+.hero-card .academy{
+    color:#f5cb55;
 }
 
 .hero-card p{
     color:#9fb0c5;
-    margin-top:7px;
+    margin-top:6px;
+}
+
+/* BTITAN LOGO */
+
+.btitan-logo{
+    width:105px;
+    height:105px;
+    object-fit:contain;
+    display:block;
+    margin:22px auto 12px;
+    border-radius:18px;
+    border:2px solid rgba(245,203,85,.65);
+    background:#06152d;
+    padding:5px;
+}
+
+.btitan-label{
+    color:#f5cb55;
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:2px;
 }
 
 .stats{
     display:grid;
     grid-template-columns:repeat(4,1fr);
     gap:8px;
-    margin-top:28px;
+    margin-top:24px;
 }
 
 .stat{
@@ -244,7 +300,7 @@ a{
 
 .stat strong{
     display:block;
-    color:#f4ca55;
+    color:#f5cb55;
     font-size:19px;
 }
 
@@ -253,7 +309,7 @@ a{
     font-size:9px;
 }
 
-/* ================= SECTION ================= */
+/* ================= SECTIONS ================= */
 
 section{
     padding:90px 0;
@@ -265,7 +321,7 @@ section{
 }
 
 .section-title small{
-    color:#f4ca55;
+    color:#f5cb55;
     font-size:11px;
     letter-spacing:3px;
     font-weight:900;
@@ -308,9 +364,9 @@ section{
 
 .highlight{
     padding:22px;
-    border-left:3px solid #f4ca55;
+    border-left:3px solid #f5cb55;
     border-radius:0 14px 14px 0;
-    background:rgba(244,202,85,.05);
+    background:rgba(245,203,85,.05);
     font-weight:bold;
 }
 
@@ -320,11 +376,11 @@ section{
     background:linear-gradient(145deg,
     rgba(28,73,130,.65),
     rgba(4,20,42,.90));
-    border:1px solid rgba(244,202,85,.22);
+    border:1px solid rgba(245,203,85,.22);
 }
 
 .info-box h3{
-    color:#f4ca55;
+    color:#f5cb55;
     font-size:22px;
     margin-bottom:18px;
 }
@@ -357,7 +413,7 @@ section{
 
 .feature:hover{
     transform:translateY(-6px);
-    border-color:rgba(244,202,85,.55);
+    border-color:rgba(245,203,85,.55);
 }
 
 .icon{
@@ -392,13 +448,9 @@ section{
     align-items:center;
     justify-content:space-between;
     gap:18px;
-
     padding:24px;
-
     border-radius:18px;
-
     background:rgba(4,20,42,.78);
-
     border:1px solid rgba(255,255,255,.08);
 }
 
@@ -415,7 +467,7 @@ section{
     align-items:center;
     justify-content:center;
     border-radius:14px;
-    background:rgba(244,202,85,.09);
+    background:rgba(245,203,85,.09);
     font-size:23px;
     flex-shrink:0;
 }
@@ -438,7 +490,7 @@ section{
 
 /* ================= PROCESS ================= */
 
-.process{
+.process-section{
     background:#07182f;
 }
 
@@ -448,7 +500,7 @@ section{
     gap:15px;
 }
 
-.process{
+.process-item{
     text-align:center;
 }
 
@@ -465,11 +517,11 @@ section{
     font-weight:900;
 }
 
-.process h3{
+.process-item h3{
     margin-bottom:7px;
 }
 
-.process p{
+.process-item p{
     color:#8fa0b7;
     font-size:13px;
 }
@@ -480,7 +532,7 @@ section{
     padding:100px 0;
     background:
     radial-gradient(circle at center,
-    rgba(244,202,85,.12),
+    rgba(245,203,85,.12),
     transparent 45%),
     #06162d;
 }
@@ -489,12 +541,10 @@ section{
     text-align:center;
     padding:70px 25px;
     border-radius:30px;
-
     background:linear-gradient(145deg,
     rgba(28,73,130,.65),
     rgba(4,20,42,.92));
-
-    border:1px solid rgba(244,202,85,.35);
+    border:1px solid rgba(245,203,85,.35);
 }
 
 .cta-box h2{
@@ -513,7 +563,7 @@ section{
 footer{
     padding:40px 0;
     background:#030e20;
-    border-top:1px solid rgba(244,202,85,.20);
+    border-top:1px solid rgba(245,203,85,.20);
 }
 
 .footer{
@@ -524,7 +574,7 @@ footer{
 }
 
 .footer-brand{
-    color:#f4ca55;
+    color:#f5cb55;
     font-size:18px;
     font-weight:900;
 }
@@ -568,24 +618,29 @@ footer{
     }
 
     .brand img{
-        width:52px;
-        height:52px;
+        width:48px;
+        height:48px;
     }
 
-    .brand-title{
-        font-size:16px;
-    }
-
-    .brand-title small{
-        font-size:7px;
+    .brand-name{
+        font-size:15px;
     }
 
     .hero-grid{
-        padding:65px 0;
+        padding:60px 0;
+    }
+
+    .hero-brand h2{
+        font-size:43px;
+    }
+
+    .hero-brand p{
+        font-size:9px;
+        letter-spacing:2px;
     }
 
     .hero h1{
-        font-size:43px;
+        font-size:42px;
     }
 
     .hero-text{
@@ -600,13 +655,18 @@ footer{
         width:100%;
     }
 
-    .hero-logo{
-        width:90px;
-        height:90px;
+    .gsda-logo{
+        width:125px;
+        height:125px;
     }
 
     .hero-card h2{
         font-size:23px;
+    }
+
+    .btitan-logo{
+        width:92px;
+        height:92px;
     }
 
     .stats{
@@ -654,7 +714,7 @@ footer{
 
 <body>
 
-<!-- NAVBAR -->
+<!-- ================= NAVBAR ================= -->
 
 <nav class="navbar">
 <div class="container nav-inner">
@@ -665,7 +725,7 @@ footer{
 src="file_000000008d988211a261c1c99b9ffe2c.jpg"
 alt="GS Digital Academy">
 
-<div class="brand-title">
+<div class="brand-name">
 GS DIGITAL ACADEMY
 <small>KNOW • UNDERSTAND • DECIDE • GROW</small>
 </div>
@@ -684,7 +744,7 @@ GS DIGITAL ACADEMY
 </nav>
 
 
-<!-- HERO -->
+<!-- ================= HERO ================= -->
 
 <header class="hero">
 
@@ -692,21 +752,36 @@ GS DIGITAL ACADEMY
 
 <div>
 
+<!-- GS DIGITAL ACADEMY BIG TOP -->
+
+<div class="hero-brand">
+
+<h2>
+GS DIGITAL <span>ACADEMY</span>
+</h2>
+
+<div class="hero-brand-line"></div>
+
+<p>
+KNOW • UNDERSTAND • DECIDE • GROW
+</p>
+
+</div>
+
 <div class="badge">
 B-TITAN • COMPLETE INFORMATION HUB
 </div>
 
 <h1>
-GS Digital<br>
-<span>Academy.</span>
+Learn.<br>
+Understand.<br>
+<span>Build & Grow.</span>
 </h1>
 
 <p class="hero-text">
-
 Your professional hub for B-TITAN information,
 blockchain learning, educational resources and
 step-by-step guidance.
-
 </p>
 
 <div class="buttons">
@@ -728,29 +803,33 @@ JOIN B-TITAN
 </div>
 
 
+<!-- ================= BRAND CARD ================= -->
+
 <div class="hero-card">
-
-<div class="logo-row">
-
-<img
-src="file_0000000071288211a783f84d1417ffcd.jpg"
-alt="B-TITAN Logo"
-class="hero-logo">
 
 <img
 src="file_000000008d988211a261c1c99b9ffe2c.jpg"
 alt="GS Digital Academy Logo"
-class="hero-logo">
-
-</div>
+class="gsda-logo">
 
 <h2>
-GS DIGITAL ACADEMY
+GS DIGITAL <span class="academy">ACADEMY</span>
 </h2>
 
 <p>
-B-TITAN Information & Learning Hub
+Professional B-TITAN Information Hub
 </p>
+
+
+<img
+src="file_0000000071288211a783f84d1417ffcd.jpg"
+alt="B-TITAN Logo"
+class="btitan-logo">
+
+<div class="btitan-label">
+B-TITAN
+</div>
+
 
 <div class="stats">
 
@@ -783,7 +862,7 @@ B-TITAN Information & Learning Hub
 </header>
 
 
-<!-- ABOUT -->
+<!-- ================= ABOUT ================= -->
 
 <section id="about" class="about">
 
@@ -851,7 +930,7 @@ B-TITAN INFORMATION HUB
 </section>
 
 
-<!-- FEATURES -->
+<!-- ================= FEATURES ================= -->
 
 <section id="features" class="features">
 
@@ -874,62 +953,35 @@ Simple access to important learning and information resources.
 <div class="feature-grid">
 
 <div class="feature">
-
 <div class="icon">📚</div>
-
-<h3>
-B-TITAN Information
-</h3>
-
+<h3>B-TITAN Information</h3>
 <p>
 Explore plan information and understand the ecosystem.
 </p>
-
 </div>
 
-
 <div class="feature">
-
 <div class="icon">🔗</div>
-
-<h3>
-Blockchain Guide
-</h3>
-
+<h3>Blockchain Guide</h3>
 <p>
 Learn about blockchain-based ID processes.
 </p>
-
 </div>
 
-
 <div class="feature">
-
 <div class="icon">🎥</div>
-
-<h3>
-Video Learning
-</h3>
-
+<h3>Video Learning</h3>
 <p>
 Access complete plan and educational videos.
 </p>
-
 </div>
 
-
 <div class="feature">
-
 <div class="icon">🚀</div>
-
-<h3>
-Build Your Knowledge
-</h3>
-
+<h3>Build Your Knowledge</h3>
 <p>
-Continue learning and developing digital knowledge.
+Continue learning and developing your digital knowledge.
 </p>
-
 </div>
 
 </div>
@@ -939,7 +991,7 @@ Continue learning and developing digital knowledge.
 </section>
 
 
-<!-- RESOURCES -->
+<!-- ================= RESOURCES ================= -->
 
 <section id="resources" class="resources">
 
@@ -1112,9 +1164,9 @@ JOIN NOW
 </section>
 
 
-<!-- PROCESS -->
+<!-- ================= PROCESS ================= -->
 
-<section id="process" class="process">
+<section id="process" class="process-section">
 
 <div class="container">
 
@@ -1134,25 +1186,25 @@ Take your time. Understand the information before making a decision.
 
 <div class="process-grid">
 
-<div>
+<div class="process-item">
 <div class="process-number">01</div>
 <h3>Know</h3>
 <p>Explore the available information.</p>
 </div>
 
-<div>
+<div class="process-item">
 <div class="process-number">02</div>
 <h3>Understand</h3>
 <p>Watch the guides and understand the process.</p>
 </div>
 
-<div>
+<div class="process-item">
 <div class="process-number">03</div>
 <h3>Decide</h3>
 <p>Review everything and make your own decision.</p>
 </div>
 
-<div>
+<div class="process-item">
 <div class="process-number">04</div>
 <h3>Grow</h3>
 <p>Continue learning and developing your knowledge.</p>
@@ -1165,7 +1217,7 @@ Take your time. Understand the information before making a decision.
 </section>
 
 
-<!-- CTA -->
+<!-- ================= CTA ================= -->
 
 <section id="join" class="cta">
 
@@ -1205,7 +1257,7 @@ VIEW RESOURCES
 </section>
 
 
-<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
