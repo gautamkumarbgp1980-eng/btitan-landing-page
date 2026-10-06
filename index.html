@@ -4,761 +4,853 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>GS Digital Academy | B-TITAN Information Hub</title>
+<title>GS Digital Academy | B-TITAN</title>
 
 <meta name="description"
-content="GS Digital Academy - B-TITAN Complete Information Hub">
+content="GS Digital Academy - B-TITAN Information & Learning Hub">
 
 <style>
+
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 html{
-    scroll-behavior:smooth;
+scroll-behavior:smooth;
 }
 
 body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:#071b35;
-    color:#fff;
-    line-height:1.6;
+font-family:Arial,Helvetica,sans-serif;
+background:#06152b;
+color:#fff;
+line-height:1.6;
+overflow-x:hidden;
 }
 
 .container{
-    width:min(1150px,92%);
-    margin:auto;
+width:min(1180px,92%);
+margin:auto;
 }
 
 .gold{
-    color:#f6cf59;
+color:#f6cf59;
 }
 
 /* ================= NAVBAR ================= */
 
 .navbar{
-    position:sticky;
-    top:0;
-    z-index:9999;
-    background:rgba(4,18,39,.97);
-    border-bottom:1px solid rgba(246,207,89,.28);
-    backdrop-filter:blur(15px);
+position:sticky;
+top:0;
+z-index:9999;
+background:rgba(4,17,37,.96);
+border-bottom:1px solid rgba(246,207,89,.25);
+backdrop-filter:blur(18px);
 }
 
-.nav-inner{
-    min-height:92px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:20px;
+.nav{
+min-height:96px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:20px;
 }
 
-/* TOP GSDA LOGO */
+/* BIG GSDA BRAND */
 
 .brand{
-    display:flex;
-    align-items:center;
-    gap:16px;
-    text-decoration:none;
-    color:#fff;
+display:flex;
+align-items:center;
+gap:16px;
+text-decoration:none;
+color:white;
 }
 
-.brand img{
-    width:72px;
-    height:72px;
-    object-fit:contain;
-    padding:5px;
-    background:#06182f;
-    border:2px solid #f6cf59;
-    border-radius:16px;
-    box-shadow:0 0 25px rgba(246,207,89,.18);
-}
-
-.brand-text{
-    line-height:1.05;
+.brand-logo{
+width:76px;
+height:76px;
+object-fit:contain;
+padding:5px;
+background:#071a35;
+border:2px solid #f6cf59;
+border-radius:18px;
+box-shadow:0 0 28px rgba(246,207,89,.20);
 }
 
 .brand-title{
-    font-size:24px;
-    font-weight:1000;
-    letter-spacing:.5px;
+font-size:25px;
+font-weight:1000;
+letter-spacing:.4px;
+line-height:1;
 }
 
-.brand-subtitle{
-    display:block;
-    margin-top:7px;
-    color:#f6cf59;
-    font-size:10px;
-    font-weight:bold;
-    letter-spacing:2px;
+.brand-sub{
+margin-top:8px;
+font-size:9px;
+font-weight:bold;
+letter-spacing:2.5px;
+color:#f6cf59;
 }
 
 .nav-links{
-    display:flex;
-    gap:23px;
+display:flex;
+gap:24px;
 }
 
 .nav-links a{
-    color:#c5d2e2;
-    text-decoration:none;
-    font-size:13px;
-    font-weight:bold;
+color:#b9c8da;
+text-decoration:none;
+font-size:12px;
+font-weight:800;
 }
 
 .nav-links a:hover{
-    color:#f6cf59;
+color:#f6cf59;
 }
 
 /* ================= HERO ================= */
 
 .hero{
-    min-height:calc(100vh - 92px);
-    display:flex;
-    align-items:center;
+position:relative;
+min-height:calc(100vh - 96px);
+display:flex;
+align-items:center;
+background:
+radial-gradient(circle at 5% 20%,rgba(32,119,218,.38),transparent 30%),
+radial-gradient(circle at 95% 75%,rgba(246,207,89,.13),transparent 30%),
+linear-gradient(135deg,#041329,#0b3b6c 50%,#06172e);
+}
 
-    background:
-    radial-gradient(circle at 8% 20%,rgba(30,112,207,.42),transparent 30%),
-    radial-gradient(circle at 90% 75%,rgba(246,207,89,.12),transparent 32%),
-    linear-gradient(135deg,#06162e,#0b3b6d,#06162e);
+.hero:before{
+content:"";
+position:absolute;
+inset:0;
+background:
+linear-gradient(
+120deg,
+transparent 0%,
+rgba(255,255,255,.025) 50%,
+transparent 100%
+);
+pointer-events:none;
 }
 
 .hero-grid{
-    display:grid;
-    grid-template-columns:1.1fr .9fr;
-    gap:55px;
-    align-items:center;
-    padding:70px 0;
+position:relative;
+display:grid;
+grid-template-columns:1.08fr .92fr;
+gap:65px;
+align-items:center;
+padding:80px 0;
 }
 
-.badge{
-    display:inline-block;
-    padding:9px 18px;
-    border:1px solid rgba(246,207,89,.55);
-    border-radius:50px;
-    color:#f6cf59;
-    font-size:11px;
-    font-weight:900;
-    letter-spacing:2px;
-    margin-bottom:22px;
+/* LEFT */
+
+.eyebrow{
+display:inline-flex;
+align-items:center;
+gap:9px;
+padding:9px 17px;
+border-radius:50px;
+border:1px solid rgba(246,207,89,.55);
+background:rgba(246,207,89,.05);
+color:#f6cf59;
+font-size:10px;
+font-weight:900;
+letter-spacing:2px;
+margin-bottom:24px;
+}
+
+.eyebrow:before{
+content:"";
+width:7px;
+height:7px;
+background:#f6cf59;
+border-radius:50%;
+box-shadow:0 0 12px #f6cf59;
 }
 
 .hero h1{
-    font-size:clamp(44px,6vw,74px);
-    line-height:.98;
-    letter-spacing:-2px;
-    font-weight:1000;
+font-size:clamp(45px,6vw,76px);
+line-height:.96;
+font-weight:1000;
+letter-spacing:-3px;
 }
 
 .hero h1 span{
-    color:#f6cf59;
+color:#f6cf59;
 }
 
-.hero-line{
-    width:110px;
-    height:4px;
-    border-radius:20px;
-    margin:18px 0;
-    background:linear-gradient(
-        90deg,
-        #d2a936,
-        #ffe68d,
-        #d2a936
-    );
+.hero-rule{
+width:120px;
+height:4px;
+margin:22px 0 16px;
+border-radius:20px;
+background:linear-gradient(
+90deg,
+#c99f2e,
+#ffe890,
+#c99f2e
+);
 }
 
-.hero-tagline{
-    color:#aabbd0;
-    font-size:11px;
-    font-weight:bold;
-    letter-spacing:3px;
+.hero-label{
+font-size:11px;
+font-weight:900;
+letter-spacing:3px;
+color:#aebfd2;
 }
 
-.hero-text{
-    max-width:620px;
-    color:#b5c6da;
-    font-size:17px;
-    margin:24px 0 30px;
+.hero-description{
+max-width:620px;
+margin:23px 0 31px;
+color:#b5c6d9;
+font-size:16px;
 }
 
-.buttons{
-    display:flex;
-    gap:14px;
-    flex-wrap:wrap;
+.hero-buttons{
+display:flex;
+gap:13px;
+flex-wrap:wrap;
 }
 
 .btn{
-    min-height:51px;
-    padding:0 25px;
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:11px;
-    text-decoration:none;
-    font-size:13px;
-    font-weight:900;
-    transition:.25s;
+min-height:52px;
+padding:0 26px;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+border-radius:11px;
+text-decoration:none;
+font-size:12px;
+font-weight:900;
+transition:.25s;
 }
 
 .btn:hover{
-    transform:translateY(-3px);
+transform:translateY(-3px);
 }
 
 .btn-gold{
-    color:#06162e;
-    background:linear-gradient(
-        135deg,
-        #d5ae3d,
-        #ffe68e,
-        #d2a936
-    );
-    box-shadow:0 10px 30px rgba(246,207,89,.14);
+color:#06152b;
+background:linear-gradient(
+135deg,
+#d1a635,
+#ffe790,
+#d1a635
+);
+box-shadow:0 12px 35px rgba(246,207,89,.16);
 }
 
 .btn-outline{
-    color:#f6cf59;
-    border:1px solid #f6cf59;
-    background:transparent;
+color:#f6cf59;
+border:1px solid #f6cf59;
+background:rgba(0,0,0,.08);
 }
 
 /* ================= HERO CARD ================= */
 
 .hero-card{
-    text-align:center;
-    padding:36px 28px;
-    border-radius:28px;
-
-    background:
-    linear-gradient(
-        145deg,
-        rgba(27,78,141,.72),
-        rgba(3,19,42,.96)
-    );
-
-    border:1px solid rgba(246,207,89,.35);
-    box-shadow:0 30px 80px rgba(0,0,0,.45);
+position:relative;
+padding:35px 30px;
+border-radius:30px;
+text-align:center;
+background:
+linear-gradient(
+145deg,
+rgba(18,72,134,.72),
+rgba(2,17,38,.96)
+);
+border:1px solid rgba(246,207,89,.35);
+box-shadow:
+0 35px 90px rgba(0,0,0,.45),
+inset 0 1px 0 rgba(255,255,255,.06);
 }
 
-/* B-TITAN LOGO */
+/* B TITAN LOGO */
 
 .btitan-logo{
-    width:170px;
-    height:170px;
-    display:block;
-    margin:0 auto 22px;
-    object-fit:contain;
-    padding:8px;
-    background:#06182f;
-    border:3px solid #f6cf59;
-    border-radius:25px;
-    box-shadow:0 0 45px rgba(246,207,89,.2);
+width:175px;
+height:175px;
+display:block;
+margin:0 auto 23px;
+object-fit:contain;
+padding:8px;
+border-radius:26px;
+background:#06162d;
+border:3px solid #f6cf59;
+box-shadow:
+0 0 45px rgba(246,207,89,.20);
 }
 
 .hero-card h2{
-    font-size:26px;
-    font-weight:1000;
+font-size:25px;
+font-weight:1000;
 }
 
 .hero-card h2 span{
-    color:#f6cf59;
+color:#f6cf59;
 }
 
-.hero-card-text{
-    color:#9eafc3;
-    font-size:13px;
-    margin-top:7px;
+.hero-card-description{
+font-size:12px;
+color:#9db0c6;
+margin-top:6px;
 }
 
-/* SMALL GSDA INSIDE CARD */
+/* GSDA MINI */
 
 .gsda-mini{
-    margin:25px auto 0;
-    padding-top:22px;
-    border-top:1px solid rgba(255,255,255,.09);
+margin-top:25px;
+padding-top:22px;
+border-top:1px solid rgba(255,255,255,.08);
 }
 
 .gsda-mini img{
-    width:90px;
-    height:90px;
-    object-fit:contain;
-    padding:5px;
-    background:#06182f;
-    border:2px solid rgba(246,207,89,.65);
-    border-radius:18px;
+width:82px;
+height:82px;
+object-fit:contain;
+padding:5px;
+background:#06162d;
+border:2px solid rgba(246,207,89,.55);
+border-radius:17px;
 }
 
 .gsda-mini-name{
-    color:#f6cf59;
-    font-size:11px;
-    font-weight:900;
-    letter-spacing:2px;
-    margin-top:7px;
+margin-top:8px;
+font-size:10px;
+font-weight:900;
+letter-spacing:2px;
+color:#f6cf59;
 }
 
 /* STATS */
 
 .stats{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:8px;
-    margin-top:24px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:9px;
+margin-top:24px;
 }
 
 .stat{
-    padding:13px 5px;
-    background:rgba(255,255,255,.05);
-    border-radius:12px;
+padding:13px 5px;
+border-radius:12px;
+background:rgba(255,255,255,.045);
 }
 
 .stat strong{
-    display:block;
-    color:#f6cf59;
-    font-size:20px;
+display:block;
+font-size:20px;
+color:#f6cf59;
 }
 
 .stat span{
-    color:#8295ac;
-    font-size:9px;
+font-size:9px;
+color:#7f93aa;
+font-weight:bold;
 }
 
-/* ================= SECTIONS ================= */
+/* ================= SECTION ================= */
 
 section{
-    padding:85px 0;
+padding:90px 0;
 }
 
-.section-title{
-    text-align:center;
-    margin-bottom:48px;
+.section-head{
+text-align:center;
+max-width:720px;
+margin:0 auto 48px;
 }
 
-.section-title small{
-    color:#f6cf59;
-    font-size:11px;
-    font-weight:900;
-    letter-spacing:3px;
+.section-head small{
+font-size:10px;
+font-weight:900;
+letter-spacing:3px;
+color:#f6cf59;
 }
 
-.section-title h2{
-    font-size:40px;
-    margin-top:8px;
+.section-head h2{
+font-size:42px;
+line-height:1.1;
+margin-top:9px;
 }
 
-.section-title p{
-    max-width:680px;
-    margin:12px auto;
-    color:#9eb0c5;
+.section-head p{
+color:#95a9bf;
+font-size:14px;
+margin-top:12px;
 }
 
 /* ================= ABOUT ================= */
 
 .about{
-    background:linear-gradient(180deg,#071d39,#0a345e);
+background:
+linear-gradient(180deg,#071d39,#092f55);
 }
 
 .about-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:50px;
-    align-items:center;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:55px;
+align-items:center;
 }
 
-.about h2{
-    font-size:40px;
-    line-height:1.1;
-    margin-bottom:20px;
+.about-title{
+font-size:40px;
+line-height:1.08;
+margin-bottom:20px;
 }
 
-.about p{
-    color:#afc0d3;
-    margin-bottom:16px;
+.about-text{
+color:#aebfd1;
+font-size:15px;
+margin-bottom:17px;
 }
 
-.highlight{
-    padding:22px;
-    border-left:3px solid #f6cf59;
-    background:rgba(246,207,89,.05);
-    font-weight:bold;
-    color:#e5eaf0;
+.message-box{
+margin-top:24px;
+padding:22px;
+border-left:3px solid #f6cf59;
+background:rgba(246,207,89,.05);
+border-radius:0 15px 15px 0;
 }
 
-.info-box{
-    padding:32px;
-    border-radius:23px;
-    background:linear-gradient(
-        145deg,
-        rgba(27,78,141,.62),
-        rgba(3,20,43,.93)
-    );
-    border:1px solid rgba(246,207,89,.25);
+.message-box strong{
+color:#f6cf59;
+font-size:13px;
 }
 
-.info-box h3{
-    color:#f6cf59;
-    font-size:22px;
-    margin-bottom:18px;
+.message-box p{
+margin-top:5px;
+color:#b7c6d7;
+font-size:13px;
 }
 
-.info-box p{
-    margin:9px 0;
+.about-card{
+padding:32px;
+border-radius:25px;
+background:
+linear-gradient(
+145deg,
+rgba(22,76,137,.62),
+rgba(3,19,41,.94)
+);
+border:1px solid rgba(246,207,89,.23);
+}
+
+.about-card h3{
+font-size:21px;
+color:#f6cf59;
+margin-bottom:20px;
+}
+
+.about-item{
+display:flex;
+align-items:center;
+gap:12px;
+padding:12px 0;
+border-bottom:1px solid rgba(255,255,255,.06);
+color:#c3d0df;
+font-size:13px;
+}
+
+.about-item:last-child{
+border-bottom:0;
+}
+
+.about-item b{
+color:#f6cf59;
 }
 
 /* ================= FEATURES ================= */
 
 .features{
-    background:#06182f;
+background:#06172e;
 }
 
 .feature-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:18px;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:18px;
 }
 
 .feature{
-    padding:28px 22px;
-    border-radius:20px;
-    background:linear-gradient(
-        145deg,
-        rgba(25,70,125,.62),
-        rgba(3,20,42,.92)
-    );
-    border:1px solid rgba(255,255,255,.08);
-    transition:.25s;
+padding:30px 23px;
+border-radius:20px;
+background:
+linear-gradient(
+145deg,
+rgba(19,63,113,.62),
+rgba(3,18,39,.94)
+);
+border:1px solid rgba(255,255,255,.07);
+transition:.25s;
 }
 
 .feature:hover{
-    transform:translateY(-5px);
-    border-color:rgba(246,207,89,.5);
+transform:translateY(-6px);
+border-color:rgba(246,207,89,.45);
 }
 
-.icon{
-    font-size:30px;
-    margin-bottom:17px;
+.feature-icon{
+font-size:29px;
+margin-bottom:17px;
 }
 
 .feature h3{
-    font-size:18px;
-    margin-bottom:8px;
+font-size:17px;
+margin-bottom:8px;
 }
 
 .feature p{
-    color:#8fa2b9;
-    font-size:13px;
+font-size:12px;
+color:#8da1b8;
 }
 
 /* ================= RESOURCES ================= */
 
 .resources{
-    background:linear-gradient(180deg,#0a345e,#06182f);
+background:
+linear-gradient(180deg,#092f55,#06172e);
 }
 
 .resource-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:18px;
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:18px;
 }
 
 .resource{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:18px;
-    padding:24px;
-    border-radius:19px;
-    background:rgba(3,20,42,.88);
-    border:1px solid rgba(255,255,255,.08);
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:18px;
+padding:23px;
+border-radius:19px;
+background:rgba(3,18,39,.9);
+border:1px solid rgba(255,255,255,.08);
+transition:.25s;
+}
+
+.resource:hover{
+border-color:rgba(246,207,89,.35);
+transform:translateY(-2px);
 }
 
 .resource-left{
-    display:flex;
-    align-items:center;
-    gap:16px;
+display:flex;
+align-items:center;
+gap:15px;
 }
 
 .resource-icon{
-    width:54px;
-    height:54px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:14px;
-    background:rgba(246,207,89,.1);
-    font-size:23px;
-    flex-shrink:0;
+width:52px;
+height:52px;
+display:flex;
+align-items:center;
+justify-content:center;
+flex-shrink:0;
+border-radius:14px;
+background:rgba(246,207,89,.09);
+font-size:22px;
 }
 
 .resource h3{
-    font-size:16px;
+font-size:15px;
 }
 
 .resource p{
-    color:#879ab2;
-    font-size:12px;
+font-size:11px;
+color:#8296ad;
+margin-top:2px;
 }
 
 .resource .btn{
-    min-height:42px;
-    padding:0 16px;
-    font-size:11px;
-    white-space:nowrap;
+min-height:41px;
+padding:0 15px;
+font-size:10px;
+white-space:nowrap;
 }
 
 /* ================= PROCESS ================= */
 
 .process{
-    background:#071a34;
+background:#06172e;
 }
 
 .process-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:15px;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px;
 }
 
-.process-item{
-    text-align:center;
+.process{
+text-align:center;
 }
 
 .process-number{
-    width:56px;
-    height:56px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    margin:0 auto 17px;
-    border-radius:50%;
-    background:linear-gradient(
-        135deg,
-        #d5ad3c,
-        #ffe68e
-    );
-    color:#06162e;
-    font-weight:1000;
+width:57px;
+height:57px;
+display:flex;
+align-items:center;
+justify-content:center;
+margin:0 auto 17px;
+border-radius:50%;
+color:#06152b;
+font-size:15px;
+font-weight:1000;
+background:linear-gradient(
+135deg,
+#d0a436,
+#ffe68b
+);
+box-shadow:0 8px 25px rgba(246,207,89,.12);
 }
 
-.process-item h3{
-    margin-bottom:7px;
+.process h3{
+font-size:17px;
+margin-bottom:6px;
 }
 
-.process-item p{
-    color:#8ea1b8;
-    font-size:13px;
+.process p{
+font-size:12px;
+color:#879bb1;
 }
 
 /* ================= CTA ================= */
 
 .cta{
-    padding:95px 0;
-    background:
-    radial-gradient(
-        circle at center,
-        rgba(246,207,89,.13),
-        transparent 48%
-    ),
-    #06182f;
+padding:100px 0;
+background:
+radial-gradient(
+circle at center,
+rgba(246,207,89,.14),
+transparent 45%
+),
+#05152c;
 }
 
 .cta-box{
-    text-align:center;
-    padding:68px 25px;
-    border-radius:30px;
-    background:linear-gradient(
-        145deg,
-        rgba(27,75,135,.68),
-        rgba(3,20,42,.94)
-    );
-    border:1px solid rgba(246,207,89,.35);
+text-align:center;
+padding:70px 25px;
+border-radius:31px;
+background:
+linear-gradient(
+145deg,
+rgba(22,72,130,.72),
+rgba(2,17,38,.95)
+);
+border:1px solid rgba(246,207,89,.35);
+box-shadow:0 30px 70px rgba(0,0,0,.35);
 }
 
 .cta-box h2{
-    font-size:45px;
-    margin-bottom:12px;
+font-size:46px;
+line-height:1.1;
 }
 
 .cta-box p{
-    max-width:650px;
-    margin:0 auto 28px;
-    color:#a6b7ca;
+max-width:620px;
+margin:13px auto 28px;
+color:#9fb1c6;
+font-size:14px;
 }
 
 /* ================= FOOTER ================= */
 
 footer{
-    padding:40px 0;
-    background:#030e20;
-    border-top:1px solid rgba(246,207,89,.2);
+padding:40px 0;
+background:#020c1c;
+border-top:1px solid rgba(246,207,89,.2);
 }
 
 .footer{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:20px;
 }
 
 .footer-brand{
-    color:#f6cf59;
-    font-size:18px;
-    font-weight:1000;
+font-size:18px;
+font-weight:1000;
+color:#f6cf59;
 }
 
 .footer p{
-    color:#718399;
-    font-size:12px;
+font-size:11px;
+color:#687c93;
 }
 
 /* ================= MOBILE ================= */
 
 @media(max-width:900px){
 
-    .nav-links{
-        display:none;
-    }
+.nav-links{
+display:none;
+}
 
-    .hero-grid,
-    .about-grid{
-        grid-template-columns:1fr;
-    }
+.hero-grid,
+.about-grid{
+grid-template-columns:1fr;
+}
 
-    .hero-card{
-        max-width:600px;
-        margin:auto;
-    }
+.hero-card{
+max-width:600px;
+width:100%;
+margin:auto;
+}
 
-    .feature-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
+.feature-grid{
+grid-template-columns:repeat(2,1fr);
+}
 
-    .process-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
+.process-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
 }
 
 @media(max-width:600px){
 
-    .nav-inner{
-        min-height:82px;
-    }
-
-    .brand img{
-        width:62px;
-        height:62px;
-    }
-
-    .brand-title{
-        font-size:18px;
-    }
-
-    .brand-subtitle{
-        font-size:8px;
-        letter-spacing:1.5px;
-    }
-
-    section{
-        padding:65px 0;
-    }
-
-    .hero-grid{
-        padding:55px 0;
-    }
-
-    .hero h1{
-        font-size:44px;
-    }
-
-    .hero-text{
-        font-size:15px;
-    }
-
-    .buttons{
-        flex-direction:column;
-    }
-
-    .buttons .btn{
-        width:100%;
-    }
-
-    .btitan-logo{
-        width:145px;
-        height:145px;
-    }
-
-    .stats{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .feature-grid,
-    .resource-grid,
-    .process-grid{
-        grid-template-columns:1fr;
-    }
-
-    .resource{
-        flex-direction:column;
-        align-items:flex-start;
-    }
-
-    .resource .btn{
-        width:100%;
-    }
-
-    .section-title h2{
-        font-size:31px;
-    }
-
-    .about h2{
-        font-size:31px;
-    }
-
-    .cta-box h2{
-        font-size:33px;
-    }
-
-    .footer{
-        flex-direction:column;
-        text-align:center;
-    }
+.nav{
+min-height:85px;
 }
+
+.brand-logo{
+width:62px;
+height:62px;
+}
+
+.brand-title{
+font-size:18px;
+}
+
+.brand-sub{
+font-size:7px;
+letter-spacing:1.5px;
+}
+
+.hero{
+min-height:auto;
+}
+
+.hero-grid{
+padding:60px 0;
+gap:45px;
+}
+
+.hero h1{
+font-size:45px;
+letter-spacing:-2px;
+}
+
+.hero-description{
+font-size:14px;
+}
+
+.hero-buttons{
+flex-direction:column;
+}
+
+.hero-buttons .btn{
+width:100%;
+}
+
+.btitan-logo{
+width:145px;
+height:145px;
+}
+
+.stats{
+grid-template-columns:repeat(3,1fr);
+}
+
+section{
+padding:65px 0;
+}
+
+.section-head h2{
+font-size:31px;
+}
+
+.about-title{
+font-size:31px;
+}
+
+.feature-grid,
+.resource-grid,
+.process-grid{
+grid-template-columns:1fr;
+}
+
+.resource{
+flex-direction:column;
+align-items:flex-start;
+}
+
+.resource .btn{
+width:100%;
+}
+
+.cta-box{
+padding:55px 20px;
+}
+
+.cta-box h2{
+font-size:34px;
+}
+
+.footer{
+flex-direction:column;
+text-align:center;
+}
+
+}
+
 </style>
 </head>
 
 <body>
 
-<!-- ================= TOP NAVBAR ================= -->
+<!-- ================= NAVBAR ================= -->
 
 <nav class="navbar">
 
-<div class="container nav-inner">
+<div class="container nav">
 
 <a href="#" class="brand">
 
 <!-- GSDA LOGO -->
 <img
+class="brand-logo"
 src="file_0000000071288211a783f84d1417ffcd.jpg"
-alt="GS Digital Academy Logo">
+alt="GS Digital Academy">
 
-<div class="brand-text">
+<div>
 
 <div class="brand-title">
 GS DIGITAL ACADEMY
 </div>
 
-<span class="brand-subtitle">
-KNOW • UNDERSTAND • DECIDE • GROW
-</span>
+<div class="brand-sub">
+DIGITAL KNOWLEDGE • BLOCKCHAIN • WEB3
+</div>
 
 </div>
 
 </a>
 
 <div class="nav-links">
+
 <a href="#about">ABOUT</a>
 <a href="#features">FEATURES</a>
 <a href="#resources">RESOURCES</a>
-<a href="#process">HOW IT WORKS</a>
+<a href="#process">PROCESS</a>
 <a href="#join">JOIN</a>
+
 </div>
 
 </div>
@@ -774,29 +866,30 @@ KNOW • UNDERSTAND • DECIDE • GROW
 
 <div>
 
-<div class="badge">
-B-TITAN • COMPLETE INFORMATION HUB
+<div class="eyebrow">
+B-TITAN INFORMATION HUB
 </div>
 
 <h1>
-Learn.<br>
 Understand.<br>
-<span>Build & Grow.</span>
+Decide.<br>
+<span>Build Your Future.</span>
 </h1>
 
-<div class="hero-line"></div>
+<div class="hero-rule"></div>
 
-<div class="hero-tagline">
-KNOW • UNDERSTAND • DECIDE • GROW
+<div class="hero-label">
+GS DIGITAL ACADEMY
 </div>
 
-<p class="hero-text">
-Welcome to GS Digital Academy — your central hub
-for B-TITAN information, blockchain learning,
-educational resources and step-by-step guidance.
+<p class="hero-description">
+A professional learning and information hub designed
+to help you explore B-TITAN resources, blockchain
+guidance, educational videos and the available process
+before making your own decision.
 </p>
 
-<div class="buttons">
+<div class="hero-buttons">
 
 <a
 href="#resources"
@@ -817,21 +910,21 @@ JOIN B-TITAN
 </div>
 
 
-<!-- B-TITAN CARD -->
+<!-- HERO CARD -->
 
 <div class="hero-card">
 
 <img
+class="btitan-logo"
 src="file_000000008d988211a261c1c99b9ffe2c.jpg"
-alt="B-TITAN Logo"
-class="btitan-logo">
+alt="B-TITAN Logo">
 
 <h2>
-B-TITAN <span>INFORMATION HUB</span>
+B-TITAN <span>HUB</span>
 </h2>
 
-<p class="hero-card-text">
-Complete Information & Learning Resources
+<p class="hero-card-description">
+Information • Education • Resources
 </p>
 
 
@@ -852,22 +945,17 @@ GS DIGITAL ACADEMY
 
 <div class="stat">
 <strong>01</strong>
-<span>KNOW</span>
+<span>EXPLORE</span>
 </div>
 
 <div class="stat">
 <strong>02</strong>
-<span>UNDERSTAND</span>
+<span>LEARN</span>
 </div>
 
 <div class="stat">
 <strong>03</strong>
 <span>DECIDE</span>
-</div>
-
-<div class="stat">
-<strong>04</strong>
-<span>GROW</span>
 </div>
 
 </div>
@@ -885,16 +973,16 @@ GS DIGITAL ACADEMY
 
 <div class="container">
 
-<div class="section-title">
+<div class="section-head">
 
-<small>ABOUT GS DIGITAL ACADEMY</small>
+<small>ABOUT THE ACADEMY</small>
 
 <h2>
-Learn With <span class="gold">Clarity.</span>
+Information With <span class="gold">Clarity</span>
 </h2>
 
 <p>
-Information first. Understanding before decision.
+Explore. Understand. Make your own informed decision.
 </p>
 
 </div>
@@ -904,39 +992,71 @@ Information first. Understanding before decision.
 
 <div>
 
-<h2>
+<h2 class="about-title">
 Knowledge First.<br>
 <span class="gold">Decision Later.</span>
 </h2>
 
-<p>
+<p class="about-text">
 GS Digital Academy brings important B-TITAN
-information, educational resources and guidance
-together in one professional hub.
+information and learning resources together
+in one simple and professional place.
 </p>
+
+<p class="about-text">
+Read the available information, watch the
+guides and understand the process before
+taking any decision.
+</p>
+
+<div class="message-box">
+
+<strong>OUR APPROACH</strong>
 
 <p>
-Explore the available information, understand the
-process, watch the guides and make your own informed decision.
+Understand the information first. Decide when you are ready.
 </p>
 
-<div class="highlight">
-KNOW • UNDERSTAND • DECIDE • GROW
 </div>
 
 </div>
 
 
-<div class="info-box">
+<div class="about-card">
 
-<h3>B-TITAN INFORMATION HUB</h3>
+<h3>
+B-TITAN INFORMATION HUB
+</h3>
 
-<p>✓ Complete Plan Information</p>
-<p>✓ Blockchain ID Guide</p>
-<p>✓ ID Activation Information</p>
-<p>✓ Educational Videos</p>
-<p>✓ GS Digital Academy Resources</p>
-<p>✓ Direct Joining Access</p>
+<div class="about-item">
+<b>✓</b>
+Complete Plan Information
+</div>
+
+<div class="about-item">
+<b>✓</b>
+Blockchain ID Guide
+</div>
+
+<div class="about-item">
+<b>✓</b>
+ID Activation Guide
+</div>
+
+<div class="about-item">
+<b>✓</b>
+Complete Plan Video
+</div>
+
+<div class="about-item">
+<b>✓</b>
+GS Digital Academy Hub
+</div>
+
+<div class="about-item">
+<b>✓</b>
+Direct Joining Access
+</div>
 
 </div>
 
@@ -953,13 +1073,17 @@ KNOW • UNDERSTAND • DECIDE • GROW
 
 <div class="container">
 
-<div class="section-title">
+<div class="section-head">
 
 <small>WHAT YOU CAN EXPLORE</small>
 
 <h2>
-Everything <span class="gold">in One Place</span>
+Your <span class="gold">Learning Hub</span>
 </h2>
+
+<p>
+Everything organized for easy access.
+</p>
 
 </div>
 
@@ -967,35 +1091,54 @@ Everything <span class="gold">in One Place</span>
 <div class="feature-grid">
 
 <div class="feature">
-<div class="icon">📚</div>
-<h3>B-TITAN Information</h3>
+
+<div class="feature-icon">📚</div>
+
+<h3>Information</h3>
+
 <p>
-Explore plan information and understand the ecosystem.
+Explore the available B-TITAN plan and ecosystem information.
 </p>
+
 </div>
 
-<div class="feature">
-<div class="icon">🔗</div>
-<h3>Blockchain Guide</h3>
-<p>
-Learn about blockchain-based ID processes.
-</p>
-</div>
 
 <div class="feature">
-<div class="icon">🎥</div>
+
+<div class="feature-icon">🔗</div>
+
+<h3>Blockchain</h3>
+
+<p>
+Learn about blockchain-based ID processes and guidance.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon">🎥</div>
+
 <h3>Video Learning</h3>
+
 <p>
-Access complete plan and educational videos.
+Watch the complete plan and step-by-step educational videos.
 </p>
+
 </div>
 
+
 <div class="feature">
-<div class="icon">🚀</div>
-<h3>Build Your Knowledge</h3>
+
+<div class="feature-icon">🚀</div>
+
+<h3>Build Knowledge</h3>
+
 <p>
-Continue learning and developing your digital knowledge.
+Keep learning and develop your digital and blockchain knowledge.
 </p>
+
 </div>
 
 </div>
@@ -1011,7 +1154,7 @@ Continue learning and developing your digital knowledge.
 
 <div class="container">
 
-<div class="section-title">
+<div class="section-head">
 
 <small>QUICK ACCESS</small>
 
@@ -1020,7 +1163,7 @@ Important <span class="gold">Resources</span>
 </h2>
 
 <p>
-Access the key B-TITAN and GS Digital Academy resources.
+Access the key resources directly from this page.
 </p>
 
 </div>
@@ -1029,7 +1172,7 @@ Access the key B-TITAN and GS Digital Academy resources.
 <div class="resource-grid">
 
 
-<!-- PLAN PDF -->
+<!-- PDF -->
 
 <div class="resource">
 
@@ -1054,7 +1197,7 @@ OPEN PDF
 </div>
 
 
-<!-- BLOCKCHAIN VIDEO -->
+<!-- BLOCKCHAIN -->
 
 <div class="resource">
 
@@ -1064,7 +1207,7 @@ OPEN PDF
 
 <div>
 <h3>Blockchain Se ID Kaise Lagaye</h3>
-<p>Watch the blockchain ID video.</p>
+<p>Watch the ID process video.</p>
 </div>
 
 </div>
@@ -1172,6 +1315,7 @@ OPEN HUB
 <a
 href="https://btitan.net/register?id=10203"
 target="_blank"
+rel="noopener noreferrer"
 class="btn btn-gold">
 JOIN NOW
 </a>
@@ -1188,20 +1332,20 @@ JOIN NOW
 
 <!-- ================= PROCESS ================= -->
 
-<section id="process" class="process">
+<section id="process">
 
 <div class="container">
 
-<div class="section-title">
+<div class="section-head">
 
-<small>SIMPLE PROCESS</small>
+<small>OUR SIMPLE APPROACH</small>
 
 <h2>
-How It <span class="gold">Works</span>
+Four Steps To <span class="gold">Explore</span>
 </h2>
 
 <p>
-Take your time. Understand the information before making a decision.
+Take the time to understand before making a decision.
 </p>
 
 </div>
@@ -1209,53 +1353,53 @@ Take your time. Understand the information before making a decision.
 
 <div class="process-grid">
 
-<div class="process-item">
+<div class="process">
 
 <div class="process-number">01</div>
 
-<h3>Know</h3>
+<h3>Explore</h3>
 
 <p>
-Explore the available information.
+Start with the available information.
 </p>
 
 </div>
 
 
-<div class="process-item">
+<div class="process">
 
 <div class="process-number">02</div>
+
+<h3>Learn</h3>
+
+<p>
+Watch the guides and educational resources.
+</p>
+
+</div>
+
+
+<div class="process">
+
+<div class="process-number">03</div>
 
 <h3>Understand</h3>
 
 <p>
-Watch the guides and understand the process.
+Understand the process and available options.
 </p>
 
 </div>
 
 
-<div class="process-item">
+<div class="process">
 
-<div class="process-number">03</div>
+<div class="process-number">04</div>
 
 <h3>Decide</h3>
 
 <p>
-Review everything and make your own decision.
-</p>
-
-</div>
-
-
-<div class="process-item">
-
-<div class="process-number">04</div>
-
-<h3>Grow</h3>
-
-<p>
-Continue learning and developing your knowledge.
+Make your own informed decision.
 </p>
 
 </div>
@@ -1276,21 +1420,22 @@ Continue learning and developing your knowledge.
 <div class="cta-box">
 
 <h2>
-Ready to <span class="gold">Explore?</span>
+Ready To <span class="gold">Explore?</span>
 </h2>
 
 <p>
-Start with knowledge. Explore the resources,
+Begin with information. Explore the resources,
 understand the process and decide when you are ready.
 </p>
 
 <div
-class="buttons"
+class="hero-buttons"
 style="justify-content:center;">
 
 <a
 href="https://btitan.net/register?id=10203"
 target="_blank"
+rel="noopener noreferrer"
 class="btn btn-gold">
 🚀 JOIN B-TITAN
 </a>
@@ -1325,7 +1470,7 @@ GS DIGITAL ACADEMY
 </p>
 
 <p>
-Knowledge First • Decision Later
+Information First • Decision Later
 </p>
 
 </div>
