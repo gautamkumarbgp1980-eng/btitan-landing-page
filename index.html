@@ -1,610 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>B-TITAN | The Ultimate Bitcoin Rush</title>
-
-<style>
-:root{
-  --gold:#d4af37;
-  --gold2:#f7dc78;
-  --gold3:#9b7620;
-  --black:#050505;
-  --dark:#0a0a0a;
-  --card:#111111;
-  --text:#ffffff;
-  --muted:#a5a5a5;
-  --border:rgba(212,175,55,.25);
-}
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  background:
-    radial-gradient(circle at 50% -10%,rgba(212,175,55,.12),transparent 35%),
-    var(--black);
-  color:var(--text);
-  font-family:Arial,Helvetica,sans-serif;
-  line-height:1.6;
-}
-
-a{
-  text-decoration:none;
-  color:inherit;
-}
-
-.container{
-  width:min(1160px,92%);
-  margin:auto;
-}
-
-/* =========================
-   PROFESSIONAL LOGO
-========================= */
-
-.logo{
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
-
-.titan-emblem{
-  width:46px;
-  height:46px;
-  position:relative;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.titan-emblem:before{
-  content:"";
-  position:absolute;
-  width:34px;
-  height:40px;
-  border:2px solid var(--gold);
-  clip-path:polygon(
-    50% 0%,
-    92% 22%,
-    80% 78%,
-    50% 100%,
-    20% 78%,
-    8% 22%
-  );
-  box-shadow:0 0 15px rgba(212,175,55,.3);
-}
-
-.titan-emblem:after{
-  content:"T";
-  position:absolute;
-  color:var(--gold2);
-  font-size:23px;
-  font-weight:900;
-  line-height:1;
-}
-
-.logo-word{
-  font-size:25px;
-  font-weight:900;
-  letter-spacing:2px;
-  white-space:nowrap;
-}
-
-.logo-word b{
-  color:var(--gold);
-}
-
-/* =========================
-   HEADER
-========================= */
-
-header{
-  position:fixed;
-  left:0;
-  top:0;
-  width:100%;
-  z-index:1000;
-  background:rgba(5,5,5,.9);
-  backdrop-filter:blur(15px);
-  border-bottom:1px solid rgba(212,175,55,.15);
-}
-
-.nav{
-  min-height:76px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-.nav-links{
-  display:flex;
-  align-items:center;
-  gap:27px;
-}
-
-.nav-links a{
-  color:#ccc;
-  font-size:13px;
-  transition:.25s;
-}
-
-.nav-links a:hover{
-  color:var(--gold2);
-}
-
-.nav-join{
-  padding:10px 19px;
-  border:1px solid var(--gold);
-  border-radius:30px;
-  color:var(--gold2)!important;
-}
-
-.menu{
-  display:none;
-  font-size:27px;
-  color:var(--gold);
-  cursor:pointer;
-}
-
-/* =========================
-   HERO
-========================= */
-
-.hero{
-  min-height:100vh;
-  padding:140px 0 90px;
-  display:flex;
-  align-items:center;
-  text-align:center;
-  position:relative;
-  overflow:hidden;
-}
-
-.hero:before{
-  content:"";
-  position:absolute;
-  width:650px;
-  height:650px;
-  border:1px solid rgba(212,175,55,.08);
-  border-radius:50%;
-  left:50%;
-  top:45%;
-  transform:translate(-50%,-50%);
-}
-
-.hero:after{
-  content:"";
-  position:absolute;
-  width:400px;
-  height:400px;
-  background:radial-gradient(
-    circle,
-    rgba(212,175,55,.15),
-    transparent 65%
-  );
-  left:50%;
-  top:35%;
-  transform:translate(-50%,-50%);
-}
-
-.hero-content{
-  position:relative;
-  z-index:2;
-  width:100%;
-}
-
-/* large logo */
-
-.hero-emblem{
-  width:125px;
-  height:125px;
-  margin:0 auto 28px;
-  position:relative;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.hero-emblem:before{
-  content:"";
-  position:absolute;
-  inset:5px;
-  border:3px solid var(--gold);
-  clip-path:polygon(
-    50% 0%,
-    90% 20%,
-    82% 78%,
-    50% 100%,
-    18% 78%,
-    10% 20%
-  );
-  filter:drop-shadow(0 0 12px rgba(212,175,55,.35));
-}
-
-.hero-emblem:after{
-  content:"T";
-  color:var(--gold2);
-  font-size:55px;
-  font-weight:900;
-}
-
-.hero-label{
-  display:inline-block;
-  padding:8px 18px;
-  border:1px solid var(--border);
-  border-radius:30px;
-  color:var(--gold2);
-  letter-spacing:2px;
-  font-size:11px;
-  background:rgba(212,175,55,.04);
-}
-
-.hero h1{
-  font-size:clamp(55px,10vw,115px);
-  line-height:.95;
-  letter-spacing:4px;
-  margin-top:22px;
-  font-weight:900;
-}
-
-.hero h1 span{
-  color:var(--gold);
-  text-shadow:0 0 35px rgba(212,175,55,.2);
-}
-
-.hero h2{
-  font-size:clamp(18px,3vw,30px);
-  letter-spacing:2px;
-  margin-top:20px;
-}
-
-.hero-text{
-  max-width:690px;
-  margin:18px auto;
-  color:#999;
-  font-size:15px;
-}
-
-.buttons{
-  margin-top:30px;
-  display:flex;
-  justify-content:center;
-  gap:13px;
-  flex-wrap:wrap;
-}
-
-.btn{
-  padding:14px 28px;
-  border-radius:30px;
-  font-size:13px;
-  font-weight:800;
-  transition:.3s;
-}
-
-.btn-gold{
-  color:#050505;
-  background:linear-gradient(
-    120deg,
-    #9d761d,
-    #f5d96f,
-    #b98c27
-  );
-}
-
-.btn-outline{
-  border:1px solid var(--gold);
-  color:var(--gold2);
-}
-
-.btn:hover{
-  transform:translateY(-3px);
-  box-shadow:0 10px 30px rgba(212,175,55,.2);
-}
-
-/* =========================
-   TRUST BAR
-========================= */
-
-.trust{
-  border-top:1px solid var(--border);
-  border-bottom:1px solid var(--border);
-  background:#090909;
-}
-
-.trust-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-}
-
-.trust-item{
-  padding:22px 10px;
-  text-align:center;
-  border-right:1px solid rgba(255,255,255,.06);
-}
-
-.trust-item:last-child{
-  border-right:0;
-}
-
-.trust-item strong{
-  display:block;
-  color:var(--gold2);
-  font-size:16px;
-}
-
-.trust-item span{
-  color:#777;
-  font-size:11px;
-}
-
-/* =========================
-   SECTIONS
-========================= */
-
-section{
-  padding:100px 0;
-}
-
-.section-title{
-  text-align:center;
-  margin-bottom:50px;
-}
-
-.section-label{
-  color:var(--gold);
-  font-size:11px;
-  letter-spacing:3px;
-  font-weight:bold;
-}
-
-.section-title h2{
-  font-size:clamp(34px,5vw,56px);
-  line-height:1.1;
-  margin-top:9px;
-}
-
-.section-title h2 span{
-  color:var(--gold);
-}
-
-.section-title p{
-  max-width:650px;
-  margin:13px auto 0;
-  color:#888;
-}
-
-/* =========================
-   INTRO
-========================= */
-
-.intro{
-  display:grid;
-  grid-template-columns:1.1fr .9fr;
-  gap:45px;
-  align-items:center;
-}
-
-.intro h3{
-  font-size:34px;
-  margin-bottom:15px;
-}
-
-.intro h3 span{
-  color:var(--gold);
-}
-
-.intro p{
-  color:#999;
-  font-size:15px;
-  margin-bottom:16px;
-}
-
-.intro-card{
-  padding:38px;
-  border:1px solid var(--border);
-  border-radius:25px;
-  background:
-    linear-gradient(145deg,#151208,#090909);
-  box-shadow:0 20px 50px rgba(0,0,0,.35);
-}
-
-.intro-card .mini-logo{
-  width:75px;
-  height:75px;
-  border:2px solid var(--gold);
-  clip-path:polygon(
-    50% 0,
-    100% 25%,
-    82% 80%,
-    50% 100%,
-    18% 80%,
-    0 25%
-  );
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:var(--gold2);
-  font-size:32px;
-  font-weight:900;
-  margin-bottom:22px;
-}
-
-/* =========================
-   FEATURE CARDS
-========================= */
-
-.cards{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
-}
-
-.card{
-  padding:30px 25px;
-  border:1px solid var(--border);
-  border-radius:20px;
-  background:linear-gradient(145deg,#121212,#080808);
-  transition:.3s;
-}
-
-.card:hover{
-  transform:translateY(-6px);
-  border-color:var(--gold);
-}
-
-.card-icon{
-  font-size:34px;
-  margin-bottom:15px;
-}
-
-.card h3{
-  color:var(--gold2);
-  margin-bottom:8px;
-}
-
-.card p{
-  color:#888;
-  font-size:14px;
-}
-
-/* =========================
-   PLAN SECTION
-========================= */
-
-.plan-box{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
-}
-
-.plan-card{
-  padding:30px 25px;
-  background:#0b0b0b;
-  border:1px solid var(--border);
-  border-radius:20px;
-  text-align:center;
-}
-
-.plan-card.featured{
-  border-color:var(--gold);
-  box-shadow:0 0 35px rgba(212,175,55,.08);
-}
-
-.plan-icon{
-  font-size:35px;
-}
-
-.plan-card h3{
-  margin:13px 0 8px;
-  color:var(--gold2);
-}
-
-.plan-card p{
-  color:#777;
-  font-size:13px;
-  min-height:45px;
-}
-
-.plan-btn{
-  display:inline-block;
-  margin-top:20px;
-  padding:10px 20px;
-  border:1px solid var(--gold);
-  border-radius:25px;
-  color:var(--gold2);
-  font-size:12px;
-}
-
-/* =========================
-   MATRIX
-========================= */
-
-.matrix-box{
-  padding:40px 15px;
-  border:1px solid var(--border);
-  border-radius:25px;
-  background:#080808;
-}
-
-.matrix{
-  max-width:950px;
-  margin:auto;
-}
-
-.matrix-row{
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  margin:10px 0;
-}
-
-.box{
-  width:105px;
-  height:82px;
-  border:1px solid rgba(212,175,55,.65);
-  border-radius:13px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  background:linear-gradient(145deg,#19150b,#080808);
-}
-
-.box strong{
-  font-size:22px;
-  color:var(--gold2);
-}
-
-.box small{
-  color:#777;
-  font-size:8px;
-  text-align:center;
-}
-
-.matrix-line{
-  height:22px;
-  width:1px;
-  background:var(--gold);
-  margin:auto;
-}
-
-/* =========================
-   LEVELS
-========================= */
-
-.levels{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:18px;
-}
-
-.level{
-  text-align:center;
-  padding:28px 15px;
-  background:#0b0b0b;
-  border:1px solid var(--border);
-  border-radius:18px;
-}
-
-.level-number{
-  font-size:11px;
-  color:var(--gold);
-  letter-spacing:2px;
-}
-
-.level h3{
-  margin:9px 0;
-  font-size:23px;
-}
-
-.level-price
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B-TITAN</title>
+
+  <style>
+    body {
+      margin: 0;
+      background: #050505;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    .page {
+      padding: 100px 20px;
+    }
+
+    .logo {
+      font-size: 55px;
+      font-weight: bold;
+      color: #d4af37;
+      letter-spacing: 4px;
+    }
+
+    h1 {
+      font-size: 45px;
+      margin: 25px 0 10px;
+    }
+
+    p {
+      color: #aaa;
+      font-size: 18px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 14px 30px;
+      background: #d4af37;
+      color: #000;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="page">
+
+    <div class="logo">B-TITAN</div>
+
+    <h1>THE ULTIMATE BITCOIN RUSH</h1>
+
+    <p>
+      Decentralized Matrix Ecosystem
+    </p>
+
+    <a class="btn"
+       href="https://btitan.net/register?id=125872"
+       target="_blank">
+      JOIN B-TITAN
+    </a>
+
+  </div>
+
+</body>
+</html>
