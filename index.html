@@ -5,12 +5,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>B-TITAN | GS Digital Academy</title>
+<title>B-TITAN | GS DIGITAL ACADEMY</title>
 
 <meta name="description"
 content="B-TITAN Complete Information Hub by GS Digital Academy. Learn, Understand, Build and Grow.">
 
 <style>
+
+/* ================= RESET ================= */
 
 *{
     margin:0;
@@ -23,46 +25,108 @@ html{
 }
 
 body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:#050505;
-    color:#fff;
+    font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+    color:#ffffff;
+
     line-height:1.6;
+
+    background:
+    radial-gradient(
+        circle at 10% 10%,
+        rgba(35,82,150,.45),
+        transparent 30%
+    ),
+    radial-gradient(
+        circle at 90% 20%,
+        rgba(232,195,90,.12),
+        transparent 28%
+    ),
+    radial-gradient(
+        circle at 50% 100%,
+        rgba(17,55,110,.55),
+        transparent 40%
+    ),
+    linear-gradient(
+        135deg,
+        #07152e 0%,
+        #0b2144 45%,
+        #061225 100%
+    );
+
+    background-attachment:fixed;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    opacity:.12;
+
+    background-image:
+    linear-gradient(
+        rgba(255,255,255,.08) 1px,
+        transparent 1px
+    ),
+    linear-gradient(
+        90deg,
+        rgba(255,255,255,.08) 1px,
+        transparent 1px
+    );
+
+    background-size:60px 60px;
+    mask-image:
+    linear-gradient(
+        to bottom,
+        black,
+        transparent 85%
+    );
+
+    z-index:-1;
 }
 
 .container{
-    width:min(1120px,92%);
+    width:min(1140px,92%);
     margin:auto;
 }
 
 .gold{
-    color:#e8c35a;
+    color:#f0c957;
 }
 
+
+/* ================= SECTIONS ================= */
+
 section{
-    padding:75px 0;
+    padding:90px 0;
 }
 
 .section-title{
     text-align:center;
-    margin-bottom:45px;
+    margin-bottom:55px;
 }
 
 .section-title span{
-    color:#e8c35a;
+    color:#f0c957;
     font-size:12px;
-    font-weight:bold;
+    font-weight:800;
     letter-spacing:3px;
 }
 
 .section-title h2{
-    font-size:36px;
-    margin-top:8px;
+    font-size:40px;
+    line-height:1.15;
+    margin-top:10px;
 }
 
 .section-title p{
-    color:#999;
-    max-width:650px;
-    margin:12px auto 0;
+    max-width:680px;
+    margin:14px auto 0;
+    color:#aebbd0;
 }
 
 
@@ -72,288 +136,473 @@ section{
     position:sticky;
     top:0;
     z-index:1000;
-    background:rgba(5,5,5,.97);
-    backdrop-filter:blur(15px);
-    border-bottom:1px solid rgba(232,195,90,.2);
+
+    background:
+    rgba(5,18,40,.90);
+
+    backdrop-filter:blur(18px);
+
+    border-bottom:
+    1px solid
+    rgba(240,201,87,.25);
+
+    box-shadow:
+    0 8px 35px rgba(0,0,0,.25);
 }
 
 .nav-inner{
-    min-height:92px;
+    min-height:94px;
+
     display:flex;
     align-items:center;
     justify-content:space-between;
-    gap:20px;
+
+    gap:25px;
 }
 
 .brand{
     display:flex;
     align-items:center;
-    gap:16px;
+    gap:15px;
+
     text-decoration:none;
-    color:#fff;
+    color:white;
 }
 
 .brand img{
-    width:65px;
-    height:65px;
-    border-radius:50%;
+    width:68px;
+    height:68px;
+
     object-fit:contain;
-    border:2px solid #e8c35a;
-    background:#000;
-    padding:2px;
-    flex-shrink:0;
+
+    border-radius:18px;
+
+    border:
+    2px solid
+    #f0c957;
+
+    background:#07152e;
+
+    padding:4px;
+
+    box-shadow:
+    0 0 25px
+    rgba(240,201,87,.18);
 }
 
 .brand-text{
-    font-size:21px;
+    font-size:22px;
     font-weight:900;
-    line-height:1.1;
+
+    line-height:1.05;
+
     letter-spacing:.5px;
+
     white-space:nowrap;
 }
 
 .brand-text small{
     display:block;
-    color:#e8c35a;
+
+    margin-top:7px;
+
+    color:#f0c957;
+
     font-size:10px;
+
+    letter-spacing:2.5px;
+
     font-weight:700;
-    letter-spacing:2px;
-    margin-top:6px;
 }
 
 .nav-links{
     display:flex;
-    gap:24px;
+    gap:28px;
 }
 
 .nav-links a{
-    color:#ccc;
+    color:#c7d2e4;
+
     text-decoration:none;
+
     font-size:13px;
-    font-weight:bold;
+
+    font-weight:700;
+
+    transition:.25s;
 }
 
 .nav-links a:hover{
-    color:#e8c35a;
+    color:#f0c957;
 }
 
 
 /* ================= HERO ================= */
 
 .hero{
-    min-height:calc(100vh - 92px);
+    min-height:
+    calc(100vh - 94px);
+
     display:flex;
     align-items:center;
 
+    position:relative;
+
+    overflow:hidden;
+}
+
+.hero::after{
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    right:-220px;
+    top:50px;
+
+    border-radius:50%;
+
     background:
     radial-gradient(
-        circle at 15% 30%,
-        rgba(232,195,90,.15),
-        transparent 28%
-    ),
-    radial-gradient(
-        circle at 85% 70%,
-        rgba(232,195,90,.08),
-        transparent 30%
+        circle,
+        rgba(240,201,87,.16),
+        transparent 68%
     );
+
+    pointer-events:none;
 }
 
 .hero-grid{
     display:grid;
-    grid-template-columns:1.1fr .9fr;
+
+    grid-template-columns:
+    1.08fr .92fr;
+
     align-items:center;
-    gap:55px;
+
+    gap:65px;
 }
 
 .hero-badge{
     display:inline-block;
-    padding:8px 16px;
-    border:1px solid rgba(232,195,90,.5);
+
+    padding:9px 17px;
+
+    border:
+    1px solid
+    rgba(240,201,87,.55);
+
     border-radius:50px;
-    color:#e8c35a;
+
+    color:#f0c957;
+
+    background:
+    rgba(240,201,87,.06);
+
     font-size:11px;
-    font-weight:bold;
+
+    font-weight:800;
+
     letter-spacing:2px;
-    margin-bottom:20px;
+
+    margin-bottom:22px;
 }
 
 .hero h1{
-    font-size:clamp(42px,6vw,72px);
-    line-height:1.02;
-    letter-spacing:-2px;
+    font-size:
+    clamp(45px,6vw,76px);
+
+    line-height:1.01;
+
+    letter-spacing:-2.5px;
 }
 
 .hero h1 span{
-    color:#e8c35a;
+    color:#f0c957;
+
+    text-shadow:
+    0 0 30px
+    rgba(240,201,87,.18);
 }
 
 .hero-text{
-    color:#aaa;
+    color:#b6c2d4;
+
     font-size:17px;
-    max-width:600px;
-    margin:22px 0 30px;
+
+    max-width:610px;
+
+    margin:
+    24px 0 32px;
 }
 
 .hero-buttons{
     display:flex;
+
     gap:14px;
+
     flex-wrap:wrap;
 }
 
 .btn{
+    min-height:51px;
+
+    padding:0 25px;
+
     display:inline-flex;
+
     align-items:center;
     justify-content:center;
-    min-height:50px;
-    padding:0 24px;
-    border-radius:10px;
+
+    border-radius:11px;
+
     text-decoration:none;
+
     font-size:13px;
-    font-weight:800;
+
+    font-weight:900;
+
     transition:.25s;
 }
 
+.btn:hover{
+    transform:
+    translateY(-3px);
+
+    box-shadow:
+    0 12px 30px
+    rgba(0,0,0,.25);
+}
+
 .btn-gold{
-    color:#080808;
-    background:linear-gradient(
+    color:#08152b;
+
+    background:
+    linear-gradient(
         135deg,
-        #d8b64f,
-        #f4dc7b,
-        #d1aa3d
+        #d8b54c,
+        #ffe58a,
+        #d1a83b
     );
 
     box-shadow:
-        0 10px 30px rgba(232,195,90,.15);
+    0 8px 25px
+    rgba(240,201,87,.18);
 }
 
 .btn-outline{
-    color:#e8c35a;
-    border:1px solid #e8c35a;
-    background:transparent;
-}
+    color:#f0c957;
 
-.btn:hover{
-    transform:translateY(-3px);
+    border:
+    1px solid
+    rgba(240,201,87,.75);
+
+    background:
+    rgba(240,201,87,.04);
 }
 
 
 /* ================= HERO CARD ================= */
 
 .hero-card{
-    padding:35px;
+    position:relative;
 
-    border:1px solid rgba(232,195,90,.3);
-    border-radius:25px;
+    padding:38px;
+
+    border:
+    1px solid
+    rgba(240,201,87,.28);
+
+    border-radius:28px;
 
     background:
     linear-gradient(
         145deg,
-        rgba(255,255,255,.08),
-        rgba(255,255,255,.025)
+        rgba(35,73,130,.48),
+        rgba(7,21,45,.72)
     );
 
+    backdrop-filter:blur(15px);
+
     box-shadow:
-        0 30px 80px rgba(0,0,0,.5);
+    0 30px 80px
+    rgba(0,0,0,.30);
+
+    overflow:hidden;
+}
+
+.hero-card::before{
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+    height:220px;
+
+    top:-100px;
+    right:-70px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(240,201,87,.17),
+        transparent 70%
+    );
 }
 
 .logo-row{
     display:flex;
-    justify-content:center;
+
     align-items:center;
-    gap:18px;
-    margin-bottom:24px;
+    justify-content:center;
+
+    gap:22px;
+
+    margin-bottom:25px;
 }
 
 .hero-logo{
-    width:105px;
-    height:105px;
+    width:118px;
+    height:118px;
 
     object-fit:contain;
 
-    border-radius:20px;
+    border-radius:22px;
 
-    border:2px solid #e8c35a;
+    border:
+    2px solid
+    rgba(240,201,87,.85);
 
-    background:#000;
+    background:
+    #06152f;
 
-    padding:5px;
+    padding:6px;
 
     box-shadow:
-        0 0 35px rgba(232,195,90,.15);
+    0 0 35px
+    rgba(240,201,87,.15);
 }
 
 .hero-card h3{
+    position:relative;
+
     text-align:center;
-    font-size:25px;
+
+    font-size:27px;
+
+    letter-spacing:.5px;
 }
 
 .hero-card .sub{
+    position:relative;
+
     text-align:center;
-    color:#999;
+
+    color:#aebbd0;
+
     margin-top:7px;
 }
 
 .stats{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:10px;
-    margin-top:28px;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:11px;
+
+    margin-top:30px;
 }
 
 .stat{
     text-align:center;
-    padding:15px 8px;
 
-    background:rgba(255,255,255,.04);
+    padding:17px 8px;
 
-    border-radius:12px;
+    border:
+    1px solid
+    rgba(255,255,255,.07);
+
+    border-radius:14px;
+
+    background:
+    rgba(255,255,255,.035);
 }
 
 .stat strong{
     display:block;
-    color:#e8c35a;
-    font-size:22px;
+
+    color:#f0c957;
+
+    font-size:23px;
 }
 
 .stat span{
-    color:#888;
+    color:#8f9db2;
+
     font-size:10px;
+
+    letter-spacing:1px;
 }
 
 
 /* ================= ABOUT ================= */
 
 .about{
-    background:#090909;
+    background:
+    linear-gradient(
+        180deg,
+        rgba(4,15,32,.35),
+        rgba(5,20,42,.72)
+    );
 }
 
 .about-grid{
     display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:50px;
+
+    grid-template-columns:
+    1fr 1fr;
+
+    gap:55px;
+
     align-items:center;
 }
 
 .about h2{
-    font-size:38px;
-    margin-bottom:18px;
+    font-size:40px;
+
+    line-height:1.15;
+
+    margin-bottom:20px;
 }
 
 .about p{
-    color:#aaa;
-    margin-bottom:16px;
+    color:#b1bfd2;
+
+    margin-bottom:17px;
 }
 
 .quote{
-    padding:22px;
+    margin-top:22px;
 
-    border-left:3px solid #e8c35a;
+    padding:23px;
 
-    background:rgba(232,195,90,.05);
+    border-left:
+    3px solid
+    #f0c957;
 
-    color:#ddd;
+    border-radius:0 14px 14px 0;
 
-    font-weight:bold;
+    background:
+    rgba(240,201,87,.055);
+
+    color:#e8edf5;
+
+    font-weight:800;
 }
 
 
@@ -361,41 +610,78 @@ section{
 
 .features-grid{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:18px;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:19px;
 }
 
 .feature{
-    padding:28px 22px;
+    padding:30px 23px;
 
-    border:1px solid #222;
+    border:
+    1px solid
+    rgba(255,255,255,.08);
 
-    border-radius:18px;
+    border-radius:20px;
 
-    background:#0b0b0b;
+    background:
+    linear-gradient(
+        145deg,
+        rgba(28,64,115,.55),
+        rgba(6,20,43,.72)
+    );
+
+    backdrop-filter:blur(10px);
 
     transition:.25s;
 }
 
 .feature:hover{
-    transform:translateY(-5px);
+    transform:
+    translateY(-6px);
 
     border-color:
-        rgba(232,195,90,.5);
+    rgba(240,201,87,.55);
+
+    box-shadow:
+    0 18px 45px
+    rgba(0,0,0,.20);
 }
 
 .icon{
-    font-size:32px;
-    margin-bottom:18px;
+    width:55px;
+    height:55px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:15px;
+
+    background:
+    rgba(240,201,87,.10);
+
+    border:
+    1px solid
+    rgba(240,201,87,.15);
+
+    font-size:28px;
+
+    margin-bottom:20px;
 }
 
 .feature h3{
-    font-size:17px;
-    margin-bottom:8px;
+    font-size:18px;
+
+    margin-bottom:9px;
 }
 
 .feature p{
-    color:#888;
+    color:#96a6bc;
+
     font-size:13px;
 }
 
@@ -403,12 +689,20 @@ section{
 /* ================= RESOURCES ================= */
 
 .resources{
-    background:#090909;
+    background:
+    linear-gradient(
+        180deg,
+        rgba(5,18,40,.75),
+        rgba(4,15,32,.9)
+    );
 }
 
 .resources-grid{
     display:grid;
-    grid-template-columns:repeat(2,1fr);
+
+    grid-template-columns:
+    repeat(2,1fr);
+
     gap:20px;
 }
 
@@ -423,15 +717,17 @@ section{
 
     padding:25px;
 
-    border:1px solid #222;
+    border:
+    1px solid
+    rgba(255,255,255,.08);
 
-    border-radius:18px;
+    border-radius:20px;
 
     background:
     linear-gradient(
         145deg,
-        #111,
-        #080808
+        rgba(27,62,111,.55),
+        rgba(5,19,42,.75)
     );
 
     transition:.25s;
@@ -439,30 +735,37 @@ section{
 
 .resource:hover{
     border-color:
-        rgba(232,195,90,.45);
+    rgba(240,201,87,.5);
 
-    transform:translateY(-2px);
+    transform:
+    translateY(-3px);
 }
 
 .resource-left{
     display:flex;
+
     align-items:center;
+
     gap:18px;
 }
 
 .resource-icon{
-    width:55px;
-    height:55px;
+    width:56px;
+    height:56px;
 
     display:flex;
 
     align-items:center;
     justify-content:center;
 
-    border-radius:14px;
+    border-radius:15px;
 
     background:
-        rgba(232,195,90,.1);
+    rgba(240,201,87,.09);
+
+    border:
+    1px solid
+    rgba(240,201,87,.14);
 
     font-size:25px;
 
@@ -474,18 +777,19 @@ section{
 }
 
 .resource p{
-    color:#888;
+    color:#8f9eb3;
+
     font-size:12px;
 }
 
 .resource .btn{
-    min-height:42px;
+    min-height:43px;
 
     padding:0 17px;
 
     white-space:nowrap;
 
-    font-size:12px;
+    font-size:11px;
 }
 
 
@@ -495,7 +799,7 @@ section{
     display:grid;
 
     grid-template-columns:
-        repeat(4,1fr);
+    repeat(4,1fr);
 
     gap:15px;
 }
@@ -503,35 +807,46 @@ section{
 .step{
     text-align:center;
 
-    padding:28px 18px;
+    padding:30px 18px;
 }
 
 .step-number{
-    width:50px;
-    height:50px;
+    width:54px;
+    height:54px;
 
     display:flex;
 
     align-items:center;
     justify-content:center;
 
-    margin:0 auto 17px;
+    margin:
+    0 auto 18px;
 
     border-radius:50%;
 
-    background:#e8c35a;
+    background:
+    linear-gradient(
+        135deg,
+        #d6b04a,
+        #ffe48a
+    );
 
-    color:#050505;
+    color:#07152e;
 
     font-weight:900;
+
+    box-shadow:
+    0 0 25px
+    rgba(240,201,87,.15);
 }
 
 .step h3{
-    margin-bottom:7px;
+    margin-bottom:8px;
 }
 
 .step p{
-    color:#888;
+    color:#8fa0b7;
+
     font-size:13px;
 }
 
@@ -539,52 +854,64 @@ section{
 /* ================= CTA ================= */
 
 .cta{
-    padding:90px 0;
+    padding:100px 0;
 }
 
 .cta-box{
     text-align:center;
 
-    padding:65px 25px;
+    padding:75px 25px;
 
-    border-radius:28px;
+    border-radius:30px;
 
     border:
-        1px solid
-        rgba(232,195,90,.35);
+    1px solid
+    rgba(240,201,87,.35);
 
     background:
     radial-gradient(
         circle at center,
-        rgba(232,195,90,.12),
+        rgba(240,201,87,.12),
         transparent 55%
     ),
-    #0b0b0b;
+    linear-gradient(
+        145deg,
+        rgba(26,62,112,.65),
+        rgba(5,19,42,.85)
+    );
+
+    box-shadow:
+    0 30px 80px
+    rgba(0,0,0,.25);
 }
 
 .cta-box h2{
-    font-size:42px;
-    margin-bottom:12px;
+    font-size:45px;
+
+    margin-bottom:13px;
 }
 
 .cta-box p{
-    color:#999;
+    color:#a5b3c7;
 
-    max-width:600px;
+    max-width:620px;
 
     margin:
-        0 auto 25px;
+    0 auto 28px;
 }
 
 
 /* ================= FOOTER ================= */
 
 footer{
-    border-top:1px solid #1c1c1c;
+    border-top:
+    1px solid
+    rgba(240,201,87,.18);
 
-    padding:35px 0;
+    padding:38px 0;
 
-    background:#030303;
+    background:
+    rgba(3,14,31,.95);
 }
 
 .footer-inner{
@@ -598,13 +925,15 @@ footer{
 }
 
 .footer-brand{
-    color:#e8c35a;
+    color:#f0c957;
 
     font-weight:900;
+
+    font-size:17px;
 }
 
 footer p{
-    color:#666;
+    color:#718198;
 
     font-size:12px;
 }
@@ -612,14 +941,14 @@ footer p{
 
 /* ================= TABLET ================= */
 
-@media(max-width:850px){
+@media(max-width:900px){
 
     .nav-links{
         display:none;
     }
 
     .hero{
-        padding:70px 0;
+        padding:80px 0;
     }
 
     .hero-grid,
@@ -628,18 +957,21 @@ footer p{
     }
 
     .hero-card{
-        max-width:520px;
+        max-width:560px;
+
+        width:100%;
+
         margin:auto;
     }
 
     .features-grid{
         grid-template-columns:
-            repeat(2,1fr);
+        repeat(2,1fr);
     }
 
     .steps-grid{
         grid-template-columns:
-            repeat(2,1fr);
+        repeat(2,1fr);
     }
 }
 
@@ -649,15 +981,45 @@ footer p{
 @media(max-width:600px){
 
     section{
-        padding:60px 0;
+        padding:65px 0;
+    }
+
+    .nav-inner{
+        min-height:82px;
+    }
+
+    .brand{
+        gap:10px;
+    }
+
+    .brand img{
+        width:57px;
+        height:57px;
+    }
+
+    .brand-text{
+        font-size:17px;
+    }
+
+    .brand-text small{
+        font-size:8px;
+
+        letter-spacing:1.6px;
+
+        margin-top:5px;
     }
 
     .hero{
         min-height:auto;
+
+        padding:
+        70px 0 65px;
     }
 
     .hero h1{
         font-size:43px;
+
+        letter-spacing:-1.5px;
     }
 
     .hero-text{
@@ -670,6 +1032,23 @@ footer p{
 
     .hero-buttons .btn{
         width:100%;
+    }
+
+    .hero-card{
+        padding:28px 20px;
+    }
+
+    .logo-row{
+        gap:10px;
+    }
+
+    .hero-logo{
+        width:90px;
+        height:90px;
+    }
+
+    .hero-card h3{
+        font-size:23px;
     }
 
     .features-grid,
@@ -689,60 +1068,31 @@ footer p{
     }
 
     .section-title h2{
-        font-size:30px;
+        font-size:31px;
     }
 
     .about h2{
-        font-size:30px;
+        font-size:31px;
+    }
+
+    .cta-box{
+        padding:55px 20px;
     }
 
     .cta-box h2{
-        font-size:31px;
+        font-size:33px;
     }
 
     .footer-inner{
         flex-direction:column;
+
         text-align:center;
-    }
-
-
-    /* MOBILE BRAND */
-
-    .brand{
-        gap:11px;
-    }
-
-    .brand img{
-        width:58px;
-        height:58px;
-    }
-
-    .brand-text{
-        font-size:17px;
-        font-weight:900;
-        letter-spacing:.3px;
-    }
-
-    .brand-text small{
-        font-size:8px;
-        letter-spacing:1.5px;
-        margin-top:5px;
-    }
-
-
-    .logo-row{
-        gap:10px;
-    }
-
-    .hero-logo{
-        width:85px;
-        height:85px;
     }
 
 }
 
 
-/* ================= VERY SMALL MOBILE ================= */
+/* ================= SMALL MOBILE ================= */
 
 @media(max-width:380px){
 
@@ -757,6 +1107,15 @@ footer p{
 
     .brand-text small{
         font-size:7px;
+    }
+
+    .hero h1{
+        font-size:39px;
+    }
+
+    .hero-logo{
+        width:80px;
+        height:80px;
     }
 
 }
@@ -798,21 +1157,13 @@ LEARN • BUILD • GROW
 
 <div class="nav-links">
 
-<a href="#about">
-About
-</a>
+<a href="#about">About</a>
 
-<a href="#resources">
-Resources
-</a>
+<a href="#resources">Resources</a>
 
-<a href="#steps">
-How It Works
-</a>
+<a href="#steps">How It Works</a>
 
-<a href="#join">
-Join
-</a>
+<a href="#join">Join</a>
 
 </div>
 
@@ -830,7 +1181,6 @@ Join
 
 
 <div>
-
 
 <div class="hero-badge">
 
@@ -932,39 +1282,27 @@ GS Digital Academy • Complete Information Hub
 
 <div class="stat">
 
-<strong>
-01
-</strong>
+<strong>01</strong>
 
-<span>
-LEARN
-</span>
+<span>LEARN</span>
 
 </div>
 
 
 <div class="stat">
 
-<strong>
-02
-</strong>
+<strong>02</strong>
 
-<span>
-UNDERSTAND
-</span>
+<span>UNDERSTAND</span>
 
 </div>
 
 
 <div class="stat">
 
-<strong>
-03
-</strong>
+<strong>03</strong>
 
-<span>
-GROW
-</span>
+<span>GROW</span>
 
 </div>
 
@@ -1022,7 +1360,6 @@ organized in one simple and professional hub.
 
 <div>
 
-
 <h2>
 
 Knowledge First.<br>
@@ -1063,37 +1400,23 @@ ID activation process step by step.
 
 <div class="hero-card">
 
-
 <h3 class="gold">
 
 B-TITAN INFORMATION HUB
 
 </h3>
 
-
 <br>
 
+<p>✓ Complete Plan Information</p>
 
-<p>
-✓ Complete Plan Information
-</p>
+<p>✓ Blockchain ID Guide</p>
 
-<p>
-✓ Blockchain ID Guide
-</p>
+<p>✓ Activation Information</p>
 
-<p>
-✓ Activation Information
-</p>
+<p>✓ Complete Plan Video</p>
 
-<p>
-✓ Complete Plan Video
-</p>
-
-<p>
-✓ Direct Joining Access
-</p>
-
+<p>✓ Direct Joining Access</p>
 
 </div>
 
@@ -1138,13 +1461,9 @@ in One Place
 
 <div class="feature">
 
-<div class="icon">
-📚
-</div>
+<div class="icon">📚</div>
 
-<h3>
-Learn
-</h3>
+<h3>Learn</h3>
 
 <p>
 Access educational information and understand the ecosystem.
@@ -1153,16 +1472,11 @@ Access educational information and understand the ecosystem.
 </div>
 
 
-
 <div class="feature">
 
-<div class="icon">
-🔗
-</div>
+<div class="icon">🔗</div>
 
-<h3>
-Blockchain
-</h3>
+<h3>Blockchain</h3>
 
 <p>
 Learn how blockchain-based ID activation works.
@@ -1171,16 +1485,11 @@ Learn how blockchain-based ID activation works.
 </div>
 
 
-
 <div class="feature">
 
-<div class="icon">
-🎥
-</div>
+<div class="icon">🎥</div>
 
-<h3>
-Video Training
-</h3>
+<h3>Video Training</h3>
 
 <p>
 Watch simple video explanations and tutorials.
@@ -1189,16 +1498,11 @@ Watch simple video explanations and tutorials.
 </div>
 
 
-
 <div class="feature">
 
-<div class="icon">
-🚀
-</div>
+<div class="icon">🚀</div>
 
-<h3>
-Build & Grow
-</h3>
+<h3>Build & Grow</h3>
 
 <p>
 Use the available resources to build your digital knowledge.
@@ -1261,11 +1565,9 @@ Direct access to the most important B-TITAN resources.
 
 <div class="resource-left">
 
-
 <div class="resource-icon">
 📄
 </div>
-
 
 <div>
 
@@ -1302,11 +1604,9 @@ OPEN PDF
 
 <div class="resource-left">
 
-
 <div class="resource-icon">
 🔗
 </div>
-
 
 <div>
 
@@ -1337,17 +1637,15 @@ WATCH VIDEO
 
 
 
-<!-- COMPLETE PLAN VIDEO -->
+<!-- COMPLETE VIDEO -->
 
 <div class="resource">
 
 <div class="resource-left">
 
-
 <div class="resource-icon">
 🎬
 </div>
-
 
 <div>
 
@@ -1384,11 +1682,9 @@ WATCH
 
 <div class="resource-left">
 
-
 <div class="resource-icon">
 ⚡
 </div>
-
 
 <div>
 
@@ -1425,11 +1721,9 @@ ACTIVATE
 
 <div class="resource-left">
 
-
 <div class="resource-icon">
 🌐
 </div>
-
 
 <div>
 
@@ -1460,17 +1754,15 @@ OPEN HUB
 
 
 
-<!-- JOINING -->
+<!-- JOIN -->
 
 <div class="resource">
 
 <div class="resource-left">
 
-
 <div class="resource-icon">
 🚀
 </div>
-
 
 <div>
 
@@ -1563,7 +1855,6 @@ Read the plan and explore the available information.
 </div>
 
 
-
 <div class="step">
 
 <div class="step-number">
@@ -1581,7 +1872,6 @@ Watch the videos and understand the process.
 </div>
 
 
-
 <div class="step">
 
 <div class="step-number">
@@ -1597,7 +1887,6 @@ Follow the activation guide when ready.
 </p>
 
 </div>
-
 
 
 <div class="step">
