@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>B-TITAN | The Ultimate Bitcoin Rush</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#050505;
+    color:#fff;
+    line-height:1.6;
+}
+
+:root{
+    --gold:#d4af37;
+    --gold2:#f4d76b;
+    --dark:#050505;
+    --card:#101010;
+    --line:#3b2d0b;
+}
+
+/* ================= HEADER ================= */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:999;
+    background:rgba(5,5,5,.94);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);
+}
+
+.nav{
+    max-width:1200px;
+    margin:auto;
+    padding:13px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+/* LOGO */
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
+}
+
+.logo-symbol{
+    width:43px;
+    height:43px;
+    border:2px solid var(--gold);
+    transform:rotate(45deg);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:8px;
+    box-shadow:0 0 18px rgba(212,175,55,.25);
+}
+
+.logo-symbol span{
+    transform:rotate(-45deg);
+    color:var(--gold2);
+    font-size:21px;
+    font-weight:900;
+}
+
+.logo-text{
+    color:#fff;
+    font-size:25px;
+    font-weight:900;
+    letter-spacing:2px;
+}
+
+.logo-text b{
+    color:var(--gold);
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+}
+
+.nav-links a{
+    color:#ddd;
+    text-decoration:none;
+    font-size:14px;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:var(--gold);
+}
+
+.menu{
+    display:none;
+    color:var(--gold);
+    font-size:28px;
+    cursor:pointer;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:100vh;
+    padding:130px 20px 80px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+
+    background:
+    radial-gradient(circle at 50% 35%,#3b2b08 0%,#171003 20%,#050505 60%);
+}
+
+.hero:before{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    border:1px solid rgba(212,175,55,.12);
+    border-radius:50%;
+}
+
+.hero-content{
+    max-width:900px;
+    position:relative;
+    z-index:2;
+}
+
+.hero-logo{
+    margin:auto;
+    margin-bottom:30px;
+    width:90px;
+    height:90px;
+    border:3px solid var(--gold);
+    transform:rotate(45deg);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:15px;
+    box-shadow:
+    0 0 20px rgba(212,175,55,.25),
+    inset 0 0 20px rgba(212,175,55,.08);
+}
+
+.hero-logo span{
+    transform:rotate(-45deg);
+    font-size:42px;
+    font-weight:900;
+    color:var(--gold2);
+}
+
+.badge{
+    display:inline-block;
+    padding:7px 18px;
+    border:1px solid var(--gold);
+    border-radius:30px;
+    color:var(--gold2);
+    font-size:12px;
+    letter-spacing:1.5px;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:clamp(52px,10vw,100px);
+    line-height:1;
+    letter-spacing:4px;
+    font-weight:900;
+}
+
+.gold{
+    color:var(--gold);
+}
+
+.hero h2{
+    margin-top:20px;
+    font-size:clamp(19px,4vw,32px);
+    letter-spacing:1px;
+}
+
+.hero p{
+    max-width:700px;
+    margin:20px auto;
+    color:#aaa;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:13px 28px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn-gold{
+    color:#000;
+    background:linear-gradient(135deg,#b88a17,#f4d76b,#b88a17);
+}
+
+.btn-outline{
+    color:var(--gold2);
+    border:1px solid var(--gold);
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 25px rgba(212,175,55,.2);
+}
+
+/* ================= COMMON ================= */
+
+section{
+    padding:90px 20px;
+}
+
+.container{
+    max-width:1150px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.section-title h2{
+    font-size:clamp(30px,5vw,48px);
+}
+
+.section-title p{
+    color:#888;
+    margin-top:8px;
+}
+
+/* ================= CARDS ================= */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.card{
+    background:linear-gradient(145deg,#151515,#090909);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:30px 24px;
+    text-align:center;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    border-color:var(--gold);
+}
+
+.icon{
+    font-size:38px;
+    margin-bottom:14px;
+}
+
+.card h3{
+    color:var(--gold2);
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#999;
+    font-size:14px;
+}
+
+/* ================= HOW ================= */
+
+.flow{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.flow-box{
+    min-width:140px;
+    padding:17px 20px;
+    text-align:center;
+    background:#0d0d0d;
+    border:1px solid var(--gold);
+    border-radius:13px;
+}
+
+.flow-box strong{
+    color:var(--gold);
+}
+
+.arrow{
+    color:var(--gold);
+    font-size:25px;
+}
+
+/* ================= TREE MATRIX ================= */
+
+.tree{
+    max-width:900px;
+    margin:40px auto;
+    text-align:center;
+}
+
+.tree-level{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    margin:14px 0;
+    position:relative;
+}
+
+.tree-box{
+    width:105px;
+    min-height:85px;
+    padding:10px 5px;
+    background:linear-gradient(145deg,#17130a,#090909);
+    border:1px solid var(--gold);
+    border-radius:12px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    box-shadow:0 0 15px rgba(212,175,55,.06);
+}
+
+.tree-box strong{
+    color:var(--gold2);
+    font-size:22px;
+}
+
+.tree-box small{
+    color:#999;
+    font-size:10px;
+}
+
+/* connector */
+.connector{
+    width:2px;
+    height:20px;
+    background:var(--gold);
+    margin:auto;
+}
+
+/* ================= LEVELS ================= */
+
+.levels{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.level{
+    text-align:center;
+    background:#0d0d0d;
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:25px 15px;
+}
+
+.level h3{
+    color:var(--gold);
+}
+
+.level .price{
+    margin:10px 0;
+    font-size:22px;
+    font-weight:bold;
+}
+
+.level p{
+    color:#888;
+    font-size:13px;
+}
+
+/* ================= REWARDS ================= */
+
+.reward-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.reward{
+    padding:25px 15px;
+    text-align:center;
+    background:#0d0d0d;
+    border-radius:16px;
+    border:1px solid var(--line);
+}
+
+.reward h3{
+    color:var(--gold);
+    margin-top:10px;
+}
+
+/* ================= CTA ================= */
+
+.cta{
+    text-align:center;
+    background:
+    radial-gradient(circle at center,#2d2208,#050505 65%);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+}
+
+.cta h2{
+    font-size:clamp(34px,6vw,58px);
+}
+
+/* ================= DISCLAIMER ================= */
+
+.disclaimer{
+    background:#090909;
+    border:1px solid #272727;
+    border-radius:15px;
+    padding:25px;
+    color:#888;
+    font-size:13px;
+}
+
+.disclaimer strong{
+    color:var(--gold);
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    text-align:center;
+    padding:40px 20px;
+    background:#020202;
+    color:#666;
+}
+
+footer .brand{
+    justify-content:center;
+    margin-bottom:15px;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:800px){
+
+    .nav-links{
+        display:none;
+        position:absolute;
+        top:69px;
+        left:0;
+        width:100%;
+        padding:20px;
+        background:#050505;
+        border-bottom:1px solid var(--line);
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .menu{
+        display:block;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .levels{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .reward-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .tree-level{
+        flex-wrap:wrap;
+    }
+
+    .arrow{
+        display:none;
+    }
+}
+
+@media(max-width:480px){
+
+    .logo-text{
+        font-size:20px;
+    }
+
+    .logo-symbol{
+        width:36px;
+        height:36px;
+    }
+
+    .hero-logo{
+        width:75px;
+        height:75px;
+    }
+
+    .hero-logo span{
+        font-size:34px;
+    }
+
+    .levels,
+    .reward-grid{
+        grid-template-columns:1fr;
+    }
+
+    .tree-box{
+        width:90px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+<div class="nav">
+
+<a href="#" class="brand">
+
+<div class="logo-symbol">
+<span>B</span>
+</div>
+
+<div class="logo-text">
+B-<b>TITAN</b>
+</div>
+
+</a>
+
+<div class="menu" onclick="toggleMenu()">☰</div>
+
+<nav class="nav-links" id="navLinks">
+<a href="#about">About</a>
+<a href="#how">How It Works</a>
+<a href="#matrix">Matrix</a>
+<a href="#levels">Levels</a>
+<a href="#rewards">Rewards</a>
+<a href="#start">Join</a>
+</nav>
+
+</div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="hero-logo">
+<span>B</span>
+</div>
+
+<div class="badge">
+DECENTRALIZED MATRIX ECOSYSTEM
+</div>
+
+<h1>
+B-<span class="gold">TITAN</span>
+</h1>
+
+<h2>
+THE ULTIMATE BITCOIN RUSH
+</h2>
+
+<p>
+Explore a blockchain-based digital ecosystem
+built around smart-contract technology,
+matrix structure and community participation.
+</p>
+
+<div class="buttons">
+
+<a href="#start" class="btn btn-gold">
+JOIN B-TITAN
+</a>
+
+<a href="#about" class="btn btn-outline">
+LEARN MORE
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+WHY <span class="gold">B-TITAN?</span>
+</h2>
+
+<p>
+Learn the ecosystem before you participate.
+</p>
+
+</div>
+
+
+<div class="cards">
+
+<div class="card">
+
+<div class="icon">⛓️</div>
+
+<h3>Blockchain</h3>
+
+<p>
+Blockchain-based infrastructure designed
+for a decentralized digital ecosystem.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🔐</div>
+
+<h3>Smart Contract</h3>
+
+<p>
+Programmable smart-contract technology
+forms the foundation of the system.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🌐</div>
+
+<h3>Community</h3>
+
+<p>
+Learn, understand, build and grow
+with a digital community.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= HOW IT WORKS ================= -->
+
+<section id="how">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+HOW IT <span class="gold">WORKS</span>
+</h2>
+
+<p>
+Simple steps to explore the ecosystem.
+</p>
+
+</div>
+
+
+<div class="flow">
+
+<div class="flow-box">
+<strong>01</strong><br>
+Connect Wallet
+</div>
+
+<div class="arrow">→</div>
+
+<div class="flow-box">
+<strong>02</strong><br>
+Register
+</div>
+
+<div class="arrow">→</div>
+
+<div class="flow-box">
+<strong>03</strong><br>
+Activate
+</div>
+
+<div class="arrow">→</div>
+
+<div class="flow-box">
+<strong>04</strong><br>
+Build
+</div>
+
+<div class="arrow">→</div>
+
+<div class="flow-box">
+<strong>05</strong><br>
+Grow
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= MATRIX ================= -->
+
+<section id="matrix">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+<span class="gold">14 BOX</span> MATRIX
+</h2>
+
+<p>
+Visual overview of the matrix structure.
+</p>
+
+</div>
+
+
+<div class="tree">
+
+<!-- LEVEL 1 -->
+
+<div class="tree-level">
+
+<div class="tree-box">
+<strong>1</strong>
+<small>Upline</small>
+</div>
+
+</div>
+
+<div class="connector"></div>
+
+
+<!-- LEVEL 2 -->
+
+<div class="tree-level">
+
+<div class="tree-box">
+<strong>2</strong>
+<small>Upline</small>
+</div>
+
+<div class="tree-box">
+<strong>3</strong>
+<small>Self</small>
+</div>
+
+</div>
+
+<div class="connector"></div>
+
+
+<!-- LEVEL 3 -->
+
+<div class="tree-level">
+
+<div class="tree-box">
+<strong>4</strong>
+<small>Hold</small>
+</div>
+
+<div class="tree-box">
+<strong>5</strong>
+<small>Upgrade</small>
+</div>
+
+<div class="tree-box">
+<strong>6</strong>
+<small>Self</small>
+</div>
+
+</div>
+
+<div class="connector"></div>
+
+
+<!-- LEVEL 4 -->
+
+<div class="tree-level">
+
+<div class="tree-box">
+<strong>7</strong>
+<small>Downline</small>
+</div>
+
+<div class="tree-box">
+<strong>8</strong>
+<small>Self</small>
+</div>
+
+<div class="tree-box">
+<strong>9</strong>
+<small>Self</small>
+</div>
+
+<div class="tree-box">
+<strong>10</strong>
+<small>Downline</small>
+</div>
+
+</div>
+
+<div class="connector"></div>
+
+
+<!-- LEVEL 5 -->
+
+<div class="tree-level">
+
+<div class="tree-box">
+<strong>11</strong>
+<small>Self</small>
+</div>
+
+<div class="tree-box">
+<strong>12</strong>
+<small>Self</small>
+</div>
+
+<div class="tree-box">
+<strong>13</strong>
+<small>2 Level Downline</small>
+</div>
+
+<div class="tree-box">
+<strong>14</strong>
+<small>Recycle</small>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= LEVELS ================= -->
+
+<section id="levels">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+LEVEL <span class="gold">SYSTEM</span>
+</h2>
+
+<p>
+Explore the progression structure.
+</p>
+
+</div>
+
+
+<div class="levels">
+
+<div class="level">
+<h3>LEVEL 1</h3>
+<div class="price">0.001 BTCB</div>
+<p>Entry Level</p>
+</div>
+
+<div class="level">
+<h3>LEVEL 2</h3>
+<div class="price">0.002 BTCB</div>
+<p>Progression Level</p>
+</div>
+
+<div class="level">
+<h3>LEVEL 3</h3>
+<div class="price">0.004 BTCB</div>
+<p>Progression Level</p>
+</div>
+
+<div class="level">
+<h3>LEVEL 4+</h3>
+<div class="price">→</div>
+<p>Explore Complete Plan</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= DIGITAL ASSETS ================= -->
+
+<section id="rewards">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+DIGITAL <span class="gold">ECOSYSTEM</span>
+</h2>
+
+<p>
+Explore the major components.
+</p>
+
+</div>
+
+
+<div class="reward-grid">
+
+<div class="reward">
+<div class="icon">🎫</div>
+<h3>Registration Pass</h3>
+</div>
+
+<div class="reward">
+<div class="icon">💎</div>
+<h3>Box NFT</h3>
+</div>
+
+<div class="reward">
+<div class="icon">🏆</div>
+<h3>Rank & Reward</h3>
+</div>
+
+<div class="reward">
+<div class="icon">♻️</div>
+<h3>Recycle</h3>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section id="start" class="cta">
+
+<div class="container">
+
+<h2>
+READY TO EXPLORE
+<span class="gold">B-TITAN?</span>
+</h2>
+
+<p>
+Knowledge First • Decision Later
+</p>
+
+<div class="buttons">
+
+<a
+href="https://btitan.net/register?id=125872"
+target="_blank"
+class="btn btn-gold">
+JOIN B-TITAN
+</a>
+
+<a
+href="https://beacons.ai/gsdigitalacademy"
+target="_blank"
+class="btn btn-outline">
+COMPLETE INFORMATION
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= DISCLAIMER ================= -->
+
+<section>
+
+<div class="container">
+
+<div class="disclaimer">
+
+<strong>IMPORTANT NOTICE</strong>
+
+<br><br>
+
+B-TITAN is a blockchain-based digital ecosystem.
+Participation in blockchain and digital assets involves
+risk, including the possible loss of funds.
+
+<br><br>
+
+Nothing on this website should be considered financial,
+investment or guaranteed-profit advice.
+
+<br><br>
+
+Always understand the technology, smart contract,
+terms and associated risks before participating.
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<a href="#" class="brand">
+
+<div class="logo-symbol">
+<span>B</span>
+</div>
+
+<div class="logo-text">
+B-<b>TITAN</b>
+</div>
+
+</a>
+
+<p>
+Learn • Understand • Build • Grow
+</p>
+
+<p style="margin-top:10px;">
+© 2026 B-TITAN. All Rights Reserved.
+</p>
+
+</footer>
+
+
+<script>
+
+function toggleMenu(){
+
+document
+.getElementById("navLinks")
+.classList
+.toggle("active");
+
+}
+
+document
+.querySelectorAll(".nav-links a")
+.forEach(function(link){
+
+link.addEventListener("click",function(){
+
+document
+.getElementById("navLinks")
+.classList
+.remove("active");
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
