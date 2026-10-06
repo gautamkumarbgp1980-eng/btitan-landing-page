@@ -4,586 +4,254 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>GS Digital Academy | B-TITAN</title>
+<title>GS Digital Academy | B-TITAN Complete Information Hub</title>
 
 <style>
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 body{
-  font-family:Arial,Helvetica,sans-serif;
-  background:#050505;
-  color:#fff;
-  line-height:1.6;
+    font-family:Arial,Helvetica,sans-serif;
+    background:linear-gradient(135deg,#050505,#151515,#050505);
+    color:#fff;
+    min-height:100vh;
 }
 
 .container{
-  width:92%;
-  max-width:1100px;
-  margin:auto;
+    width:100%;
+    max-width:600px;
+    margin:auto;
+    padding:22px 16px 40px;
+    text-align:center;
 }
 
-header{
-  background:linear-gradient(135deg,#050505,#17120a);
-  padding:45px 15px 35px;
-  text-align:center;
-  border-bottom:1px solid #d4af37;
+.logo{
+    width:105px;
+    height:105px;
+    border-radius:50%;
+    object-fit:cover;
+    margin:5px auto 15px;
+    display:block;
+    border:3px solid #d4af37;
+    box-shadow:0 0 25px rgba(212,175,55,.35);
 }
 
-.logo-text{
-  font-size:34px;
-  font-weight:900;
-  letter-spacing:2px;
-  color:#d4af37;
+h1{
+    color:#d4af37;
+    font-size:28px;
+    font-weight:800;
+    letter-spacing:1px;
+    margin-bottom:7px;
 }
 
 .subtitle{
-  margin-top:8px;
-  font-size:17px;
-  color:#ddd;
+    color:#ddd;
+    font-size:14px;
+    margin-bottom:22px;
 }
 
 .badge{
-  display:inline-block;
-  margin-top:18px;
-  padding:8px 18px;
-  border:1px solid #d4af37;
-  border-radius:30px;
-  color:#d4af37;
-  font-weight:bold;
-}
-
-.hero{
-  padding:50px 15px;
-  text-align:center;
-  background:
-  radial-gradient(circle at top,#2b210c 0,#080808 45%,#050505 100%);
-}
-
-.hero h1{
-  font-size:38px;
-  color:#d4af37;
-  margin-bottom:12px;
-}
-
-.hero h2{
-  font-size:22px;
-  margin-bottom:12px;
-}
-
-.hero p{
-  max-width:750px;
-  margin:0 auto 25px;
-  color:#ccc;
-}
-
-.btn{
-  display:inline-block;
-  padding:14px 25px;
-  margin:7px;
-  border-radius:8px;
-  text-decoration:none;
-  font-weight:bold;
-  transition:.2s;
-}
-
-.btn-gold{
-  background:#d4af37;
-  color:#000;
-}
-
-.btn-dark{
-  border:1px solid #d4af37;
-  color:#d4af37;
-  background:#111;
-}
-
-.btn:hover{
-  transform:translateY(-2px);
-  opacity:.9;
-}
-
-section{
-  padding:42px 0;
-}
-
-.section-title{
-  text-align:center;
-  color:#d4af37;
-  font-size:28px;
-  margin-bottom:28px;
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-  gap:18px;
+    display:inline-block;
+    padding:8px 18px;
+    border:1px solid #d4af37;
+    border-radius:30px;
+    color:#d4af37;
+    font-size:12px;
+    font-weight:bold;
+    margin-bottom:22px;
 }
 
 .card{
-  background:linear-gradient(145deg,#151515,#0b0b0b);
-  border:1px solid #333;
-  border-radius:14px;
-  padding:24px 18px;
-  text-align:center;
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(212,175,55,.35);
+    border-radius:18px;
+    padding:18px;
+    margin-bottom:15px;
+    box-shadow:0 8px 30px rgba(0,0,0,.35);
 }
 
-.card h3{
-  color:#d4af37;
-  margin-bottom:10px;
-  font-size:20px;
+.card h2{
+    font-size:18px;
+    margin-bottom:7px;
+    color:#fff;
 }
 
 .card p{
-  color:#bbb;
-  font-size:14px;
+    color:#bbb;
+    font-size:13px;
+    margin-bottom:13px;
+    line-height:1.5;
 }
 
-.card .btn{
-  margin-top:15px;
-  width:90%;
+.btn{
+    display:block;
+    width:100%;
+    padding:15px 12px;
+    border-radius:12px;
+    text-decoration:none;
+    color:#000;
+    background:linear-gradient(90deg,#d4af37,#f5d76e,#d4af37);
+    font-weight:800;
+    font-size:15px;
+    margin-top:10px;
+    transition:.2s;
+}
+
+.btn:hover{
+    transform:scale(1.02);
+}
+
+.btn-dark{
+    background:#111;
+    color:#d4af37;
+    border:1px solid #d4af37;
 }
 
 .highlight{
-  border-color:#d4af37;
-  box-shadow:0 0 18px rgba(212,175,55,.12);
+    border:2px solid #d4af37;
+    background:linear-gradient(145deg,rgba(212,175,55,.12),rgba(255,255,255,.04));
 }
 
-.steps{
-  max-width:800px;
-  margin:auto;
+.join{
+    font-size:18px;
 }
 
-.step{
-  display:flex;
-  gap:15px;
-  align-items:flex-start;
-  margin-bottom:18px;
-  background:#111;
-  padding:18px;
-  border-radius:10px;
-  border-left:3px solid #d4af37;
-}
-
-.number{
-  min-width:34px;
-  height:34px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:50%;
-  background:#d4af37;
-  color:#000;
-  font-weight:bold;
-}
-
-.matrix{
-  display:grid;
-  grid-template-columns:repeat(7,1fr);
-  gap:7px;
-  max-width:700px;
-  margin:20px auto;
-}
-
-.box{
-  aspect-ratio:1;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:#171717;
-  border:1px solid #d4af37;
-  color:#d4af37;
-  border-radius:7px;
-  font-weight:bold;
-}
-
-.notice{
-  max-width:800px;
-  margin:20px auto;
-  padding:18px;
-  text-align:center;
-  border:1px solid #444;
-  border-radius:12px;
-  color:#ccc;
-}
-
-.cta{
-  text-align:center;
-  background:linear-gradient(135deg,#17120a,#050505);
-  border-top:1px solid #333;
-  border-bottom:1px solid #333;
-}
-
-footer{
-  text-align:center;
-  padding:28px 15px;
-  color:#888;
-  font-size:13px;
-}
-
-.gold{
-  color:#d4af37;
-}
-
-@media(max-width:600px){
-  .logo-text{
-    font-size:27px;
-  }
-
-  .hero h1{
-    font-size:30px;
-  }
-
-  .hero h2{
-    font-size:19px;
-  }
-
-  .matrix{
-    grid-template-columns:repeat(7,1fr);
-    gap:4px;
-  }
-
-  .box{
+.footer{
+    margin-top:28px;
+    color:#888;
     font-size:12px;
-  }
+    line-height:1.6;
+}
+
+.footer strong{
+    color:#d4af37;
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-<header>
-  <div class="container">
-    <div class="logo-text">GS DIGITAL ACADEMY</div>
-    <div class="subtitle">Learn • Understand • Build • Grow</div>
-    <div class="badge">B-TITAN COMPLETE INFORMATION HUB</div>
-  </div>
-</header>
+<div class="container">
 
+    <!-- LOGO -->
+    <img src="logo.png" alt="GS Digital Academy Logo" class="logo">
 
-<!-- HERO -->
-<section class="hero">
-  <div class="container">
+    <div class="badge">COMPLETE INFORMATION HUB</div>
 
-    <h1>B-TITAN</h1>
+    <h1>GS DIGITAL ACADEMY</h1>
 
-    <h2>Learn First • Decide Later</h2>
-
-    <p>
-      B-TITAN ke complete plan, matrix structure,
-      activation process, training aur important resources
-      ek hi jagah par.
-    </p>
-
-    <a class="btn btn-gold"
-       href="https://btitan.net/register?id=10203"
-       target="_blank">
-       JOIN B-TITAN
-    </a>
-
-    <a class="btn btn-dark"
-       href="#resources">
-       EXPLORE INFORMATION
-    </a>
-
-  </div>
-</section>
-
-
-<!-- QUICK INFORMATION -->
-<section>
-  <div class="container">
-
-    <h2 class="section-title">QUICK INFORMATION</h2>
-
-    <div class="grid">
-
-      <div class="card highlight">
-        <h3>🆔 Referral ID</h3>
-        <p>10203</p>
-      </div>
-
-      <div class="card">
-        <h3>📦 Matrix</h3>
-        <p>14 Box Structure</p>
-      </div>
-
-      <div class="card">
-        <h3>📈 Levels</h3>
-        <p>12 Level Growth Structure</p>
-      </div>
-
-      <div class="card">
-        <h3>🎓 Academy</h3>
-        <p>Training & Team Development</p>
-      </div>
-
+    <div class="subtitle">
+        Learn • Understand • Build • Grow
     </div>
 
-  </div>
-</section>
-
-
-<!-- RESOURCES -->
-<section id="resources">
-  <div class="container">
-
-    <h2 class="section-title">IMPORTANT RESOURCES</h2>
-
-    <div class="grid">
-
-      <div class="card highlight">
-        <h3>📄 Complete Plan PDF</h3>
+    <!-- PLAN PDF -->
+    <div class="card highlight">
+        <h2>📄 B-TITAN Complete Plan</h2>
         <p>
-          B-TITAN ka complete plan PDF yahan se dekhein.
+            Complete B-TITAN plan information PDF dekhein.
         </p>
 
-        <!-- PDF LINK YAHAN BAAD ME CHANGE KAREN -->
-        <a class="btn btn-gold"
-           href="#pdf-link">
-           OPEN PLAN PDF
-        </a>
-      </div>
-
-
-      <div class="card">
-        <h3>▶️ Complete Plan Video</h3>
-        <p>
-          Complete plan ko video ke through samjhein.
-        </p>
-
-        <a class="btn btn-gold"
-           href="https://youtu.be/jg6a-Jo_acE"
+        <a class="btn"
+           href="https://docs.google.com/presentation/d/1ZhQFHnTPKTx4Lqs4LjZRFQjwZjct5FGL/export/pdf"
            target="_blank">
-           WATCH VIDEO
+           📄 OPEN PLAN PDF
         </a>
-      </div>
+    </div>
 
-
-      <div class="card">
-        <h3>🆔 Activate ID</h3>
+    <!-- BLOCKCHAIN ID VIDEO -->
+    <div class="card highlight">
+        <h2>🎥 Blockchain Se ID Kaise Lagaye</h2>
         <p>
-          ID activation process step-by-step dekhein.
+            Blockchain se ID lagane ka complete video tutorial.
         </p>
 
-        <a class="btn btn-gold"
+        <a class="btn"
+           href="https://youtube.com/shorts/-fIVG9pZtEo?si=nclwN9l8L6Fo1tLa"
+           target="_blank">
+           ▶️ WATCH VIDEO
+        </a>
+    </div>
+
+    <!-- JOINING -->
+    <div class="card">
+        <h2>🚀 B-TITAN Joining</h2>
+        <p>
+            Registration ke liye apni referral ID enter karein.
+        </p>
+
+        <a class="btn join"
+           href="https://btitan.net/register?id=10203"
+           target="_blank">
+           🔗 JOIN B-TITAN — ID 10203
+        </a>
+    </div>
+
+    <!-- ACTIVATION -->
+    <div class="card">
+        <h2>⚡ How to Activate ID</h2>
+        <p>
+            ID activate karne ki complete information.
+        </p>
+
+        <a class="btn btn-dark"
            href="https://tinyurl.com/4u6jnrrw"
            target="_blank">
-           ACTIVATION GUIDE
+           ⚡ ACTIVATE ID
         </a>
-      </div>
-
     </div>
 
-  </div>
-</section>
-
-
-<!-- 14 BOX -->
-<section>
-  <div class="container">
-
-    <h2 class="section-title">14 BOX MATRIX</h2>
-
-    <div class="matrix">
-      <div class="box">1</div>
-      <div class="box">2</div>
-      <div class="box">3</div>
-      <div class="box">4</div>
-      <div class="box">5</div>
-      <div class="box">6</div>
-      <div class="box">7</div>
-      <div class="box">8</div>
-      <div class="box">9</div>
-      <div class="box">10</div>
-      <div class="box">11</div>
-      <div class="box">12</div>
-      <div class="box">13</div>
-      <div class="box">14</div>
-    </div>
-
-    <div class="notice">
-      <strong class="gold">14 Box Matrix Structure</strong><br>
-      Matrix ke flow aur qualification ko complete plan
-      aur training material se samjhein.
-    </div>
-
-  </div>
-</section>
-
-
-<!-- LEVEL -->
-<section>
-  <div class="container">
-
-    <h2 class="section-title">LEVEL STRUCTURE</h2>
-
-    <div class="grid">
-
-      <div class="card">
-        <h3>LEVEL 1</h3>
-        <p>Foundation & Entry</p>
-      </div>
-
-      <div class="card">
-        <h3>LEVEL 2</h3>
-        <p>Team Development</p>
-      </div>
-
-      <div class="card">
-        <h3>LEVEL 3</h3>
-        <p>Growth & Qualification</p>
-      </div>
-
-      <div class="card">
-        <h3>LEVEL 4+</h3>
-        <p>Long-Term Development</p>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-
-<!-- ZOOM -->
-<section>
-  <div class="container">
-
-    <h2 class="section-title">DAILY TRAINING</h2>
-
-    <div class="grid">
-
-      <div class="card highlight">
-        <h3>🌅 Morning Zoom</h3>
+    <!-- COMPLETE VIDEO -->
+    <div class="card">
+        <h2>🎬 Complete Plan Video</h2>
         <p>
-          Daily Training & Learning
-        </p>
-        <p class="gold">
-          8:15 AM
-        </p>
-      </div>
-
-
-      <div class="card highlight">
-        <h3>🌙 Night Zoom</h3>
-        <p>
-          Team Development & Support
-        </p>
-        <p class="gold">
-          9:00 PM
+            B-TITAN plan ko video ke through samjhein.
         </p>
 
-        <a class="btn btn-gold"
-           href="https://tinyurl.com/ssbm8h4j"
+        <a class="btn btn-dark"
+           href="https://youtu.be/jg6a-Jo_acE"
            target="_blank">
-           JOIN ZOOM
+           ▶️ WATCH COMPLETE VIDEO
         </a>
-      </div>
-
     </div>
 
-  </div>
-</section>
+    <!-- GSDA HUB -->
+    <div class="card">
+        <h2>🌐 GS Digital Academy</h2>
+        <p>
+            GS Digital Academy ka complete information hub.
+        </p>
 
-
-<!-- HOW TO START -->
-<section>
-  <div class="container">
-
-    <h2 class="section-title">HOW TO START</h2>
-
-    <div class="steps">
-
-      <div class="step">
-        <div class="number">1</div>
-        <div>
-          <strong>Learn</strong><br>
-          Complete plan ko samjhein.
-        </div>
-      </div>
-
-      <div class="step">
-        <div class="number">2</div>
-        <div>
-          <strong>Understand</strong><br>
-          Matrix aur activation process ko samjhein.
-        </div>
-      </div>
-
-      <div class="step">
-        <div class="number">3</div>
-        <div>
-          <strong>Decide</strong><br>
-          Information samajhne ke baad apna decision lein.
-        </div>
-      </div>
-
-      <div class="step">
-        <div class="number">4</div>
-        <div>
-          <strong>Build & Grow</strong><br>
-          Training aur team development par focus karein.
-        </div>
-      </div>
-
+        <a class="btn btn-dark"
+           href="https://beacons.ai/gsdigitalacademy"
+           target="_blank">
+           🌐 OPEN GSDA HUB
+        </a>
     </div>
 
-  </div>
-</section>
+    <!-- SUPPORT -->
+    <div class="card">
+        <h2>💬 Support & Information</h2>
+        <p>
+            Plan, joining, training aur support ke liye GSDA hub visit karein.
+        </p>
 
-
-<!-- CTA -->
-<section class="cta">
-  <div class="container">
-
-    <h2 class="section-title">
-      READY TO LEARN MORE?
-    </h2>
-
-    <p style="color:#bbb;margin-bottom:20px;">
-      Pehle information samjhein, phir decision lein.
-    </p>
-
-    <a class="btn btn-gold"
-       href="https://btitan.net/register?id=10203"
-       target="_blank">
-       JOIN B-TITAN
-    </a>
-
-    <a class="btn btn-dark"
-       href="https://beacons.ai/gsdigitalacademy"
-       target="_blank">
-       GS DIGITAL ACADEMY
-    </a>
-
-  </div>
-</section>
-
-
-<!-- FOOTER -->
-<footer>
-  <div class="container">
-
-    <div class="gold">
-      GS DIGITAL ACADEMY
+        <a class="btn btn-dark"
+           href="https://beacons.ai/gsdigitalacademy"
+           target="_blank">
+           💬 GET SUPPORT
+        </a>
     </div>
 
-    <p>
-      Learn • Understand • Build • Grow
-    </p>
+    <div class="footer">
+        <strong>GS DIGITAL ACADEMY</strong><br>
+        B-TITAN Complete Information Hub<br><br>
+        Knowledge First • Decision Later
+    </div>
 
-    <p style="margin-top:8px;">
-      © 2026 GS Digital Academy
-    </p>
-
-  </div>
-</footer>
-
+</div>
 
 </body>
 </html>
