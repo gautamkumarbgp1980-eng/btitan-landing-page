@@ -7,562 +7,784 @@
 <title>B-TITAN | The Ultimate Bitcoin Rush</title>
 
 <style>
+:root{
+--gold:#d6ad35;
+--gold2:#ffe58a;
+--black:#030303;
+--dark:#080808;
+--card:#0e0e0e;
+--text:#f5f5f5;
+--muted:#999;
+--line:rgba(214,173,53,.25);
+}
+
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 html{
-    scroll-behavior:smooth;
+scroll-behavior:smooth;
 }
 
 body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:#050505;
-    color:#fff;
-    line-height:1.6;
+background:var(--black);
+color:var(--text);
+font-family:Arial,Helvetica,sans-serif;
+overflow-x:hidden;
 }
 
-:root{
-    --gold:#d4af37;
-    --gold2:#f4d76b;
-    --dark:#050505;
-    --card:#101010;
-    --line:#3b2d0b;
+a{
+text-decoration:none;
+color:inherit;
 }
 
-/* ================= HEADER ================= */
+.container{
+width:min(1180px,92%);
+margin:auto;
+}
+
+/* ================= BACKGROUND ================= */
+
+body:before{
+content:"";
+position:fixed;
+inset:0;
+pointer-events:none;
+opacity:.35;
+background-image:
+linear-gradient(rgba(214,173,53,.035) 1px,transparent 1px),
+linear-gradient(90deg,rgba(214,173,53,.035) 1px,transparent 1px);
+background-size:60px 60px;
+z-index:-2;
+}
+
+body:after{
+content:"";
+position:fixed;
+width:600px;
+height:600px;
+left:50%;
+top:20%;
+transform:translate(-50%,-50%);
+background:radial-gradient(circle,rgba(214,173,53,.11),transparent 65%);
+pointer-events:none;
+z-index:-1;
+}
+
+/* ================= NAVBAR ================= */
 
 header{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    z-index:999;
-    background:rgba(5,5,5,.94);
-    backdrop-filter:blur(12px);
-    border-bottom:1px solid var(--line);
+position:fixed;
+top:0;
+left:0;
+width:100%;
+z-index:1000;
+background:rgba(3,3,3,.82);
+backdrop-filter:blur(15px);
+border-bottom:1px solid rgba(214,173,53,.16);
 }
 
 .nav{
-    max-width:1200px;
-    margin:auto;
-    padding:13px 20px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
+height:74px;
+display:flex;
+align-items:center;
+justify-content:space-between;
 }
-
-/* LOGO */
 
 .brand{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    text-decoration:none;
+display:flex;
+align-items:center;
+gap:12px;
 }
 
-.logo-symbol{
-    width:43px;
-    height:43px;
-    border:2px solid var(--gold);
-    transform:rotate(45deg);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:8px;
-    box-shadow:0 0 18px rgba(212,175,55,.25);
+.brand-mark{
+width:42px;
+height:42px;
+position:relative;
+transform:rotate(45deg);
+border:2px solid var(--gold);
+box-shadow:
+0 0 15px rgba(214,173,53,.3),
+inset 0 0 12px rgba(214,173,53,.1);
 }
 
-.logo-symbol span{
-    transform:rotate(-45deg);
-    color:var(--gold2);
-    font-size:21px;
-    font-weight:900;
+.brand-mark span{
+position:absolute;
+inset:0;
+display:flex;
+align-items:center;
+justify-content:center;
+transform:rotate(-45deg);
+font-size:22px;
+font-weight:900;
+color:var(--gold2);
 }
 
-.logo-text{
-    color:#fff;
-    font-size:25px;
-    font-weight:900;
-    letter-spacing:2px;
+.brand-name{
+font-size:25px;
+font-weight:900;
+letter-spacing:2px;
 }
 
-.logo-text b{
-    color:var(--gold);
+.brand-name span{
+color:var(--gold);
 }
 
 .nav-links{
-    display:flex;
-    gap:25px;
+display:flex;
+align-items:center;
+gap:28px;
 }
 
 .nav-links a{
-    color:#ddd;
-    text-decoration:none;
-    font-size:14px;
-    transition:.3s;
+font-size:13px;
+color:#ccc;
+transition:.25s;
 }
 
 .nav-links a:hover{
-    color:var(--gold);
+color:var(--gold2);
+}
+
+.nav-btn{
+padding:10px 19px;
+border:1px solid var(--gold);
+border-radius:25px;
+color:var(--gold2)!important;
 }
 
 .menu{
-    display:none;
-    color:var(--gold);
-    font-size:28px;
-    cursor:pointer;
+display:none;
+font-size:28px;
+color:var(--gold);
+cursor:pointer;
 }
 
 /* ================= HERO ================= */
 
 .hero{
-    min-height:100vh;
-    padding:130px 20px 80px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    position:relative;
-    overflow:hidden;
-
-    background:
-    radial-gradient(circle at 50% 35%,#3b2b08 0%,#171003 20%,#050505 60%);
-}
-
-.hero:before{
-    content:"";
-    position:absolute;
-    width:500px;
-    height:500px;
-    border:1px solid rgba(212,175,55,.12);
-    border-radius:50%;
+min-height:100vh;
+display:flex;
+align-items:center;
+padding:130px 0 80px;
+position:relative;
+overflow:hidden;
 }
 
 .hero-content{
-    max-width:900px;
-    position:relative;
-    z-index:2;
+text-align:center;
+width:100%;
 }
 
 .hero-logo{
-    margin:auto;
-    margin-bottom:30px;
-    width:90px;
-    height:90px;
-    border:3px solid var(--gold);
-    transform:rotate(45deg);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:15px;
-    box-shadow:
-    0 0 20px rgba(212,175,55,.25),
-    inset 0 0 20px rgba(212,175,55,.08);
+width:115px;
+height:115px;
+margin:0 auto 34px;
+position:relative;
+transform:rotate(45deg);
+border:3px solid var(--gold);
+border-radius:20px;
+box-shadow:
+0 0 30px rgba(214,173,53,.25),
+inset 0 0 30px rgba(214,173,53,.08);
+}
+
+.hero-logo:before{
+content:"";
+position:absolute;
+inset:12px;
+border:1px solid rgba(255,229,138,.6);
 }
 
 .hero-logo span{
-    transform:rotate(-45deg);
-    font-size:42px;
-    font-weight:900;
-    color:var(--gold2);
+position:absolute;
+inset:0;
+display:flex;
+align-items:center;
+justify-content:center;
+transform:rotate(-45deg);
+font-size:48px;
+font-weight:900;
+color:var(--gold2);
 }
 
-.badge{
-    display:inline-block;
-    padding:7px 18px;
-    border:1px solid var(--gold);
-    border-radius:30px;
-    color:var(--gold2);
-    font-size:12px;
-    letter-spacing:1.5px;
-    margin-bottom:20px;
+.hero-tag{
+display:inline-block;
+padding:8px 18px;
+border:1px solid var(--line);
+border-radius:30px;
+font-size:11px;
+letter-spacing:2px;
+color:var(--gold2);
+background:rgba(214,173,53,.05);
 }
 
 .hero h1{
-    font-size:clamp(52px,10vw,100px);
-    line-height:1;
-    letter-spacing:4px;
-    font-weight:900;
+font-size:clamp(55px,11vw,125px);
+line-height:.95;
+margin-top:22px;
+letter-spacing:5px;
+font-weight:950;
 }
 
-.gold{
-    color:var(--gold);
+.hero h1 span{
+color:var(--gold);
+text-shadow:0 0 30px rgba(214,173,53,.25);
 }
 
 .hero h2{
-    margin-top:20px;
-    font-size:clamp(19px,4vw,32px);
-    letter-spacing:1px;
+font-size:clamp(18px,3vw,30px);
+margin-top:22px;
+letter-spacing:3px;
 }
 
 .hero p{
-    max-width:700px;
-    margin:20px auto;
-    color:#aaa;
+max-width:700px;
+margin:20px auto 0;
+color:#aaa;
+font-size:15px;
 }
 
-.buttons{
-    display:flex;
-    justify-content:center;
-    gap:14px;
-    flex-wrap:wrap;
-    margin-top:30px;
+.hero-buttons{
+margin-top:35px;
+display:flex;
+justify-content:center;
+gap:14px;
+flex-wrap:wrap;
 }
 
 .btn{
-    display:inline-block;
-    padding:13px 28px;
-    border-radius:30px;
-    text-decoration:none;
-    font-weight:bold;
-    transition:.3s;
+padding:14px 28px;
+border-radius:30px;
+font-weight:800;
+font-size:13px;
+transition:.3s;
 }
 
 .btn-gold{
-    color:#000;
-    background:linear-gradient(135deg,#b88a17,#f4d76b,#b88a17);
+background:linear-gradient(120deg,#9b7415,#f7d76b,#a87c16);
+color:#050505;
+box-shadow:0 8px 30px rgba(214,173,53,.15);
 }
 
 .btn-outline{
-    color:var(--gold2);
-    border:1px solid var(--gold);
+border:1px solid var(--gold);
+color:var(--gold2);
+background:rgba(214,173,53,.03);
 }
 
 .btn:hover{
-    transform:translateY(-3px);
-    box-shadow:0 8px 25px rgba(212,175,55,.2);
+transform:translateY(-4px);
+box-shadow:0 12px 35px rgba(214,173,53,.22);
 }
 
-/* ================= COMMON ================= */
+/* ================= TICKER ================= */
+
+.ticker{
+border-top:1px solid var(--line);
+border-bottom:1px solid var(--line);
+background:#080808;
+overflow:hidden;
+white-space:nowrap;
+}
+
+.ticker-track{
+display:inline-block;
+padding:15px 0;
+animation:move 22s linear infinite;
+color:#bbb;
+font-size:12px;
+letter-spacing:2px;
+}
+
+.ticker b{
+color:var(--gold);
+margin:0 30px;
+}
+
+@keyframes move{
+from{transform:translateX(0)}
+to{transform:translateX(-50%)}
+}
+
+/* ================= SECTIONS ================= */
 
 section{
-    padding:90px 20px;
+padding:105px 0;
 }
 
-.container{
-    max-width:1150px;
-    margin:auto;
+.section-head{
+text-align:center;
+margin-bottom:55px;
 }
 
-.section-title{
-    text-align:center;
-    margin-bottom:45px;
+.eyebrow{
+color:var(--gold);
+font-size:11px;
+letter-spacing:3px;
+font-weight:bold;
 }
 
-.section-title h2{
-    font-size:clamp(30px,5vw,48px);
+.section-head h2{
+font-size:clamp(34px,5vw,58px);
+margin-top:10px;
 }
 
-.section-title p{
-    color:#888;
-    margin-top:8px;
+.section-head h2 span{
+color:var(--gold);
 }
 
-/* ================= CARDS ================= */
-
-.cards{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
+.section-head p{
+max-width:650px;
+margin:13px auto 0;
+color:#888;
 }
 
-.card{
-    background:linear-gradient(145deg,#151515,#090909);
-    border:1px solid var(--line);
-    border-radius:18px;
-    padding:30px 24px;
-    text-align:center;
-    transition:.3s;
+/* ================= FEATURES ================= */
+
+.features{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
 }
 
-.card:hover{
-    transform:translateY(-6px);
-    border-color:var(--gold);
+.feature{
+background:linear-gradient(145deg,#111,#080808);
+border:1px solid var(--line);
+border-radius:22px;
+padding:34px 28px;
+position:relative;
+overflow:hidden;
 }
 
-.icon{
-    font-size:38px;
-    margin-bottom:14px;
+.feature:before{
+content:"";
+position:absolute;
+width:100px;
+height:100px;
+right:-45px;
+top:-45px;
+border-radius:50%;
+background:rgba(214,173,53,.07);
 }
 
-.card h3{
-    color:var(--gold2);
-    margin-bottom:10px;
+.feature-icon{
+font-size:35px;
+margin-bottom:18px;
 }
 
-.card p{
-    color:#999;
-    font-size:14px;
+.feature h3{
+color:var(--gold2);
+font-size:20px;
+margin-bottom:9px;
 }
 
-/* ================= HOW ================= */
+.feature p{
+color:#888;
+font-size:14px;
+}
+
+/* ================= FLOW ================= */
 
 .flow{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:10px;
-    flex-wrap:wrap;
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:10px;
 }
 
-.flow-box{
-    min-width:140px;
-    padding:17px 20px;
-    text-align:center;
-    background:#0d0d0d;
-    border:1px solid var(--gold);
-    border-radius:13px;
+.flow-item{
+text-align:center;
+padding:25px 12px;
+border:1px solid var(--line);
+background:#0a0a0a;
+border-radius:15px;
+position:relative;
 }
 
-.flow-box strong{
-    color:var(--gold);
+.flow-item:not(:last-child):after{
+content:"→";
+position:absolute;
+right:-16px;
+top:50%;
+transform:translateY(-50%);
+color:var(--gold);
+z-index:2;
 }
 
-.arrow{
-    color:var(--gold);
-    font-size:25px;
+.flow-number{
+font-size:12px;
+color:var(--gold);
+font-weight:bold;
 }
 
-/* ================= TREE MATRIX ================= */
-
-.tree{
-    max-width:900px;
-    margin:40px auto;
-    text-align:center;
+.flow-item h3{
+margin-top:8px;
+font-size:15px;
 }
 
-.tree-level{
-    display:flex;
-    justify-content:center;
-    gap:12px;
-    margin:14px 0;
-    position:relative;
+/* ================= MATRIX ================= */
+
+.matrix-wrap{
+background:linear-gradient(145deg,#0d0d0d,#050505);
+border:1px solid var(--line);
+border-radius:25px;
+padding:45px 20px;
+overflow:hidden;
 }
 
-.tree-box{
-    width:105px;
-    min-height:85px;
-    padding:10px 5px;
-    background:linear-gradient(145deg,#17130a,#090909);
-    border:1px solid var(--gold);
-    border-radius:12px;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    box-shadow:0 0 15px rgba(212,175,55,.06);
+.matrix{
+max-width:920px;
+margin:auto;
 }
 
-.tree-box strong{
-    color:var(--gold2);
-    font-size:22px;
+.matrix-row{
+display:flex;
+justify-content:center;
+gap:12px;
+margin:12px 0;
 }
 
-.tree-box small{
-    color:#999;
-    font-size:10px;
+.matrix-box{
+width:105px;
+height:82px;
+border:1px solid rgba(214,173,53,.6);
+border-radius:13px;
+background:linear-gradient(145deg,#18140a,#080808);
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+box-shadow:0 5px 20px rgba(0,0,0,.4);
 }
 
-/* connector */
-.connector{
-    width:2px;
-    height:20px;
-    background:var(--gold);
-    margin:auto;
+.matrix-box strong{
+font-size:22px;
+color:var(--gold2);
+}
+
+.matrix-box small{
+font-size:9px;
+color:#888;
+text-align:center;
+margin-top:3px;
+}
+
+.matrix-line{
+height:25px;
+width:1px;
+background:var(--gold);
+margin:auto;
 }
 
 /* ================= LEVELS ================= */
 
-.levels{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:18px;
+.level-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:18px;
 }
 
-.level{
-    text-align:center;
-    background:#0d0d0d;
-    border:1px solid var(--line);
-    border-radius:16px;
-    padding:25px 15px;
+.level-card{
+background:#0b0b0b;
+border:1px solid var(--line);
+border-radius:18px;
+padding:30px 20px;
+text-align:center;
 }
 
-.level h3{
-    color:var(--gold);
+.level-card .num{
+font-size:13px;
+color:var(--gold);
+letter-spacing:2px;
 }
 
-.level .price{
-    margin:10px 0;
-    font-size:22px;
-    font-weight:bold;
+.level-card h3{
+margin:8px 0;
+font-size:25px;
 }
 
-.level p{
-    color:#888;
-    font-size:13px;
+.level-card .amount{
+color:var(--gold2);
+font-size:20px;
+font-weight:bold;
 }
 
-/* ================= REWARDS ================= */
-
-.reward-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:18px;
+.level-card p{
+color:#777;
+font-size:12px;
+margin-top:8px;
 }
 
-.reward{
-    padding:25px 15px;
-    text-align:center;
-    background:#0d0d0d;
-    border-radius:16px;
-    border:1px solid var(--line);
+/* ================= ECOSYSTEM ================= */
+
+.ecosystem{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:18px;
 }
 
-.reward h3{
-    color:var(--gold);
-    margin-top:10px;
+.eco{
+padding:28px 15px;
+text-align:center;
+border:1px solid var(--line);
+border-radius:18px;
+background:#0b0b0b;
+}
+
+.eco-icon{
+font-size:34px;
+}
+
+.eco h3{
+margin-top:12px;
+color:var(--gold2);
+}
+
+.eco p{
+font-size:12px;
+color:#777;
+margin-top:5px;
+}
+
+/* ================= ROADMAP ================= */
+
+.roadmap{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:18px;
+}
+
+.road{
+padding:25px;
+background:#0b0b0b;
+border:1px solid var(--line);
+border-radius:18px;
+}
+
+.road span{
+font-size:11px;
+color:var(--gold);
+letter-spacing:2px;
+}
+
+.road h3{
+margin:8px 0;
+}
+
+.road p{
+color:#777;
+font-size:13px;
 }
 
 /* ================= CTA ================= */
 
 .cta{
-    text-align:center;
-    background:
-    radial-gradient(circle at center,#2d2208,#050505 65%);
-    border-top:1px solid var(--line);
-    border-bottom:1px solid var(--line);
+text-align:center;
+padding:120px 0;
+background:
+radial-gradient(circle at center,rgba(214,173,53,.13),transparent 55%),
+#050505;
+border-top:1px solid var(--line);
+border-bottom:1px solid var(--line);
 }
 
 .cta h2{
-    font-size:clamp(34px,6vw,58px);
+font-size:clamp(40px,7vw,75px);
+line-height:1;
+}
+
+.cta h2 span{
+color:var(--gold);
+}
+
+.cta p{
+color:#999;
+margin:18px 0 30px;
 }
 
 /* ================= DISCLAIMER ================= */
 
-.disclaimer{
-    background:#090909;
-    border:1px solid #272727;
-    border-radius:15px;
-    padding:25px;
-    color:#888;
-    font-size:13px;
+.notice{
+border:1px solid #222;
+background:#090909;
+border-radius:18px;
+padding:28px;
+color:#777;
+font-size:12px;
 }
 
-.disclaimer strong{
-    color:var(--gold);
+.notice strong{
+color:var(--gold2);
 }
 
 /* ================= FOOTER ================= */
 
 footer{
-    text-align:center;
-    padding:40px 20px;
-    background:#020202;
-    color:#666;
+padding:45px 0;
+background:#020202;
+text-align:center;
 }
 
 footer .brand{
-    justify-content:center;
-    margin-bottom:15px;
+justify-content:center;
+margin-bottom:18px;
+}
+
+footer p{
+font-size:12px;
+color:#666;
+margin-top:5px;
 }
 
 /* ================= MOBILE ================= */
 
-@media(max-width:800px){
+@media(max-width:850px){
 
-    .nav-links{
-        display:none;
-        position:absolute;
-        top:69px;
-        left:0;
-        width:100%;
-        padding:20px;
-        background:#050505;
-        border-bottom:1px solid var(--line);
-        flex-direction:column;
-        text-align:center;
-    }
-
-    .nav-links.active{
-        display:flex;
-    }
-
-    .menu{
-        display:block;
-    }
-
-    .cards{
-        grid-template-columns:1fr;
-    }
-
-    .levels{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .reward-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .tree-level{
-        flex-wrap:wrap;
-    }
-
-    .arrow{
-        display:none;
-    }
+.nav-links{
+display:none;
+position:absolute;
+top:74px;
+left:0;
+width:100%;
+padding:25px;
+background:#050505;
+border-bottom:1px solid var(--line);
+flex-direction:column;
+text-align:center;
+gap:20px;
 }
 
-@media(max-width:480px){
-
-    .logo-text{
-        font-size:20px;
-    }
-
-    .logo-symbol{
-        width:36px;
-        height:36px;
-    }
-
-    .hero-logo{
-        width:75px;
-        height:75px;
-    }
-
-    .hero-logo span{
-        font-size:34px;
-    }
-
-    .levels,
-    .reward-grid{
-        grid-template-columns:1fr;
-    }
-
-    .tree-box{
-        width:90px;
-    }
+.nav-links.active{
+display:flex;
 }
+
+.menu{
+display:block;
+}
+
+.features{
+grid-template-columns:1fr;
+}
+
+.flow{
+grid-template-columns:1fr;
+}
+
+.flow-item:not(:last-child):after{
+content:"↓";
+right:auto;
+top:auto;
+bottom:-18px;
+left:50%;
+transform:translateX(-50%);
+}
+
+.level-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.ecosystem{
+grid-template-columns:repeat(2,1fr);
+}
+
+.roadmap{
+grid-template-columns:1fr 1fr;
+}
+
+}
+
+@media(max-width:520px){
+
+.brand-name{
+font-size:20px;
+}
+
+.brand-mark{
+width:36px;
+height:36px;
+}
+
+.hero{
+padding-top:120px;
+}
+
+.hero-logo{
+width:88px;
+height:88px;
+}
+
+.hero-logo span{
+font-size:38px;
+}
+
+.hero h1{
+letter-spacing:2px;
+}
+
+section{
+padding:75px 0;
+}
+
+.level-grid,
+.ecosystem,
+.roadmap{
+grid-template-columns:1fr;
+}
+
+.matrix-wrap{
+padding:30px 8px;
+}
+
+.matrix-row{
+gap:6px;
+}
+
+.matrix-box{
+width:72px;
+height:72px;
+}
+
+.matrix-box strong{
+font-size:18px;
+}
+
+.matrix-box small{
+font-size:8px;
+}
+
+}
+
+/* ================= ANIMATION ================= */
+
+@keyframes pulse{
+0%,100%{box-shadow:0 0 15px rgba(214,173,53,.15)}
+50%{box-shadow:0 0 35px rgba(214,173,53,.35)}
+}
+
+.hero-logo{
+animation:pulse 3s infinite;
+}
+
 </style>
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
+<!-- NAVIGATION -->
 
 <header>
-
-<div class="nav">
+<div class="container nav">
 
 <a href="#" class="brand">
 
-<div class="logo-symbol">
+<div class="brand-mark">
 <span>B</span>
 </div>
 
-<div class="logo-text">
-B-<b>TITAN</b>
+<div class="brand-name">
+B-<span>TITAN</span>
 </div>
 
 </a>
@@ -570,35 +792,36 @@ B-<b>TITAN</b>
 <div class="menu" onclick="toggleMenu()">☰</div>
 
 <nav class="nav-links" id="navLinks">
-<a href="#about">About</a>
-<a href="#how">How It Works</a>
-<a href="#matrix">Matrix</a>
-<a href="#levels">Levels</a>
-<a href="#rewards">Rewards</a>
-<a href="#start">Join</a>
+
+<a href="#about">ABOUT</a>
+<a href="#how">HOW IT WORKS</a>
+<a href="#matrix">MATRIX</a>
+<a href="#levels">LEVELS</a>
+<a href="#ecosystem">ECOSYSTEM</a>
+<a href="#start" class="nav-btn">JOIN NOW</a>
+
 </nav>
 
 </div>
-
 </header>
 
 
-<!-- ================= HERO ================= -->
+<!-- HERO -->
 
 <section class="hero">
 
-<div class="hero-content">
+<div class="container hero-content">
 
 <div class="hero-logo">
 <span>B</span>
 </div>
 
-<div class="badge">
+<div class="hero-tag">
 DECENTRALIZED MATRIX ECOSYSTEM
 </div>
 
 <h1>
-B-<span class="gold">TITAN</span>
+B-<span>TITAN</span>
 </h1>
 
 <h2>
@@ -606,19 +829,19 @@ THE ULTIMATE BITCOIN RUSH
 </h2>
 
 <p>
-Explore a blockchain-based digital ecosystem
-built around smart-contract technology,
-matrix structure and community participation.
+A blockchain-based digital ecosystem built around
+smart-contract technology, matrix structure and
+community participation.
 </p>
 
-<div class="buttons">
+<div class="hero-buttons">
 
 <a href="#start" class="btn btn-gold">
-JOIN B-TITAN
+EXPLORE B-TITAN
 </a>
 
-<a href="#about" class="btn btn-outline">
-LEARN MORE
+<a href="#matrix" class="btn btn-outline">
+VIEW MATRIX
 </a>
 
 </div>
@@ -628,64 +851,98 @@ LEARN MORE
 </section>
 
 
-<!-- ================= ABOUT ================= -->
+<!-- TICKER -->
+
+<div class="ticker">
+
+<div class="ticker-track">
+
+BLOCKCHAIN
+<b>◆</b>
+SMART CONTRACT
+<b>◆</b>
+14 BOX MATRIX
+<b>◆</b>
+DIGITAL ASSETS
+<b>◆</b>
+RANK & REWARD
+<b>◆</b>
+RECYCLE
+<b>◆</b>
+
+BLOCKCHAIN
+<b>◆</b>
+SMART CONTRACT
+<b>◆</b>
+14 BOX MATRIX
+<b>◆</b>
+
+</div>
+
+</div>
+
+
+<!-- ABOUT -->
 
 <section id="about">
 
 <div class="container">
 
-<div class="section-title">
+<div class="section-head">
+
+<div class="eyebrow">DISCOVER B-TITAN</div>
 
 <h2>
-WHY <span class="gold">B-TITAN?</span>
+BUILT FOR THE <span>DIGITAL ERA</span>
 </h2>
 
 <p>
-Learn the ecosystem before you participate.
+Understand the technology, structure and ecosystem
+before making any decision.
 </p>
 
 </div>
 
 
-<div class="cards">
+<div class="features">
 
-<div class="card">
+<div class="feature">
 
-<div class="icon">⛓️</div>
+<div class="feature-icon">⛓️</div>
 
-<h3>Blockchain</h3>
+<h3>Blockchain Based</h3>
 
 <p>
-Blockchain-based infrastructure designed
-for a decentralized digital ecosystem.
+Explore a digital ecosystem built around
+blockchain technology and decentralized infrastructure.
 </p>
 
 </div>
 
 
-<div class="card">
+<div class="feature">
 
-<div class="icon">🔐</div>
+<div class="feature-icon">🔐</div>
 
 <h3>Smart Contract</h3>
 
 <p>
-Programmable smart-contract technology
-forms the foundation of the system.
+Programmable smart-contract logic forms
+an important part of the ecosystem.
 </p>
 
 </div>
 
 
-<div class="card">
+<div class="feature">
 
-<div class="icon">🌐</div>
+<div class="feature-icon">🌐</div>
 
-<h3>Community</h3>
+<h3>Global Community</h3>
 
 <p>
-Learn, understand, build and grow
-with a digital community.
+Learn, understand and participate with
+a growing digital community.
 </p>
 
 </div>
@@ -697,20 +954,22 @@ with a digital community.
 </section>
 
 
-<!-- ================= HOW IT WORKS ================= -->
+<!-- HOW IT WORKS -->
 
 <section id="how">
 
 <div class="container">
 
-<div class="section-title">
+<div class="section-head">
+
+<div class="eyebrow">PROCESS</div>
 
 <h2>
-HOW IT <span class="gold">WORKS</span>
+HOW <span>B-TITAN</span> WORKS
 </h2>
 
 <p>
-Simple steps to explore the ecosystem.
+A simple overview of the participation journey.
 </p>
 
 </div>
@@ -718,37 +977,29 @@ Simple steps to explore the ecosystem.
 
 <div class="flow">
 
-<div class="flow-box">
-<strong>01</strong><br>
-Connect Wallet
+<div class="flow-item">
+<div class="flow-number">01</div>
+<h3>Connect Wallet</h3>
 </div>
 
-<div class="arrow">→</div>
-
-<div class="flow-box">
-<strong>02</strong><br>
-Register
+<div class="flow-item">
+<div class="flow-number">02</div>
+<h3>Register</h3>
 </div>
 
-<div class="arrow">→</div>
-
-<div class="flow-box">
-<strong>03</strong><br>
-Activate
+<div class="flow-item">
+<div class="flow-number">03</div>
+<h3>Activate</h3>
 </div>
 
-<div class="arrow">→</div>
-
-<div class="flow-box">
-<strong>04</strong><br>
-Build
+<div class="flow-item">
+<div class="flow-number">04</div>
+<h3>Build</h3>
 </div>
 
-<div class="arrow">→</div>
-
-<div class="flow-box">
-<strong>05</strong><br>
-Grow
+<div class="flow-item">
+<div class="flow-number">05</div>
+<h3>Grow</h3>
 </div>
 
 </div>
@@ -758,135 +1009,135 @@ Grow
 </section>
 
 
-<!-- ================= MATRIX ================= -->
+<!-- MATRIX -->
 
 <section id="matrix">
 
 <div class="container">
 
-<div class="section-title">
+<div class="section-head">
+
+<div class="eyebrow">MATRIX STRUCTURE</div>
 
 <h2>
-<span class="gold">14 BOX</span> MATRIX
+THE <span>14 BOX</span> MATRIX
 </h2>
 
 <p>
-Visual overview of the matrix structure.
+Visual overview of the matrix flow.
 </p>
 
 </div>
 
 
-<div class="tree">
+<div class="matrix-wrap">
 
-<!-- LEVEL 1 -->
+<div class="matrix">
 
-<div class="tree-level">
+<div class="matrix-row">
 
-<div class="tree-box">
+<div class="matrix-box">
 <strong>1</strong>
-<small>Upline</small>
+<small>UPLINE</small>
 </div>
 
 </div>
 
-<div class="connector"></div>
+
+<div class="matrix-line"></div>
 
 
-<!-- LEVEL 2 -->
+<div class="matrix-row">
 
-<div class="tree-level">
-
-<div class="tree-box">
+<div class="matrix-box">
 <strong>2</strong>
-<small>Upline</small>
+<small>UPLINE</small>
 </div>
 
-<div class="tree-box">
+<div class="matrix-box">
 <strong>3</strong>
-<small>Self</small>
+<small>SELF</small>
 </div>
 
 </div>
 
-<div class="connector"></div>
+
+<div class="matrix-line"></div>
 
 
-<!-- LEVEL 3 -->
+<div class="matrix-row">
 
-<div class="tree-level">
-
-<div class="tree-box">
+<div class="matrix-box">
 <strong>4</strong>
-<small>Hold</small>
+<small>HOLD</small>
 </div>
 
-<div class="tree-box">
+<div class="matrix-box">
 <strong>5</strong>
-<small>Upgrade</small>
+<small>UPGRADE</small>
 </div>
 
-<div class="tree-box">
+<div class="matrix-box">
 <strong>6</strong>
-<small>Self</small>
+<small>SELF</small>
 </div>
 
 </div>
 
-<div class="connector"></div>
+
+<div class="matrix-line"></div>
 
 
-<!-- LEVEL 4 -->
+<div class="matrix-row">
 
-<div class="tree-level">
-
-<div class="tree-box">
+<div class="matrix-box">
 <strong>7</strong>
-<small>Downline</small>
+<small>DOWNLINE</small>
 </div>
 
-<div class="tree-box">
+<div class="matrix-box">
 <strong>8</strong>
-<small>Self</small>
+<small>SELF</small>
 </div>
 
-<div class="tree-box">
+<div class="matrix-box">
 <strong>9</strong>
-<small>Self</small>
+<small>SELF</small>
 </div>
 
-<div class="tree-box">
+<div class="matrix-box">
 <strong>10</strong>
-<small>Downline</small>
+<small>DOWNLINE</small>
 </div>
 
 </div>
 
-<div class="connector"></div>
+
+<div class="matrix-line"></div>
 
 
-<!-- LEVEL 5 -->
+<div class="matrix-row">
 
-<div class="tree-level">
-
-<div class="tree-box">
+<div class="matrix-box">
 <strong>11</strong>
-<small>Self</small>
+<small>SELF</small>
 </div>
 
-<div class="tree-box">
+<div class="matrix-box">
 <strong>12</strong>
-<small>Self</small>
+<small>SELF</small>
 </div>
 
-<div class="tree-box">
+<div class="matrix-box">
 <strong>13</strong>
-<small>2 Level Downline</small>
+<small>2 LEVEL DOWNLINE</small>
 </div>
 
-<div class="tree-box">
+<div class="matrix-box">
 <strong>14</strong>
-<small>Recycle</small>
+<small>RECYCLE</small>
+</div>
+
 </div>
 
 </div>
@@ -898,49 +1149,56 @@ Visual overview of the matrix structure.
 </section>
 
 
-<!-- ================= LEVELS ================= -->
+<!-- LEVELS -->
 
 <section id="levels">
 
 <div class="container">
 
-<div class="section-title">
+<div class="section-head">
+
+<div class="eyebrow">PROGRESSION</div>
 
 <h2>
-LEVEL <span class="gold">SYSTEM</span>
+LEVEL <span>SYSTEM</span>
 </h2>
 
 <p>
-Explore the progression structure.
+Example entry structure. Always verify the current plan
+before participating.
 </p>
 
 </div>
 
 
-<div class="levels">
+<div class="level-grid">
 
-<div class="level">
-<h3>LEVEL 1</h3>
-<div class="price">0.001 BTCB</div>
+<div class="level-card">
+<div class="num">LEVEL 01</div>
+<h3>START</h3>
+<div class="amount">0.001 BTCB</div>
 <p>Entry Level</p>
 </div>
 
-<div class="level">
-<h3>LEVEL 2</h3>
-<div class="price">0.002 BTCB</div>
-<p>Progression Level</p>
+<div class="level-card">
+<div class="num">LEVEL 02</div>
+<h3>BUILD</h3>
+<div class="amount">0.002 BTCB</div>
+<p>Progression</p>
 </div>
 
-<div class="level">
-<h3>LEVEL 3</h3>
-<div class="price">0.004 BTCB</div>
-<p>Progression Level</p>
+<div class="level-card">
+<div class="num">LEVEL 03</div>
+<h3>GROW</h3>
+<div class="amount">0.004 BTCB</div>
+<p>Progression</p>
 </div>
 
-<div class="level">
-<h3>LEVEL 4+</h3>
-<div class="price">→</div>
-<p>Explore Complete Plan</p>
+<div class="level-card">
+<div class="num">LEVEL 04+</div>
+<h3>EXPLORE</h3>
+<div class="amount">12 LEVELS</div>
+<p>Complete structure</p>
 </div>
 
 </div>
@@ -950,45 +1208,47 @@ Explore the progression structure.
 </section>
 
 
-<!-- ================= DIGITAL ASSETS ================= -->
+<!-- ECOSYSTEM -->
 
-<section id="rewards">
+<section id="ecosystem">
 
 <div class="container">
 
-<div class="section-title">
+<div class="section-head">
+
+<div class="eyebrow">DIGITAL ECOSYSTEM</div>
 
 <h2>
-DIGITAL <span class="gold">ECOSYSTEM</span>
+EXPLORE THE <span>ECOSYSTEM</span>
 </h2>
 
-<p>
-Explore the major components.
-</p>
-
 </div>
 
 
-<div class="reward-grid">
+<div class="ecosystem">
 
-<div class="reward">
-<div class="icon">🎫</div>
+<div class="eco">
+<div class="eco-icon">🎫</div>
 <h3>Registration Pass</h3>
+<p>Digital registration component.</p>
 </div>
 
-<div class="reward">
-<div class="icon">💎</div>
+<div class="eco">
+<div class="eco-icon">💎</div>
 <h3>Box NFT</h3>
+<p>Digital asset component.</p>
 </div>
 
-<div class="reward">
-<div class="icon">🏆</div>
+<div class="eco">
+<div class="eco-icon">🏆</div>
 <h3>Rank & Reward</h3>
+<p>Explore the rank structure.</p>
 </div>
 
-<div class="reward">
-<div class="icon">♻️</div>
+<div class="eco">
+<div class="eco-icon">♻️</div>
 <h3>Recycle</h3>
+<p>Part of the matrix flow.</p>
 </div>
 
 </div>
@@ -998,22 +1258,73 @@ Explore the major components.
 </section>
 
 
-<!-- ================= CTA ================= -->
+<!-- ROADMAP -->
+
+<section>
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="eyebrow">VISION</div>
+
+<h2>
+B-TITAN <span>ROADMAP</span>
+</h2>
+
+</div>
+
+
+<div class="roadmap">
+
+<div class="road">
+<span>PHASE 01</span>
+<h3>Foundation</h3>
+<p>Technology, smart-contract and ecosystem foundation.</p>
+</div>
+
+<div class="road">
+<span>PHASE 02</span>
+<h3>Community</h3>
+<p>Education, community development and awareness.</p>
+</div>
+
+<div class="road">
+<span>PHASE 03</span>
+<h3>Expansion</h3>
+<p>Digital ecosystem growth and development.</p>
+</div>
+
+<div class="road">
+<span>PHASE 04</span>
+<h3>Future</h3>
+<p>Long-term ecosystem development.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CTA -->
 
 <section id="start" class="cta">
 
 <div class="container">
 
+<div class="eyebrow">START YOUR JOURNEY</div>
+
 <h2>
-READY TO EXPLORE
-<span class="gold">B-TITAN?</span>
+WELCOME TO <span>B-TITAN</span>
 </h2>
 
 <p>
-Knowledge First • Decision Later
+Learn • Understand • Build • Grow
 </p>
 
-<div class="buttons">
+<div class="hero-buttons">
 
 <a
 href="https://btitan.net/register?id=125872"
@@ -1036,31 +1347,32 @@ COMPLETE INFORMATION
 </section>
 
 
-<!-- ================= DISCLAIMER ================= -->
+<!-- NOTICE -->
 
 <section>
 
 <div class="container">
 
-<div class="disclaimer">
+<div class="notice">
 
 <strong>IMPORTANT NOTICE</strong>
 
 <br><br>
 
-B-TITAN is a blockchain-based digital ecosystem.
-Participation in blockchain and digital assets involves
-risk, including the possible loss of funds.
+B-TITAN is presented as a blockchain-based digital ecosystem.
+Blockchain and digital-asset participation involves risks,
+including the possible loss of funds.
 
 <br><br>
 
-Nothing on this website should be considered financial,
-investment or guaranteed-profit advice.
+Nothing on this website is financial, investment or
+guaranteed-profit advice. Users should independently
+understand the technology, smart contract, terms and risks
+before participating.
 
 <br><br>
 
-Always understand the technology, smart contract,
-terms and associated risks before participating.
+<b>Knowledge First • Decision Later</b>
 
 </div>
 
@@ -1069,29 +1381,33 @@ terms and associated risks before participating.
 </section>
 
 
-<!-- ================= FOOTER ================= -->
+<!-- FOOTER -->
 
 <footer>
 
+<div class="container">
+
 <a href="#" class="brand">
 
-<div class="logo-symbol">
+<div class="brand-mark">
 <span>B</span>
 </div>
 
-<div class="logo-text">
-B-<b>TITAN</b>
+<div class="brand-name">
+B-<span>TITAN</span>
 </div>
 
 </a>
 
 <p>
-Learn • Understand • Build • Grow
+THE ULTIMATE BITCOIN RUSH
 </p>
 
-<p style="margin-top:10px;">
+<p>
 © 2026 B-TITAN. All Rights Reserved.
 </p>
+
+</div>
 
 </footer>
 
