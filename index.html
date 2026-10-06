@@ -8,1437 +8,603 @@
 
 <style>
 :root{
---gold:#d6ad35;
---gold2:#ffe58a;
---black:#030303;
---dark:#080808;
---card:#0e0e0e;
---text:#f5f5f5;
---muted:#999;
---line:rgba(214,173,53,.25);
+  --gold:#d4af37;
+  --gold2:#f7dc78;
+  --gold3:#9b7620;
+  --black:#050505;
+  --dark:#0a0a0a;
+  --card:#111111;
+  --text:#ffffff;
+  --muted:#a5a5a5;
+  --border:rgba(212,175,55,.25);
 }
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
 html{
-scroll-behavior:smooth;
+  scroll-behavior:smooth;
 }
 
 body{
-background:var(--black);
-color:var(--text);
-font-family:Arial,Helvetica,sans-serif;
-overflow-x:hidden;
+  background:
+    radial-gradient(circle at 50% -10%,rgba(212,175,55,.12),transparent 35%),
+    var(--black);
+  color:var(--text);
+  font-family:Arial,Helvetica,sans-serif;
+  line-height:1.6;
 }
 
 a{
-text-decoration:none;
-color:inherit;
+  text-decoration:none;
+  color:inherit;
 }
 
 .container{
-width:min(1180px,92%);
-margin:auto;
+  width:min(1160px,92%);
+  margin:auto;
 }
 
-/* ================= BACKGROUND ================= */
+/* =========================
+   PROFESSIONAL LOGO
+========================= */
 
-body:before{
-content:"";
-position:fixed;
-inset:0;
-pointer-events:none;
-opacity:.35;
-background-image:
-linear-gradient(rgba(214,173,53,.035) 1px,transparent 1px),
-linear-gradient(90deg,rgba(214,173,53,.035) 1px,transparent 1px);
-background-size:60px 60px;
-z-index:-2;
+.logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
 }
 
-body:after{
-content:"";
-position:fixed;
-width:600px;
-height:600px;
-left:50%;
-top:20%;
-transform:translate(-50%,-50%);
-background:radial-gradient(circle,rgba(214,173,53,.11),transparent 65%);
-pointer-events:none;
-z-index:-1;
+.titan-emblem{
+  width:46px;
+  height:46px;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
-/* ================= NAVBAR ================= */
+.titan-emblem:before{
+  content:"";
+  position:absolute;
+  width:34px;
+  height:40px;
+  border:2px solid var(--gold);
+  clip-path:polygon(
+    50% 0%,
+    92% 22%,
+    80% 78%,
+    50% 100%,
+    20% 78%,
+    8% 22%
+  );
+  box-shadow:0 0 15px rgba(212,175,55,.3);
+}
+
+.titan-emblem:after{
+  content:"T";
+  position:absolute;
+  color:var(--gold2);
+  font-size:23px;
+  font-weight:900;
+  line-height:1;
+}
+
+.logo-word{
+  font-size:25px;
+  font-weight:900;
+  letter-spacing:2px;
+  white-space:nowrap;
+}
+
+.logo-word b{
+  color:var(--gold);
+}
+
+/* =========================
+   HEADER
+========================= */
 
 header{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-z-index:1000;
-background:rgba(3,3,3,.82);
-backdrop-filter:blur(15px);
-border-bottom:1px solid rgba(214,173,53,.16);
+  position:fixed;
+  left:0;
+  top:0;
+  width:100%;
+  z-index:1000;
+  background:rgba(5,5,5,.9);
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid rgba(212,175,55,.15);
 }
 
 .nav{
-height:74px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-}
-
-.brand{
-display:flex;
-align-items:center;
-gap:12px;
-}
-
-.brand-mark{
-width:42px;
-height:42px;
-position:relative;
-transform:rotate(45deg);
-border:2px solid var(--gold);
-box-shadow:
-0 0 15px rgba(214,173,53,.3),
-inset 0 0 12px rgba(214,173,53,.1);
-}
-
-.brand-mark span{
-position:absolute;
-inset:0;
-display:flex;
-align-items:center;
-justify-content:center;
-transform:rotate(-45deg);
-font-size:22px;
-font-weight:900;
-color:var(--gold2);
-}
-
-.brand-name{
-font-size:25px;
-font-weight:900;
-letter-spacing:2px;
-}
-
-.brand-name span{
-color:var(--gold);
+  min-height:76px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 
 .nav-links{
-display:flex;
-align-items:center;
-gap:28px;
+  display:flex;
+  align-items:center;
+  gap:27px;
 }
 
 .nav-links a{
-font-size:13px;
-color:#ccc;
-transition:.25s;
+  color:#ccc;
+  font-size:13px;
+  transition:.25s;
 }
 
 .nav-links a:hover{
-color:var(--gold2);
+  color:var(--gold2);
 }
 
-.nav-btn{
-padding:10px 19px;
-border:1px solid var(--gold);
-border-radius:25px;
-color:var(--gold2)!important;
+.nav-join{
+  padding:10px 19px;
+  border:1px solid var(--gold);
+  border-radius:30px;
+  color:var(--gold2)!important;
 }
 
 .menu{
-display:none;
-font-size:28px;
-color:var(--gold);
-cursor:pointer;
+  display:none;
+  font-size:27px;
+  color:var(--gold);
+  cursor:pointer;
 }
 
-/* ================= HERO ================= */
+/* =========================
+   HERO
+========================= */
 
 .hero{
-min-height:100vh;
-display:flex;
-align-items:center;
-padding:130px 0 80px;
-position:relative;
-overflow:hidden;
+  min-height:100vh;
+  padding:140px 0 90px;
+  display:flex;
+  align-items:center;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+
+.hero:before{
+  content:"";
+  position:absolute;
+  width:650px;
+  height:650px;
+  border:1px solid rgba(212,175,55,.08);
+  border-radius:50%;
+  left:50%;
+  top:45%;
+  transform:translate(-50%,-50%);
+}
+
+.hero:after{
+  content:"";
+  position:absolute;
+  width:400px;
+  height:400px;
+  background:radial-gradient(
+    circle,
+    rgba(212,175,55,.15),
+    transparent 65%
+  );
+  left:50%;
+  top:35%;
+  transform:translate(-50%,-50%);
 }
 
 .hero-content{
-text-align:center;
-width:100%;
+  position:relative;
+  z-index:2;
+  width:100%;
 }
 
-.hero-logo{
-width:115px;
-height:115px;
-margin:0 auto 34px;
-position:relative;
-transform:rotate(45deg);
-border:3px solid var(--gold);
-border-radius:20px;
-box-shadow:
-0 0 30px rgba(214,173,53,.25),
-inset 0 0 30px rgba(214,173,53,.08);
+/* large logo */
+
+.hero-emblem{
+  width:125px;
+  height:125px;
+  margin:0 auto 28px;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
-.hero-logo:before{
-content:"";
-position:absolute;
-inset:12px;
-border:1px solid rgba(255,229,138,.6);
+.hero-emblem:before{
+  content:"";
+  position:absolute;
+  inset:5px;
+  border:3px solid var(--gold);
+  clip-path:polygon(
+    50% 0%,
+    90% 20%,
+    82% 78%,
+    50% 100%,
+    18% 78%,
+    10% 20%
+  );
+  filter:drop-shadow(0 0 12px rgba(212,175,55,.35));
 }
 
-.hero-logo span{
-position:absolute;
-inset:0;
-display:flex;
-align-items:center;
-justify-content:center;
-transform:rotate(-45deg);
-font-size:48px;
-font-weight:900;
-color:var(--gold2);
+.hero-emblem:after{
+  content:"T";
+  color:var(--gold2);
+  font-size:55px;
+  font-weight:900;
 }
 
-.hero-tag{
-display:inline-block;
-padding:8px 18px;
-border:1px solid var(--line);
-border-radius:30px;
-font-size:11px;
-letter-spacing:2px;
-color:var(--gold2);
-background:rgba(214,173,53,.05);
+.hero-label{
+  display:inline-block;
+  padding:8px 18px;
+  border:1px solid var(--border);
+  border-radius:30px;
+  color:var(--gold2);
+  letter-spacing:2px;
+  font-size:11px;
+  background:rgba(212,175,55,.04);
 }
 
 .hero h1{
-font-size:clamp(55px,11vw,125px);
-line-height:.95;
-margin-top:22px;
-letter-spacing:5px;
-font-weight:950;
+  font-size:clamp(55px,10vw,115px);
+  line-height:.95;
+  letter-spacing:4px;
+  margin-top:22px;
+  font-weight:900;
 }
 
 .hero h1 span{
-color:var(--gold);
-text-shadow:0 0 30px rgba(214,173,53,.25);
+  color:var(--gold);
+  text-shadow:0 0 35px rgba(212,175,55,.2);
 }
 
 .hero h2{
-font-size:clamp(18px,3vw,30px);
-margin-top:22px;
-letter-spacing:3px;
+  font-size:clamp(18px,3vw,30px);
+  letter-spacing:2px;
+  margin-top:20px;
 }
 
-.hero p{
-max-width:700px;
-margin:20px auto 0;
-color:#aaa;
-font-size:15px;
+.hero-text{
+  max-width:690px;
+  margin:18px auto;
+  color:#999;
+  font-size:15px;
 }
 
-.hero-buttons{
-margin-top:35px;
-display:flex;
-justify-content:center;
-gap:14px;
-flex-wrap:wrap;
+.buttons{
+  margin-top:30px;
+  display:flex;
+  justify-content:center;
+  gap:13px;
+  flex-wrap:wrap;
 }
 
 .btn{
-padding:14px 28px;
-border-radius:30px;
-font-weight:800;
-font-size:13px;
-transition:.3s;
+  padding:14px 28px;
+  border-radius:30px;
+  font-size:13px;
+  font-weight:800;
+  transition:.3s;
 }
 
 .btn-gold{
-background:linear-gradient(120deg,#9b7415,#f7d76b,#a87c16);
-color:#050505;
-box-shadow:0 8px 30px rgba(214,173,53,.15);
+  color:#050505;
+  background:linear-gradient(
+    120deg,
+    #9d761d,
+    #f5d96f,
+    #b98c27
+  );
 }
 
 .btn-outline{
-border:1px solid var(--gold);
-color:var(--gold2);
-background:rgba(214,173,53,.03);
+  border:1px solid var(--gold);
+  color:var(--gold2);
 }
 
 .btn:hover{
-transform:translateY(-4px);
-box-shadow:0 12px 35px rgba(214,173,53,.22);
+  transform:translateY(-3px);
+  box-shadow:0 10px 30px rgba(212,175,55,.2);
 }
 
-/* ================= TICKER ================= */
+/* =========================
+   TRUST BAR
+========================= */
 
-.ticker{
-border-top:1px solid var(--line);
-border-bottom:1px solid var(--line);
-background:#080808;
-overflow:hidden;
-white-space:nowrap;
+.trust{
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  background:#090909;
 }
 
-.ticker-track{
-display:inline-block;
-padding:15px 0;
-animation:move 22s linear infinite;
-color:#bbb;
-font-size:12px;
-letter-spacing:2px;
+.trust-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
 }
 
-.ticker b{
-color:var(--gold);
-margin:0 30px;
+.trust-item{
+  padding:22px 10px;
+  text-align:center;
+  border-right:1px solid rgba(255,255,255,.06);
 }
 
-@keyframes move{
-from{transform:translateX(0)}
-to{transform:translateX(-50%)}
+.trust-item:last-child{
+  border-right:0;
 }
 
-/* ================= SECTIONS ================= */
+.trust-item strong{
+  display:block;
+  color:var(--gold2);
+  font-size:16px;
+}
+
+.trust-item span{
+  color:#777;
+  font-size:11px;
+}
+
+/* =========================
+   SECTIONS
+========================= */
 
 section{
-padding:105px 0;
+  padding:100px 0;
 }
 
-.section-head{
-text-align:center;
-margin-bottom:55px;
+.section-title{
+  text-align:center;
+  margin-bottom:50px;
 }
 
-.eyebrow{
-color:var(--gold);
-font-size:11px;
-letter-spacing:3px;
-font-weight:bold;
+.section-label{
+  color:var(--gold);
+  font-size:11px;
+  letter-spacing:3px;
+  font-weight:bold;
 }
 
-.section-head h2{
-font-size:clamp(34px,5vw,58px);
-margin-top:10px;
+.section-title h2{
+  font-size:clamp(34px,5vw,56px);
+  line-height:1.1;
+  margin-top:9px;
 }
 
-.section-head h2 span{
-color:var(--gold);
+.section-title h2 span{
+  color:var(--gold);
 }
 
-.section-head p{
-max-width:650px;
-margin:13px auto 0;
-color:#888;
+.section-title p{
+  max-width:650px;
+  margin:13px auto 0;
+  color:#888;
 }
 
-/* ================= FEATURES ================= */
+/* =========================
+   INTRO
+========================= */
 
-.features{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
+.intro{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:45px;
+  align-items:center;
 }
 
-.feature{
-background:linear-gradient(145deg,#111,#080808);
-border:1px solid var(--line);
-border-radius:22px;
-padding:34px 28px;
-position:relative;
-overflow:hidden;
+.intro h3{
+  font-size:34px;
+  margin-bottom:15px;
 }
 
-.feature:before{
-content:"";
-position:absolute;
-width:100px;
-height:100px;
-right:-45px;
-top:-45px;
-border-radius:50%;
-background:rgba(214,173,53,.07);
+.intro h3 span{
+  color:var(--gold);
 }
 
-.feature-icon{
-font-size:35px;
-margin-bottom:18px;
+.intro p{
+  color:#999;
+  font-size:15px;
+  margin-bottom:16px;
 }
 
-.feature h3{
-color:var(--gold2);
-font-size:20px;
-margin-bottom:9px;
+.intro-card{
+  padding:38px;
+  border:1px solid var(--border);
+  border-radius:25px;
+  background:
+    linear-gradient(145deg,#151208,#090909);
+  box-shadow:0 20px 50px rgba(0,0,0,.35);
 }
 
-.feature p{
-color:#888;
-font-size:14px;
+.intro-card .mini-logo{
+  width:75px;
+  height:75px;
+  border:2px solid var(--gold);
+  clip-path:polygon(
+    50% 0,
+    100% 25%,
+    82% 80%,
+    50% 100%,
+    18% 80%,
+    0 25%
+  );
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--gold2);
+  font-size:32px;
+  font-weight:900;
+  margin-bottom:22px;
 }
 
-/* ================= FLOW ================= */
+/* =========================
+   FEATURE CARDS
+========================= */
 
-.flow{
-display:grid;
-grid-template-columns:repeat(5,1fr);
-gap:10px;
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
 }
 
-.flow-item{
-text-align:center;
-padding:25px 12px;
-border:1px solid var(--line);
-background:#0a0a0a;
-border-radius:15px;
-position:relative;
+.card{
+  padding:30px 25px;
+  border:1px solid var(--border);
+  border-radius:20px;
+  background:linear-gradient(145deg,#121212,#080808);
+  transition:.3s;
 }
 
-.flow-item:not(:last-child):after{
-content:"→";
-position:absolute;
-right:-16px;
-top:50%;
-transform:translateY(-50%);
-color:var(--gold);
-z-index:2;
+.card:hover{
+  transform:translateY(-6px);
+  border-color:var(--gold);
 }
 
-.flow-number{
-font-size:12px;
-color:var(--gold);
-font-weight:bold;
+.card-icon{
+  font-size:34px;
+  margin-bottom:15px;
 }
 
-.flow-item h3{
-margin-top:8px;
-font-size:15px;
+.card h3{
+  color:var(--gold2);
+  margin-bottom:8px;
 }
 
-/* ================= MATRIX ================= */
+.card p{
+  color:#888;
+  font-size:14px;
+}
 
-.matrix-wrap{
-background:linear-gradient(145deg,#0d0d0d,#050505);
-border:1px solid var(--line);
-border-radius:25px;
-padding:45px 20px;
-overflow:hidden;
+/* =========================
+   PLAN SECTION
+========================= */
+
+.plan-box{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.plan-card{
+  padding:30px 25px;
+  background:#0b0b0b;
+  border:1px solid var(--border);
+  border-radius:20px;
+  text-align:center;
+}
+
+.plan-card.featured{
+  border-color:var(--gold);
+  box-shadow:0 0 35px rgba(212,175,55,.08);
+}
+
+.plan-icon{
+  font-size:35px;
+}
+
+.plan-card h3{
+  margin:13px 0 8px;
+  color:var(--gold2);
+}
+
+.plan-card p{
+  color:#777;
+  font-size:13px;
+  min-height:45px;
+}
+
+.plan-btn{
+  display:inline-block;
+  margin-top:20px;
+  padding:10px 20px;
+  border:1px solid var(--gold);
+  border-radius:25px;
+  color:var(--gold2);
+  font-size:12px;
+}
+
+/* =========================
+   MATRIX
+========================= */
+
+.matrix-box{
+  padding:40px 15px;
+  border:1px solid var(--border);
+  border-radius:25px;
+  background:#080808;
 }
 
 .matrix{
-max-width:920px;
-margin:auto;
+  max-width:950px;
+  margin:auto;
 }
 
 .matrix-row{
-display:flex;
-justify-content:center;
-gap:12px;
-margin:12px 0;
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin:10px 0;
 }
 
-.matrix-box{
-width:105px;
-height:82px;
-border:1px solid rgba(214,173,53,.6);
-border-radius:13px;
-background:linear-gradient(145deg,#18140a,#080808);
-display:flex;
-align-items:center;
-justify-content:center;
-flex-direction:column;
-box-shadow:0 5px 20px rgba(0,0,0,.4);
+.box{
+  width:105px;
+  height:82px;
+  border:1px solid rgba(212,175,55,.65);
+  border-radius:13px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(145deg,#19150b,#080808);
 }
 
-.matrix-box strong{
-font-size:22px;
-color:var(--gold2);
+.box strong{
+  font-size:22px;
+  color:var(--gold2);
 }
 
-.matrix-box small{
-font-size:9px;
-color:#888;
-text-align:center;
-margin-top:3px;
+.box small{
+  color:#777;
+  font-size:8px;
+  text-align:center;
 }
 
 .matrix-line{
-height:25px;
-width:1px;
-background:var(--gold);
-margin:auto;
+  height:22px;
+  width:1px;
+  background:var(--gold);
+  margin:auto;
 }
 
-/* ================= LEVELS ================= */
+/* =========================
+   LEVELS
+========================= */
 
-.level-grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:18px;
+.levels{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
 }
 
-.level-card{
-background:#0b0b0b;
-border:1px solid var(--line);
-border-radius:18px;
-padding:30px 20px;
-text-align:center;
+.level{
+  text-align:center;
+  padding:28px 15px;
+  background:#0b0b0b;
+  border:1px solid var(--border);
+  border-radius:18px;
 }
 
-.level-card .num{
-font-size:13px;
-color:var(--gold);
-letter-spacing:2px;
+.level-number{
+  font-size:11px;
+  color:var(--gold);
+  letter-spacing:2px;
 }
 
-.level-card h3{
-margin:8px 0;
-font-size:25px;
+.level h3{
+  margin:9px 0;
+  font-size:23px;
 }
 
-.level-card .amount{
-color:var(--gold2);
-font-size:20px;
-font-weight:bold;
-}
-
-.level-card p{
-color:#777;
-font-size:12px;
-margin-top:8px;
-}
-
-/* ================= ECOSYSTEM ================= */
-
-.ecosystem{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:18px;
-}
-
-.eco{
-padding:28px 15px;
-text-align:center;
-border:1px solid var(--line);
-border-radius:18px;
-background:#0b0b0b;
-}
-
-.eco-icon{
-font-size:34px;
-}
-
-.eco h3{
-margin-top:12px;
-color:var(--gold2);
-}
-
-.eco p{
-font-size:12px;
-color:#777;
-margin-top:5px;
-}
-
-/* ================= ROADMAP ================= */
-
-.roadmap{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:18px;
-}
-
-.road{
-padding:25px;
-background:#0b0b0b;
-border:1px solid var(--line);
-border-radius:18px;
-}
-
-.road span{
-font-size:11px;
-color:var(--gold);
-letter-spacing:2px;
-}
-
-.road h3{
-margin:8px 0;
-}
-
-.road p{
-color:#777;
-font-size:13px;
-}
-
-/* ================= CTA ================= */
-
-.cta{
-text-align:center;
-padding:120px 0;
-background:
-radial-gradient(circle at center,rgba(214,173,53,.13),transparent 55%),
-#050505;
-border-top:1px solid var(--line);
-border-bottom:1px solid var(--line);
-}
-
-.cta h2{
-font-size:clamp(40px,7vw,75px);
-line-height:1;
-}
-
-.cta h2 span{
-color:var(--gold);
-}
-
-.cta p{
-color:#999;
-margin:18px 0 30px;
-}
-
-/* ================= DISCLAIMER ================= */
-
-.notice{
-border:1px solid #222;
-background:#090909;
-border-radius:18px;
-padding:28px;
-color:#777;
-font-size:12px;
-}
-
-.notice strong{
-color:var(--gold2);
-}
-
-/* ================= FOOTER ================= */
-
-footer{
-padding:45px 0;
-background:#020202;
-text-align:center;
-}
-
-footer .brand{
-justify-content:center;
-margin-bottom:18px;
-}
-
-footer p{
-font-size:12px;
-color:#666;
-margin-top:5px;
-}
-
-/* ================= MOBILE ================= */
-
-@media(max-width:850px){
-
-.nav-links{
-display:none;
-position:absolute;
-top:74px;
-left:0;
-width:100%;
-padding:25px;
-background:#050505;
-border-bottom:1px solid var(--line);
-flex-direction:column;
-text-align:center;
-gap:20px;
-}
-
-.nav-links.active{
-display:flex;
-}
-
-.menu{
-display:block;
-}
-
-.features{
-grid-template-columns:1fr;
-}
-
-.flow{
-grid-template-columns:1fr;
-}
-
-.flow-item:not(:last-child):after{
-content:"↓";
-right:auto;
-top:auto;
-bottom:-18px;
-left:50%;
-transform:translateX(-50%);
-}
-
-.level-grid{
-grid-template-columns:repeat(2,1fr);
-}
-
-.ecosystem{
-grid-template-columns:repeat(2,1fr);
-}
-
-.roadmap{
-grid-template-columns:1fr 1fr;
-}
-
-}
-
-@media(max-width:520px){
-
-.brand-name{
-font-size:20px;
-}
-
-.brand-mark{
-width:36px;
-height:36px;
-}
-
-.hero{
-padding-top:120px;
-}
-
-.hero-logo{
-width:88px;
-height:88px;
-}
-
-.hero-logo span{
-font-size:38px;
-}
-
-.hero h1{
-letter-spacing:2px;
-}
-
-section{
-padding:75px 0;
-}
-
-.level-grid,
-.ecosystem,
-.roadmap{
-grid-template-columns:1fr;
-}
-
-.matrix-wrap{
-padding:30px 8px;
-}
-
-.matrix-row{
-gap:6px;
-}
-
-.matrix-box{
-width:72px;
-height:72px;
-}
-
-.matrix-box strong{
-font-size:18px;
-}
-
-.matrix-box small{
-font-size:8px;
-}
-
-}
-
-/* ================= ANIMATION ================= */
-
-@keyframes pulse{
-0%,100%{box-shadow:0 0 15px rgba(214,173,53,.15)}
-50%{box-shadow:0 0 35px rgba(214,173,53,.35)}
-}
-
-.hero-logo{
-animation:pulse 3s infinite;
-}
-
-</style>
-</head>
-
-<body>
-
-<!-- NAVIGATION -->
-
-<header>
-<div class="container nav">
-
-<a href="#" class="brand">
-
-<div class="brand-mark">
-<span>B</span>
-</div>
-
-<div class="brand-name">
-B-<span>TITAN</span>
-</div>
-
-</a>
-
-<div class="menu" onclick="toggleMenu()">☰</div>
-
-<nav class="nav-links" id="navLinks">
-
-<a href="#about">ABOUT</a>
-<a href="#how">HOW IT WORKS</a>
-<a href="#matrix">MATRIX</a>
-<a href="#levels">LEVELS</a>
-<a href="#ecosystem">ECOSYSTEM</a>
-<a href="#start" class="nav-btn">JOIN NOW</a>
-
-</nav>
-
-</div>
-</header>
-
-
-<!-- HERO -->
-
-<section class="hero">
-
-<div class="container hero-content">
-
-<div class="hero-logo">
-<span>B</span>
-</div>
-
-<div class="hero-tag">
-DECENTRALIZED MATRIX ECOSYSTEM
-</div>
-
-<h1>
-B-<span>TITAN</span>
-</h1>
-
-<h2>
-THE ULTIMATE BITCOIN RUSH
-</h2>
-
-<p>
-A blockchain-based digital ecosystem built around
-smart-contract technology, matrix structure and
-community participation.
-</p>
-
-<div class="hero-buttons">
-
-<a href="#start" class="btn btn-gold">
-EXPLORE B-TITAN
-</a>
-
-<a href="#matrix" class="btn btn-outline">
-VIEW MATRIX
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- TICKER -->
-
-<div class="ticker">
-
-<div class="ticker-track">
-
-BLOCKCHAIN
-<b>◆</b>
-SMART CONTRACT
-<b>◆</b>
-14 BOX MATRIX
-<b>◆</b>
-DIGITAL ASSETS
-<b>◆</b>
-RANK & REWARD
-<b>◆</b>
-RECYCLE
-<b>◆</b>
-
-BLOCKCHAIN
-<b>◆</b>
-SMART CONTRACT
-<b>◆</b>
-14 BOX MATRIX
-<b>◆</b>
-
-</div>
-
-</div>
-
-
-<!-- ABOUT -->
-
-<section id="about">
-
-<div class="container">
-
-<div class="section-head">
-
-<div class="eyebrow">DISCOVER B-TITAN</div>
-
-<h2>
-BUILT FOR THE <span>DIGITAL ERA</span>
-</h2>
-
-<p>
-Understand the technology, structure and ecosystem
-before making any decision.
-</p>
-
-</div>
-
-
-<div class="features">
-
-<div class="feature">
-
-<div class="feature-icon">⛓️</div>
-
-<h3>Blockchain Based</h3>
-
-<p>
-Explore a digital ecosystem built around
-blockchain technology and decentralized infrastructure.
-</p>
-
-</div>
-
-
-<div class="feature">
-
-<div class="feature-icon">🔐</div>
-
-<h3>Smart Contract</h3>
-
-<p>
-Programmable smart-contract logic forms
-an important part of the ecosystem.
-</p>
-
-</div>
-
-
-<div class="feature">
-
-<div class="feature-icon">🌐</div>
-
-<h3>Global Community</h3>
-
-<p>
-Learn, understand and participate with
-a growing digital community.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- HOW IT WORKS -->
-
-<section id="how">
-
-<div class="container">
-
-<div class="section-head">
-
-<div class="eyebrow">PROCESS</div>
-
-<h2>
-HOW <span>B-TITAN</span> WORKS
-</h2>
-
-<p>
-A simple overview of the participation journey.
-</p>
-
-</div>
-
-
-<div class="flow">
-
-<div class="flow-item">
-<div class="flow-number">01</div>
-<h3>Connect Wallet</h3>
-</div>
-
-<div class="flow-item">
-<div class="flow-number">02</div>
-<h3>Register</h3>
-</div>
-
-<div class="flow-item">
-<div class="flow-number">03</div>
-<h3>Activate</h3>
-</div>
-
-<div class="flow-item">
-<div class="flow-number">04</div>
-<h3>Build</h3>
-</div>
-
-<div class="flow-item">
-<div class="flow-number">05</div>
-<h3>Grow</h3>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- MATRIX -->
-
-<section id="matrix">
-
-<div class="container">
-
-<div class="section-head">
-
-<div class="eyebrow">MATRIX STRUCTURE</div>
-
-<h2>
-THE <span>14 BOX</span> MATRIX
-</h2>
-
-<p>
-Visual overview of the matrix flow.
-</p>
-
-</div>
-
-
-<div class="matrix-wrap">
-
-<div class="matrix">
-
-<div class="matrix-row">
-
-<div class="matrix-box">
-<strong>1</strong>
-<small>UPLINE</small>
-</div>
-
-</div>
-
-
-<div class="matrix-line"></div>
-
-
-<div class="matrix-row">
-
-<div class="matrix-box">
-<strong>2</strong>
-<small>UPLINE</small>
-</div>
-
-<div class="matrix-box">
-<strong>3</strong>
-<small>SELF</small>
-</div>
-
-</div>
-
-
-<div class="matrix-line"></div>
-
-
-<div class="matrix-row">
-
-<div class="matrix-box">
-<strong>4</strong>
-<small>HOLD</small>
-</div>
-
-<div class="matrix-box">
-<strong>5</strong>
-<small>UPGRADE</small>
-</div>
-
-<div class="matrix-box">
-<strong>6</strong>
-<small>SELF</small>
-</div>
-
-</div>
-
-
-<div class="matrix-line"></div>
-
-
-<div class="matrix-row">
-
-<div class="matrix-box">
-<strong>7</strong>
-<small>DOWNLINE</small>
-</div>
-
-<div class="matrix-box">
-<strong>8</strong>
-<small>SELF</small>
-</div>
-
-<div class="matrix-box">
-<strong>9</strong>
-<small>SELF</small>
-</div>
-
-<div class="matrix-box">
-<strong>10</strong>
-<small>DOWNLINE</small>
-</div>
-
-</div>
-
-
-<div class="matrix-line"></div>
-
-
-<div class="matrix-row">
-
-<div class="matrix-box">
-<strong>11</strong>
-<small>SELF</small>
-</div>
-
-<div class="matrix-box">
-<strong>12</strong>
-<small>SELF</small>
-</div>
-
-<div class="matrix-box">
-<strong>13</strong>
-<small>2 LEVEL DOWNLINE</small>
-</div>
-
-<div class="matrix-box">
-<strong>14</strong>
-<small>RECYCLE</small>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- LEVELS -->
-
-<section id="levels">
-
-<div class="container">
-
-<div class="section-head">
-
-<div class="eyebrow">PROGRESSION</div>
-
-<h2>
-LEVEL <span>SYSTEM</span>
-</h2>
-
-<p>
-Example entry structure. Always verify the current plan
-before participating.
-</p>
-
-</div>
-
-
-<div class="level-grid">
-
-<div class="level-card">
-<div class="num">LEVEL 01</div>
-<h3>START</h3>
-<div class="amount">0.001 BTCB</div>
-<p>Entry Level</p>
-</div>
-
-<div class="level-card">
-<div class="num">LEVEL 02</div>
-<h3>BUILD</h3>
-<div class="amount">0.002 BTCB</div>
-<p>Progression</p>
-</div>
-
-<div class="level-card">
-<div class="num">LEVEL 03</div>
-<h3>GROW</h3>
-<div class="amount">0.004 BTCB</div>
-<p>Progression</p>
-</div>
-
-<div class="level-card">
-<div class="num">LEVEL 04+</div>
-<h3>EXPLORE</h3>
-<div class="amount">12 LEVELS</div>
-<p>Complete structure</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ECOSYSTEM -->
-
-<section id="ecosystem">
-
-<div class="container">
-
-<div class="section-head">
-
-<div class="eyebrow">DIGITAL ECOSYSTEM</div>
-
-<h2>
-EXPLORE THE <span>ECOSYSTEM</span>
-</h2>
-
-</div>
-
-
-<div class="ecosystem">
-
-<div class="eco">
-<div class="eco-icon">🎫</div>
-<h3>Registration Pass</h3>
-<p>Digital registration component.</p>
-</div>
-
-<div class="eco">
-<div class="eco-icon">💎</div>
-<h3>Box NFT</h3>
-<p>Digital asset component.</p>
-</div>
-
-<div class="eco">
-<div class="eco-icon">🏆</div>
-<h3>Rank & Reward</h3>
-<p>Explore the rank structure.</p>
-</div>
-
-<div class="eco">
-<div class="eco-icon">♻️</div>
-<h3>Recycle</h3>
-<p>Part of the matrix flow.</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ROADMAP -->
-
-<section>
-
-<div class="container">
-
-<div class="section-head">
-
-<div class="eyebrow">VISION</div>
-
-<h2>
-B-TITAN <span>ROADMAP</span>
-</h2>
-
-</div>
-
-
-<div class="roadmap">
-
-<div class="road">
-<span>PHASE 01</span>
-<h3>Foundation</h3>
-<p>Technology, smart-contract and ecosystem foundation.</p>
-</div>
-
-<div class="road">
-<span>PHASE 02</span>
-<h3>Community</h3>
-<p>Education, community development and awareness.</p>
-</div>
-
-<div class="road">
-<span>PHASE 03</span>
-<h3>Expansion</h3>
-<p>Digital ecosystem growth and development.</p>
-</div>
-
-<div class="road">
-<span>PHASE 04</span>
-<h3>Future</h3>
-<p>Long-term ecosystem development.</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- CTA -->
-
-<section id="start" class="cta">
-
-<div class="container">
-
-<div class="eyebrow">START YOUR JOURNEY</div>
-
-<h2>
-WELCOME TO <span>B-TITAN</span>
-</h2>
-
-<p>
-Learn • Understand • Build • Grow
-</p>
-
-<div class="hero-buttons">
-
-<a
-href="https://btitan.net/register?id=125872"
-target="_blank"
-class="btn btn-gold">
-JOIN B-TITAN
-</a>
-
-<a
-href="https://beacons.ai/gsdigitalacademy"
-target="_blank"
-class="btn btn-outline">
-COMPLETE INFORMATION
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- NOTICE -->
-
-<section>
-
-<div class="container">
-
-<div class="notice">
-
-<strong>IMPORTANT NOTICE</strong>
-
-<br><br>
-
-B-TITAN is presented as a blockchain-based digital ecosystem.
-Blockchain and digital-asset participation involves risks,
-including the possible loss of funds.
-
-<br><br>
-
-Nothing on this website is financial, investment or
-guaranteed-profit advice. Users should independently
-understand the technology, smart contract, terms and risks
-before participating.
-
-<br><br>
-
-<b>Knowledge First • Decision Later</b>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- FOOTER -->
-
-<footer>
-
-<div class="container">
-
-<a href="#" class="brand">
-
-<div class="brand-mark">
-<span>B</span>
-</div>
-
-<div class="brand-name">
-B-<span>TITAN</span>
-</div>
-
-</a>
-
-<p>
-THE ULTIMATE BITCOIN RUSH
-</p>
-
-<p>
-© 2026 B-TITAN. All Rights Reserved.
-</p>
-
-</div>
-
-</footer>
-
-
-<script>
-
-function toggleMenu(){
-
-document
-.getElementById("navLinks")
-.classList
-.toggle("active");
-
-}
-
-document
-.querySelectorAll(".nav-links a")
-.forEach(function(link){
-
-link.addEventListener("click",function(){
-
-document
-.getElementById("navLinks")
-.classList
-.remove("active");
-
-});
-
-});
-
-</script>
-
-</body>
-</html>
+.level-price
