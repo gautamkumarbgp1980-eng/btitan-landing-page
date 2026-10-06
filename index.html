@@ -8,7 +8,7 @@
 <title>B-TITAN | GS DIGITAL ACADEMY</title>
 
 <meta name="description"
-content="B-TITAN Complete Information Hub by GS Digital Academy. Learn, Understand, Build and Grow.">
+content="B-TITAN Complete Information Hub by GS Digital Academy. Know, Understand, Decide and Grow.">
 
 <style>
 
@@ -25,36 +25,31 @@ html{
 }
 
 body{
-    font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
-
+    font-family:Arial,Helvetica,sans-serif;
     color:#ffffff;
-
     line-height:1.6;
 
     background:
     radial-gradient(
         circle at 10% 10%,
-        rgba(35,82,150,.45),
+        rgba(38,88,160,.50),
         transparent 30%
     ),
     radial-gradient(
         circle at 90% 20%,
-        rgba(232,195,90,.12),
+        rgba(240,201,87,.13),
         transparent 28%
     ),
     radial-gradient(
         circle at 50% 100%,
-        rgba(17,55,110,.55),
-        transparent 40%
+        rgba(18,65,125,.55),
+        transparent 42%
     ),
     linear-gradient(
         135deg,
-        #07152e 0%,
-        #0b2144 45%,
-        #061225 100%
+        #07172f 0%,
+        #0b2852 48%,
+        #061326 100%
     );
 
     background-attachment:fixed;
@@ -65,28 +60,28 @@ body::before{
     position:fixed;
     inset:0;
     pointer-events:none;
-    opacity:.12;
+    z-index:-1;
+    opacity:.10;
 
     background-image:
     linear-gradient(
-        rgba(255,255,255,.08) 1px,
+        rgba(255,255,255,.10) 1px,
         transparent 1px
     ),
     linear-gradient(
         90deg,
-        rgba(255,255,255,.08) 1px,
+        rgba(255,255,255,.10) 1px,
         transparent 1px
     );
 
-    background-size:60px 60px;
+    background-size:65px 65px;
+
     mask-image:
     linear-gradient(
         to bottom,
         black,
         transparent 85%
     );
-
-    z-index:-1;
 }
 
 .container{
@@ -98,12 +93,12 @@ body::before{
     color:#f0c957;
 }
 
-
-/* ================= SECTIONS ================= */
-
 section{
     padding:90px 0;
 }
+
+
+/* ================= SECTION TITLE ================= */
 
 .section-title{
     text-align:center;
@@ -138,7 +133,7 @@ section{
     z-index:1000;
 
     background:
-    rgba(5,18,40,.90);
+    rgba(5,20,43,.91);
 
     backdrop-filter:blur(18px);
 
@@ -147,7 +142,8 @@ section{
     rgba(240,201,87,.25);
 
     box-shadow:
-    0 8px 35px rgba(0,0,0,.25);
+    0 8px 35px
+    rgba(0,0,0,.25);
 }
 
 .nav-inner{
@@ -166,7 +162,7 @@ section{
     gap:15px;
 
     text-decoration:none;
-    color:white;
+    color:#fff;
 }
 
 .brand img{
@@ -256,11 +252,11 @@ section{
 
     position:absolute;
 
-    width:500px;
-    height:500px;
+    width:520px;
+    height:520px;
 
-    right:-220px;
-    top:50px;
+    right:-240px;
+    top:40px;
 
     border-radius:50%;
 
@@ -368,8 +364,7 @@ section{
 }
 
 .btn:hover{
-    transform:
-    translateY(-3px);
+    transform:translateY(-3px);
 
     box-shadow:
     0 12px 30px
@@ -420,8 +415,8 @@ section{
     background:
     linear-gradient(
         145deg,
-        rgba(35,73,130,.48),
-        rgba(7,21,45,.72)
+        rgba(35,78,140,.55),
+        rgba(7,22,47,.75)
     );
 
     backdrop-filter:blur(15px);
@@ -477,8 +472,7 @@ section{
     2px solid
     rgba(240,201,87,.85);
 
-    background:
-    #06152f;
+    background:#06152f;
 
     padding:6px;
 
@@ -511,9 +505,9 @@ section{
     display:grid;
 
     grid-template-columns:
-    repeat(3,1fr);
+    repeat(4,1fr);
 
-    gap:11px;
+    gap:10px;
 
     margin-top:30px;
 }
@@ -521,7 +515,7 @@ section{
 .stat{
     text-align:center;
 
-    padding:17px 8px;
+    padding:15px 5px;
 
     border:
     1px solid
@@ -538,15 +532,15 @@ section{
 
     color:#f0c957;
 
-    font-size:23px;
+    font-size:19px;
 }
 
 .stat span{
     color:#8f9db2;
 
-    font-size:10px;
+    font-size:9px;
 
-    letter-spacing:1px;
+    letter-spacing:.5px;
 }
 
 
@@ -595,7 +589,8 @@ section{
     3px solid
     #f0c957;
 
-    border-radius:0 14px 14px 0;
+    border-radius:
+    0 14px 14px 0;
 
     background:
     rgba(240,201,87,.055);
@@ -1004,7 +999,7 @@ footer p{
     .brand-text small{
         font-size:8px;
 
-        letter-spacing:1.6px;
+        letter-spacing:1.5px;
 
         margin-top:5px;
     }
@@ -1049,6 +1044,11 @@ footer p{
 
     .hero-card h3{
         font-size:23px;
+    }
+
+    .stats{
+        grid-template-columns:
+        repeat(2,1fr);
     }
 
     .features-grid,
@@ -1147,7 +1147,7 @@ alt="B-TITAN Logo">
 GS DIGITAL ACADEMY
 
 <small>
-LEARN • BUILD • GROW
+KNOW • UNDERSTAND • DECIDE • GROW
 </small>
 
 </div>
@@ -1157,13 +1157,21 @@ LEARN • BUILD • GROW
 
 <div class="nav-links">
 
-<a href="#about">About</a>
+<a href="#about">
+About
+</a>
 
-<a href="#resources">Resources</a>
+<a href="#resources">
+Resources
+</a>
 
-<a href="#steps">How It Works</a>
+<a href="#steps">
+How It Works
+</a>
 
-<a href="#join">Join</a>
+<a href="#join">
+Join
+</a>
 
 </div>
 
@@ -1191,12 +1199,12 @@ B-TITAN • COMPLETE INFORMATION HUB
 
 <h1>
 
-Learn.<br>
+Know.<br>
 
 Understand.<br>
 
 <span>
-Build & Grow.
+Decide & Grow.
 </span>
 
 </h1>
@@ -1264,16 +1272,12 @@ class="hero-logo">
 
 
 <h3>
-
 B-TITAN
-
 </h3>
 
 
 <p class="sub">
-
 GS Digital Academy • Complete Information Hub
-
 </p>
 
 
@@ -1284,7 +1288,9 @@ GS Digital Academy • Complete Information Hub
 
 <strong>01</strong>
 
-<span>LEARN</span>
+<span>
+KNOW
+</span>
 
 </div>
 
@@ -1293,7 +1299,9 @@ GS Digital Academy • Complete Information Hub
 
 <strong>02</strong>
 
-<span>UNDERSTAND</span>
+<span>
+UNDERSTAND
+</span>
 
 </div>
 
@@ -1302,7 +1310,20 @@ GS Digital Academy • Complete Information Hub
 
 <strong>03</strong>
 
-<span>GROW</span>
+<span>
+DECIDE
+</span>
+
+</div>
+
+
+<div class="stat">
+
+<strong>04</strong>
+
+<span>
+GROW
+</span>
 
 </div>
 
@@ -1390,7 +1411,7 @@ ID activation process step by step.
 
 <div class="quote">
 
-“Learn • Understand • Build • Grow”
+“KNOW • UNDERSTAND • DECIDE • GROW”
 
 </div>
 
@@ -1400,6 +1421,7 @@ ID activation process step by step.
 
 <div class="hero-card">
 
+
 <h3 class="gold">
 
 B-TITAN INFORMATION HUB
@@ -1408,15 +1430,27 @@ B-TITAN INFORMATION HUB
 
 <br>
 
-<p>✓ Complete Plan Information</p>
 
-<p>✓ Blockchain ID Guide</p>
+<p>
+✓ Complete Plan Information
+</p>
 
-<p>✓ Activation Information</p>
+<p>
+✓ Blockchain ID Guide
+</p>
 
-<p>✓ Complete Plan Video</p>
+<p>
+✓ Activation Information
+</p>
 
-<p>✓ Direct Joining Access</p>
+<p>
+✓ Complete Plan Video
+</p>
+
+<p>
+✓ Direct Joining Access
+</p>
+
 
 </div>
 
@@ -1461,51 +1495,70 @@ in One Place
 
 <div class="feature">
 
-<div class="icon">📚</div>
+<div class="icon">
+📚
+</div>
 
-<h3>Learn</h3>
+<h3>
+Knowledge
+</h3>
 
 <p>
-Access educational information and understand the ecosystem.
+Explore the available information and understand the ecosystem.
 </p>
 
 </div>
 
 
+
 <div class="feature">
 
-<div class="icon">🔗</div>
+<div class="icon">
+🔗
+</div>
 
-<h3>Blockchain</h3>
+<h3>
+Blockchain
+</h3>
 
 <p>
-Learn how blockchain-based ID activation works.
+Understand blockchain-based ID activation and related processes.
 </p>
 
 </div>
 
 
+
 <div class="feature">
 
-<div class="icon">🎥</div>
+<div class="icon">
+🎥
+</div>
 
-<h3>Video Training</h3>
+<h3>
+Video Training
+</h3>
 
 <p>
-Watch simple video explanations and tutorials.
+Watch simple explanations and educational tutorials.
 </p>
 
 </div>
 
 
+
 <div class="feature">
 
-<div class="icon">🚀</div>
+<div class="icon">
+🧭
+</div>
 
-<h3>Build & Grow</h3>
+<h3>
+Make Your Decision
+</h3>
 
 <p>
-Use the available resources to build your digital knowledge.
+Review the information carefully before making your own decision.
 </p>
 
 </div>
@@ -1637,7 +1690,7 @@ WATCH VIDEO
 
 
 
-<!-- COMPLETE VIDEO -->
+<!-- COMPLETE PLAN VIDEO -->
 
 <div class="resource">
 
@@ -1827,7 +1880,7 @@ Works
 
 <p>
 
-Start with knowledge. Understand before making a decision.
+A simple approach — know the information before making a decision.
 
 </p>
 
@@ -1845,14 +1898,15 @@ Start with knowledge. Understand before making a decision.
 </div>
 
 <h3>
-Learn
+Know
 </h3>
 
 <p>
-Read the plan and explore the available information.
+Explore the plan and available information.
 </p>
 
 </div>
+
 
 
 <div class="step">
@@ -1872,6 +1926,7 @@ Watch the videos and understand the process.
 </div>
 
 
+
 <div class="step">
 
 <div class="step-number">
@@ -1879,14 +1934,15 @@ Watch the videos and understand the process.
 </div>
 
 <h3>
-Activate
+Decide
 </h3>
 
 <p>
-Follow the activation guide when ready.
+Review everything and make your own decision.
 </p>
 
 </div>
+
 
 
 <div class="step">
@@ -1896,11 +1952,11 @@ Follow the activation guide when ready.
 </div>
 
 <h3>
-Build & Grow
+Grow
 </h3>
 
 <p>
-Continue learning and building your digital knowledge.
+Continue learning and developing your digital knowledge.
 </p>
 
 </div>
@@ -1939,8 +1995,8 @@ Explore?
 
 <p>
 
-Start by understanding the information, watching the
-guides and exploring the available resources.
+Know the information, understand the process and explore
+the available resources before making your own decision.
 
 </p>
 
