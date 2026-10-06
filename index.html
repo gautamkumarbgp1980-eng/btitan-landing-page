@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>GS Digital Academy | B-TITAN Information Hub</title>
+<title>B-TITAN | GS Digital Academy</title>
 
 <meta name="description"
-content="GS Digital Academy - B-TITAN Complete Information Hub. Learn, Understand, Build and Grow.">
+content="B-TITAN Complete Information Hub by GS Digital Academy. Learn, Understand, Build and Grow.">
 
 <style>
 *{
@@ -27,8 +27,6 @@ body{
     line-height:1.6;
 }
 
-/* ================= GLOBAL ================= */
-
 .container{
     width:min(1120px,92%);
     margin:auto;
@@ -39,7 +37,7 @@ body{
 }
 
 section{
-    padding:80px 0;
+    padding:75px 0;
 }
 
 .section-title{
@@ -49,10 +47,9 @@ section{
 
 .section-title span{
     color:#e8c35a;
-    font-size:13px;
+    font-size:12px;
     font-weight:bold;
     letter-spacing:3px;
-    text-transform:uppercase;
 }
 
 .section-title h2{
@@ -66,15 +63,15 @@ section{
     margin:12px auto 0;
 }
 
-/* ================= NAVBAR ================= */
+/* NAVBAR */
 
 .navbar{
     position:sticky;
     top:0;
     z-index:1000;
-    background:rgba(5,5,5,.92);
+    background:rgba(5,5,5,.96);
     backdrop-filter:blur(15px);
-    border-bottom:1px solid rgba(232,195,90,.18);
+    border-bottom:1px solid rgba(232,195,90,.2);
 }
 
 .nav-inner{
@@ -82,7 +79,6 @@ section{
     display:flex;
     align-items:center;
     justify-content:space-between;
-    gap:20px;
 }
 
 .brand{
@@ -91,33 +87,34 @@ section{
     gap:12px;
     text-decoration:none;
     color:#fff;
-    font-weight:800;
+    font-weight:bold;
 }
 
 .brand img{
-    width:45px;
-    height:45px;
+    width:46px;
+    height:46px;
     border-radius:50%;
-    object-fit:cover;
+    object-fit:contain;
     border:2px solid #e8c35a;
+    background:#000;
 }
 
 .brand-text{
-    font-size:15px;
+    font-size:14px;
     line-height:1.1;
 }
 
 .brand-text small{
     display:block;
     color:#e8c35a;
-    font-size:9px;
+    font-size:8px;
     letter-spacing:1.5px;
-    margin-top:3px;
+    margin-top:4px;
 }
 
 .nav-links{
     display:flex;
-    gap:25px;
+    gap:24px;
 }
 
 .nav-links a{
@@ -131,22 +128,20 @@ section{
     color:#e8c35a;
 }
 
-/* ================= HERO ================= */
+/* HERO */
 
 .hero{
     min-height:calc(100vh - 72px);
     display:flex;
     align-items:center;
-    position:relative;
-    overflow:hidden;
     background:
-    radial-gradient(circle at 15% 30%,rgba(232,195,90,.14),transparent 28%),
+    radial-gradient(circle at 15% 30%,rgba(232,195,90,.15),transparent 28%),
     radial-gradient(circle at 85% 70%,rgba(232,195,90,.08),transparent 30%);
 }
 
 .hero-grid{
     display:grid;
-    grid-template-columns:1.15fr .85fr;
+    grid-template-columns:1.1fr .9fr;
     align-items:center;
     gap:55px;
 }
@@ -194,7 +189,7 @@ section{
     padding:0 24px;
     border-radius:10px;
     text-decoration:none;
-    font-size:14px;
+    font-size:13px;
     font-weight:800;
     transition:.25s;
 }
@@ -218,34 +213,44 @@ section{
 /* HERO CARD */
 
 .hero-card{
-    position:relative;
     padding:35px;
     border:1px solid rgba(232,195,90,.3);
     border-radius:25px;
-    background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.025));
+    background:linear-gradient(
+        145deg,
+        rgba(255,255,255,.08),
+        rgba(255,255,255,.025)
+    );
     box-shadow:0 30px 80px rgba(0,0,0,.5);
 }
 
+.logo-row{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:18px;
+    margin-bottom:22px;
+}
+
 .hero-logo{
-    width:120px;
-    height:120px;
-    display:block;
-    object-fit:cover;
-    border-radius:50%;
-    margin:0 auto 22px;
-    border:3px solid #e8c35a;
-    box-shadow:0 0 40px rgba(232,195,90,.18);
+    width:105px;
+    height:105px;
+    object-fit:contain;
+    border-radius:20px;
+    border:2px solid #e8c35a;
+    background:#000;
+    padding:5px;
 }
 
 .hero-card h3{
     text-align:center;
-    font-size:24px;
+    font-size:25px;
 }
 
-.hero-card p{
+.hero-card .sub{
     text-align:center;
     color:#999;
-    margin-top:8px;
+    margin-top:7px;
 }
 
 .stats{
@@ -273,7 +278,7 @@ section{
     font-size:10px;
 }
 
-/* ================= ABOUT ================= */
+/* ABOUT */
 
 .about{
     background:#090909;
@@ -304,7 +309,7 @@ section{
     font-weight:bold;
 }
 
-/* ================= FEATURES ================= */
+/* FEATURES */
 
 .features-grid{
     display:grid;
@@ -340,7 +345,7 @@ section{
     font-size:13px;
 }
 
-/* ================= RESOURCES ================= */
+/* RESOURCES */
 
 .resources{
     background:#090909;
@@ -361,6 +366,12 @@ section{
     border:1px solid #222;
     border-radius:18px;
     background:linear-gradient(145deg,#111,#080808);
+    transition:.25s;
+}
+
+.resource:hover{
+    border-color:rgba(232,195,90,.45);
+    transform:translateY(-2px);
 }
 
 .resource-left{
@@ -378,6 +389,7 @@ section{
     border-radius:14px;
     background:rgba(232,195,90,.1);
     font-size:25px;
+    flex-shrink:0;
 }
 
 .resource h3{
@@ -396,7 +408,7 @@ section{
     font-size:12px;
 }
 
-/* ================= STEPS ================= */
+/* STEPS */
 
 .steps-grid{
     display:grid;
@@ -405,7 +417,6 @@ section{
 }
 
 .step{
-    position:relative;
     text-align:center;
     padding:28px 18px;
 }
@@ -432,7 +443,7 @@ section{
     font-size:13px;
 }
 
-/* ================= CTA ================= */
+/* CTA */
 
 .cta{
     padding:90px 0;
@@ -459,7 +470,7 @@ section{
     margin:0 auto 25px;
 }
 
-/* ================= FOOTER ================= */
+/* FOOTER */
 
 footer{
     border-top:1px solid #1c1c1c;
@@ -484,7 +495,7 @@ footer p{
     font-size:12px;
 }
 
-/* ================= MOBILE ================= */
+/* MOBILE */
 
 @media(max-width:850px){
 
@@ -572,23 +583,36 @@ footer p{
         flex-direction:column;
         text-align:center;
     }
+
+    .hero-logo{
+        width:85px;
+        height:85px;
+    }
+
+    .logo-row{
+        gap:10px;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<!-- ================= NAVBAR ================= -->
+<!-- NAVBAR -->
 
 <nav class="navbar">
 <div class="container nav-inner">
 
 <a href="#" class="brand">
-<img src="logo.png" alt="GS Digital Academy">
+
+<img src="gsda-logo.png"
+alt="GS Digital Academy">
+
 <div class="brand-text">
 GS DIGITAL ACADEMY
 <small>LEARN • BUILD • GROW</small>
 </div>
+
 </a>
 
 <div class="nav-links">
@@ -602,7 +626,7 @@ GS DIGITAL ACADEMY
 </nav>
 
 
-<!-- ================= HERO ================= -->
+<!-- HERO -->
 
 <header class="hero">
 
@@ -628,12 +652,14 @@ and blockchain education.
 
 <div class="hero-buttons">
 
-<a href="#resources" class="btn btn-gold">
+<a href="#resources"
+class="btn btn-gold">
 EXPLORE RESOURCES
 </a>
 
 <a href="https://btitan.net/register?id=10203"
 target="_blank"
+rel="noopener noreferrer"
 class="btn btn-outline">
 JOIN B-TITAN
 </a>
@@ -643,16 +669,28 @@ JOIN B-TITAN
 </div>
 
 
+<!-- LOGOS -->
+
 <div class="hero-card">
 
-<img src="logo.png"
+<div class="logo-row">
+
+<img src="btitan-logo.png"
+alt="B-TITAN Logo"
+class="hero-logo">
+
+<img src="gsda-logo.png"
 alt="GS Digital Academy Logo"
 class="hero-logo">
 
-<h3>GS DIGITAL ACADEMY</h3>
+</div>
 
-<p>
-B-TITAN Complete Information Hub
+<h3>
+B-TITAN
+</h3>
+
+<p class="sub">
+GS Digital Academy • Complete Information Hub
 </p>
 
 <div class="stats">
@@ -681,7 +719,7 @@ B-TITAN Complete Information Hub
 </header>
 
 
-<!-- ================= ABOUT ================= -->
+<!-- ABOUT -->
 
 <section id="about" class="about">
 
@@ -692,7 +730,8 @@ B-TITAN Complete Information Hub
 <span>ABOUT THE HUB</span>
 
 <h2>
-One Place. <span class="gold">Complete Information.</span>
+One Place.
+<span class="gold">Complete Information.</span>
 </h2>
 
 <p>
@@ -738,25 +777,11 @@ B-TITAN INFORMATION HUB
 
 <br>
 
-<p>
-✓ Complete Plan Information
-</p>
-
-<p>
-✓ Blockchain ID Guide
-</p>
-
-<p>
-✓ Activation Information
-</p>
-
-<p>
-✓ Complete Plan Video
-</p>
-
-<p>
-✓ Direct Joining Access
-</p>
+<p>✓ Complete Plan Information</p>
+<p>✓ Blockchain ID Guide</p>
+<p>✓ Activation Information</p>
+<p>✓ Complete Plan Video</p>
+<p>✓ Direct Joining Access</p>
 
 </div>
 
@@ -767,7 +792,7 @@ B-TITAN INFORMATION HUB
 </section>
 
 
-<!-- ================= FEATURES ================= -->
+<!-- FEATURES -->
 
 <section>
 
@@ -814,7 +839,7 @@ Watch simple video explanations and tutorials.
 <div class="icon">🚀</div>
 <h3>Build & Grow</h3>
 <p>
-Use the available resources to build your knowledge.
+Use the available resources to build your digital knowledge.
 </p>
 </div>
 
@@ -825,7 +850,7 @@ Use the available resources to build your knowledge.
 </section>
 
 
-<!-- ================= RESOURCES ================= -->
+<!-- RESOURCES -->
 
 <section id="resources" class="resources">
 
@@ -849,15 +874,13 @@ Direct access to the most important B-TITAN resources.
 <div class="resources-grid">
 
 
-<!-- PDF -->
+<!-- PLAN PDF -->
 
 <div class="resource">
 
 <div class="resource-left">
 
-<div class="resource-icon">
-📄
-</div>
+<div class="resource-icon">📄</div>
 
 <div>
 
@@ -874,6 +897,7 @@ Read the complete plan information.
 <a
 href="https://docs.google.com/presentation/d/1ZhQFHnTPKTx4Lqs4LjZRFQjwZjct5FGL/export/pdf"
 target="_blank"
+rel="noopener noreferrer"
 class="btn btn-gold">
 OPEN PDF
 </a>
@@ -881,15 +905,13 @@ OPEN PDF
 </div>
 
 
-<!-- BLOCKCHAIN VIDEO -->
+<!-- BLOCKCHAIN ID -->
 
 <div class="resource">
 
 <div class="resource-left">
 
-<div class="resource-icon">
-🔗
-</div>
+<div class="resource-icon">🔗</div>
 
 <div>
 
@@ -906,6 +928,7 @@ Watch the ID process video.
 <a
 href="https://youtube.com/shorts/-fIVG9pZtEo?si=nclwN9l8L6Fo1tLa"
 target="_blank"
+rel="noopener noreferrer"
 class="btn btn-gold">
 WATCH VIDEO
 </a>
@@ -913,15 +936,13 @@ WATCH VIDEO
 </div>
 
 
-<!-- COMPLETE VIDEO -->
+<!-- COMPLETE PLAN VIDEO -->
 
 <div class="resource">
 
 <div class="resource-left">
 
-<div class="resource-icon">
-🎬
-</div>
+<div class="resource-icon">🎬</div>
 
 <div>
 
@@ -938,6 +959,7 @@ Understand the complete plan.
 <a
 href="https://youtu.be/jg6a-Jo_acE"
 target="_blank"
+rel="noopener noreferrer"
 class="btn btn-gold">
 WATCH
 </a>
@@ -951,9 +973,7 @@ WATCH
 
 <div class="resource-left">
 
-<div class="resource-icon">
-⚡
-</div>
+<div class="resource-icon">⚡</div>
 
 <div>
 
@@ -970,6 +990,7 @@ Step-by-step activation information.
 <a
 href="https://tinyurl.com/4u6jnrrw"
 target="_blank"
+rel="noopener noreferrer"
 class="btn btn-gold">
 ACTIVATE
 </a>
@@ -977,15 +998,13 @@ ACTIVATE
 </div>
 
 
-<!-- GSDA HUB -->
+<!-- GSDA -->
 
 <div class="resource">
 
 <div class="resource-left">
 
-<div class="resource-icon">
-🌐
-</div>
+<div class="resource-icon">🌐</div>
 
 <div>
 
@@ -1002,6 +1021,7 @@ Open the complete GSDA resource hub.
 <a
 href="https://beacons.ai/gsdigitalacademy"
 target="_blank"
+rel="noopener noreferrer"
 class="btn btn-gold">
 OPEN HUB
 </a>
@@ -1009,15 +1029,13 @@ OPEN HUB
 </div>
 
 
-<!-- JOINING -->
+<!-- JOIN -->
 
 <div class="resource">
 
 <div class="resource-left">
 
-<div class="resource-icon">
-🚀
-</div>
+<div class="resource-icon">🚀</div>
 
 <div>
 
@@ -1034,6 +1052,7 @@ Registration with Referral ID 10203.
 <a
 href="https://btitan.net/register?id=10203"
 target="_blank"
+rel="noopener noreferrer"
 class="btn btn-gold">
 JOIN NOW
 </a>
@@ -1047,7 +1066,7 @@ JOIN NOW
 </section>
 
 
-<!-- ================= HOW IT WORKS ================= -->
+<!-- HOW IT WORKS -->
 
 <section id="steps">
 
@@ -1128,7 +1147,7 @@ Continue learning and building your digital knowledge.
 </section>
 
 
-<!-- ================= CTA ================= -->
+<!-- CTA -->
 
 <section id="join" class="cta">
 
@@ -1151,6 +1170,7 @@ style="justify-content:center;">
 <a
 href="https://btitan.net/register?id=10203"
 target="_blank"
+rel="noopener noreferrer"
 class="btn btn-gold">
 🚀 JOIN B-TITAN
 </a>
@@ -1170,7 +1190,7 @@ VIEW RESOURCES
 </section>
 
 
-<!-- ================= FOOTER ================= -->
+<!-- FOOTER -->
 
 <footer>
 
