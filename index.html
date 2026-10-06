@@ -1,72 +1,654 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>B-TITAN</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      margin: 0;
-      background: #050505;
-      color: white;
-      font-family: Arial, sans-serif;
-      text-align: center;
-    }
+<title>B-TITAN | The Ultimate Bitcoin Rush</title>
 
-    .page {
-      padding: 100px 20px;
-    }
+<style>
 
-    .logo {
-      font-size: 55px;
-      font-weight: bold;
-      color: #d4af37;
-      letter-spacing: 4px;
-    }
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
 
-    h1 {
-      font-size: 45px;
-      margin: 25px 0 10px;
-    }
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:#050505;
+color:white;
+}
 
-    p {
-      color: #aaa;
-      font-size: 18px;
-    }
+a{
+text-decoration:none;
+}
 
-    .btn {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 14px 30px;
-      background: #d4af37;
-      color: #000;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-  </style>
+.container{
+width:92%;
+max-width:1150px;
+margin:auto;
+}
+
+/* HEADER */
+
+header{
+position:sticky;
+top:0;
+z-index:100;
+background:rgba(5,5,5,.96);
+border-bottom:1px solid #29210c;
+}
+
+.nav{
+height:70px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+.logo{
+font-size:25px;
+font-weight:900;
+letter-spacing:2px;
+color:white;
+}
+
+.logo span{
+color:#d4af37;
+}
+
+.nav a{
+color:#d4af37;
+border:1px solid #d4af37;
+padding:9px 18px;
+border-radius:25px;
+font-size:13px;
+}
+
+/* HERO */
+
+.hero{
+padding:100px 20px;
+text-align:center;
+background:
+radial-gradient(circle at center,#332b0d 0%,#050505 55%);
+}
+
+.badge{
+display:inline-block;
+border:1px solid #80651d;
+border-radius:30px;
+padding:8px 18px;
+color:#e8cb62;
+font-size:12px;
+letter-spacing:2px;
+}
+
+.hero h1{
+font-size:clamp(50px,10vw,100px);
+margin-top:20px;
+letter-spacing:4px;
+}
+
+.hero h1 span{
+color:#d4af37;
+}
+
+.hero h2{
+font-size:22px;
+margin-top:15px;
+letter-spacing:2px;
+}
+
+.hero p{
+max-width:650px;
+margin:20px auto;
+color:#999;
+line-height:1.7;
+}
+
+.buttons{
+margin-top:30px;
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:14px 28px;
+border-radius:30px;
+font-weight:bold;
+font-size:13px;
+}
+
+.gold{
+background:#d4af37;
+color:#050505;
+}
+
+.outline{
+border:1px solid #d4af37;
+color:#d4af37;
+}
+
+/* SECTIONS */
+
+section{
+padding:80px 0;
+}
+
+.title{
+text-align:center;
+margin-bottom:45px;
+}
+
+.title small{
+color:#d4af37;
+letter-spacing:3px;
+}
+
+.title h2{
+font-size:42px;
+margin-top:10px;
+}
+
+.title h2 span{
+color:#d4af37;
+}
+
+.title p{
+color:#888;
+margin-top:12px;
+}
+
+/* ABOUT */
+
+.about{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+}
+
+.box{
+background:#0d0d0d;
+border:1px solid #332b13;
+border-radius:18px;
+padding:30px;
+}
+
+.box h3{
+color:#e8cb62;
+font-size:24px;
+margin-bottom:15px;
+}
+
+.box p{
+color:#999;
+line-height:1.8;
+}
+
+/* FEATURES */
+
+.features{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+.feature{
+background:#0d0d0d;
+border:1px solid #332b13;
+border-radius:18px;
+padding:30px 20px;
+text-align:center;
+}
+
+.icon{
+font-size:35px;
+}
+
+.feature h3{
+color:#e8cb62;
+margin:15px 0 8px;
+}
+
+.feature p{
+color:#888;
+font-size:14px;
+line-height:1.6;
+}
+
+/* PLAN */
+
+.plan{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+.plan-card{
+background:#0d0d0d;
+border:1px solid #332b13;
+border-radius:18px;
+padding:30px 20px;
+text-align:center;
+}
+
+.plan-card h3{
+color:#e8cb62;
+margin:15px 0;
+}
+
+.plan-card p{
+color:#888;
+font-size:14px;
+min-height:50px;
+}
+
+.plan-btn{
+display:inline-block;
+margin-top:20px;
+padding:10px 20px;
+border:1px solid #d4af37;
+border-radius:25px;
+color:#d4af37;
+font-size:12px;
+}
+
+/* CTA */
+
+.cta{
+text-align:center;
+background:
+radial-gradient(circle,#30270b,#050505 65%);
+padding:100px 20px;
+}
+
+.cta h2{
+font-size:48px;
+}
+
+.cta h2 span{
+color:#d4af37;
+}
+
+.cta p{
+color:#999;
+margin:15px 0;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:35px 20px;
+border-top:1px solid #222;
+color:#666;
+font-size:12px;
+}
+
+footer strong{
+color:#d4af37;
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+.about{
+grid-template-columns:1fr;
+}
+
+.features,
+.plan{
+grid-template-columns:1fr;
+}
+
+.hero{
+padding:75px 15px;
+}
+
+.hero h1{
+font-size:55px;
+}
+
+.title h2{
+font-size:32px;
+}
+
+.cta h2{
+font-size:38px;
+}
+
+}
+
+</style>
 </head>
 
 <body>
 
-  <div class="page">
+<header>
 
-    <div class="logo">B-TITAN</div>
+<div class="container nav">
 
-    <h1>THE ULTIMATE BITCOIN RUSH</h1>
+<div class="logo">
+B-<span>TITAN</span>
+</div>
 
-    <p>
-      Decentralized Matrix Ecosystem
-    </p>
+<a href="https://btitan.net/register?id=125872"
+target="_blank">
+JOIN NOW
+</a>
 
-    <a class="btn"
-       href="https://btitan.net/register?id=125872"
-       target="_blank">
-      JOIN B-TITAN
-    </a>
+</div>
 
-  </div>
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="container">
+
+<div class="badge">
+DECENTRALIZED MATRIX ECOSYSTEM
+</div>
+
+<h1>
+B-<span>TITAN</span>
+</h1>
+
+<h2>
+THE ULTIMATE BITCOIN RUSH
+</h2>
+
+<p>
+Explore a blockchain-based digital ecosystem
+built around smart-contract technology,
+matrix structure and community participation.
+</p>
+
+<div class="buttons">
+
+<a class="btn gold"
+href="https://btitan.net/register?id=125872"
+target="_blank">
+JOIN B-TITAN
+</a>
+
+<a class="btn outline"
+href="https://beacons.ai/gsdigitalacademy"
+target="_blank">
+COMPLETE INFORMATION
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section>
+
+<div class="container">
+
+<div class="title">
+
+<small>ABOUT B-TITAN</small>
+
+<h2>
+UNDERSTAND <span>B-TITAN</span>
+</h2>
+
+<p>
+Knowledge First • Decision Later
+</p>
+
+</div>
+
+
+<div class="about">
+
+<div class="box">
+
+<h3>What is B-TITAN?</h3>
+
+<p>
+B-TITAN is presented as a blockchain-based
+digital ecosystem built around smart-contract
+technology and a structured matrix model.
+</p>
+
+</div>
+
+
+<div class="box">
+
+<h3>Our Approach</h3>
+
+<p>
+Learn the system, understand the technology,
+study the plan and make your own informed
+decision before participating.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FEATURES -->
+
+<section>
+
+<div class="container">
+
+<div class="title">
+
+<small>ECOSYSTEM</small>
+
+<h2>
+WHY <span>B-TITAN?</span>
+</h2>
+
+</div>
+
+
+<div class="features">
+
+<div class="feature">
+
+<div class="icon">⛓️</div>
+
+<h3>Blockchain</h3>
+
+<p>
+Built around blockchain technology
+and digital infrastructure.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="icon">🔐</div>
+
+<h3>Smart Contract</h3>
+
+<p>
+Programmable smart-contract technology
+supports the ecosystem structure.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="icon">🌐</div>
+
+<h3>Community</h3>
+
+<p>
+Learn and grow through an educational
+and community-focused ecosystem.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PLAN -->
+
+<section>
+
+<div class="container">
+
+<div class="title">
+
+<small>COMPLETE INFORMATION</small>
+
+<h2>
+B-TITAN <span>PLAN</span>
+</h2>
+
+<p>
+Understand the complete system before participating.
+</p>
+
+</div>
+
+
+<div class="plan">
+
+
+<div class="plan-card">
+
+<div class="icon">📄</div>
+
+<h3>Complete Plan PDF</h3>
+
+<p>
+Read the complete B-TITAN plan.
+</p>
+
+<a class="plan-btn"
+href="https://tinyurl.com/26m4b8cy"
+target="_blank">
+VIEW PLAN
+</a>
+
+</div>
+
+
+<div class="plan-card">
+
+<div class="icon">▶️</div>
+
+<h3>Complete Plan Video</h3>
+
+<p>
+Watch the complete plan explanation.
+</p>
+
+<a class="plan-btn"
+href="https://youtu.be/jg6a-Jo_acE"
+target="_blank">
+WATCH VIDEO
+</a>
+
+</div>
+
+
+<div class="plan-card">
+
+<div class="icon">🆔</div>
+
+<h3>Activate ID</h3>
+
+<p>
+Learn the ID activation process.
+</p>
+
+<a class="plan-btn"
+href="https://tinyurl.com/4u6jnrrw"
+target="_blank">
+ACTIVATION GUIDE
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta">
+
+<div class="container">
+
+<h2>
+READY FOR <span>B-TITAN?</span>
+</h2>
+
+<p>
+Learn • Understand • Build • Grow
+</p>
+
+<div class="buttons">
+
+<a class="btn gold"
+href="https://btitan.net/register?id=125872"
+target="_blank">
+JOIN B-TITAN
+</a>
+
+<a class="btn outline"
+href="https://beacons.ai/gsdigitalacademy"
+target="_blank">
+OPEN INFORMATION HUB
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<p>
+<strong>B-TITAN</strong> — THE ULTIMATE BITCOIN RUSH
+</p>
+
+<p>
+© 2026 B-TITAN. All Rights Reserved.
+</p>
+
+</footer>
+
 
 </body>
 </html>
