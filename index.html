@@ -131,10 +131,13 @@ header{
     min-height:calc(100vh - 78px);
 
     margin:auto;
-    padding:55px 25px 35px;
+
+    /* COMPACT SPACING */
+    padding:25px 25px 20px;
 
     display:grid;
     grid-template-columns:1fr 1fr;
+
     align-items:center;
 }
 
@@ -144,9 +147,7 @@ header{
 ========================= */
 
 .hero-content{
-    padding-right:20px;
-    position:relative;
-    z-index:2;
+    padding-right:10px;
 }
 
 .top-line{
@@ -154,7 +155,9 @@ header{
     font-size:13px;
     font-weight:bold;
     letter-spacing:3px;
-    margin-bottom:22px;
+
+    /* SPACE REDUCED */
+    margin-bottom:14px;
 }
 
 .hero h1{
@@ -162,6 +165,7 @@ header{
     line-height:.96;
     font-weight:900;
     letter-spacing:-3px;
+    margin:0;
 }
 
 .hero h1 span{
@@ -173,7 +177,9 @@ header{
     height:5px;
     background:#ffe000;
     border-radius:20px;
-    margin:27px 0;
+
+    /* SPACE REDUCED */
+    margin:18px 0;
 }
 
 .academy-name{
@@ -181,7 +187,9 @@ header{
     font-size:13px;
     font-weight:bold;
     letter-spacing:4px;
-    margin-bottom:18px;
+
+    /* SPACE REDUCED */
+    margin-bottom:12px;
 }
 
 .description{
@@ -189,7 +197,9 @@ header{
     color:#edf8ff;
     font-size:15px;
     line-height:1.8;
-    margin-bottom:28px;
+
+    /* SPACE REDUCED */
+    margin-bottom:20px;
 }
 
 
@@ -243,48 +253,36 @@ header{
 
 
 /* =========================
-   GAUTAM PHOTO
-   ONLY PHOTO AREA
+   PROFILE PHOTO
 ========================= */
 
 .hero-photo{
-    height:100%;
-    min-height:520px;
-
     display:flex;
-    align-items:flex-end;
+    align-items:center;
     justify-content:center;
+    text-align:center;
 
     position:relative;
     overflow:hidden;
 
-    z-index:1;
+    /* PHOTO BACKGROUND */
+    background:#0088FE;
+
+    margin:0;
 }
 
 .hero-photo img{
     width:auto;
-
     max-width:100%;
-    max-height:610px;
 
-    height:auto;
+    /* PHOTO SIZE */
+    max-height:590px;
 
     object-fit:contain;
-    object-position:center bottom;
-
     display:block;
 
-    position:relative;
-    z-index:2;
-
     filter:
-        drop-shadow(0 25px 35px rgba(0,0,0,.30));
-
-    transition:transform .3s ease;
-}
-
-.hero-photo img:hover{
-    transform:scale(1.01);
+        drop-shadow(0 25px 35px rgba(0,0,0,.35));
 }
 
 
@@ -699,16 +697,23 @@ footer p{
     .hero-container{
         grid-template-columns:1fr;
         text-align:center;
-        padding-top:45px;
+
+        /* MOBILE SPACE REDUCED */
+        padding:25px 20px 15px;
     }
 
     .hero-content{
         padding-right:0;
     }
 
+    .top-line{
+        margin-bottom:12px;
+    }
+
     .description{
         margin-left:auto;
         margin-right:auto;
+        margin-bottom:20px;
     }
 
     .hero-buttons{
@@ -716,15 +721,12 @@ footer p{
     }
 
     .hero-photo{
-        min-height:auto;
-        height:auto;
-        margin-top:35px;
-
-        align-items:flex-end;
+        margin-top:15px;
+        background:#0088FE;
     }
 
     .hero-photo img{
-        max-height:530px;
+        max-height:500px;
         max-width:95%;
     }
 
@@ -765,6 +767,10 @@ footer p{
         font-size:7px;
     }
 
+    .hero-container{
+        padding:20px 15px 10px;
+    }
+
     .hero h1{
         font-size:44px;
         letter-spacing:-2px;
@@ -773,14 +779,24 @@ footer p{
     .top-line{
         font-size:10px;
         letter-spacing:2px;
+        margin-bottom:10px;
     }
 
     .academy-name{
         font-size:10px;
+        margin-bottom:9px;
+    }
+
+    .yellow-line{
+        margin:14px auto;
+    }
+
+    .description{
+        margin-bottom:18px;
     }
 
     .hero-photo{
-        margin-top:30px;
+        margin-top:10px;
     }
 
     .hero-photo img{
@@ -916,16 +932,13 @@ JOIN ZOOM
 
 
 
-<!-- =========================
-     GAUTAM PHOTO
-     RIGHT SIDE
-========================= -->
+<!-- YOUR PHOTO -->
 
 <div class="hero-photo">
 
 <img
-src="Gautam-2.png"
-alt="Mr Gautam Kumar Crypto Expert">
+src="Gautam.png"
+alt="Mr Gautam Kumar">
 
 </div>
 
@@ -938,7 +951,7 @@ alt="Mr Gautam Kumar Crypto Expert">
 
 <!-- ==================================================
      IMPORTANT LINKS
-================================================== -->
+========================================================= -->
 
 <section class="links-section" id="links">
 
