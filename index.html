@@ -4,961 +4,491 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>GS Digital Academy | B-TITAN</title>
+<title>GS Digital Academy | B-TITAN Information Hub</title>
 
 <meta name="description"
-content="GS Digital Academy - B-TITAN Information & Learning Hub">
+content="GS Digital Academy - Digital Knowledge, Blockchain & Web3 Information Hub">
 
 <style>
-
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 html{
-scroll-behavior:smooth;
+    scroll-behavior:smooth;
 }
 
 body{
-font-family:Arial,Helvetica,sans-serif;
-background:#06152b;
-color:#fff;
-line-height:1.6;
-overflow-x:hidden;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#03182d;
+    color:#fff;
+    line-height:1.6;
 }
 
-.container{
-width:min(1180px,92%);
-margin:auto;
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:#031326;
+    border-bottom:1px solid rgba(255,208,51,.4);
+    box-shadow:0 5px 25px rgba(0,0,0,.4);
 }
 
-.gold{
-color:#f6cf59;
+.header-inner{
+    max-width:1200px;
+    margin:auto;
+    padding:12px 25px;
+    display:flex;
+    align-items:center;
+    gap:18px;
 }
 
-/* ================= NAVBAR ================= */
-
-.navbar{
-position:sticky;
-top:0;
-z-index:9999;
-background:rgba(4,17,37,.96);
-border-bottom:1px solid rgba(246,207,89,.25);
-backdrop-filter:blur(18px);
+.logo{
+    width:70px;
+    height:70px;
+    object-fit:contain;
+    border:3px solid #ffd033;
+    border-radius:20px;
+    padding:4px;
+    background:#061a32;
 }
 
-.nav{
-min-height:96px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:20px;
+.brand h1{
+    font-size:24px;
+    letter-spacing:1px;
 }
 
-/* BIG GSDA BRAND */
-
-.brand{
-display:flex;
-align-items:center;
-gap:16px;
-text-decoration:none;
-color:white;
+.brand p{
+    color:#ffd033;
+    font-size:10px;
+    letter-spacing:3px;
 }
 
-.brand-logo{
-width:76px;
-height:76px;
-object-fit:contain;
-padding:5px;
-background:#071a35;
-border:2px solid #f6cf59;
-border-radius:18px;
-box-shadow:0 0 28px rgba(246,207,89,.20);
-}
-
-.brand-title{
-font-size:25px;
-font-weight:1000;
-letter-spacing:.4px;
-line-height:1;
-}
-
-.brand-sub{
-margin-top:8px;
-font-size:9px;
-font-weight:bold;
-letter-spacing:2.5px;
-color:#f6cf59;
-}
-
-.nav-links{
-display:flex;
-gap:24px;
-}
-
-.nav-links a{
-color:#b9c8da;
-text-decoration:none;
-font-size:12px;
-font-weight:800;
-}
-
-.nav-links a:hover{
-color:#f6cf59;
-}
-
-/* ================= HERO ================= */
+/* HERO */
 
 .hero{
-position:relative;
-min-height:calc(100vh - 96px);
-display:flex;
-align-items:center;
-background:
-radial-gradient(circle at 5% 20%,rgba(32,119,218,.38),transparent 30%),
-radial-gradient(circle at 95% 75%,rgba(246,207,89,.13),transparent 30%),
-linear-gradient(135deg,#041329,#0b3b6c 50%,#06172e);
+    min-height:700px;
+    display:flex;
+    align-items:center;
+    background:
+    radial-gradient(circle at 85% 20%,rgba(255,208,51,.12),transparent 25%),
+    radial-gradient(circle at 10% 80%,rgba(0,120,255,.2),transparent 30%),
+    linear-gradient(135deg,#06315b,#034a78,#031d38);
 }
 
-.hero:before{
-content:"";
-position:absolute;
-inset:0;
-background:
-linear-gradient(
-120deg,
-transparent 0%,
-rgba(255,255,255,.025) 50%,
-transparent 100%
-);
-pointer-events:none;
+.hero-inner{
+    width:100%;
+    max-width:1200px;
+    margin:auto;
+    padding:80px 28px;
 }
 
-.hero-grid{
-position:relative;
-display:grid;
-grid-template-columns:1.08fr .92fr;
-gap:65px;
-align-items:center;
-padding:80px 0;
+.badge{
+    display:inline-block;
+    padding:13px 24px;
+    border:1px solid #ffd033;
+    border-radius:40px;
+    color:#ffd033;
+    letter-spacing:3px;
+    font-size:13px;
+    margin-bottom:35px;
 }
 
-/* LEFT */
-
-.eyebrow{
-display:inline-flex;
-align-items:center;
-gap:9px;
-padding:9px 17px;
-border-radius:50px;
-border:1px solid rgba(246,207,89,.55);
-background:rgba(246,207,89,.05);
-color:#f6cf59;
-font-size:10px;
-font-weight:900;
-letter-spacing:2px;
-margin-bottom:24px;
+.hero h2{
+    font-size:clamp(50px,8vw,88px);
+    line-height:.95;
+    margin-bottom:30px;
 }
 
-.eyebrow:before{
-content:"";
-width:7px;
-height:7px;
-background:#f6cf59;
-border-radius:50%;
-box-shadow:0 0 12px #f6cf59;
+.hero h2 span{
+    color:#ffd033;
 }
 
-.hero h1{
-font-size:clamp(45px,6vw,76px);
-line-height:.96;
-font-weight:1000;
-letter-spacing:-3px;
+.gold-line{
+    width:180px;
+    height:5px;
+    background:#ffd033;
+    border-radius:10px;
+    margin:25px 0;
 }
 
-.hero h1 span{
-color:#f6cf59;
+.small-title{
+    color:#b7c9db;
+    letter-spacing:6px;
+    font-size:13px;
+    margin-bottom:30px;
 }
 
-.hero-rule{
-width:120px;
-height:4px;
-margin:22px 0 16px;
-border-radius:20px;
-background:linear-gradient(
-90deg,
-#c99f2e,
-#ffe890,
-#c99f2e
-);
+.hero-text{
+    max-width:760px;
+    color:#c8d7e6;
+    font-size:18px;
+    margin-bottom:35px;
 }
 
-.hero-label{
-font-size:11px;
-font-weight:900;
-letter-spacing:3px;
-color:#aebfd2;
-}
-
-.hero-description{
-max-width:620px;
-margin:23px 0 31px;
-color:#b5c6d9;
-font-size:16px;
-}
-
-.hero-buttons{
-display:flex;
-gap:13px;
-flex-wrap:wrap;
+.buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
 }
 
 .btn{
-min-height:52px;
-padding:0 26px;
-display:inline-flex;
-align-items:center;
-justify-content:center;
-border-radius:11px;
-text-decoration:none;
-font-size:12px;
-font-weight:900;
-transition:.25s;
-}
-
-.btn:hover{
-transform:translateY(-3px);
+    display:inline-block;
+    text-decoration:none;
+    text-align:center;
+    min-width:230px;
+    padding:17px 25px;
+    border-radius:15px;
+    font-weight:bold;
+    transition:.3s;
 }
 
 .btn-gold{
-color:#06152b;
-background:linear-gradient(
-135deg,
-#d1a635,
-#ffe790,
-#d1a635
-);
-box-shadow:0 12px 35px rgba(246,207,89,.16);
+    background:linear-gradient(135deg,#ffd84d,#f0ad00);
+    color:#06182d;
 }
 
 .btn-outline{
-color:#f6cf59;
-border:1px solid #f6cf59;
-background:rgba(0,0,0,.08);
+    border:1px solid #ffd033;
+    color:#ffd033;
+    background:transparent;
 }
 
-/* ================= HERO CARD ================= */
-
-.hero-card{
-position:relative;
-padding:35px 30px;
-border-radius:30px;
-text-align:center;
-background:
-linear-gradient(
-145deg,
-rgba(18,72,134,.72),
-rgba(2,17,38,.96)
-);
-border:1px solid rgba(246,207,89,.35);
-box-shadow:
-0 35px 90px rgba(0,0,0,.45),
-inset 0 1px 0 rgba(255,255,255,.06);
+.btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 30px rgba(255,204,51,.25);
 }
 
-/* B TITAN LOGO */
-
-.btitan-logo{
-width:175px;
-height:175px;
-display:block;
-margin:0 auto 23px;
-object-fit:contain;
-padding:8px;
-border-radius:26px;
-background:#06162d;
-border:3px solid #f6cf59;
-box-shadow:
-0 0 45px rgba(246,207,89,.20);
-}
-
-.hero-card h2{
-font-size:25px;
-font-weight:1000;
-}
-
-.hero-card h2 span{
-color:#f6cf59;
-}
-
-.hero-card-description{
-font-size:12px;
-color:#9db0c6;
-margin-top:6px;
-}
-
-/* GSDA MINI */
-
-.gsda-mini{
-margin-top:25px;
-padding-top:22px;
-border-top:1px solid rgba(255,255,255,.08);
-}
-
-.gsda-mini img{
-width:82px;
-height:82px;
-object-fit:contain;
-padding:5px;
-background:#06162d;
-border:2px solid rgba(246,207,89,.55);
-border-radius:17px;
-}
-
-.gsda-mini-name{
-margin-top:8px;
-font-size:10px;
-font-weight:900;
-letter-spacing:2px;
-color:#f6cf59;
-}
-
-/* STATS */
-
-.stats{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:9px;
-margin-top:24px;
-}
-
-.stat{
-padding:13px 5px;
-border-radius:12px;
-background:rgba(255,255,255,.045);
-}
-
-.stat strong{
-display:block;
-font-size:20px;
-color:#f6cf59;
-}
-
-.stat span{
-font-size:9px;
-color:#7f93aa;
-font-weight:bold;
-}
-
-/* ================= SECTION ================= */
+/* SECTIONS */
 
 section{
-padding:90px 0;
+    padding:75px 25px;
 }
 
-.section-head{
-text-align:center;
-max-width:720px;
-margin:0 auto 48px;
+.container{
+    max-width:1150px;
+    margin:auto;
 }
 
-.section-head small{
-font-size:10px;
-font-weight:900;
-letter-spacing:3px;
-color:#f6cf59;
+.section-title{
+    text-align:center;
+    margin-bottom:45px;
 }
 
-.section-head h2{
-font-size:42px;
-line-height:1.1;
-margin-top:9px;
+.section-title h2{
+    font-size:38px;
+    margin-bottom:10px;
 }
 
-.section-head p{
-color:#95a9bf;
-font-size:14px;
-margin-top:12px;
+.section-title span{
+    color:#ffd033;
 }
 
-/* ================= ABOUT ================= */
-
-.about{
-background:
-linear-gradient(180deg,#071d39,#092f55);
+.section-title p{
+    color:#aebfd0;
 }
 
-.about-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:55px;
-align-items:center;
+/* CARDS */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
 }
 
-.about-title{
-font-size:40px;
-line-height:1.08;
-margin-bottom:20px;
+.card{
+    background:linear-gradient(145deg,#083967,#06294c);
+    border:1px solid rgba(255,208,51,.35);
+    border-radius:25px;
+    padding:30px;
+    text-align:center;
+    box-shadow:0 15px 40px rgba(0,0,0,.2);
+    transition:.3s;
 }
 
-.about-text{
-color:#aebfd1;
-font-size:15px;
-margin-bottom:17px;
+.card:hover{
+    transform:translateY(-7px);
+    border-color:#ffd033;
 }
 
-.message-box{
-margin-top:24px;
-padding:22px;
-border-left:3px solid #f6cf59;
-background:rgba(246,207,89,.05);
-border-radius:0 15px 15px 0;
+.card-icon{
+    width:110px;
+    height:110px;
+    margin:0 auto 20px;
+    border:3px solid #ffd033;
+    border-radius:28px;
+    padding:8px;
+    background:#031a33;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
-.message-box strong{
-color:#f6cf59;
-font-size:13px;
+.card-icon img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    border-radius:18px;
 }
 
-.message-box p{
-margin-top:5px;
-color:#b7c6d7;
-font-size:13px;
+.card h3{
+    font-size:24px;
+    margin-bottom:10px;
 }
 
-.about-card{
-padding:32px;
-border-radius:25px;
-background:
-linear-gradient(
-145deg,
-rgba(22,76,137,.62),
-rgba(3,19,41,.94)
-);
-border:1px solid rgba(246,207,89,.23);
+.card h3 span{
+    color:#ffd033;
 }
 
-.about-card h3{
-font-size:21px;
-color:#f6cf59;
-margin-bottom:20px;
+.card p{
+    color:#b8c9d9;
+    margin-bottom:22px;
 }
 
-.about-item{
-display:flex;
-align-items:center;
-gap:12px;
-padding:12px 0;
-border-bottom:1px solid rgba(255,255,255,.06);
-color:#c3d0df;
-font-size:13px;
+.card-btn{
+    display:inline-block;
+    text-decoration:none;
+    color:#071a2d;
+    background:#ffd033;
+    padding:12px 25px;
+    border-radius:10px;
+    font-weight:bold;
 }
 
-.about-item:last-child{
-border-bottom:0;
-}
-
-.about-item b{
-color:#f6cf59;
-}
-
-/* ================= FEATURES ================= */
-
-.features{
-background:#06172e;
-}
-
-.feature-grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:18px;
-}
-
-.feature{
-padding:30px 23px;
-border-radius:20px;
-background:
-linear-gradient(
-145deg,
-rgba(19,63,113,.62),
-rgba(3,18,39,.94)
-);
-border:1px solid rgba(255,255,255,.07);
-transition:.25s;
-}
-
-.feature:hover{
-transform:translateY(-6px);
-border-color:rgba(246,207,89,.45);
-}
-
-.feature-icon{
-font-size:29px;
-margin-bottom:17px;
-}
-
-.feature h3{
-font-size:17px;
-margin-bottom:8px;
-}
-
-.feature p{
-font-size:12px;
-color:#8da1b8;
-}
-
-/* ================= RESOURCES ================= */
+/* RESOURCES */
 
 .resources{
-background:
-linear-gradient(180deg,#092f55,#06172e);
+    background:#041e37;
 }
 
 .resource-grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:18px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
 }
 
 .resource{
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:18px;
-padding:23px;
-border-radius:19px;
-background:rgba(3,18,39,.9);
-border:1px solid rgba(255,255,255,.08);
-transition:.25s;
+    display:flex;
+    align-items:center;
+    gap:20px;
+    padding:25px;
+    background:#062b4d;
+    border:1px solid rgba(255,208,51,.25);
+    border-radius:18px;
+    text-decoration:none;
+    color:#fff;
+    transition:.3s;
 }
 
 .resource:hover{
-border-color:rgba(246,207,89,.35);
-transform:translateY(-2px);
-}
-
-.resource-left{
-display:flex;
-align-items:center;
-gap:15px;
+    border-color:#ffd033;
+    transform:translateY(-3px);
 }
 
 .resource-icon{
-width:52px;
-height:52px;
-display:flex;
-align-items:center;
-justify-content:center;
-flex-shrink:0;
-border-radius:14px;
-background:rgba(246,207,89,.09);
-font-size:22px;
+    width:55px;
+    height:55px;
+    flex-shrink:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:15px;
+    background:#ffd033;
+    color:#06192d;
+    font-size:24px;
 }
 
 .resource h3{
-font-size:15px;
+    font-size:18px;
 }
 
 .resource p{
-font-size:11px;
-color:#8296ad;
-margin-top:2px;
+    color:#aebfd0;
+    font-size:13px;
 }
 
-.resource .btn{
-min-height:41px;
-padding:0 15px;
-font-size:10px;
-white-space:nowrap;
+/* VIDEO */
+
+.video-box{
+    max-width:850px;
+    margin:auto;
+    background:#061c33;
+    padding:15px;
+    border:1px solid rgba(255,208,51,.35);
+    border-radius:20px;
 }
 
-/* ================= PROCESS ================= */
-
-.process{
-background:#06172e;
+.video-box iframe{
+    width:100%;
+    aspect-ratio:16/9;
+    border:0;
+    border-radius:12px;
 }
 
-.process-grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:15px;
+/* NOTICE */
+
+.notice{
+    background:linear-gradient(135deg,#071d35,#082d4e);
+    border:1px solid rgba(255,208,51,.4);
+    border-radius:22px;
+    padding:35px;
+    text-align:center;
 }
 
-.process{
-text-align:center;
+.notice h2{
+    color:#ffd033;
+    margin-bottom:15px;
 }
 
-.process-number{
-width:57px;
-height:57px;
-display:flex;
-align-items:center;
-justify-content:center;
-margin:0 auto 17px;
-border-radius:50%;
-color:#06152b;
-font-size:15px;
-font-weight:1000;
-background:linear-gradient(
-135deg,
-#d0a436,
-#ffe68b
-);
-box-shadow:0 8px 25px rgba(246,207,89,.12);
+.notice p{
+    color:#c2d0dc;
 }
 
-.process h3{
-font-size:17px;
-margin-bottom:6px;
+/* SOCIAL */
+
+.social{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
 }
 
-.process p{
-font-size:12px;
-color:#879bb1;
+.social a{
+    text-decoration:none;
+    color:#fff;
+    border:1px solid #ffd033;
+    padding:13px 25px;
+    border-radius:30px;
+    transition:.3s;
 }
 
-/* ================= CTA ================= */
-
-.cta{
-padding:100px 0;
-background:
-radial-gradient(
-circle at center,
-rgba(246,207,89,.14),
-transparent 45%
-),
-#05152c;
+.social a:hover{
+    background:#ffd033;
+    color:#06192d;
 }
 
-.cta-box{
-text-align:center;
-padding:70px 25px;
-border-radius:31px;
-background:
-linear-gradient(
-145deg,
-rgba(22,72,130,.72),
-rgba(2,17,38,.95)
-);
-border:1px solid rgba(246,207,89,.35);
-box-shadow:0 30px 70px rgba(0,0,0,.35);
-}
-
-.cta-box h2{
-font-size:46px;
-line-height:1.1;
-}
-
-.cta-box p{
-max-width:620px;
-margin:13px auto 28px;
-color:#9fb1c6;
-font-size:14px;
-}
-
-/* ================= FOOTER ================= */
+/* FOOTER */
 
 footer{
-padding:40px 0;
-background:#020c1c;
-border-top:1px solid rgba(246,207,89,.2);
+    background:#021121;
+    border-top:1px solid rgba(255,208,51,.3);
+    padding:45px 20px;
+    text-align:center;
 }
 
-.footer{
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:20px;
+footer img{
+    width:75px;
+    height:75px;
+    object-fit:contain;
+    margin-bottom:15px;
 }
 
-.footer-brand{
-font-size:18px;
-font-weight:1000;
-color:#f6cf59;
+footer h3{
+    margin-bottom:8px;
 }
 
-.footer p{
-font-size:11px;
-color:#687c93;
+footer p{
+    color:#899caf;
+    font-size:13px;
 }
 
-/* ================= MOBILE ================= */
-
-@media(max-width:900px){
-
-.nav-links{
-display:none;
+.copyright{
+    margin-top:25px;
+    color:#66798c;
+    font-size:12px;
 }
 
-.hero-grid,
-.about-grid{
-grid-template-columns:1fr;
+/* MOBILE */
+
+@media(max-width:800px){
+
+    .header-inner{
+        padding:12px 18px;
+    }
+
+    .logo{
+        width:60px;
+        height:60px;
+    }
+
+    .brand h1{
+        font-size:19px;
+    }
+
+    .brand p{
+        font-size:8px;
+        letter-spacing:2px;
+    }
+
+    .hero{
+        min-height:auto;
+    }
+
+    .hero-inner{
+        padding:65px 27px 75px;
+    }
+
+    .badge{
+        font-size:10px;
+        letter-spacing:2px;
+    }
+
+    .hero h2{
+        font-size:53px;
+    }
+
+    .hero-text{
+        font-size:16px;
+    }
+
+    .buttons{
+        flex-direction:column;
+    }
+
+    .btn{
+        width:100%;
+    }
+
+    section{
+        padding:55px 20px;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .resource-grid{
+        grid-template-columns:1fr;
+    }
+
+    .section-title h2{
+        font-size:30px;
+    }
 }
-
-.hero-card{
-max-width:600px;
-width:100%;
-margin:auto;
-}
-
-.feature-grid{
-grid-template-columns:repeat(2,1fr);
-}
-
-.process-grid{
-grid-template-columns:repeat(2,1fr);
-}
-
-}
-
-@media(max-width:600px){
-
-.nav{
-min-height:85px;
-}
-
-.brand-logo{
-width:62px;
-height:62px;
-}
-
-.brand-title{
-font-size:18px;
-}
-
-.brand-sub{
-font-size:7px;
-letter-spacing:1.5px;
-}
-
-.hero{
-min-height:auto;
-}
-
-.hero-grid{
-padding:60px 0;
-gap:45px;
-}
-
-.hero h1{
-font-size:45px;
-letter-spacing:-2px;
-}
-
-.hero-description{
-font-size:14px;
-}
-
-.hero-buttons{
-flex-direction:column;
-}
-
-.hero-buttons .btn{
-width:100%;
-}
-
-.btitan-logo{
-width:145px;
-height:145px;
-}
-
-.stats{
-grid-template-columns:repeat(3,1fr);
-}
-
-section{
-padding:65px 0;
-}
-
-.section-head h2{
-font-size:31px;
-}
-
-.about-title{
-font-size:31px;
-}
-
-.feature-grid,
-.resource-grid,
-.process-grid{
-grid-template-columns:1fr;
-}
-
-.resource{
-flex-direction:column;
-align-items:flex-start;
-}
-
-.resource .btn{
-width:100%;
-}
-
-.cta-box{
-padding:55px 20px;
-}
-
-.cta-box h2{
-font-size:34px;
-}
-
-.footer{
-flex-direction:column;
-text-align:center;
-}
-
-}
-
 </style>
 </head>
 
 <body>
 
-<!-- ================= NAVBAR ================= -->
+<!-- HEADER -->
 
-<nav class="navbar">
+<header>
 
-<div class="container nav">
+<div class="header-inner">
 
-<a href="#" class="brand">
+<img src="gsda-logo.png"
+     class="logo"
+     alt="GS Digital Academy Logo">
 
-<!-- GSDA LOGO -->
-<img
-class="brand-logo"
-src="file_0000000071288211a783f84d1417ffcd.jpg"
-alt="GS Digital Academy">
+<div class="brand">
 
-<div>
+<h1>GS DIGITAL ACADEMY</h1>
 
-<div class="brand-title">
-GS DIGITAL ACADEMY
-</div>
-
-<div class="brand-sub">
+<p>
 DIGITAL KNOWLEDGE • BLOCKCHAIN • WEB3
-</div>
-
-</div>
-
-</a>
-
-<div class="nav-links">
-
-<a href="#about">ABOUT</a>
-<a href="#features">FEATURES</a>
-<a href="#resources">RESOURCES</a>
-<a href="#process">PROCESS</a>
-<a href="#join">JOIN</a>
-
-</div>
-
-</div>
-
-</nav>
-
-
-<!-- ================= HERO ================= -->
-
-<header class="hero">
-
-<div class="container hero-grid">
-
-<div>
-
-<div class="eyebrow">
-B-TITAN INFORMATION HUB
-</div>
-
-<h1>
-Understand.<br>
-Decide.<br>
-<span>Build Your Future.</span>
-</h1>
-
-<div class="hero-rule"></div>
-
-<div class="hero-label">
-GS DIGITAL ACADEMY
-</div>
-
-<p class="hero-description">
-A professional learning and information hub designed
-to help you explore B-TITAN resources, blockchain
-guidance, educational videos and the available process
-before making your own decision.
 </p>
-
-<div class="hero-buttons">
-
-<a
-href="#resources"
-class="btn btn-gold">
-EXPLORE RESOURCES
-</a>
-
-<a
-href="https://btitan.net/register?id=10203"
-target="_blank"
-rel="noopener noreferrer"
-class="btn btn-outline">
-JOIN B-TITAN
-</a>
-
-</div>
-
-</div>
-
-
-<!-- HERO CARD -->
-
-<div class="hero-card">
-
-<img
-class="btitan-logo"
-src="file_000000008d988211a261c1c99b9ffe2c.jpg"
-alt="B-TITAN Logo">
-
-<h2>
-B-TITAN <span>HUB</span>
-</h2>
-
-<p class="hero-card-description">
-Information • Education • Resources
-</p>
-
-
-<div class="gsda-mini">
-
-<img
-src="file_0000000071288211a783f84d1417ffcd.jpg"
-alt="GS Digital Academy Logo">
-
-<div class="gsda-mini-name">
-GS DIGITAL ACADEMY
-</div>
-
-</div>
-
-
-<div class="stats">
-
-<div class="stat">
-<strong>01</strong>
-<span>EXPLORE</span>
-</div>
-
-<div class="stat">
-<strong>02</strong>
-<span>LEARN</span>
-</div>
-
-<div class="stat">
-<strong>03</strong>
-<span>DECIDE</span>
-</div>
-
-</div>
 
 </div>
 
@@ -967,98 +497,170 @@ GS DIGITAL ACADEMY
 </header>
 
 
-<!-- ================= ABOUT ================= -->
+<!-- HERO -->
 
-<section id="about" class="about">
+<section class="hero" id="home">
+
+<div class="hero-inner">
+
+<div class="badge">
+● &nbsp; B-TITAN INFORMATION HUB
+</div>
+
+<h2>
+Understand.<br>
+Decide.<br>
+<span>Build Your Future.</span>
+</h2>
+
+<div class="gold-line"></div>
+
+<div class="small-title">
+GS DIGITAL ACADEMY
+</div>
+
+<p class="hero-text">
+
+A professional learning and information hub designed
+to help you explore B-TITAN resources, blockchain guidance,
+educational videos and available processes before making
+your own decision.
+
+</p>
+
+<div class="buttons">
+
+<a href="#resources" class="btn btn-gold">
+EXPLORE RESOURCES
+</a>
+
+<a
+href="https://btitan.net/register?id=10203"
+target="_blank"
+class="btn btn-outline">
+JOIN B-TITAN
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- B-TITAN -->
+
+<section id="join">
 
 <div class="container">
 
-<div class="section-head">
-
-<small>ABOUT THE ACADEMY</small>
+<div class="section-title">
 
 <h2>
-Information With <span class="gold">Clarity</span>
+B-TITAN <span>Information Hub</span>
 </h2>
 
 <p>
-Explore. Understand. Make your own informed decision.
+Explore the available B-TITAN information and resources.
 </p>
 
 </div>
 
 
-<div class="about-grid">
+<div class="cards">
 
-<div>
 
-<h2 class="about-title">
-Knowledge First.<br>
-<span class="gold">Decision Later.</span>
-</h2>
+<!-- B-TITAN PLAN -->
 
-<p class="about-text">
-GS Digital Academy brings important B-TITAN
-information and learning resources together
-in one simple and professional place.
-</p>
+<div class="card">
 
-<p class="about-text">
-Read the available information, watch the
-guides and understand the process before
-taking any decision.
-</p>
+<div class="card-icon">
 
-<div class="message-box">
-
-<strong>OUR APPROACH</strong>
-
-<p>
-Understand the information first. Decide when you are ready.
-</p>
+<img src="btitan-logo.png"
+alt="B-TITAN Logo">
 
 </div>
-
-</div>
-
-
-<div class="about-card">
 
 <h3>
-B-TITAN INFORMATION HUB
+B-TITAN <span>PLAN</span>
 </h3>
 
-<div class="about-item">
-<b>✓</b>
-Complete Plan Information
-</div>
+<p>
+Explore the B-TITAN plan presentation and
+educational information.
+</p>
 
-<div class="about-item">
-<b>✓</b>
-Blockchain ID Guide
-</div>
-
-<div class="about-item">
-<b>✓</b>
-ID Activation Guide
-</div>
-
-<div class="about-item">
-<b>✓</b>
-Complete Plan Video
-</div>
-
-<div class="about-item">
-<b>✓</b>
-GS Digital Academy Hub
-</div>
-
-<div class="about-item">
-<b>✓</b>
-Direct Joining Access
-</div>
+<a
+href="https://tinyurl.com/26m4b8cy"
+target="_blank"
+class="card-btn">
+VIEW PDF
+</a>
 
 </div>
+
+
+<!-- JOIN -->
+
+<div class="card">
+
+<div class="card-icon">
+
+<span style="font-size:55px;color:#ffd033;">
+➜
+</span>
+
+</div>
+
+<h3>
+JOIN <span>B-TITAN</span>
+</h3>
+
+<p>
+Use the official registration process with
+Referral ID 10203.
+</p>
+
+<a
+href="https://btitan.net/register?id=10203"
+target="_blank"
+class="card-btn">
+JOIN NOW
+</a>
+
+</div>
+
+
+<!-- VIDEO -->
+
+<div class="card">
+
+<div class="card-icon">
+
+<span style="font-size:50px;color:#ffd033;">
+▶
+</span>
+
+</div>
+
+<h3>
+BLOCKCHAIN <span>GUIDE</span>
+</h3>
+
+<p>
+Watch the video explaining the blockchain
+ID process.
+</p>
+
+<a
+href="https://youtube.com/shorts/-fIVG9pZtEo?si=nclwN9l8L6Fo1tLa"
+target="_blank"
+class="card-btn">
+WATCH VIDEO
+</a>
+
+</div>
+
 
 </div>
 
@@ -1067,103 +669,21 @@ Direct Joining Access
 </section>
 
 
-<!-- ================= FEATURES ================= -->
+<!-- RESOURCES -->
 
-<section id="features" class="features">
-
-<div class="container">
-
-<div class="section-head">
-
-<small>WHAT YOU CAN EXPLORE</small>
-
-<h2>
-Your <span class="gold">Learning Hub</span>
-</h2>
-
-<p>
-Everything organized for easy access.
-</p>
-
-</div>
-
-
-<div class="feature-grid">
-
-<div class="feature">
-
-<div class="feature-icon">📚</div>
-
-<h3>Information</h3>
-
-<p>
-Explore the available B-TITAN plan and ecosystem information.
-</p>
-
-</div>
-
-
-<div class="feature">
-
-<div class="feature-icon">🔗</div>
-
-<h3>Blockchain</h3>
-
-<p>
-Learn about blockchain-based ID processes and guidance.
-</p>
-
-</div>
-
-
-<div class="feature">
-
-<div class="feature-icon">🎥</div>
-
-<h3>Video Learning</h3>
-
-<p>
-Watch the complete plan and step-by-step educational videos.
-</p>
-
-</div>
-
-
-<div class="feature">
-
-<div class="feature-icon">🚀</div>
-
-<h3>Build Knowledge</h3>
-
-<p>
-Keep learning and develop your digital and blockchain knowledge.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ================= RESOURCES ================= -->
-
-<section id="resources" class="resources">
+<section class="resources" id="resources">
 
 <div class="container">
 
-<div class="section-head">
-
-<small>QUICK ACCESS</small>
+<div class="section-title">
 
 <h2>
-Important <span class="gold">Resources</span>
+Explore <span>Resources</span>
 </h2>
 
 <p>
-Access the key resources directly from this page.
+All important B-TITAN and GS Digital Academy
+resources in one place.
 </p>
 
 </div>
@@ -1172,156 +692,267 @@ Access the key resources directly from this page.
 <div class="resource-grid">
 
 
-<!-- PDF -->
+<a
+href="https://tinyurl.com/26m4b8cy"
+target="_blank"
+class="resource">
 
-<div class="resource">
-
-<div class="resource-left">
-
-<div class="resource-icon">📄</div>
+<div class="resource-icon">
+📄
+</div>
 
 <div>
-<h3>B-TITAN Complete Plan</h3>
-<p>Read the complete plan information.</p>
-</div>
+
+<h3>
+B-TITAN Plan Presentation PDF
+</h3>
+
+<p>
+Open the complete plan presentation.
+</p>
 
 </div>
 
-<a
-href="https://docs.google.com/presentation/d/1ZhQFHnTPKTx4Lqs4LjZRFQjwZjct5FGL/export/pdf"
-target="_blank"
-class="btn btn-gold">
-OPEN PDF
 </a>
 
-</div>
-
-
-<!-- BLOCKCHAIN -->
-
-<div class="resource">
-
-<div class="resource-left">
-
-<div class="resource-icon">🔗</div>
-
-<div>
-<h3>Blockchain Se ID Kaise Lagaye</h3>
-<p>Watch the ID process video.</p>
-</div>
-
-</div>
-
-<a
-href="https://youtube.com/shorts/-fIVG9pZtEo?si=nclwN9l8L6Fo1tLa"
-target="_blank"
-class="btn btn-gold">
-WATCH
-</a>
-
-</div>
-
-
-<!-- COMPLETE VIDEO -->
-
-<div class="resource">
-
-<div class="resource-left">
-
-<div class="resource-icon">🎬</div>
-
-<div>
-<h3>Complete Plan Video</h3>
-<p>Understand the complete plan.</p>
-</div>
-
-</div>
 
 <a
 href="https://youtu.be/jg6a-Jo_acE"
 target="_blank"
-class="btn btn-gold">
-WATCH
-</a>
+class="resource">
 
+<div class="resource-icon">
+▶
 </div>
-
-
-<!-- ACTIVATION -->
-
-<div class="resource">
-
-<div class="resource-left">
-
-<div class="resource-icon">⚡</div>
 
 <div>
-<h3>How to Activate ID</h3>
-<p>Step-by-step activation information.</p>
-</div>
+
+<h3>
+Complete Plan Video
+</h3>
+
+<p>
+Watch the detailed plan presentation.
+</p>
 
 </div>
+
+</a>
+
 
 <a
 href="https://tinyurl.com/4u6jnrrw"
 target="_blank"
+class="resource">
+
+<div class="resource-icon">
+🔗
+</div>
+
+<div>
+
+<h3>
+ID Activation Guide
+</h3>
+
+<p>
+Learn the ID activation process.
+</p>
+
+</div>
+
+</a>
+
+
+<a
+href="https://youtube.com/shorts/-fIVG9pZtEo?si=nclwN9l8L6Fo1tLa"
+target="_blank"
+class="resource">
+
+<div class="resource-icon">
+▶
+</div>
+
+<div>
+
+<h3>
+Blockchain ID Video
+</h3>
+
+<p>
+Watch the blockchain ID process.
+</p>
+
+</div>
+
+</a>
+
+
+<a
+href="https://beacons.ai/gsdigitalacademy"
+target="_blank"
+class="resource">
+
+<div class="resource-icon">
+🌐
+</div>
+
+<div>
+
+<h3>
+GS Digital Academy Hub
+</h3>
+
+<p>
+Open the complete academy information hub.
+</p>
+
+</div>
+
+</a>
+
+
+<a
+href="https://btitan.net/register?id=10203"
+target="_blank"
+class="resource">
+
+<div class="resource-icon">
+🚀
+</div>
+
+<div>
+
+<h3>
+B-TITAN Registration</h3>
+
+<p>
+Register using Referral ID 10203.
+</p>
+
+</div>
+
+</a>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- VIDEO -->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+Blockchain <span>ID Guide</span>
+</h2>
+
+<p>
+Watch the educational video
+</p>
+
+</div>
+
+<div class="video-box">
+
+<iframe
+src="https://www.youtube.com/embed/-fIVG9pZtEo"
+title="Blockchain ID Guide"
+allowfullscreen>
+</iframe>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ZOOM -->
+
+<section>
+
+<div class="container">
+
+<div class="notice">
+
+<h2>
+Daily B-TITAN Sessions
+</h2>
+
+<p>
+
+<strong>Morning Zoom — 8:15 AM</strong>
+<br>
+
+<strong>Night Zoom — 9:00 PM</strong>
+
+<br><br>
+
+Join using the latest official meeting link.
+
+</p>
+
+<br>
+
+<!-- अपना Zoom link यहाँ डालें -->
+
+<a
+href="YOUR_ZOOM_LINK"
+target="_blank"
 class="btn btn-gold">
-ACTIVATE
+
+JOIN ZOOM MEETING
+
 </a>
 
 </div>
 
-
-<!-- GSDA HUB -->
-
-<div class="resource">
-
-<div class="resource-left">
-
-<div class="resource-icon">🌐</div>
-
-<div>
-<h3>GS Digital Academy Hub</h3>
-<p>Open the complete GSDA resource hub.</p>
 </div>
 
-</div>
+</section>
+
+
+<!-- ACADEMY HUB -->
+
+<section>
+
+<div class="container">
+
+<div class="notice">
+
+<h2>
+GS Digital Academy
+</h2>
+
+<p>
+
+Digital Knowledge • Blockchain • Web3
+
+<br><br>
+
+Access the complete GS Digital Academy
+information hub, resources and available links.
+
+</p>
+
+<br>
 
 <a
 href="https://beacons.ai/gsdigitalacademy"
 target="_blank"
 class="btn btn-gold">
-OPEN HUB
+
+OPEN ACADEMY HUB
+
 </a>
-
-</div>
-
-
-<!-- JOIN -->
-
-<div class="resource">
-
-<div class="resource-left">
-
-<div class="resource-icon">🚀</div>
-
-<div>
-<h3>B-TITAN Joining</h3>
-<p>Registration with Referral ID 10203.</p>
-</div>
-
-</div>
-
-<a
-href="https://btitan.net/register?id=10203"
-target="_blank"
-rel="noopener noreferrer"
-class="btn btn-gold">
-JOIN NOW
-</a>
-
-</div>
-
 
 </div>
 
@@ -1330,79 +961,28 @@ JOIN NOW
 </section>
 
 
-<!-- ================= PROCESS ================= -->
+<!-- IMPORTANT -->
 
-<section id="process">
+<section>
 
 <div class="container">
 
-<div class="section-head">
-
-<small>OUR SIMPLE APPROACH</small>
+<div class="notice">
 
 <h2>
-Four Steps To <span class="gold">Explore</span>
+Important Information
 </h2>
 
 <p>
-Take the time to understand before making a decision.
+
+This website is provided for educational and
+informational purposes. Digital assets and
+blockchain projects involve financial risk.
+Please understand the technology, verify
+official information and make your own
+independent decision before committing funds.
+
 </p>
-
-</div>
-
-
-<div class="process-grid">
-
-<div class="process">
-
-<div class="process-number">01</div>
-
-<h3>Explore</h3>
-
-<p>
-Start with the available information.
-</p>
-
-</div>
-
-
-<div class="process">
-
-<div class="process-number">02</div>
-
-<h3>Learn</h3>
-
-<p>
-Watch the guides and educational resources.
-</p>
-
-</div>
-
-
-<div class="process">
-
-<div class="process-number">03</div>
-
-<h3>Understand</h3>
-
-<p>
-Understand the process and available options.
-</p>
-
-</div>
-
-
-<div class="process">
-
-<div class="process-number">04</div>
-
-<h3>Decide</h3>
-
-<p>
-Make your own informed decision.
-</p>
-
-</div>
 
 </div>
 
@@ -1411,42 +991,43 @@ Make your own informed decision.
 </section>
 
 
-<!-- ================= CTA ================= -->
+<!-- SOCIAL -->
 
-<section id="join" class="cta">
+<section>
 
 <div class="container">
 
-<div class="cta-box">
+<div class="section-title">
 
 <h2>
-Ready To <span class="gold">Explore?</span>
+Connect With <span>Us</span>
 </h2>
 
-<p>
-Begin with information. Explore the resources,
-understand the process and decide when you are ready.
-</p>
-
-<div
-class="hero-buttons"
-style="justify-content:center;">
-
-<a
-href="https://btitan.net/register?id=10203"
-target="_blank"
-rel="noopener noreferrer"
-class="btn btn-gold">
-🚀 JOIN B-TITAN
-</a>
-
-<a
-href="#resources"
-class="btn btn-outline">
-VIEW RESOURCES
-</a>
-
 </div>
+
+<div class="social">
+
+<!-- इन links को बाद में अपने actual links से replace करें -->
+
+<a href="YOUR_WHATSAPP_LINK"
+target="_blank">
+WhatsApp
+</a>
+
+<a href="YOUR_FACEBOOK_LINK"
+target="_blank">
+Facebook
+</a>
+
+<a href="YOUR_INSTAGRAM_LINK"
+target="_blank">
+Instagram
+</a>
+
+<a href="YOUR_YOUTUBE_CHANNEL"
+target="_blank">
+YouTube
+</a>
 
 </div>
 
@@ -1455,27 +1036,35 @@ VIEW RESOURCES
 </section>
 
 
-<!-- ================= FOOTER ================= -->
+<!-- FOOTER -->
 
 <footer>
 
-<div class="container footer">
+<img
+src="gsda-logo.png"
+alt="GS Digital Academy">
 
-<div class="footer-brand">
+<h3>
 GS DIGITAL ACADEMY
-</div>
+</h3>
 
 <p>
-© 2026 GS Digital Academy • B-TITAN Information Hub
+DIGITAL KNOWLEDGE • BLOCKCHAIN • WEB3
 </p>
 
 <p>
-Information First • Decision Later
+B-TITAN Information & Educational Hub
 </p>
+
+<div class="copyright">
+
+© 2026 GS Digital Academy.
+All Rights Reserved.
 
 </div>
 
 </footer>
+
 
 </body>
 </html>
