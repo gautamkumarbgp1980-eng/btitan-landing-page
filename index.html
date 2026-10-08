@@ -128,13 +128,12 @@ header{
 
 .hero-container{
     max-width:1200px;
-
-    /* TOP & BOTTOM SPACE REDUCED */
     min-height:calc(100vh - 78px);
 
     margin:auto;
 
-    padding:25px 25px 20px;
+    /* ONLY SPACE REDUCED */
+    padding:25px 25px 15px;
 
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -148,6 +147,8 @@ header{
 
 .hero-content{
     padding-right:20px;
+    position:relative;
+    z-index:2;
 }
 
 .top-line{
@@ -155,12 +156,17 @@ header{
     font-size:13px;
     font-weight:bold;
     letter-spacing:3px;
-    margin-bottom:18px;
+
+    /* SPACE REDUCED */
+    margin-bottom:14px;
 }
 
 .hero h1{
     font-size:clamp(48px,6vw,78px);
-    line-height:.96;
+
+    /* SPACE BETWEEN LINES REDUCED */
+    line-height:.90;
+
     font-weight:900;
     letter-spacing:-3px;
 }
@@ -174,7 +180,9 @@ header{
     height:5px;
     background:#ffe000;
     border-radius:20px;
-    margin:22px 0;
+
+    /* SPACE REDUCED */
+    margin:20px 0;
 }
 
 .academy-name{
@@ -182,7 +190,9 @@ header{
     font-size:13px;
     font-weight:bold;
     letter-spacing:4px;
-    margin-bottom:15px;
+
+    /* SPACE REDUCED */
+    margin-bottom:14px;
 }
 
 .description{
@@ -190,7 +200,9 @@ header{
     color:#edf8ff;
     font-size:15px;
     line-height:1.8;
-    margin-bottom:24px;
+
+    /* SPACE REDUCED */
+    margin-bottom:22px;
 }
 
 
@@ -244,35 +256,48 @@ header{
 
 
 /* =========================
-   PROFILE PHOTO
+   GAUTAM PHOTO
+   PHOTO SAME
 ========================= */
 
 .hero-photo{
+    height:100%;
+    min-height:520px;
+
     display:flex;
-    align-items:center;
+    align-items:flex-end;
     justify-content:center;
-    text-align:center;
 
     position:relative;
     overflow:hidden;
 
-    /* PHOTO BACKGROUND */
-    background:#0088FE;
+    z-index:1;
 }
 
 .hero-photo img{
     width:auto;
 
     max-width:100%;
+    max-height:610px;
 
-    /* PHOTO SIZE */
-    max-height:560px;
+    height:auto;
 
     object-fit:contain;
+    object-position:center bottom;
+
     display:block;
 
+    position:relative;
+    z-index:2;
+
     filter:
-        drop-shadow(0 25px 35px rgba(0,0,0,.35));
+        drop-shadow(0 25px 35px rgba(0,0,0,.30));
+
+    transition:transform .3s ease;
+}
+
+.hero-photo img:hover{
+    transform:scale(1.01);
 }
 
 
@@ -688,8 +713,9 @@ footer p{
         grid-template-columns:1fr;
         text-align:center;
 
-        /* MOBILE SPACING REDUCED */
-        padding:25px 20px 15px;
+        /* MOBILE SPACE REDUCED */
+        padding-top:25px;
+        padding-bottom:15px;
     }
 
     .hero-content{
@@ -706,8 +732,13 @@ footer p{
     }
 
     .hero-photo{
+        min-height:auto;
+        height:auto;
+
+        /* PHOTO POSITION SAME */
         margin-top:20px;
-        background:#0088FE;
+
+        align-items:flex-end;
     }
 
     .hero-photo img{
@@ -755,12 +786,17 @@ footer p{
     .hero h1{
         font-size:44px;
         letter-spacing:-2px;
+
+        /* MOBILE HEADING SPACE */
+        line-height:.90;
     }
 
     .top-line{
         font-size:10px;
         letter-spacing:2px;
-        margin-bottom:15px;
+
+        /* MOBILE SPACE */
+        margin-bottom:12px;
     }
 
     .academy-name{
@@ -768,7 +804,7 @@ footer p{
     }
 
     .hero-photo{
-        margin-top:18px;
+        margin-top:20px;
     }
 
     .hero-photo img{
@@ -906,12 +942,13 @@ JOIN ZOOM
 
 <!-- =========================
      GAUTAM PHOTO
+     RIGHT SIDE
 ========================= -->
 
 <div class="hero-photo">
 
 <img
-src="Gautam_Kumar_Crypto_Expert-3.png"
+src="Gautam-2.png"
 alt="Mr Gautam Kumar Crypto Expert">
 
 </div>
@@ -950,6 +987,8 @@ links from one place.
 <div class="links-grid">
 
 
+<!-- 1 PLAN VIDEO -->
+
 <div class="link-card">
 
 <div class="link-icon">▶️</div>
@@ -974,6 +1013,8 @@ WATCH PLAN VIDEO
 </div>
 
 
+
+<!-- 2 PLAN PDF -->
 
 <div class="link-card">
 
@@ -1000,6 +1041,8 @@ OPEN PLAN PDF
 
 
 
+<!-- 3 HOW TO ACTIVATE ID -->
+
 <div class="link-card">
 
 <div class="link-icon">🆔</div>
@@ -1024,6 +1067,8 @@ ACTIVATE ID
 </div>
 
 
+
+<!-- 4 2x2 MATRIX -->
 
 <div class="link-card">
 
@@ -1050,6 +1095,8 @@ WATCH GUIDE
 
 
 
+<!-- 5 DECENTRALIZED SYSTEM -->
+
 <div class="link-card">
 
 <div class="link-icon">🌐</div>
@@ -1074,6 +1121,8 @@ WATCH VIDEO
 </div>
 
 
+
+<!-- 6 BLOCKCHAIN ID -->
 
 <div class="link-card">
 
@@ -1100,6 +1149,8 @@ WATCH VIDEO
 
 
 
+<!-- 7 JOIN BTITAN -->
+
 <div class="link-card">
 
 <div class="link-icon">🚀</div>
@@ -1124,6 +1175,8 @@ JOIN B-TITAN
 </div>
 
 
+
+<!-- 8 GS ACADEMY -->
 
 <div class="link-card">
 
@@ -1184,6 +1237,8 @@ and team development.
 <div class="zoom-grid">
 
 
+<!-- MORNING ZOOM -->
+
 <div class="zoom-card">
 
 <h3>🌅 Morning Zoom</h3>
@@ -1209,6 +1264,8 @@ JOIN MORNING ZOOM
 </div>
 
 
+
+<!-- EVENING ZOOM -->
 
 <div class="zoom-card">
 
