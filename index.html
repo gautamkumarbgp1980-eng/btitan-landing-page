@@ -109,17 +109,22 @@ header{
 .hero{
     min-height:calc(100vh - 78px);
 
+    /*
+      Photo ke blue background ke saath
+      hero background match kiya gaya hai
+    */
+
     background:
     radial-gradient(
         circle at 75% 30%,
-        rgba(0,220,255,.35),
+        rgba(0,220,255,.30),
         transparent 32%
     ),
     linear-gradient(
         135deg,
         #06142e 0%,
-        #067bd9 58%,
-        #02b9ee 100%
+        #087fdc 55%,
+        #078ef0 100%
     );
 
     position:relative;
@@ -242,7 +247,6 @@ header{
 
 /* =========================
    PROFILE PHOTO
-   ONLY PHOTO AREA CHANGED
 ========================= */
 
 .hero-photo{
@@ -252,22 +256,17 @@ header{
     text-align:center;
 
     position:relative;
-    overflow:hidden;
-
-    /*
-       Photo ke blue background ko
-       exact matching color diya gaya hai.
-       Baaki hero design same rahega.
-    */
-    background:#0088FE;
 }
 
 .hero-photo img{
     width:auto;
+
     max-width:100%;
     max-height:610px;
 
     object-fit:contain;
+    object-position:center bottom;
+
     display:block;
 
     filter:
@@ -704,12 +703,6 @@ footer p{
 
     .hero-photo{
         margin-top:35px;
-
-        /*
-           Mobile me bhi photo ke exact
-           blue background ko match karega.
-        */
-        background:#0088FE;
     }
 
     .hero-photo img{
@@ -901,12 +894,14 @@ JOIN ZOOM
 
 
 
-<!-- YOUR PHOTO -->
+<!-- ==================================================
+     NEW GAUTAM KUMAR PHOTO
+================================================== -->
 
 <div class="hero-photo">
 
 <img
-src="Gautam_Kumar_Crypto_Expert-3.png"
+src="Gautam_Kumar_Crypto_Expert_REAL_Transparent.png"
 alt="Mr Gautam Kumar Crypto Expert">
 
 </div>
@@ -945,7 +940,7 @@ links from one place.
 <div class="links-grid">
 
 
-<!-- 1 PLAN VIDEO -->
+<!-- 1 -->
 
 <div class="link-card">
 
@@ -972,7 +967,7 @@ WATCH PLAN VIDEO
 
 
 
-<!-- 2 PLAN PDF -->
+<!-- 2 -->
 
 <div class="link-card">
 
@@ -999,7 +994,7 @@ OPEN PLAN PDF
 
 
 
-<!-- 3 HOW TO ACTIVATE ID -->
+<!-- 3 -->
 
 <div class="link-card">
 
@@ -1026,7 +1021,7 @@ ACTIVATE ID
 
 
 
-<!-- 4 2x2 MATRIX -->
+<!-- 4 -->
 
 <div class="link-card">
 
@@ -1053,7 +1048,7 @@ WATCH GUIDE
 
 
 
-<!-- 5 DECENTRALIZED SYSTEM -->
+<!-- 5 -->
 
 <div class="link-card">
 
@@ -1080,7 +1075,7 @@ WATCH VIDEO
 
 
 
-<!-- 6 BLOCKCHAIN ID -->
+<!-- 6 -->
 
 <div class="link-card">
 
@@ -1107,7 +1102,7 @@ WATCH VIDEO
 
 
 
-<!-- 7 JOIN BTITAN -->
+<!-- 7 -->
 
 <div class="link-card">
 
@@ -1134,7 +1129,7 @@ JOIN B-TITAN
 
 
 
-<!-- 8 GS ACADEMY -->
+<!-- 8 -->
 
 <div class="link-card">
 
@@ -1195,7 +1190,7 @@ and team development.
 <div class="zoom-grid">
 
 
-<!-- MORNING ZOOM -->
+<!-- MORNING -->
 
 <div class="zoom-card">
 
@@ -1223,7 +1218,7 @@ JOIN MORNING ZOOM
 
 
 
-<!-- EVENING ZOOM -->
+<!-- EVENING -->
 
 <div class="zoom-card">
 
