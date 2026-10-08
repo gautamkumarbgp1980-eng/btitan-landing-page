@@ -4,15 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>GS Digital Academy | Digital Knowledge • Blockchain • Web3</title>
+<title>GS Digital Academy | B-TITAN</title>
 
-<meta name="description" content="GS Digital Academy - Digital Knowledge, Blockchain and Web3 resources. Understand. Decide. Build Your Future.">
+<meta name="description" content="GS Digital Academy - Digital Knowledge, Blockchain and Web3">
 
 <style>
 
-/* =====================================================
+/* =========================
    RESET
-===================================================== */
+========================= */
 
 * {
     margin: 0;
@@ -26,107 +26,111 @@ html {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: #06142f;
+    background: #06132d;
     color: #ffffff;
     overflow-x: hidden;
 }
 
 a {
     text-decoration: none;
-    color: inherit;
 }
 
 
-/* =====================================================
+/* =========================
    HEADER
-===================================================== */
+========================= */
 
-.header {
-    width: 100%;
+header {
     height: 88px;
+    width: 100%;
 
     background:
         linear-gradient(
             90deg,
-            #030b20 0%,
-            #071b43 50%,
-            #030b20 100%
+            #02091d,
+            #071a43,
+            #02091d
         );
 
     border-bottom: 1px solid rgba(255,255,255,0.15);
 
+    display: flex;
+    align-items: center;
+
     position: relative;
-    z-index: 100;
+    z-index: 10;
 }
 
 .header-inner {
     width: 92%;
     max-width: 1250px;
-    height: 100%;
     margin: auto;
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
 }
 
 
 /* LOGO */
 
-.logo-area {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-}
-
-.logo {
+.header-logo {
     width: 58px;
     height: 58px;
+
     object-fit: contain;
+
+    margin-right: 14px;
 }
 
-.logo-text h2 {
+.header-title {
     font-size: 20px;
     font-weight: 900;
+
     letter-spacing: 1.5px;
-    color: #ffffff;
+
+    color: white;
 }
 
-.logo-text p {
+.header-subtitle {
     margin-top: 5px;
+
     font-size: 9px;
-    font-weight: 800;
+    font-weight: bold;
+
     letter-spacing: 2px;
-    color: #ffd900;
+
+    color: #ffe000;
 }
 
 
-/* =====================================================
+/* =========================
    HERO
-===================================================== */
+========================= */
 
 .hero {
     min-height: calc(100vh - 88px);
 
     position: relative;
+
     overflow: hidden;
 
     background:
         radial-gradient(
-            circle at 75% 50%,
-            rgba(0, 210, 255, 0.38),
-            transparent 38%
+            circle at 75% 45%,
+            rgba(0,220,255,0.45),
+            transparent 35%
         ),
+
         linear-gradient(
             120deg,
-            #06266d 0%,
-            #008fdc 48%,
-            #0754a5 100%
+            #05266d 0%,
+            #008fdf 50%,
+            #0757a8 100%
         );
 }
 
 
-/* BACKGROUND GLOW */
+/* BACKGROUND EFFECT */
 
 .hero::before {
     content: "";
@@ -136,14 +140,14 @@ a {
     width: 650px;
     height: 650px;
 
-    right: -260px;
-    top: -220px;
+    right: -280px;
+    top: -250px;
 
     border-radius: 50%;
 
-    background: rgba(0, 225, 255, 0.16);
+    background: rgba(0,230,255,0.15);
 
-    filter: blur(20px);
+    filter: blur(25px);
 }
 
 .hero::after {
@@ -154,20 +158,20 @@ a {
     width: 500px;
     height: 500px;
 
-    left: -250px;
-    bottom: -280px;
+    left: -300px;
+    bottom: -300px;
 
     border-radius: 50%;
 
-    background: rgba(0, 60, 180, 0.35);
+    background: rgba(0,55,180,0.30);
 
-    filter: blur(30px);
+    filter: blur(25px);
 }
 
 
 /* HERO CONTAINER */
 
-.hero-inner {
+.hero-container {
     width: 92%;
     max-width: 1250px;
 
@@ -177,55 +181,56 @@ a {
 
     display: grid;
 
-    grid-template-columns: 55% 45%;
+    grid-template-columns: 54% 46%;
 
     align-items: center;
 
     position: relative;
-    z-index: 5;
+    z-index: 2;
 }
 
 
-/* =====================================================
-   HERO LEFT CONTENT
-===================================================== */
+/* =========================
+   LEFT CONTENT
+========================= */
 
 .hero-content {
-    padding: 60px 0;
-    max-width: 700px;
+    padding: 55px 0;
 }
 
-.top-label {
-    color: #ffe000;
-
+.small-heading {
     font-size: 12px;
+
     font-weight: 900;
 
     letter-spacing: 3px;
+
+    color: #ffe000;
 
     margin-bottom: 22px;
 }
 
 
 .hero-title {
-    font-size: clamp(50px, 6vw, 82px);
-
-    line-height: 0.98;
+    font-size: clamp(52px, 6vw, 82px);
 
     font-weight: 900;
 
+    line-height: 0.98;
+
     letter-spacing: -3px;
 
-    color: #ffffff;
+    color: white;
 }
 
 .hero-title .yellow {
     display: block;
+
     color: #ffe000;
 }
 
 
-.title-line {
+.yellow-line {
     width: 125px;
     height: 5px;
 
@@ -233,39 +238,37 @@ a {
 
     border-radius: 20px;
 
-    margin: 28px 0 25px;
+    margin: 27px 0 24px;
 }
 
 
-.academy-title {
+.academy-name {
     font-size: 13px;
 
     font-weight: 900;
 
     letter-spacing: 5px;
 
-    margin-bottom: 20px;
-
-    color: #ffffff;
+    margin-bottom: 19px;
 }
 
 
-.hero-description {
-    max-width: 630px;
-
-    color: rgba(255,255,255,0.92);
+.description {
+    max-width: 620px;
 
     font-size: 15px;
 
     line-height: 1.75;
 
-    margin-bottom: 32px;
+    color: rgba(255,255,255,0.92);
+
+    margin-bottom: 30px;
 }
 
 
-/* =====================================================
+/* =========================
    BUTTONS
-===================================================== */
+========================= */
 
 .buttons {
     display: flex;
@@ -275,58 +278,51 @@ a {
     flex-wrap: wrap;
 }
 
-.button {
+.btn {
+    display: inline-block;
+
     min-width: 175px;
 
-    padding: 16px 25px;
+    padding: 16px 24px;
 
     border-radius: 9px;
+
+    text-align: center;
 
     font-size: 12px;
 
     font-weight: 900;
 
-    letter-spacing: 0.8px;
+    letter-spacing: 0.7px;
 
-    text-align: center;
-
-    transition: all 0.3s ease;
+    transition: 0.3s ease;
 }
 
-
-/* PRIMARY BUTTON */
-
-.button-primary {
+.btn-yellow {
     background: #ffe000;
 
-    color: #06152f;
+    color: #06132d;
 
     box-shadow:
-        0 12px 28px rgba(0,0,0,0.22);
+        0 12px 30px rgba(0,0,0,0.20);
 }
 
-.button-primary:hover {
+.btn-yellow:hover {
     transform: translateY(-4px);
 
-    background: #ffffff;
-
-    box-shadow:
-        0 18px 35px rgba(0,0,0,0.28);
+    background: white;
 }
 
+.btn-outline {
+    color: white;
 
-/* SECONDARY BUTTON */
+    border: 1.5px solid rgba(255,255,255,0.9);
 
-.button-secondary {
-    color: #ffffff;
-
-    border: 1.5px solid rgba(255,255,255,0.85);
-
-    background: rgba(255,255,255,0.06);
+    background: rgba(255,255,255,0.05);
 }
 
-.button-secondary:hover {
-    background: #ffffff;
+.btn-outline:hover {
+    background: white;
 
     color: #06266d;
 
@@ -334,20 +330,20 @@ a {
 }
 
 
-/* =====================================================
-   HERO PHOTO
-===================================================== */
+/* =========================
+   RIGHT PHOTO
+========================= */
 
-.hero-photo-area {
+.hero-photo {
     min-height: 600px;
 
     position: relative;
 
     display: flex;
 
-    align-items: center;
-
     justify-content: center;
+
+    align-items: center;
 }
 
 
@@ -356,48 +352,48 @@ a {
 .photo-glow {
     position: absolute;
 
-    width: 470px;
-    height: 470px;
+    width: 480px;
+    height: 480px;
 
     border-radius: 50%;
 
     background:
         radial-gradient(
             circle,
-            rgba(255,255,255,0.23) 0%,
-            rgba(0,220,255,0.15) 35%,
+            rgba(255,255,255,0.25),
+            rgba(0,220,255,0.12),
             transparent 70%
         );
 
-    filter: blur(5px);
+    filter: blur(7px);
 }
 
 
-/* PHOTO */
+/* ACTUAL PHOTO */
 
-.profile-photo {
+.profile {
     position: relative;
 
-    z-index: 3;
+    z-index: 2;
 
-    width: min(430px, 92%);
+    width: 430px;
+
+    max-width: 92%;
 
     max-height: 620px;
 
     object-fit: contain;
 
-    object-position: center bottom;
-
     filter:
         drop-shadow(
-            0 25px 35px rgba(0,0,0,0.30)
+            0 25px 35px rgba(0,0,0,0.32)
         );
 
-    transition: all 0.4s ease;
+    transition: 0.4s ease;
 }
 
-.profile-photo:hover {
-    transform: scale(1.025) translateY(-5px);
+.profile:hover {
+    transform: translateY(-5px) scale(1.02);
 }
 
 
@@ -406,38 +402,36 @@ a {
 .photo-label {
     position: absolute;
 
-    right: 10px;
-    bottom: 75px;
+    z-index: 5;
 
-    z-index: 10;
+    right: 5px;
+    bottom: 70px;
 
-    padding: 12px 17px;
+    padding: 12px 18px;
 
-    background: rgba(3,15,45,0.72);
+    background:
+        rgba(3,15,45,0.75);
 
     border:
-        1px solid rgba(255,255,255,0.22);
+        1px solid rgba(255,255,255,0.25);
 
     border-radius: 10px;
 
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(10px);
 
     font-size: 10px;
 
-    font-weight: 800;
+    font-weight: 900;
 
-    letter-spacing: 1.2px;
+    letter-spacing: 1px;
 
-    color: #ffffff;
-
-    box-shadow:
-        0 15px 35px rgba(0,0,0,0.20);
+    color: white;
 }
 
 
-/* =====================================================
-   RESOURCES SECTION
-===================================================== */
+/* =========================
+   RESOURCES
+========================= */
 
 .resources {
     padding: 90px 20px;
@@ -445,12 +439,12 @@ a {
     background:
         linear-gradient(
             180deg,
-            #06142f 0%,
-            #081d43 100%
+            #06132d,
+            #081e46
         );
 }
 
-.resources-inner {
+.resources-container {
     width: 92%;
     max-width: 1150px;
 
@@ -458,7 +452,6 @@ a {
 
     text-align: center;
 }
-
 
 .section-title {
     font-size: 40px;
@@ -471,7 +464,6 @@ a {
 .section-title span {
     color: #ffe000;
 }
-
 
 .section-description {
     max-width: 720px;
@@ -486,9 +478,9 @@ a {
 }
 
 
-/* =====================================================
-   RESOURCE CARDS
-===================================================== */
+/* =========================
+   CARDS
+========================= */
 
 .cards {
     margin-top: 45px;
@@ -506,41 +498,34 @@ a {
 
     border-radius: 16px;
 
-    background:
-        rgba(255,255,255,0.045);
+    background: rgba(255,255,255,0.05);
 
     border:
-        1px solid rgba(255,255,255,0.11);
+        1px solid rgba(255,255,255,0.10);
 
-    transition: all 0.3s ease;
+    transition: 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-8px);
-
-    background:
-        rgba(255,255,255,0.075);
+    transform: translateY(-7px);
 
     border-color:
         rgba(255,224,0,0.35);
 }
 
-
-.card-icon {
-    font-size: 35px;
+.icon {
+    font-size: 34px;
 
     margin-bottom: 15px;
 }
 
-
 .card h3 {
-    font-size: 19px;
-
     color: #ffe000;
+
+    font-size: 19px;
 
     margin-bottom: 12px;
 }
-
 
 .card p {
     font-size: 14px;
@@ -551,26 +536,26 @@ a {
 }
 
 
-/* =====================================================
-   B-TITAN INFORMATION
-===================================================== */
+/* =========================
+   INFORMATION
+========================= */
 
-.info-section {
+.information {
     padding: 90px 20px;
 
-    background: #050f25;
-}
-
-.info-inner {
-    width: 92%;
-    max-width: 1000px;
-
-    margin: auto;
+    background: #040d21;
 
     text-align: center;
 }
 
-.info-title {
+.information-container {
+    width: 92%;
+    max-width: 950px;
+
+    margin: auto;
+}
+
+.information h2 {
     font-size: 38px;
 
     font-weight: 900;
@@ -578,26 +563,21 @@ a {
     margin-bottom: 20px;
 }
 
-.info-title span {
+.information h2 span {
     color: #ffe000;
 }
 
-.info-text {
-    color: rgba(255,255,255,0.72);
-
-    line-height: 1.8;
-
-    font-size: 15px;
-
+.information p {
     max-width: 750px;
 
     margin: auto;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    color: rgba(255,255,255,0.72);
 }
-
-
-/* =====================================================
-   NOTICE
-===================================================== */
 
 .notice {
     margin-top: 35px;
@@ -607,12 +587,12 @@ a {
     border-radius: 12px;
 
     background:
-        rgba(255,224,0,0.07);
+        rgba(255,224,0,0.06);
 
     border:
         1px solid rgba(255,224,0,0.25);
 
-    color: rgba(255,255,255,0.80);
+    color: rgba(255,255,255,0.75);
 
     font-size: 13px;
 
@@ -620,11 +600,11 @@ a {
 }
 
 
-/* =====================================================
+/* =========================
    FOOTER
-===================================================== */
+========================= */
 
-.footer {
+footer {
     padding: 30px 20px;
 
     text-align: center;
@@ -637,7 +617,6 @@ a {
 
 .footer-logo {
     width: 55px;
-
     height: 55px;
 
     object-fit: contain;
@@ -645,22 +624,22 @@ a {
     margin-bottom: 10px;
 }
 
-.footer-title {
+.footer-name {
+    font-size: 14px;
+
     font-weight: 900;
 
     letter-spacing: 1px;
-
-    font-size: 14px;
 }
 
-.footer-text {
+.footer-sub {
     margin-top: 8px;
 
     color: rgba(255,255,255,0.45);
 
     font-size: 11px;
 
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
 
@@ -670,7 +649,7 @@ a {
 
 @media (max-width: 950px) {
 
-    .hero-inner {
+    .hero-container {
         grid-template-columns: 1fr;
 
         text-align: center;
@@ -684,12 +663,12 @@ a {
         margin: auto;
     }
 
-    .title-line {
+    .yellow-line {
         margin-left: auto;
         margin-right: auto;
     }
 
-    .hero-description {
+    .description {
         margin-left: auto;
         margin-right: auto;
     }
@@ -698,13 +677,13 @@ a {
         justify-content: center;
     }
 
-    .hero-photo-area {
+    .hero-photo {
         min-height: 500px;
 
         margin-top: -30px;
     }
 
-    .profile-photo {
+    .profile {
         width: 390px;
     }
 
@@ -728,7 +707,7 @@ a {
 
 @media (max-width: 600px) {
 
-    .header {
+    header {
         height: 76px;
     }
 
@@ -736,107 +715,77 @@ a {
         width: 94%;
     }
 
-    .logo {
+    .header-logo {
         width: 48px;
         height: 48px;
     }
 
-    .logo-text h2 {
+    .header-title {
         font-size: 14px;
     }
 
-    .logo-text p {
+    .header-subtitle {
         font-size: 7px;
 
         letter-spacing: 1px;
     }
 
-
-    .hero-inner {
+    .hero-container {
         width: 92%;
 
         padding-top: 30px;
     }
 
-
-    .top-label {
+    .small-heading {
         font-size: 9px;
 
         letter-spacing: 2px;
-
-        line-height: 1.5;
     }
-
 
     .hero-title {
-        font-size: 46px;
+        font-size: 45px;
 
         letter-spacing: -2px;
-
-        line-height: 1;
     }
 
-
-    .title-line {
-        width: 100px;
-
-        height: 4px;
-
-        margin-top: 23px;
-
-        margin-bottom: 20px;
-    }
-
-
-    .academy-title {
+    .academy-name {
         font-size: 9px;
 
         letter-spacing: 3px;
     }
 
-
-    .hero-description {
+    .description {
         font-size: 13px;
 
         line-height: 1.7;
     }
 
-
     .buttons {
         flex-direction: column;
 
         width: 100%;
-
-        gap: 11px;
     }
 
-
-    .button {
+    .btn {
         width: 100%;
-
-        padding: 15px;
     }
 
-
-    .hero-photo-area {
+    .hero-photo {
         min-height: 430px;
 
         margin-top: -15px;
     }
 
-
-    .profile-photo {
+    .profile {
         width: 330px;
 
         max-height: 470px;
     }
 
-
     .photo-glow {
         width: 310px;
         height: 310px;
     }
-
 
     .photo-label {
         bottom: 20px;
@@ -846,50 +795,28 @@ a {
         font-size: 9px;
     }
 
-
-    .resources {
-        padding: 70px 18px;
-    }
-
-
     .section-title {
         font-size: 30px;
     }
 
-
-    .section-description {
-        font-size: 13px;
-    }
-
-
-    .info-section {
-        padding: 70px 18px;
-    }
-
-
-    .info-title {
+    .information h2 {
         font-size: 29px;
     }
-
 }
 
 
 /* =====================================================
-   VERY SMALL MOBILE
+   SMALL MOBILE
 ===================================================== */
 
 @media (max-width: 380px) {
 
     .hero-title {
-        font-size: 40px;
+        font-size: 39px;
     }
 
-    .profile-photo {
+    .profile {
         width: 290px;
-    }
-
-    .hero-photo-area {
-        min-height: 390px;
     }
 
 }
@@ -905,31 +832,29 @@ a {
      HEADER
 ===================================================== -->
 
-<header class="header">
+<header>
 
     <div class="header-inner">
 
-        <a href="#" class="logo-area">
+        <!-- YOUR ACTUAL GITHUB LOGO FILE -->
 
-            <img
-                src="logo.png"
-                alt="GS Digital Academy Logo"
-                class="logo"
-            >
+        <img
+            src="gs-digital-academy-logo-1.png"
+            alt="GS Digital Academy Logo"
+            class="header-logo"
+        >
 
-            <div class="logo-text">
+        <div>
 
-                <h2>
-                    GS DIGITAL ACADEMY
-                </h2>
-
-                <p>
-                    DIGITAL KNOWLEDGE • BLOCKCHAIN • WEB3
-                </p>
-
+            <div class="header-title">
+                GS DIGITAL ACADEMY
             </div>
 
-        </a>
+            <div class="header-subtitle">
+                DIGITAL KNOWLEDGE • BLOCKCHAIN • WEB3
+            </div>
+
+        </div>
 
     </div>
 
@@ -938,19 +863,19 @@ a {
 
 
 <!-- =====================================================
-     HERO SECTION
+     HERO
 ===================================================== -->
 
 <section class="hero">
 
-    <div class="hero-inner">
+    <div class="hero-container">
 
 
-        <!-- LEFT -->
+        <!-- LEFT SIDE -->
 
         <div class="hero-content">
 
-            <div class="top-label">
+            <div class="small-heading">
                 DIGITAL KNOWLEDGE • BLOCKCHAIN • WEB3
             </div>
 
@@ -968,15 +893,15 @@ a {
             </h1>
 
 
-            <div class="title-line"></div>
+            <div class="yellow-line"></div>
 
 
-            <div class="academy-title">
+            <div class="academy-name">
                 GS DIGITAL ACADEMY
             </div>
 
 
-            <p class="hero-description">
+            <p class="description">
 
                 A professional learning and information hub
                 designed to help you explore B-TITAN resources,
@@ -989,31 +914,27 @@ a {
 
             <div class="buttons">
 
-
-                <!-- EXPLORE -->
-
                 <a
                     href="#resources"
-                    class="button button-primary"
+                    class="btn btn-yellow"
                 >
                     EXPLORE RESOURCES
                 </a>
 
 
-                <!-- =================================================
-                     IMPORTANT:
-                     Yahan apna actual B-TITAN joining link paste karein
-                ================================================== -->
+                <!--
+                    YAHAN APNA ACTUAL B-TITAN
+                    JOINING LINK PASTE KAREIN
+                -->
 
                 <a
                     href="https://example.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="button button-secondary"
+                    class="btn btn-outline"
                 >
                     JOIN B-TITAN
                 </a>
-
 
             </div>
 
@@ -1021,24 +942,19 @@ a {
 
 
 
-        <!-- RIGHT PHOTO -->
+        <!-- RIGHT SIDE PHOTO -->
 
-        <div class="hero-photo-area">
+        <div class="hero-photo">
 
             <div class="photo-glow"></div>
 
 
-            <!--
-                IMPORTANT:
-
-                Apna transparent PNG photo
-                "profile.png" naam se upload karein.
-            -->
+            <!-- YOUR ACTUAL GITHUB PHOTO FILE -->
 
             <img
-                src="profile.png"
+                src="GS_Digital_Academy_Profile-1.png"
                 alt="GS Digital Academy"
-                class="profile-photo"
+                class="profile"
             >
 
 
@@ -1056,7 +972,7 @@ a {
 
 
 <!-- =====================================================
-     RESOURCES SECTION
+     RESOURCES
 ===================================================== -->
 
 <section
@@ -1064,8 +980,7 @@ a {
     id="resources"
 >
 
-    <div class="resources-inner">
-
+    <div class="resources-container">
 
         <h2 class="section-title">
 
@@ -1079,7 +994,7 @@ a {
 
             Explore educational information, blockchain
             resources, videos and project-related information
-            from one place.
+            from one convenient place.
 
         </p>
 
@@ -1087,11 +1002,9 @@ a {
         <div class="cards">
 
 
-            <!-- CARD 1 -->
-
             <div class="card">
 
-                <div class="card-icon">
+                <div class="icon">
                     📚
                 </div>
 
@@ -1110,11 +1023,10 @@ a {
             </div>
 
 
-            <!-- CARD 2 -->
 
             <div class="card">
 
-                <div class="card-icon">
+                <div class="icon">
                     🎥
                 </div>
 
@@ -1133,11 +1045,10 @@ a {
             </div>
 
 
-            <!-- CARD 3 -->
 
             <div class="card">
 
-                <div class="card-icon">
+                <div class="icon">
                     🔗
                 </div>
 
@@ -1165,15 +1076,14 @@ a {
 
 
 <!-- =====================================================
-     B-TITAN INFORMATION
+     INFORMATION
 ===================================================== -->
 
-<section class="info-section">
+<section class="information">
 
-    <div class="info-inner">
+    <div class="information-container">
 
-
-        <h2 class="info-title">
+        <h2>
 
             Understand Before You
             <span>Decide</span>
@@ -1181,13 +1091,12 @@ a {
         </h2>
 
 
-        <p class="info-text">
+        <p>
 
-            GS Digital Academy is created as an information
-            and learning platform. Explore the available
-            information, understand the process and make
-            your own decision based on your understanding
-            and risk assessment.
+            GS Digital Academy is an information and
+            learning platform designed to help visitors
+            understand available information before
+            making their own decisions.
 
         </p>
 
@@ -1196,14 +1105,13 @@ a {
 
             <strong>Important:</strong>
 
-            B-TITAN and blockchain-related activities may
-            involve financial and technological risks.
-            Always do your own research and understand
-            the risks before participating or making
-            any financial decision.
+            B-TITAN and blockchain-related activities
+            may involve financial and technological risks.
+            Please conduct your own research and understand
+            the risks before participating or making any
+            financial decision.
 
         </div>
-
 
     </div>
 
@@ -1215,33 +1123,29 @@ a {
      FOOTER
 ===================================================== -->
 
-<footer class="footer">
+<footer>
 
     <img
-        src="logo.png"
+        src="gs-digital-academy-logo-1.png"
         alt="GS Digital Academy"
         class="footer-logo"
     >
 
-
-    <div class="footer-title">
+    <div class="footer-name">
         GS DIGITAL ACADEMY
     </div>
 
-
-    <div class="footer-text">
+    <div class="footer-sub">
 
         DIGITAL KNOWLEDGE • BLOCKCHAIN • WEB3
 
         <br><br>
 
-        © 2026 GS Digital Academy.
-        All Rights Reserved.
+        © 2026 GS Digital Academy. All Rights Reserved.
 
     </div>
 
 </footer>
-
 
 
 </body>
