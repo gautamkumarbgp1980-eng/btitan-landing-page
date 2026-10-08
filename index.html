@@ -4,838 +4,1245 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>GS Digital Academy | B-TITAN Information Hub</title>
+<title>GS Digital Academy | Digital Knowledge • Blockchain • Web3</title>
 
-<meta name="description"
-content="GS Digital Academy - Digital Knowledge, Blockchain & Web3 Information Hub">
+<meta name="description" content="GS Digital Academy - Digital Knowledge, Blockchain and Web3 resources. Understand. Decide. Build Your Future.">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:#03182d;
-    color:#fff;
-    line-height:1.6;
-    overflow-x:hidden;
-}
-a{-webkit-tap-highlight-color:transparent}
-.container{width:100%;max-width:1150px;margin:auto}
 
-/* ================= HEADER ================= */
-header{
-    position:sticky;
-    top:0;
-    z-index:9999;
-    background:#031426;
-    border-bottom:1px solid rgba(255,208,51,.45);
-    box-shadow:0 5px 25px rgba(0,0,0,.35);
-}
-.header-inner{
-    max-width:1200px;
-    margin:auto;
-    min-height:92px;
-    padding:10px 22px;
-    display:flex;
-    align-items:center;
-    gap:16px;
-}
-.logo{
-    width:70px;height:70px;
-    object-fit:contain;
-    background:#000;
-    border:3px solid #ffd033;
-    border-radius:20px;
-    padding:3px;
-    flex-shrink:0;
-}
-.brand h1{font-size:24px;line-height:1.2;letter-spacing:1px}
-.brand p{
-    margin-top:5px;
-    color:#ffd033;
-    font-size:10px;
-    letter-spacing:3px;
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* ================= HERO ================= */
-.hero{
-    position:relative;
-    min-height:calc(100vh - 92px);
-    display:flex;
-    align-items:center;
-    overflow:hidden;
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #06142f;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header {
+    width: 100%;
+    height: 88px;
+
     background:
-        radial-gradient(circle at 90% 10%,rgba(255,208,51,.12),transparent 27%),
-        radial-gradient(circle at 5% 90%,rgba(0,130,255,.18),transparent 32%),
-        linear-gradient(135deg,#062b50 0%,#034b76 50%,#062c4d 100%);
+        linear-gradient(
+            90deg,
+            #030b20 0%,
+            #071b43 50%,
+            #030b20 100%
+        );
+
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+
+    position: relative;
+    z-index: 100;
 }
-.hero::before{
-    content:"";
-    position:absolute;
-    width:500px;height:500px;
-    border-radius:50%;
-    background:rgba(255,208,51,.035);
-    right:-250px;
-    bottom:-250px;
+
+.header-inner {
+    width: 92%;
+    max-width: 1250px;
+    height: 100%;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
-.hero-inner{
-    position:relative;
-    z-index:2;
-    width:100%;
-    max-width:1200px;
-    margin:auto;
-    padding:65px 28px 70px;
-    padding-right:400px;
+
+
+/* LOGO */
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 14px;
 }
-.badge{
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-    padding:12px 22px;
-    margin-bottom:32px;
-    color:#ffd033;
-    font-size:12px;
-    letter-spacing:3px;
-    border:1px solid #ffd033;
-    border-radius:50px;
-    background:rgba(0,0,0,.08);
+
+.logo {
+    width: 58px;
+    height: 58px;
+    object-fit: contain;
 }
-.hero h2{
-    max-width:760px;
-    margin-bottom:24px;
-    font-size:clamp(50px,7vw,82px);
-    font-weight:700;
-    line-height:.98;
-    letter-spacing:-2.5px;
+
+.logo-text h2 {
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    color: #ffffff;
 }
-.hero h2 span{color:#ffd033;white-space:nowrap}
-.gold-line{
-    width:175px;height:5px;
-    margin:22px 0 25px;
-    background:#ffd033;
-    border-radius:10px;
+
+.logo-text p {
+    margin-top: 5px;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #ffd900;
 }
-.small-title{
-    margin-bottom:24px;
-    color:#c6d6e4;
-    font-size:12px;
-    letter-spacing:6px;
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+    min-height: calc(100vh - 88px);
+
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 75% 50%,
+            rgba(0, 210, 255, 0.38),
+            transparent 38%
+        ),
+        linear-gradient(
+            120deg,
+            #06266d 0%,
+            #008fdc 48%,
+            #0754a5 100%
+        );
 }
-.hero-text{
-    max-width:760px;
-    margin-bottom:30px;
-    color:#c7d8e8;
-    font-size:17px;
-    line-height:1.75;
+
+
+/* BACKGROUND GLOW */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 650px;
+    height: 650px;
+
+    right: -260px;
+    top: -220px;
+
+    border-radius: 50%;
+
+    background: rgba(0, 225, 255, 0.16);
+
+    filter: blur(20px);
 }
-.hero-photo{
-    position:absolute;
-    right:22px;
-    bottom:0;
-    width:350px;
-    max-height:560px;
-    object-fit:contain;
-    object-position:center bottom;
-    z-index:4;
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    left: -250px;
+    bottom: -280px;
+
+    border-radius: 50%;
+
+    background: rgba(0, 60, 180, 0.35);
+
+    filter: blur(30px);
+}
+
+
+/* HERO CONTAINER */
+
+.hero-inner {
+    width: 92%;
+    max-width: 1250px;
+
+    min-height: calc(100vh - 88px);
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 55% 45%;
+
+    align-items: center;
+
+    position: relative;
+    z-index: 5;
+}
+
+
+/* =====================================================
+   HERO LEFT CONTENT
+===================================================== */
+
+.hero-content {
+    padding: 60px 0;
+    max-width: 700px;
+}
+
+.top-label {
+    color: #ffe000;
+
+    font-size: 12px;
+    font-weight: 900;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 22px;
+}
+
+
+.hero-title {
+    font-size: clamp(50px, 6vw, 82px);
+
+    line-height: 0.98;
+
+    font-weight: 900;
+
+    letter-spacing: -3px;
+
+    color: #ffffff;
+}
+
+.hero-title .yellow {
+    display: block;
+    color: #ffe000;
+}
+
+
+.title-line {
+    width: 125px;
+    height: 5px;
+
+    background: #ffe000;
+
+    border-radius: 20px;
+
+    margin: 28px 0 25px;
+}
+
+
+.academy-title {
+    font-size: 13px;
+
+    font-weight: 900;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 20px;
+
+    color: #ffffff;
+}
+
+
+.hero-description {
+    max-width: 630px;
+
+    color: rgba(255,255,255,0.92);
+
+    font-size: 15px;
+
+    line-height: 1.75;
+
+    margin-bottom: 32px;
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.buttons {
+    display: flex;
+
+    gap: 14px;
+
+    flex-wrap: wrap;
+}
+
+.button {
+    min-width: 175px;
+
+    padding: 16px 25px;
+
+    border-radius: 9px;
+
+    font-size: 12px;
+
+    font-weight: 900;
+
+    letter-spacing: 0.8px;
+
+    text-align: center;
+
+    transition: all 0.3s ease;
+}
+
+
+/* PRIMARY BUTTON */
+
+.button-primary {
+    background: #ffe000;
+
+    color: #06152f;
+
+    box-shadow:
+        0 12px 28px rgba(0,0,0,0.22);
+}
+
+.button-primary:hover {
+    transform: translateY(-4px);
+
+    background: #ffffff;
+
+    box-shadow:
+        0 18px 35px rgba(0,0,0,0.28);
+}
+
+
+/* SECONDARY BUTTON */
+
+.button-secondary {
+    color: #ffffff;
+
+    border: 1.5px solid rgba(255,255,255,0.85);
+
+    background: rgba(255,255,255,0.06);
+}
+
+.button-secondary:hover {
+    background: #ffffff;
+
+    color: #06266d;
+
+    transform: translateY(-4px);
+}
+
+
+/* =====================================================
+   HERO PHOTO
+===================================================== */
+
+.hero-photo-area {
+    min-height: 600px;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+/* PHOTO GLOW */
+
+.photo-glow {
+    position: absolute;
+
+    width: 470px;
+    height: 470px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,0.23) 0%,
+            rgba(0,220,255,0.15) 35%,
+            transparent 70%
+        );
+
+    filter: blur(5px);
+}
+
+
+/* PHOTO */
+
+.profile-photo {
+    position: relative;
+
+    z-index: 3;
+
+    width: min(430px, 92%);
+
+    max-height: 620px;
+
+    object-fit: contain;
+
+    object-position: center bottom;
+
     filter:
-        drop-shadow(0 20px 35px rgba(0,0,0,.38))
-        drop-shadow(0 0 28px rgba(255,208,51,.12));
-}
-.buttons{display:flex;flex-wrap:wrap;gap:14px}
-.btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    min-width:225px;
-    padding:16px 22px;
-    border-radius:15px;
-    text-decoration:none;
-    font-size:15px;
-    font-weight:700;
-    transition:.25s ease;
-}
-.btn-gold{
-    color:#06182d;
-    background:linear-gradient(135deg,#ffe05b,#f2b500);
-    box-shadow:0 8px 25px rgba(255,208,51,.15);
-}
-.btn-outline{
-    color:#ffd033;
-    background:rgba(0,0,0,.04);
-    border:1px solid #ffd033;
-}
-.btn:hover{
-    transform:translateY(-3px);
-    box-shadow:0 12px 30px rgba(255,208,51,.22);
+        drop-shadow(
+            0 25px 35px rgba(0,0,0,0.30)
+        );
+
+    transition: all 0.4s ease;
 }
 
-/* ================= COMMON ================= */
-section{padding:75px 22px}
-.section-title{text-align:center;margin-bottom:45px}
-.section-title h2{font-size:38px;line-height:1.2;margin-bottom:10px}
-.section-title h2 span{color:#ffd033}
-.section-title p{color:#aebfd0}
-
-/* ================= CARDS ================= */
-.cards{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:24px;
-}
-.card{
-    padding:30px;
-    text-align:center;
-    background:linear-gradient(145deg,#083967,#06294c);
-    border:1px solid rgba(255,208,51,.30);
-    border-radius:25px;
-    box-shadow:0 15px 40px rgba(0,0,0,.20);
-    transition:.3s;
-}
-.card:hover{transform:translateY(-6px);border-color:#ffd033}
-.card-icon{
-    width:115px;height:115px;
-    margin:0 auto 22px;
-    padding:8px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:#020b17;
-    border:3px solid #ffd033;
-    border-radius:28px;
-}
-.card-icon img{width:100%;height:100%;object-fit:contain;border-radius:17px}
-.card h3{margin-bottom:10px;font-size:24px}
-.card h3 span{color:#ffd033}
-.card p{margin-bottom:22px;color:#b8c9d9;font-size:15px}
-.card-btn{
-    display:inline-block;
-    padding:12px 25px;
-    color:#071a2d;
-    background:#ffd033;
-    border-radius:10px;
-    text-decoration:none;
-    font-weight:bold;
+.profile-photo:hover {
+    transform: scale(1.025) translateY(-5px);
 }
 
-/* ================= RESOURCES ================= */
-.resources{background:#041e37}
-.resource-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:18px;
-}
-.resource{
-    display:flex;
-    align-items:center;
-    gap:18px;
-    padding:23px;
-    color:#fff;
-    text-decoration:none;
-    background:#062b4d;
-    border:1px solid rgba(255,208,51,.25);
-    border-radius:18px;
-    transition:.25s;
-}
-.resource:hover{transform:translateY(-3px);border-color:#ffd033}
-.resource-icon{
-    width:56px;height:56px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    flex-shrink:0;
-    color:#06192d;
-    background:#ffd033;
-    border-radius:15px;
-    font-size:23px;
-}
-.resource h3{font-size:18px;margin-bottom:3px}
-.resource p{color:#aebfd0;font-size:13px}
 
-/* ================= VIDEO ================= */
-.video-box{
-    width:100%;
-    max-width:850px;
-    margin:auto;
-    padding:15px;
-    background:#061c33;
-    border:1px solid rgba(255,208,51,.35);
-    border-radius:20px;
-}
-.video-box iframe{
-    display:block;
-    width:100%;
-    aspect-ratio:16/9;
-    border:0;
-    border-radius:12px;
+/* PHOTO LABEL */
+
+.photo-label {
+    position: absolute;
+
+    right: 10px;
+    bottom: 75px;
+
+    z-index: 10;
+
+    padding: 12px 17px;
+
+    background: rgba(3,15,45,0.72);
+
+    border:
+        1px solid rgba(255,255,255,0.22);
+
+    border-radius: 10px;
+
+    backdrop-filter: blur(12px);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.2px;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.20);
 }
 
-/* ================= NOTICE ================= */
-.notice{
-    padding:35px;
-    text-align:center;
-    background:linear-gradient(135deg,#071d35,#082d4e);
-    border:1px solid rgba(255,208,51,.35);
-    border-radius:22px;
-}
-.notice h2{margin-bottom:14px;color:#ffd033;font-size:30px}
-.notice p{color:#c2d0dc}
 
-/* ================= SOCIAL ================= */
-.social{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:14px;
-}
-.social a{
-    padding:12px 24px;
-    color:#fff;
-    text-decoration:none;
-    border:1px solid #ffd033;
-    border-radius:30px;
-    transition:.25s;
-}
-.social a:hover{color:#06192d;background:#ffd033}
+/* =====================================================
+   RESOURCES SECTION
+===================================================== */
 
-/* ================= FOOTER ================= */
-footer{
-    padding:45px 20px;
-    text-align:center;
-    background:#021121;
-    border-top:1px solid rgba(255,208,51,.30);
-}
-.footer-logo{
-    width:80px;height:80px;
-    object-fit:contain;
-    margin-bottom:15px;
-    background:#000;
-    border-radius:20px;
-}
-footer h3{margin-bottom:8px}
-footer p{color:#899caf;font-size:13px}
-.copyright{margin-top:24px;color:#66798c;font-size:12px}
+.resources {
+    padding: 90px 20px;
 
-/* ================= MESSAGE ================= */
-#messageBox{
-    display:none;
-    position:fixed;
-    left:50%;
-    bottom:25px;
-    transform:translateX(-50%);
-    z-index:99999;
-    width:90%;
-    max-width:450px;
-    padding:18px 20px;
-    background:#061a30;
-    border:1px solid #ffd033;
-    border-radius:15px;
-    text-align:center;
-    box-shadow:0 10px 40px rgba(0,0,0,.45);
-    color:#fff;
+    background:
+        linear-gradient(
+            180deg,
+            #06142f 0%,
+            #081d43 100%
+        );
 }
 
-/* ================= MOBILE ================= */
-@media(max-width:800px){
-    .header-inner{
-        min-height:84px;
-        padding:10px 16px;
-        gap:13px;
+.resources-inner {
+    width: 92%;
+    max-width: 1150px;
+
+    margin: auto;
+
+    text-align: center;
+}
+
+
+.section-title {
+    font-size: 40px;
+
+    font-weight: 900;
+
+    margin-bottom: 15px;
+}
+
+.section-title span {
+    color: #ffe000;
+}
+
+
+.section-description {
+    max-width: 720px;
+
+    margin: auto;
+
+    color: rgba(255,255,255,0.70);
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   RESOURCE CARDS
+===================================================== */
+
+.cards {
+    margin-top: 45px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+.card {
+    padding: 32px 25px;
+
+    border-radius: 16px;
+
+    background:
+        rgba(255,255,255,0.045);
+
+    border:
+        1px solid rgba(255,255,255,0.11);
+
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+
+    background:
+        rgba(255,255,255,0.075);
+
+    border-color:
+        rgba(255,224,0,0.35);
+}
+
+
+.card-icon {
+    font-size: 35px;
+
+    margin-bottom: 15px;
+}
+
+
+.card h3 {
+    font-size: 19px;
+
+    color: #ffe000;
+
+    margin-bottom: 12px;
+}
+
+
+.card p {
+    font-size: 14px;
+
+    line-height: 1.65;
+
+    color: rgba(255,255,255,0.70);
+}
+
+
+/* =====================================================
+   B-TITAN INFORMATION
+===================================================== */
+
+.info-section {
+    padding: 90px 20px;
+
+    background: #050f25;
+}
+
+.info-inner {
+    width: 92%;
+    max-width: 1000px;
+
+    margin: auto;
+
+    text-align: center;
+}
+
+.info-title {
+    font-size: 38px;
+
+    font-weight: 900;
+
+    margin-bottom: 20px;
+}
+
+.info-title span {
+    color: #ffe000;
+}
+
+.info-text {
+    color: rgba(255,255,255,0.72);
+
+    line-height: 1.8;
+
+    font-size: 15px;
+
+    max-width: 750px;
+
+    margin: auto;
+}
+
+
+/* =====================================================
+   NOTICE
+===================================================== */
+
+.notice {
+    margin-top: 35px;
+
+    padding: 22px;
+
+    border-radius: 12px;
+
+    background:
+        rgba(255,224,0,0.07);
+
+    border:
+        1px solid rgba(255,224,0,0.25);
+
+    color: rgba(255,255,255,0.80);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer {
+    padding: 30px 20px;
+
+    text-align: center;
+
+    background: #020817;
+
+    border-top:
+        1px solid rgba(255,255,255,0.08);
+}
+
+.footer-logo {
+    width: 55px;
+
+    height: 55px;
+
+    object-fit: contain;
+
+    margin-bottom: 10px;
+}
+
+.footer-title {
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+    font-size: 14px;
+}
+
+.footer-text {
+    margin-top: 8px;
+
+    color: rgba(255,255,255,0.45);
+
+    font-size: 11px;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 950px) {
+
+    .hero-inner {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+        padding-top: 40px;
     }
-    .logo{width:60px;height:60px;border-radius:18px}
-    .brand h1{font-size:19px}
-    .brand p{font-size:8px;letter-spacing:2px}
 
-    .hero{min-height:auto}
-    .hero-inner{
-        padding:48px 27px 30px;
-        padding-right:27px;
-        display:flex;
-        flex-direction:column;
-    }
-    .badge{padding:11px 18px;margin-bottom:29px;font-size:10px;letter-spacing:2.1px}
-    .hero h2{
-        font-size:48px;
-        line-height:.98;
-        letter-spacing:-1.8px;
-        margin-bottom:21px;
-    }
-    .hero h2 span{
-        display:block;
-        white-space:normal;
-        font-size:41px;
-        letter-spacing:-1.5px;
-    }
-    .gold-line{width:150px;height:5px;margin:20px 0 23px}
-    .small-title{font-size:10px;letter-spacing:5px;margin-bottom:22px}
-    .hero-text{font-size:15px;line-height:1.7;margin-bottom:27px}
-    .buttons{flex-direction:column;gap:11px}
-    .btn{width:100%;min-width:0;padding:16px 20px}
+    .hero-content {
+        max-width: 750px;
 
-    .hero-photo{
-        position:relative;
-        right:auto;
-        bottom:auto;
-        width:min(310px,90vw);
-        max-height:430px;
-        margin:28px auto 0;
-        align-self:center;
+        margin: auto;
     }
 
-    section{padding:55px 20px}
-    .section-title{margin-bottom:32px}
-    .section-title h2{font-size:30px}
-    .cards{grid-template-columns:1fr;gap:18px}
-    .card{padding:26px 22px}
-    .resource-grid{grid-template-columns:1fr;gap:14px}
-    .resource{padding:19px;gap:15px}
-    .notice{padding:28px 20px}
-    .notice h2{font-size:26px}
+    .title-line {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    .hero-photo-area {
+        min-height: 500px;
+
+        margin-top: -30px;
+    }
+
+    .profile-photo {
+        width: 390px;
+    }
+
+    .photo-label {
+        right: 50%;
+
+        transform: translateX(50%);
+
+        bottom: 35px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
 }
 
-@media(max-width:380px){
-    .hero-inner{padding-left:21px;padding-right:21px}
-    .hero h2{font-size:43px}
-    .hero h2 span{font-size:36px}
-    .hero-text{font-size:14.5px}
-    .brand h1{font-size:17px}
-    .brand p{font-size:7px;letter-spacing:1.7px}
-    .hero-photo{width:245px}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .header {
+        height: 76px;
+    }
+
+    .header-inner {
+        width: 94%;
+    }
+
+    .logo {
+        width: 48px;
+        height: 48px;
+    }
+
+    .logo-text h2 {
+        font-size: 14px;
+    }
+
+    .logo-text p {
+        font-size: 7px;
+
+        letter-spacing: 1px;
+    }
+
+
+    .hero-inner {
+        width: 92%;
+
+        padding-top: 30px;
+    }
+
+
+    .top-label {
+        font-size: 9px;
+
+        letter-spacing: 2px;
+
+        line-height: 1.5;
+    }
+
+
+    .hero-title {
+        font-size: 46px;
+
+        letter-spacing: -2px;
+
+        line-height: 1;
+    }
+
+
+    .title-line {
+        width: 100px;
+
+        height: 4px;
+
+        margin-top: 23px;
+
+        margin-bottom: 20px;
+    }
+
+
+    .academy-title {
+        font-size: 9px;
+
+        letter-spacing: 3px;
+    }
+
+
+    .hero-description {
+        font-size: 13px;
+
+        line-height: 1.7;
+    }
+
+
+    .buttons {
+        flex-direction: column;
+
+        width: 100%;
+
+        gap: 11px;
+    }
+
+
+    .button {
+        width: 100%;
+
+        padding: 15px;
+    }
+
+
+    .hero-photo-area {
+        min-height: 430px;
+
+        margin-top: -15px;
+    }
+
+
+    .profile-photo {
+        width: 330px;
+
+        max-height: 470px;
+    }
+
+
+    .photo-glow {
+        width: 310px;
+        height: 310px;
+    }
+
+
+    .photo-label {
+        bottom: 20px;
+
+        white-space: nowrap;
+
+        font-size: 9px;
+    }
+
+
+    .resources {
+        padding: 70px 18px;
+    }
+
+
+    .section-title {
+        font-size: 30px;
+    }
+
+
+    .section-description {
+        font-size: 13px;
+    }
+
+
+    .info-section {
+        padding: 70px 18px;
+    }
+
+
+    .info-title {
+        font-size: 29px;
+    }
+
 }
+
+
+/* =====================================================
+   VERY SMALL MOBILE
+===================================================== */
+
+@media (max-width: 380px) {
+
+    .hero-title {
+        font-size: 40px;
+    }
+
+    .profile-photo {
+        width: 290px;
+    }
+
+    .hero-photo-area {
+        min-height: 390px;
+    }
+
+}
+
 </style>
 </head>
 
+
 <body>
 
-<!-- ================= HEADER ================= -->
-<header>
-    <div class="header-inner">
-        <img src="gs-digital-academy-logo-1.png"
-             class="logo"
-             alt="GS Digital Academy Logo">
 
-        <div class="brand">
-            <h1>GS DIGITAL ACADEMY</h1>
-            <p>DIGITAL KNOWLEDGE • BLOCKCHAIN • WEB3</p>
-        </div>
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="header">
+
+    <div class="header-inner">
+
+        <a href="#" class="logo-area">
+
+            <img
+                src="logo.png"
+                alt="GS Digital Academy Logo"
+                class="logo"
+            >
+
+            <div class="logo-text">
+
+                <h2>
+                    GS DIGITAL ACADEMY
+                </h2>
+
+                <p>
+                    DIGITAL KNOWLEDGE • BLOCKCHAIN • WEB3
+                </p>
+
+            </div>
+
+        </a>
+
     </div>
+
 </header>
 
-<!-- ================= HERO ================= -->
-<section class="hero" id="home">
+
+
+<!-- =====================================================
+     HERO SECTION
+===================================================== -->
+
+<section class="hero">
+
     <div class="hero-inner">
 
-        <div class="badge">
-            <span>●</span>
-            B-TITAN INFORMATION HUB
+
+        <!-- LEFT -->
+
+        <div class="hero-content">
+
+            <div class="top-label">
+                DIGITAL KNOWLEDGE • BLOCKCHAIN • WEB3
+            </div>
+
+
+            <h1 class="hero-title">
+
+                Understand.<br>
+
+                Decide.
+
+                <span class="yellow">
+                    Build Your Future.
+                </span>
+
+            </h1>
+
+
+            <div class="title-line"></div>
+
+
+            <div class="academy-title">
+                GS DIGITAL ACADEMY
+            </div>
+
+
+            <p class="hero-description">
+
+                A professional learning and information hub
+                designed to help you explore B-TITAN resources,
+                blockchain guidance, educational videos and
+                available processes before making your own
+                decision.
+
+            </p>
+
+
+            <div class="buttons">
+
+
+                <!-- EXPLORE -->
+
+                <a
+                    href="#resources"
+                    class="button button-primary"
+                >
+                    EXPLORE RESOURCES
+                </a>
+
+
+                <!-- =================================================
+                     IMPORTANT:
+                     Yahan apna actual B-TITAN joining link paste karein
+                ================================================== -->
+
+                <a
+                    href="https://example.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="button button-secondary"
+                >
+                    JOIN B-TITAN
+                </a>
+
+
+            </div>
+
         </div>
 
-        <h2>
-            Understand.<br>
-            Decide.<br>
-            <span>Build Your Future.</span>
-        </h2>
 
-        <div class="gold-line"></div>
 
-        <div class="small-title">
-            GS DIGITAL ACADEMY
+        <!-- RIGHT PHOTO -->
+
+        <div class="hero-photo-area">
+
+            <div class="photo-glow"></div>
+
+
+            <!--
+                IMPORTANT:
+
+                Apna transparent PNG photo
+                "profile.png" naam se upload karein.
+            -->
+
+            <img
+                src="profile.png"
+                alt="GS Digital Academy"
+                class="profile-photo"
+            >
+
+
+            <div class="photo-label">
+                LEARN • UNDERSTAND • DECIDE
+            </div>
+
         </div>
 
-        <p class="hero-text">
-            A professional learning and information hub designed
-            to help you explore B-TITAN resources, blockchain
-            guidance, educational videos and available processes
-            before making your own decision.
-        </p>
 
-        <div class="buttons">
-            <a href="#resources" class="btn btn-gold">
-                EXPLORE RESOURCES
-            </a>
-
-            <a href="#join" class="btn btn-outline">
-                JOIN B-TITAN
-            </a>
-        </div>
-
-        <!-- YOUR PROFILE PHOTO -->
-        <img src="GS_Digital_Academy_Profile-1.png"
-             class="hero-photo"
-             alt="GS Digital Academy Profile">
     </div>
+
 </section>
 
-<!-- ================= B-TITAN HUB ================= -->
-<section id="join">
-    <div class="container">
 
-        <div class="section-title">
-            <h2>B-TITAN <span>Information Hub</span></h2>
-            <p>Explore available information and resources.</p>
-        </div>
+
+<!-- =====================================================
+     RESOURCES SECTION
+===================================================== -->
+
+<section
+    class="resources"
+    id="resources"
+>
+
+    <div class="resources-inner">
+
+
+        <h2 class="section-title">
+
+            Explore
+            <span>Resources</span>
+
+        </h2>
+
+
+        <p class="section-description">
+
+            Explore educational information, blockchain
+            resources, videos and project-related information
+            from one place.
+
+        </p>
+
 
         <div class="cards">
 
-            <div class="card">
-                <div class="card-icon">
-                    <img src="btitan-logo-1.png" alt="B-TITAN Logo">
-                </div>
 
-                <h3>B-TITAN <span>PLAN</span></h3>
-
-                <p>
-                    Explore the available B-TITAN plan
-                    and educational information.
-                </p>
-
-                <a href="#resources" class="card-btn">
-                    VIEW PLAN
-                </a>
-            </div>
+            <!-- CARD 1 -->
 
             <div class="card">
+
                 <div class="card-icon">
-                    <span style="font-size:55px;color:#ffd033">➜</span>
+                    📚
                 </div>
 
-                <h3>JOIN <span>B-TITAN</span></h3>
+                <h3>
+                    Learning
+                </h3>
 
                 <p>
-                    Review the information first and
-                    continue to the registration process.
+
+                    Learn the basics of blockchain,
+                    Web3, digital technology and
+                    cryptocurrency concepts.
+
                 </p>
 
-                <a href="#registration" class="card-btn">
-                    JOIN NOW
-                </a>
             </div>
+
+
+            <!-- CARD 2 -->
 
             <div class="card">
+
                 <div class="card-icon">
-                    <span style="font-size:50px;color:#ffd033">▶</span>
+                    🎥
                 </div>
 
-                <h3>BLOCKCHAIN <span>GUIDE</span></h3>
+                <h3>
+                    Educational Videos
+                </h3>
 
                 <p>
-                    Watch the blockchain ID process
-                    and educational guide.
+
+                    Watch educational and informational
+                    videos related to blockchain,
+                    Web3 and digital technology.
+
                 </p>
 
-                <a href="https://youtube.com/shorts/-fIVG9pZtEo?si=nclwN9l8L6Fo1tLa"
-                   target="_blank"
-                   rel="noopener"
-                   class="card-btn">
-                    WATCH VIDEO
-                </a>
             </div>
 
-        </div>
-    </div>
-</section>
 
-<!-- ================= RESOURCES ================= -->
-<section class="resources" id="resources">
-    <div class="container">
+            <!-- CARD 3 -->
 
-        <div class="section-title">
-            <h2>Explore <span>Resources</span></h2>
-            <p>Important resources in one place.</p>
-        </div>
+            <div class="card">
 
-        <div class="resource-grid">
-
-            <a href="#"
-               class="resource"
-               onclick="showMessage('Plan Presentation PDF link will be added here.');return false;">
-                <div class="resource-icon">📄</div>
-                <div>
-                    <h3>B-TITAN Plan Presentation PDF</h3>
-                    <p>Open the complete plan presentation.</p>
+                <div class="card-icon">
+                    🔗
                 </div>
-            </a>
 
-            <a href="https://youtube.com/shorts/-fIVG9pZtEo?si=nclwN9l8L6Fo1tLa"
-               target="_blank"
-               rel="noopener"
-               class="resource">
-                <div class="resource-icon">▶</div>
-                <div>
-                    <h3>Blockchain ID Video</h3>
-                    <p>Watch the blockchain ID process.</p>
-                </div>
-            </a>
+                <h3>
+                    B-TITAN Resources
+                </h3>
 
-            <a href="#"
-               class="resource"
-               onclick="showMessage('Complete Plan Video link will be added here.');return false;">
-                <div class="resource-icon">🎬</div>
-                <div>
-                    <h3>Complete Plan Video</h3>
-                    <p>Watch the detailed plan presentation.</p>
-                </div>
-            </a>
+                <p>
 
-            <a href="https://beacons.ai/gsdigitalacademy"
-               target="_blank"
-               rel="noopener"
-               class="resource">
-                <div class="resource-icon">🌐</div>
-                <div>
-                    <h3>GS Digital Academy Hub</h3>
-                    <p>Open the academy information hub.</p>
-                </div>
-            </a>
+                    Access available B-TITAN information,
+                    guides, videos and resources from
+                    one convenient location.
 
-            <a href="#"
-               class="resource"
-               onclick="showMessage('ID Activation Guide link will be added here.');return false;">
-                <div class="resource-icon">🔗</div>
-                <div>
-                    <h3>ID Activation Guide</h3>
-                    <p>Learn the ID activation process.</p>
-                </div>
-            </a>
+                </p>
 
-            <a href="#"
-               class="resource"
-               onclick="showMessage('Zoom meeting link will be added here.');return false;">
-                <div class="resource-icon">💻</div>
-                <div>
-                    <h3>Daily Zoom Meeting</h3>
-                    <p>Join the latest online session.</p>
-                </div>
-            </a>
+            </div>
 
-        </div>
-    </div>
-</section>
 
-<!-- ================= VIDEO ================= -->
-<section>
-    <div class="container">
-
-        <div class="section-title">
-            <h2>Blockchain <span>ID Guide</span></h2>
-            <p>Educational video resource</p>
-        </div>
-
-        <div class="video-box">
-            <iframe
-                src="https://www.youtube.com/embed/-fIVG9pZtEo"
-                title="B-TITAN Blockchain ID Guide"
-                allowfullscreen>
-            </iframe>
         </div>
 
     </div>
+
 </section>
 
-<!-- ================= REGISTRATION ================= -->
-<section id="registration">
-    <div class="container">
+
+
+<!-- =====================================================
+     B-TITAN INFORMATION
+===================================================== -->
+
+<section class="info-section">
+
+    <div class="info-inner">
+
+
+        <h2 class="info-title">
+
+            Understand Before You
+            <span>Decide</span>
+
+        </h2>
+
+
+        <p class="info-text">
+
+            GS Digital Academy is created as an information
+            and learning platform. Explore the available
+            information, understand the process and make
+            your own decision based on your understanding
+            and risk assessment.
+
+        </p>
+
 
         <div class="notice">
-            <h2>B-TITAN Registration</h2>
 
-            <p>
-                Before joining, please review the available
-                information carefully.
+            <strong>Important:</strong>
 
-                <br><br>
+            B-TITAN and blockchain-related activities may
+            involve financial and technological risks.
+            Always do your own research and understand
+            the risks before participating or making
+            any financial decision.
 
-                <strong>Referral / ID:</strong>
-                <strong style="color:#ffd033;font-size:20px;">
-                    10203
-                </strong>
-            </p>
-
-            <br>
-
-            <a href="https://btitan.net/register?id=10203"
-               target="_blank"
-               rel="noopener"
-               class="btn btn-gold">
-                JOIN B-TITAN
-            </a>
         </div>
+
 
     </div>
+
 </section>
 
-<!-- ================= DAILY ZOOM ================= -->
-<section>
-    <div class="container">
 
-        <div class="notice">
-            <h2>Daily B-TITAN Sessions</h2>
 
-            <p>
-                <strong>Morning Zoom — 8:15 AM</strong>
-                <br>
-                <strong>Night Zoom — 9:00 PM</strong>
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
-                <br><br>
+<footer class="footer">
 
-                Please verify the latest official meeting
-                link before joining.
-            </p>
+    <img
+        src="logo.png"
+        alt="GS Digital Academy"
+        class="footer-logo"
+    >
 
-            <br>
 
-            <a href="#"
-               class="btn btn-gold"
-               onclick="showMessage('Your latest Zoom link can be added here.');return false;">
-                JOIN ZOOM MEETING
-            </a>
-        </div>
-
+    <div class="footer-title">
+        GS DIGITAL ACADEMY
     </div>
-</section>
 
-<!-- ================= ACADEMY ================= -->
-<section>
-    <div class="container">
 
-        <div class="notice">
-            <h2>GS Digital Academy</h2>
+    <div class="footer-text">
 
-            <p>
-                DIGITAL KNOWLEDGE • BLOCKCHAIN • WEB3
-                <br><br>
-                Access the complete GS Digital Academy
-                information and resource hub.
-            </p>
+        DIGITAL KNOWLEDGE • BLOCKCHAIN • WEB3
 
-            <br>
+        <br><br>
 
-            <a href="https://beacons.ai/gsdigitalacademy"
-               target="_blank"
-               rel="noopener"
-               class="btn btn-gold">
-                OPEN ACADEMY HUB
-            </a>
-        </div>
+        © 2026 GS Digital Academy.
+        All Rights Reserved.
 
-    </div>
-</section>
-
-<!-- ================= IMPORTANT INFORMATION ================= -->
-<section>
-    <div class="container">
-
-        <div class="notice">
-            <h2>Important Information</h2>
-
-            <p>
-                This website is provided for educational and
-                informational purposes.
-
-                <br><br>
-
-                Digital assets and blockchain projects involve
-                financial risk. Please understand the technology,
-                verify official information and make your own
-                independent decision before committing funds.
-            </p>
-        </div>
-
-    </div>
-</section>
-
-<!-- ================= SOCIAL ================= -->
-<section>
-    <div class="container">
-
-        <div class="section-title">
-            <h2>Connect With <span>Us</span></h2>
-            <p>Follow the available GS Digital Academy channels.</p>
-        </div>
-
-        <div class="social">
-
-            <a href="https://beacons.ai/gsdigitalacademy"
-               target="_blank"
-               rel="noopener">
-                Academy Hub
-            </a>
-
-            <a href="#"
-               onclick="showMessage('WhatsApp link will be added here.');return false;">
-                WhatsApp
-            </a>
-
-            <a href="#"
-               onclick="showMessage('Facebook link will be added here.');return false;">
-                Facebook
-            </a>
-
-            <a href="#"
-               onclick="showMessage('Instagram link will be added here.');return false;">
-                Instagram
-            </a>
-
-            <a href="#"
-               onclick="showMessage('YouTube channel link will be added here.');return false;">
-                YouTube
-            </a>
-
-        </div>
-    </div>
-</section>
-
-<!-- ================= FOOTER ================= -->
-<footer>
-
-    <img src="gs-digital-academy-logo-1.png"
-         class="footer-logo"
-         alt="GS Digital Academy">
-
-    <h3>GS DIGITAL ACADEMY</h3>
-
-    <p>DIGITAL KNOWLEDGE • BLOCKCHAIN • WEB3</p>
-
-    <p>B-TITAN Information & Educational Hub</p>
-
-    <div class="copyright">
-        © 2026 GS Digital Academy. All Rights Reserved.
     </div>
 
 </footer>
 
-<!-- ================= MESSAGE BOX ================= -->
-<div id="messageBox">
 
-    <span id="messageText"></span>
-
-    <br><br>
-
-    <button
-        onclick="closeMessage()"
-        style="
-        padding:9px 20px;
-        border:0;
-        border-radius:8px;
-        background:#ffd033;
-        color:#06182d;
-        font-weight:bold;
-        ">
-        OK
-    </button>
-
-</div>
-
-<script>
-function showMessage(message){
-    document.getElementById("messageText").innerText = message;
-    document.getElementById("messageBox").style.display = "block";
-}
-
-function closeMessage(){
-    document.getElementById("messageBox").style.display = "none";
-}
-</script>
 
 </body>
 </html>
