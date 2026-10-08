@@ -242,6 +242,7 @@ header{
 
 /* =========================
    PROFILE PHOTO
+   ONLY PHOTO AREA CHANGED
 ========================= */
 
 .hero-photo{
@@ -249,6 +250,16 @@ header{
     align-items:center;
     justify-content:center;
     text-align:center;
+
+    position:relative;
+    overflow:hidden;
+
+    /*
+       Photo ke blue background ko
+       exact matching color diya gaya hai.
+       Baaki hero design same rahega.
+    */
+    background:#0088FE;
 }
 
 .hero-photo img{
@@ -693,6 +704,12 @@ footer p{
 
     .hero-photo{
         margin-top:35px;
+
+        /*
+           Mobile me bhi photo ke exact
+           blue background ko match karega.
+        */
+        background:#0088FE;
     }
 
     .hero-photo img{
