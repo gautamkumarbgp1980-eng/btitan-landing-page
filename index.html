@@ -104,28 +104,18 @@ header{
 
 /* =========================
    HERO
+   PHOTO BACKGROUND MATCHED
 ========================= */
 
 .hero{
     min-height:calc(100vh - 78px);
 
     /*
-      Photo ke blue background ke saath
-      hero background match kiya gaya hai
+       EXACT BLUE MATCHED WITH
+       GAUTAM KUMAR PHOTO
     */
 
-    background:
-    radial-gradient(
-        circle at 75% 30%,
-        rgba(0,220,255,.30),
-        transparent 32%
-    ),
-    linear-gradient(
-        135deg,
-        #06142e 0%,
-        #087fdc 55%,
-        #078ef0 100%
-    );
+    background:#0088fe;
 
     position:relative;
     overflow:hidden;
@@ -254,23 +244,27 @@ header{
     align-items:center;
     justify-content:center;
     text-align:center;
-
-    position:relative;
 }
 
 .hero-photo img{
     width:auto;
-
     max-width:100%;
     max-height:610px;
 
     object-fit:contain;
-    object-position:center bottom;
+    object-position:center;
 
     display:block;
 
-    filter:
-        drop-shadow(0 25px 35px rgba(0,0,0,.35));
+    /*
+       IMPORTANT:
+       No crop
+       No filter
+       No opacity
+       No color change
+    */
+
+    filter:none;
 }
 
 
@@ -894,9 +888,9 @@ JOIN ZOOM
 
 
 
-<!-- ==================================================
-     NEW GAUTAM KUMAR PHOTO
-================================================== -->
+<!-- =========================
+     GAUTAM KUMAR PHOTO
+========================= -->
 
 <div class="hero-photo">
 
@@ -940,8 +934,6 @@ links from one place.
 <div class="links-grid">
 
 
-<!-- 1 -->
-
 <div class="link-card">
 
 <div class="link-icon">▶️</div>
@@ -966,8 +958,6 @@ WATCH PLAN VIDEO
 </div>
 
 
-
-<!-- 2 -->
 
 <div class="link-card">
 
@@ -994,8 +984,6 @@ OPEN PLAN PDF
 
 
 
-<!-- 3 -->
-
 <div class="link-card">
 
 <div class="link-icon">🆔</div>
@@ -1020,8 +1008,6 @@ ACTIVATE ID
 </div>
 
 
-
-<!-- 4 -->
 
 <div class="link-card">
 
@@ -1048,8 +1034,6 @@ WATCH GUIDE
 
 
 
-<!-- 5 -->
-
 <div class="link-card">
 
 <div class="link-icon">🌐</div>
@@ -1074,8 +1058,6 @@ WATCH VIDEO
 </div>
 
 
-
-<!-- 6 -->
 
 <div class="link-card">
 
@@ -1102,8 +1084,6 @@ WATCH VIDEO
 
 
 
-<!-- 7 -->
-
 <div class="link-card">
 
 <div class="link-icon">🚀</div>
@@ -1128,8 +1108,6 @@ JOIN B-TITAN
 </div>
 
 
-
-<!-- 8 -->
 
 <div class="link-card">
 
@@ -1190,8 +1168,6 @@ and team development.
 <div class="zoom-grid">
 
 
-<!-- MORNING -->
-
 <div class="zoom-card">
 
 <h3>🌅 Morning Zoom</h3>
@@ -1217,8 +1193,6 @@ JOIN MORNING ZOOM
 </div>
 
 
-
-<!-- EVENING -->
 
 <div class="zoom-card">
 
