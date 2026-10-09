@@ -12,9 +12,7 @@ content="GS Digital Academy - Digital Knowledge, Blockchain & Web3">
 
 <style>
 
-/* =========================
-   RESET
-========================= */
+/* RESET */
 
 *{
     margin:0;
@@ -34,10 +32,7 @@ a{
     text-decoration:none;
 }
 
-
-/* =========================
-   HEADER
-========================= */
+/* HEADER */
 
 header{
     position:sticky;
@@ -53,7 +48,6 @@ header{
     margin:auto;
     min-height:78px;
     padding:10px 25px;
-
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -101,14 +95,10 @@ header{
     color:#ffd400;
 }
 
-
-/* =========================
-   HERO
-========================= */
+/* HERO */
 
 .hero{
     min-height:calc(100vh - 78px);
-
     background:
     radial-gradient(
         circle at 75% 30%,
@@ -121,7 +111,6 @@ header{
         #067bd9 58%,
         #02b9ee 100%
     );
-
     position:relative;
     overflow:hidden;
 }
@@ -129,21 +118,14 @@ header{
 .hero-container{
     max-width:1200px;
     min-height:calc(100vh - 78px);
-
     margin:auto;
-
-    /* ONLY SPACE REDUCED */
     padding:25px 25px 15px;
-
     display:grid;
     grid-template-columns:1fr 1fr;
     align-items:center;
 }
 
-
-/* =========================
-   HERO LEFT
-========================= */
+/* HERO CONTENT */
 
 .hero-content{
     padding-right:20px;
@@ -156,17 +138,12 @@ header{
     font-size:13px;
     font-weight:bold;
     letter-spacing:3px;
-
-    /* SPACE REDUCED */
     margin-bottom:14px;
 }
 
 .hero h1{
     font-size:clamp(48px,6vw,78px);
-
-    /* SPACE BETWEEN LINES REDUCED */
     line-height:.90;
-
     font-weight:900;
     letter-spacing:-3px;
 }
@@ -180,8 +157,6 @@ header{
     height:5px;
     background:#ffe000;
     border-radius:20px;
-
-    /* SPACE REDUCED */
     margin:20px 0;
 }
 
@@ -190,8 +165,6 @@ header{
     font-size:13px;
     font-weight:bold;
     letter-spacing:4px;
-
-    /* SPACE REDUCED */
     margin-bottom:14px;
 }
 
@@ -200,15 +173,10 @@ header{
     color:#edf8ff;
     font-size:15px;
     line-height:1.8;
-
-    /* SPACE REDUCED */
     margin-bottom:22px;
 }
 
-
-/* =========================
-   HERO BUTTONS
-========================= */
+/* HERO BUTTONS */
 
 .hero-buttons{
     display:flex;
@@ -219,16 +187,12 @@ header{
 .btn{
     min-height:48px;
     padding:0 22px;
-
     display:inline-flex;
     align-items:center;
     justify-content:center;
-
     border-radius:9px;
-
     font-size:12px;
     font-weight:bold;
-
     transition:.3s;
 }
 
@@ -254,45 +218,30 @@ header{
     transform:translateY(-3px);
 }
 
-
-/* =========================
-   GAUTAM PHOTO
-   PHOTO SAME
-========================= */
+/* GAUTAM PHOTO */
 
 .hero-photo{
     height:100%;
     min-height:520px;
-
     display:flex;
     align-items:flex-end;
     justify-content:center;
-
     position:relative;
     overflow:hidden;
-
     z-index:1;
 }
 
 .hero-photo img{
     width:auto;
-
     max-width:100%;
     max-height:610px;
-
     height:auto;
-
     object-fit:contain;
     object-position:center bottom;
-
     display:block;
-
     position:relative;
     z-index:2;
-
-    filter:
-        drop-shadow(0 25px 35px rgba(0,0,0,.30));
-
+    filter:drop-shadow(0 25px 35px rgba(0,0,0,.30));
     transition:transform .3s ease;
 }
 
@@ -300,10 +249,7 @@ header{
     transform:scale(1.01);
 }
 
-
-/* =========================
-   COMMON SECTION
-========================= */
+/* COMMON SECTION */
 
 section{
     padding:80px 20px;
@@ -335,15 +281,11 @@ section{
 .section-heading p{
     max-width:720px;
     margin:auto;
-
     color:#9fb2ca;
     line-height:1.7;
 }
 
-
-/* =========================
-   IMPORTANT LINKS
-========================= */
+/* IMPORTANT LINKS */
 
 .links-section{
     background:#061225;
@@ -357,27 +299,16 @@ section{
 
 .link-card{
     padding:28px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #102a4c,
-            #071327
-        );
-
+    background:linear-gradient(145deg,#102a4c,#071327);
     border:1px solid rgba(255,215,0,.18);
-
     border-radius:18px;
-
     transition:.3s;
 }
 
 .link-card:hover{
     transform:translateY(-7px);
     border-color:#ffd400;
-
-    box-shadow:
-        0 15px 35px rgba(0,0,0,.35);
+    box-shadow:0 15px 35px rgba(0,0,0,.35);
 }
 
 .link-icon{
@@ -401,15 +332,11 @@ section{
     display:inline-flex;
     align-items:center;
     justify-content:center;
-
     min-height:42px;
     padding:0 18px;
-
     border-radius:8px;
-
     background:#ffd900;
     color:#061225;
-
     font-size:11px;
     font-weight:bold;
 }
@@ -418,10 +345,7 @@ section{
     background:#fff16b;
 }
 
-
-/* =========================
-   ZOOM
-========================= */
+/* ZOOM */
 
 .zoom-section{
     background:
@@ -441,16 +365,8 @@ section{
 
 .zoom-card{
     padding:35px;
-
     border-radius:20px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #10294b,
-            #071225
-        );
-
+    background:linear-gradient(145deg,#10294b,#071225);
     border:1px solid rgba(255,215,0,.22);
 }
 
@@ -475,15 +391,11 @@ section{
     display:inline-flex;
     align-items:center;
     justify-content:center;
-
     min-height:46px;
     padding:0 20px;
-
     background:#2688ff;
     color:white;
-
     border-radius:8px;
-
     font-size:12px;
     font-weight:bold;
 }
@@ -492,10 +404,7 @@ section{
     background:#006ee8;
 }
 
-
-/* =========================
-   RESOURCES
-========================= */
+/* RESOURCES */
 
 .resources{
     background:#08152a;
@@ -509,13 +418,9 @@ section{
 
 .resource-card{
     padding:30px;
-
     background:#0d2341;
-
     border-radius:18px;
-
     border:1px solid rgba(255,255,255,.08);
-
     transition:.3s;
 }
 
@@ -546,10 +451,7 @@ section{
     font-size:12px;
 }
 
-
-/* =========================
-   SOCIAL
-========================= */
+/* SOCIAL MEDIA */
 
 .social-section{
     background:#061225;
@@ -563,22 +465,15 @@ section{
 
 .social{
     min-height:120px;
-
     display:flex;
     flex-direction:column;
     align-items:center;
     justify-content:center;
-
     gap:10px;
-
     background:#0d213d;
-
     border-radius:16px;
-
     border:1px solid rgba(255,255,255,.09);
-
     color:#fff;
-
     transition:.3s;
 }
 
@@ -596,10 +491,7 @@ section{
     font-weight:bold;
 }
 
-
-/* =========================
-   ABOUT
-========================= */
+/* ABOUT */
 
 .about{
     background:#030b18;
@@ -608,20 +500,10 @@ section{
 .about-box{
     max-width:900px;
     margin:auto;
-
     padding:42px;
-
     text-align:center;
-
-    background:
-        linear-gradient(
-            145deg,
-            #102a4c,
-            #071327
-        );
-
+    background:linear-gradient(145deg,#102a4c,#071327);
     border-radius:22px;
-
     border:1px solid rgba(255,215,0,.18);
 }
 
@@ -645,10 +527,7 @@ section{
     color:#ffd400;
 }
 
-
-/* =========================
-   DISCLAIMER
-========================= */
+/* DISCLAIMER */
 
 .disclaimer{
     background:#020711;
@@ -658,27 +537,18 @@ section{
 .disclaimer-box{
     max-width:900px;
     margin:auto;
-
     text-align:center;
-
     color:#7f91a8;
-
     font-size:11px;
     line-height:1.8;
 }
 
-
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 
 footer{
     padding:35px 20px;
-
     text-align:center;
-
     background:#01050c;
-
     border-top:1px solid rgba(255,215,0,.15);
 }
 
@@ -698,10 +568,7 @@ footer p{
     font-size:11px;
 }
 
-
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 
 @media(max-width:900px){
 
@@ -712,8 +579,6 @@ footer p{
     .hero-container{
         grid-template-columns:1fr;
         text-align:center;
-
-        /* MOBILE SPACE REDUCED */
         padding-top:25px;
         padding-bottom:15px;
     }
@@ -734,10 +599,7 @@ footer p{
     .hero-photo{
         min-height:auto;
         height:auto;
-
-        /* PHOTO POSITION SAME */
         margin-top:20px;
-
         align-items:flex-end;
     }
 
@@ -746,14 +608,8 @@ footer p{
         max-width:95%;
     }
 
-    .links-grid{
-        grid-template-columns:1fr;
-    }
-
-    .resource-grid{
-        grid-template-columns:1fr;
-    }
-
+    .links-grid,
+    .resource-grid,
     .zoom-grid{
         grid-template-columns:1fr;
     }
@@ -762,7 +618,6 @@ footer p{
         grid-template-columns:1fr 1fr;
     }
 }
-
 
 @media(max-width:500px){
 
@@ -786,16 +641,12 @@ footer p{
     .hero h1{
         font-size:44px;
         letter-spacing:-2px;
-
-        /* MOBILE HEADING SPACE */
         line-height:.90;
     }
 
     .top-line{
         font-size:10px;
         letter-spacing:2px;
-
-        /* MOBILE SPACE */
         margin-bottom:12px;
     }
 
@@ -825,16 +676,11 @@ footer p{
 
 </head>
 
-
 <body>
 
-
-<!-- ==================================================
-     HEADER
-================================================== -->
+<!-- HEADER -->
 
 <header>
-
 <div class="navbar">
 
 <a href="#home" class="brand">
@@ -844,40 +690,28 @@ src="gs-digital-academy-logo-1.png"
 alt="GS Digital Academy">
 
 <div>
-
 <h2>GS DIGITAL ACADEMY</h2>
-
 <p>DIGITAL KNOWLEDGE • BLOCKCHAIN • WEB3</p>
-
 </div>
 
 </a>
 
-
 <nav class="nav">
-
 <a href="#home">HOME</a>
 <a href="#links">LINKS</a>
 <a href="#zoom">ZOOM</a>
 <a href="#resources">RESOURCES</a>
 <a href="#social">SOCIAL</a>
-
 </nav>
 
 </div>
-
 </header>
 
-
-
-<!-- ==================================================
-     HERO
-================================================== -->
+<!-- HERO -->
 
 <section class="hero" id="home">
 
 <div class="hero-container">
-
 
 <div class="hero-content">
 
@@ -885,65 +719,39 @@ alt="GS Digital Academy">
 DIGITAL KNOWLEDGE • BLOCKCHAIN • WEB3
 </div>
 
-
 <h1>
-
 Understand.<br>
-
 Decide.<br>
-
 <span>Build Your Future.</span>
-
 </h1>
 
-
 <div class="yellow-line"></div>
-
 
 <div class="academy-name">
 GS DIGITAL ACADEMY
 </div>
 
-
 <p class="description">
-
 A professional learning and information hub designed to
 help you explore B-TITAN resources, blockchain guidance,
 educational videos and available processes before making
 your own decision.
-
 </p>
-
 
 <div class="hero-buttons">
 
-<a
-href="#links"
-class="btn btn-gold">
-
+<a href="#links" class="btn btn-gold">
 EXPLORE RESOURCES
-
 </a>
 
-
-<a
-href="#zoom"
-class="btn btn-outline">
-
+<a href="#zoom" class="btn btn-outline">
 JOIN ZOOM
-
 </a>
 
 </div>
-
 </div>
 
-
-
-<!-- =========================
-     GAUTAM PHOTO
-     RIGHT SIDE
-========================= -->
+<!-- GAUTAM PHOTO -->
 
 <div class="hero-photo">
 
@@ -953,16 +761,10 @@ alt="Mr Gautam Kumar Crypto Expert">
 
 </div>
 
-
 </div>
-
 </section>
 
-
-
-<!-- ==================================================
-     IMPORTANT LINKS
-================================================== -->
+<!-- IMPORTANT LINKS -->
 
 <section class="links-section" id="links">
 
@@ -983,417 +785,140 @@ links from one place.
 
 </div>
 
-
 <div class="links-grid">
 
-
-<!-- 1 PLAN VIDEO -->
-
 <div class="link-card">
-
 <div class="link-icon">▶️</div>
-
 <h3>Complete Plan Video</h3>
-
-<p>
-Watch the complete B-TITAN plan presentation
-before making your own decision.
-</p>
-
-<a
-class="link-button"
-href="https://youtu.be/jg6a-Jo_acE"
-target="_blank"
-rel="noopener">
-
-WATCH PLAN VIDEO
-
-</a>
-
+<p>Watch the complete B-TITAN plan presentation before making your own decision.</p>
+<a class="link-button" href="https://youtu.be/jg6a-Jo_acE" target="_blank" rel="noopener">WATCH PLAN VIDEO</a>
 </div>
 
-
-
-<!-- 2 PLAN PDF -->
-
 <div class="link-card">
-
 <div class="link-icon">📄</div>
-
 <h3>Plan Presentation PDF</h3>
-
-<p>
-Open the latest B-TITAN plan presentation
-for detailed information.
-</p>
-
-<a
-class="link-button"
-href="https://docs.google.com/presentation/d/1ZhQFHnTPKTx4Lqs4LjZRFQjwZjct5FGL/export/pdf"
-target="_blank"
-rel="noopener">
-
-OPEN PLAN PDF
-
-</a>
-
+<p>Open the latest B-TITAN plan presentation for detailed information.</p>
+<a class="link-button" href="https://docs.google.com/presentation/d/1ZhQFHnTPKTx4Lqs4LjZRFQjwZjct5FGL/export/pdf" target="_blank" rel="noopener">OPEN PLAN PDF</a>
 </div>
 
-
-
-<!-- 3 HOW TO ACTIVATE ID -->
-
 <div class="link-card">
-
 <div class="link-icon">🆔</div>
-
 <h3>How To Activate ID</h3>
-
-<p>
-Follow the ID activation guide and understand
-the complete activation process step by step.
-</p>
-
-<a
-class="link-button"
-href="https://tinyurl.com/4u6jnrrw"
-target="_blank"
-rel="noopener">
-
-ACTIVATE ID
-
-</a>
-
+<p>Follow the ID activation guide and understand the complete activation process step by step.</p>
+<a class="link-button" href="https://tinyurl.com/4u6jnrrw" target="_blank" rel="noopener">ACTIVATE ID</a>
 </div>
 
-
-
-<!-- 4 2x2 MATRIX -->
-
 <div class="link-card">
-
 <div class="link-icon">⚙️</div>
-
 <h3>2×2 Matrix – Technical Guide</h3>
-
-<p>
-Watch the technical guide to understand the
-2×2 Matrix structure and working process.
-</p>
-
-<a
-class="link-button"
-href="https://youtu.be/HIxNEUneKYs"
-target="_blank"
-rel="noopener">
-
-WATCH GUIDE
-
-</a>
-
+<p>Watch the technical guide to understand the 2×2 Matrix structure and working process.</p>
+<a class="link-button" href="https://youtu.be/HIxNEUneKYs" target="_blank" rel="noopener">WATCH GUIDE</a>
 </div>
 
-
-
-<!-- 5 DECENTRALIZED SYSTEM -->
-
 <div class="link-card">
-
 <div class="link-icon">🌐</div>
-
 <h3>B-TITAN Decentralized System</h3>
-
-<p>
-Watch the educational video explaining the
-B-TITAN decentralized system.
-</p>
-
-<a
-class="link-button"
-href="https://youtu.be/MCNicgjFkxA"
-target="_blank"
-rel="noopener">
-
-WATCH VIDEO
-
-</a>
-
+<p>Watch the educational video explaining the B-TITAN decentralized system.</p>
+<a class="link-button" href="https://youtu.be/MCNicgjFkxA" target="_blank" rel="noopener">WATCH VIDEO</a>
 </div>
 
-
-
-<!-- 6 BLOCKCHAIN ID -->
-
 <div class="link-card">
-
 <div class="link-icon">⛓️</div>
-
 <h3>Blockchain ID Process</h3>
-
-<p>
-Watch the video explaining how to add your ID
-through blockchain.
-</p>
-
-<a
-class="link-button"
-href="https://youtube.com/shorts/-fIVG9pZtEo?si=nclwN9l8L6Fo1tLa"
-target="_blank"
-rel="noopener">
-
-WATCH VIDEO
-
-</a>
-
+<p>Watch the video explaining how to add your ID through blockchain.</p>
+<a class="link-button" href="https://youtube.com/shorts/-fIVG9pZtEo?si=nclwN9l8L6Fo1tLa" target="_blank" rel="noopener">WATCH VIDEO</a>
 </div>
 
-
-
-<!-- 7 JOIN BTITAN -->
-
 <div class="link-card">
-
 <div class="link-icon">🚀</div>
-
 <h3>Join B-TITAN</h3>
-
-<p>
-Open the B-TITAN registration page and continue
-with the joining process.
-</p>
-
-<a
-class="link-button"
-href="https://btitan.net/register?id=10203"
-target="_blank"
-rel="noopener">
-
-JOIN B-TITAN
-
-</a>
-
+<p>Open the B-TITAN registration page and continue with the joining process.</p>
+<a class="link-button" href="https://btitan.net/register?id=10203" target="_blank" rel="noopener">JOIN B-TITAN</a>
 </div>
-
-
-
-<!-- 8 GS ACADEMY -->
 
 <div class="link-card">
-
 <div class="link-icon">🎓</div>
-
 <h3>GS Digital Academy</h3>
-
-<p>
-Visit the GS Digital Academy hub for available
-learning and community resources.
-</p>
-
-<a
-class="link-button"
-href="https://beacons.ai/gsdigitalacademy"
-target="_blank"
-rel="noopener">
-
-OPEN ACADEMY
-
-</a>
-
-</div>
-
-
+<p>Visit the GS Digital Academy hub for available learning and community resources.</p>
+<a class="link-button" href="https://beacons.ai/gsdigitalacademy" target="_blank" rel="noopener">OPEN ACADEMY</a>
 </div>
 
 </div>
-
+</div>
 </section>
 
-
-
-<!-- ==================================================
-     ZOOM
-================================================== -->
+<!-- ZOOM -->
 
 <section class="zoom-section" id="zoom">
 
 <div class="container">
 
 <div class="section-heading">
-
-<div class="mini">
-DAILY LIVE MEETINGS
-</div>
-
+<div class="mini">DAILY LIVE MEETINGS</div>
 <h2>Join Our Zoom Meetings</h2>
-
-<p>
-Daily online sessions for learning, discussion
-and team development.
-</p>
-
+<p>Daily online sessions for learning, discussion and team development.</p>
 </div>
-
 
 <div class="zoom-grid">
 
-
-<!-- MORNING ZOOM -->
-
 <div class="zoom-card">
-
 <h3>🌅 Morning Zoom</h3>
-
-<div class="zoom-time">
-Daily • 8:15 AM
+<div class="zoom-time">Daily • 8:15 AM</div>
+<p>Morning Zoom meeting and team development session.</p>
+<a class="zoom-button" href="https://zoom.us/j/7890581048?pwd=0c3cExXWU7Xt1sBfLuvo0DlWej9xmV.1" target="_blank" rel="noopener">JOIN MORNING ZOOM</a>
 </div>
-
-<p>
-Morning Zoom meeting and team development session.
-</p>
-
-<a
-class="zoom-button"
-href="https://zoom.us/j/7890581048?pwd=0c3cExXWU7Xt1sBfLuvo0DlWej9xmV.1"
-target="_blank"
-rel="noopener">
-
-JOIN MORNING ZOOM
-
-</a>
-
-</div>
-
-
-
-<!-- EVENING ZOOM -->
 
 <div class="zoom-card">
-
 <h3>🌙 Evening Zoom</h3>
-
-<div class="zoom-time">
-Daily • 9:00 PM
-</div>
-
-<p>
-Evening Zoom meeting, discussion and development session.
-</p>
-
-<a
-class="zoom-button"
-href="https://zoom.us/j/6053096493?pwd=v43dprpzbo7Xqc4omNKu95IJVx6pR9.1"
-target="_blank"
-rel="noopener">
-
-JOIN EVENING ZOOM
-
-</a>
-
-</div>
-
-
+<div class="zoom-time">Daily • 9:00 PM</div>
+<p>Evening Zoom meeting, discussion and development session.</p>
+<a class="zoom-button" href="https://zoom.us/j/6053096493?pwd=v43dprpzbo7Xqc4omNKu95IJVx6pR9.1" target="_blank" rel="noopener">JOIN EVENING ZOOM</a>
 </div>
 
 </div>
-
+</div>
 </section>
 
-
-
-<!-- ==================================================
-     RESOURCES
-================================================== -->
+<!-- RESOURCES -->
 
 <section class="resources" id="resources">
 
 <div class="container">
 
 <div class="section-heading">
-
-<div class="mini">
-LEARN • UNDERSTAND • DECIDE
-</div>
-
+<div class="mini">LEARN • UNDERSTAND • DECIDE</div>
 <h2>Learning Resources</h2>
-
-<p>
-Educational resources related to blockchain,
-Web3 and digital knowledge.
-</p>
-
+<p>Educational resources related to blockchain, Web3 and digital knowledge.</p>
 </div>
-
 
 <div class="resource-grid">
 
-
 <div class="resource-card">
-
 <div class="resource-icon">₿</div>
-
 <h3>B-TITAN Information</h3>
-
-<p>
-Explore available B-TITAN information and
-educational resources.
-</p>
-
-<a href="#links">
-EXPLORE →
-</a>
-
+<p>Explore available B-TITAN information and educational resources.</p>
+<a href="#links">EXPLORE →</a>
 </div>
 
-
-
 <div class="resource-card">
-
 <div class="resource-icon">⛓️</div>
-
 <h3>Blockchain Education</h3>
-
-<p>
-Understand blockchain technology and the
-basic concepts behind Web3.
-</p>
-
-<a href="#links">
-LEARN MORE →
-</a>
-
+<p>Understand blockchain technology and the basic concepts behind Web3.</p>
+<a href="#links">LEARN MORE →</a>
 </div>
-
-
 
 <div class="resource-card">
-
 <div class="resource-icon">🎓</div>
-
 <h3>Digital Knowledge</h3>
-
-<p>
-Learn, understand and research before
-making your own decision.
-</p>
-
-<a href="#about">
-LEARN MORE →
-</a>
-
-</div>
-
-
+<p>Learn, understand and research before making your own decision.</p>
+<a href="#about">LEARN MORE →</a>
 </div>
 
 </div>
-
+</div>
 </section>
 
-
-
-<!-- ==================================================
-     SOCIAL MEDIA
-================================================== -->
+<!-- SOCIAL MEDIA: YOUR FOUR LINKS -->
 
 <section class="social-section" id="social">
 
@@ -1401,9 +926,7 @@ LEARN MORE →
 
 <div class="section-heading">
 
-<div class="mini">
-CONNECT WITH US
-</div>
+<div class="mini">CONNECT WITH US</div>
 
 <h2>Social Media</h2>
 
@@ -1414,76 +937,65 @@ updates and new videos.
 
 </div>
 
-
 <div class="social-grid">
 
+<!-- FACEBOOK -->
 
 <a
 class="social"
-href="https://youtube.com/shorts/-fIVG9pZtEo?si=nclwN9l8L6Fo1tLa"
-target="_blank"
-rel="noopener">
-
-<div class="social-icon">▶️</div>
-
-<span>YouTube</span>
-
-</a>
-
-
-
-<a
-class="social"
-href="https://www.facebook.com/"
+href="https://www.facebook.com/profile.php?id=61590478625779"
 target="_blank"
 rel="noopener">
 
 <div class="social-icon">f</div>
-
 <span>Facebook</span>
 
 </a>
 
-
+<!-- YOUTUBE -->
 
 <a
 class="social"
-href="https://www.instagram.com/"
+href="https://youtube.com/@gautamdigitalacademy?si=yEkIv6-54rAN0h6e"
+target="_blank"
+rel="noopener">
+
+<div class="social-icon">▶️</div>
+<span>YouTube</span>
+
+</a>
+
+<!-- INSTAGRAM -->
+
+<a
+class="social"
+href="https://www.instagram.com/btitanchampions?psln=MzZheDgwdTUzcnJ0"
 target="_blank"
 rel="noopener">
 
 <div class="social-icon">◎</div>
-
 <span>Instagram</span>
 
 </a>
 
-
+<!-- WHATSAPP -->
 
 <a
 class="social"
-href="https://wa.me/"
+href="https://wa.me/918368960385?text=Am_interested_in_B-TITAN"
 target="_blank"
 rel="noopener">
 
 <div class="social-icon">☏</div>
-
 <span>WhatsApp</span>
 
 </a>
 
-
 </div>
-
 </div>
-
 </section>
 
-
-
-<!-- ==================================================
-     ABOUT
-================================================== -->
+<!-- ABOUT -->
 
 <section class="about" id="about">
 
@@ -1491,13 +1003,9 @@ rel="noopener">
 
 <div class="about-box">
 
-<h2>
-GS DIGITAL ACADEMY
-</h2>
+<h2>GS DIGITAL ACADEMY</h2>
 
-<h3>
-Digital Knowledge • Blockchain • Web3
-</h3>
+<h3>Digital Knowledge • Blockchain • Web3</h3>
 
 <p>
 
@@ -1528,16 +1036,10 @@ decision.
 </p>
 
 </div>
-
 </div>
-
 </section>
 
-
-
-<!-- ==================================================
-     DISCLAIMER
-================================================== -->
+<!-- DISCLAIMER -->
 
 <section class="disclaimer">
 
@@ -1561,14 +1063,9 @@ GS Digital Academy does not guarantee profits,
 returns or financial results.
 
 </div>
-
 </section>
 
-
-
-<!-- ==================================================
-     FOOTER
-================================================== -->
+<!-- FOOTER -->
 
 <footer>
 
@@ -1577,22 +1074,15 @@ class="footer-logo"
 src="gs-digital-academy-logo-1.png"
 alt="GS Digital Academy">
 
-<h3>
-GS DIGITAL ACADEMY
-</h3>
+<h3>GS DIGITAL ACADEMY</h3>
 
-<p>
-DIGITAL KNOWLEDGE • BLOCKCHAIN • WEB3
-</p>
+<p>DIGITAL KNOWLEDGE • BLOCKCHAIN • WEB3</p>
 
 <br>
 
-<p>
-© 2026 GS Digital Academy. All Rights Reserved.
-</p>
+<p>© 2026 GS Digital Academy. All Rights Reserved.</p>
 
 </footer>
-
 
 </body>
 </html>
