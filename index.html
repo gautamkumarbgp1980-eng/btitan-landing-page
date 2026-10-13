@@ -16,72 +16,166 @@ a{text-decoration:none;color:inherit}
 button,input{font:inherit}
 button{cursor:pointer}
 
-.header{background:linear-gradient(110deg,#07194e,#082b87 70%,#310b78);border-bottom:1px solid #ffffff22;position:sticky;top:0;z-index:20}
-.header-top{min-height:95px;padding:10px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:nowrap}
-.brand{display:flex;align-items:center;flex:1;min-width:0;gap:0}
+.header{
+background:linear-gradient(110deg,#07194e,#082b87 70%,#310b78);
+border-bottom:1px solid #ffffff22;
+position:sticky;top:0;z-index:20
+}
+.header-top{
+min-height:90px;padding:10px 12px;
+display:flex;align-items:center;justify-content:space-between;gap:8px
+}
+.brand{display:flex;align-items:center;flex:1;min-width:0}
 
+/* B-TITAN LOGO */
 .logo{
-  display:block;
-  width:100%;
-  max-width:340px;
-  max-height:85px;
-  height:auto;
-  object-fit:contain;
-  object-position:left center;
-  background:transparent;
-  border:0;
-  border-radius:0;
-  box-shadow:none;
-  flex-shrink:1;
+display:block;
+width:100%;
+max-width:340px;
+max-height:85px;
+height:auto;
+object-fit:contain;
+object-position:left center;
+background:transparent;
+border:0;
+border-radius:0;
+box-shadow:none;
+mix-blend-mode:screen;
+flex-shrink:1
 }
 
 .header-actions{display:flex;align-items:center;flex-shrink:0}
-.menu-btn{width:49px;height:49px;border:1px solid #ffffff30;border-radius:13px;background:#ffffff0c;color:white;font-size:27px}
+.menu-btn{
+width:49px;height:49px;border:1px solid #ffffff30;
+border-radius:13px;background:#ffffff0c;color:white;font-size:27px
+}
 
 .search-wrap{padding:0 16px 12px}
-.search{width:100%;height:56px;border-radius:40px;border:0;outline:none;padding:0 20px;background:white;color:#222;font-size:15px}
+.search{
+width:100%;height:56px;border-radius:40px;border:0;outline:none;
+padding:0 20px;background:white;color:#222;font-size:15px
+}
 
-.nav{display:flex;align-items:center;gap:7px;padding:5px 12px 13px;overflow-x:auto;scrollbar-width:none}
+.nav{
+display:flex;align-items:center;gap:7px;padding:5px 12px 13px;
+overflow-x:auto;scrollbar-width:none
+}
 .nav::-webkit-scrollbar{display:none}
-.nav a{flex-shrink:0;padding:12px 14px;border-radius:13px;font-size:13px;font-weight:700;white-space:nowrap}
+.nav a{
+flex-shrink:0;padding:12px 14px;border-radius:13px;
+font-size:13px;font-weight:700;white-space:nowrap
+}
 .nav a.active{background:var(--gold);color:#111}
 
-.mobile-menu{display:none;padding:10px 16px 14px;background:#071744;border-top:1px solid #ffffff14}
+.mobile-menu{
+display:none;padding:10px 16px 14px;
+background:#071744;border-top:1px solid #ffffff14
+}
 .mobile-menu.open{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.mobile-menu a{padding:11px;border-radius:9px;background:#ffffff12;font-size:13px}
+.mobile-menu a{
+padding:11px;border-radius:9px;background:#ffffff12;font-size:13px
+}
 
-.hero{position:relative;overflow:hidden;padding:36px 25px 35px;background:radial-gradient(ellipse at 82% 20%,#9c00ffb5,transparent 48%),radial-gradient(ellipse at 20% 70%,#006cff66,transparent 50%),linear-gradient(115deg,#062e83,#101f9a 53%,#4d08b0)}
-.hero:before{content:"";position:absolute;width:380px;height:380px;border:1px solid #ffffff18;border-radius:50%;right:-100px;top:-80px;pointer-events:none}
-.welcome{display:inline-block;border:1px solid #ffd52e70;background:#ffffff0b;border-radius:30px;padding:11px 16px;color:#ffe16c;font-weight:700;font-size:14px}
-.hero h1{font-size:clamp(37px,7.4vw,68px);line-height:1.13;letter-spacing:-1.5px;margin:27px 0 13px;font-weight:900}
+.hero{
+position:relative;overflow:hidden;padding:36px 25px 35px;
+background:
+radial-gradient(ellipse at 82% 20%,#9c00ffb5,transparent 48%),
+radial-gradient(ellipse at 20% 70%,#006cff66,transparent 50%),
+linear-gradient(115deg,#062e83,#101f9a 53%,#4d08b0)
+}
+.hero:before{
+content:"";position:absolute;width:380px;height:380px;
+border:1px solid #ffffff18;border-radius:50%;
+right:-100px;top:-80px;pointer-events:none
+}
+.welcome{
+display:inline-block;border:1px solid #ffd52e70;background:#ffffff0b;
+border-radius:30px;padding:11px 16px;color:#ffe16c;
+font-weight:700;font-size:14px
+}
+.hero h1{
+font-size:clamp(37px,7.4vw,68px);line-height:1.13;
+letter-spacing:-1.5px;margin:27px 0 13px;font-weight:900
+}
 .hero h1 span{color:var(--gold)}
 .hero h2{font-size:clamp(21px,4vw,30px);margin-bottom:20px}
 .hero-desc{font-size:16px;line-height:1.8;color:#e5eaff;margin-bottom:25px}
 .features{display:flex;flex-wrap:wrap;gap:12px 18px;margin:22px 0 28px}
 .features span{font-size:13px;display:flex;align-items:center;gap:7px}
-.check{width:25px;height:25px;border-radius:50%;background:var(--gold);color:#14204c;display:inline-grid;place-items:center;font-weight:900}
+.check{
+width:25px;height:25px;border-radius:50%;background:var(--gold);
+color:#14204c;display:inline-grid;place-items:center;font-weight:900
+}
 .hero-buttons{display:flex;flex-wrap:wrap;gap:12px}
-.btn{min-height:55px;padding:0 22px;border-radius:17px;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;border:1px solid #ffffff45}
+.btn{
+min-height:55px;padding:0 22px;border-radius:17px;
+display:inline-flex;align-items:center;justify-content:center;
+font-weight:800;font-size:14px;border:1px solid #ffffff45
+}
 .btn-gold{background:var(--gold);color:#101530;border:0}
 .btn-outline{background:#ffffff0a;color:white}
 .hero-foot{margin-top:24px;color:#d9e4ff;font-size:14px}
 
-.illustration{min-height:185px;max-width:660px;margin:18px auto 0;position:relative;display:flex;align-items:flex-end;justify-content:center}
-.person{width:175px;height:150px;position:relative;z-index:1;display:flex;justify-content:center}
-.hair{position:absolute;top:6px;width:138px;height:138px;background:#30282b;border-radius:70px 70px 42px 42px}
-.face{position:absolute;top:35px;width:100px;height:100px;background:#ffdfbf;border-radius:48% 48% 45% 45%;z-index:2}
+.illustration{
+min-height:185px;max-width:660px;margin:18px auto 0;
+position:relative;display:flex;align-items:flex-end;justify-content:center
+}
+.person{
+width:175px;height:150px;position:relative;z-index:1;
+display:flex;justify-content:center
+}
+.hair{
+position:absolute;top:6px;width:138px;height:138px;
+background:#30282b;border-radius:70px 70px 42px 42px
+}
+.face{
+position:absolute;top:35px;width:100px;height:100px;
+background:#ffdfbf;border-radius:48% 48% 45% 45%;z-index:2
+}
 .eye{position:absolute;top:43px;width:13px;height:17px;border-radius:50%;background:#34313a}
 .eye.left{left:23px}.eye.right{right:23px}
-.smile{position:absolute;bottom:16px;left:37px;width:27px;height:12px;border-bottom:3px solid #ad6a57;border-radius:50%}
-.laptop{position:absolute;z-index:3;bottom:0;width:180px;height:67px;border-radius:12px 12px 3px 3px;background:#b9becb;border:5px solid #e5e7ef;text-align:center;color:#7e8492;font-size:26px;padding-top:10px}
-.orbit{position:absolute;width:90%;height:105px;bottom:12px;border:2px solid #f8d9698c;border-radius:50%;transform:rotate(-15deg)}
-.float-icon{position:absolute;z-index:4;width:48px;height:48px;border:1px solid #ffffff77;border-radius:50%;display:grid;place-items:center;font-size:23px;background:#ffffff10;box-shadow:0 0 18px #c077ff77}
-.float-icon.one{left:6%;bottom:47px}.float-icon.two{left:29%;bottom:55px}.float-icon.three{right:26%;bottom:48px}.float-icon.four{right:5%;bottom:52px}
-.create-badge{position:absolute;right:2%;top:4px;z-index:5;width:102px;height:102px;border:4px solid var(--gold);border-radius:50%;background:#071b56;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-size:12px;line-height:1.35}
+.smile{
+position:absolute;bottom:16px;left:37px;width:27px;height:12px;
+border-bottom:3px solid #ad6a57;border-radius:50%
+}
+.laptop{
+position:absolute;z-index:3;bottom:0;width:180px;height:67px;
+border-radius:12px 12px 3px 3px;background:#b9becb;
+border:5px solid #e5e7ef;text-align:center;color:#7e8492;
+font-size:26px;padding-top:10px
+}
+.orbit{
+position:absolute;width:90%;height:105px;bottom:12px;
+border:2px solid #f8d9698c;border-radius:50%;transform:rotate(-15deg)
+}
+.float-icon{
+position:absolute;z-index:4;width:48px;height:48px;
+border:1px solid #ffffff77;border-radius:50%;
+display:grid;place-items:center;font-size:23px;background:#ffffff10;
+box-shadow:0 0 18px #c077ff77
+}
+.float-icon.one{left:6%;bottom:47px}
+.float-icon.two{left:29%;bottom:55px}
+.float-icon.three{right:26%;bottom:48px}
+.float-icon.four{right:5%;bottom:52px}
+.create-badge{
+position:absolute;right:2%;top:4px;z-index:5;width:102px;height:102px;
+border:4px solid var(--gold);border-radius:50%;background:#071b56;
+display:flex;flex-direction:column;align-items:center;justify-content:center;
+text-align:center;font-size:12px;line-height:1.35
+}
 
-.dashboard{background:#f7f8ff;color:#111d3b;padding:13px 12px 35px;border-radius:27px 27px 0 0;position:relative;z-index:2;margin-top:-1px}
+.dashboard{
+background:#f7f8ff;color:#111d3b;padding:13px 12px 35px;
+border-radius:27px 27px 0 0;position:relative;z-index:2;margin-top:-1px
+}
 .dashboard-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
-.dash-card{min-height:135px;padding:17px 6px 12px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:linear-gradient(145deg,#fff,#eaf0ff);border:1px solid #e0e5f0;border-radius:20px;color:#111d3b}
+.dash-card{
+min-height:135px;padding:17px 6px 12px;display:flex;
+flex-direction:column;align-items:center;justify-content:center;text-align:center;
+background:linear-gradient(145deg,#fff,#eaf0ff);
+border:1px solid #e0e5f0;border-radius:20px;color:#111d3b
+}
 .dash-icon{font-size:31px;margin-bottom:7px}
 .dash-card strong{font-size:13px}
 .dash-card small{font-size:11px;color:#637391;margin-top:6px}
@@ -91,12 +185,20 @@ button{cursor:pointer}
 .section-head small{font-size:10px;letter-spacing:2px;color:var(--gold);font-weight:900}
 .section-head h2{font-size:27px;margin:7px 0}
 .section-head p{font-size:13px;color:#c5d0e8}
+
 .link-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.link-card{border:1px solid #ffffff20;border-radius:16px;padding:17px;background:linear-gradient(145deg,#122e54,#091a36);display:flex;flex-direction:column;align-items:flex-start;min-height:160px}
+.link-card{
+border:1px solid #ffffff20;border-radius:16px;padding:17px;
+background:linear-gradient(145deg,#122e54,#091a36);
+display:flex;flex-direction:column;align-items:flex-start;min-height:160px
+}
 .link-icon{font-size:25px;margin-bottom:7px}
 .link-card h3{font-size:15px;margin-bottom:6px}
 .link-card p{font-size:12px;color:#c1cde1;flex:1;margin-bottom:13px}
-.link-btn{padding:10px 13px;border-radius:10px;background:var(--gold);color:#121a32;font-weight:900;font-size:10px;display:inline-block}
+.link-btn{
+padding:10px 13px;border-radius:10px;background:var(--gold);
+color:#121a32;font-weight:900;font-size:10px;display:inline-block
+}
 
 .zoom-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .zoom-card{padding:19px;border:1px solid #ffd52e55;border-radius:16px;background:#10264b}
@@ -105,55 +207,70 @@ button{cursor:pointer}
 .zoom-card p{font-size:12px;color:#c1cde1;margin-bottom:14px}
 
 .social-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-.social-card{min-height:92px;border:1px solid #ffffff20;border-radius:15px;background:#11274b;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:7px;font-size:12px;font-weight:800}
+.social-card{
+min-height:92px;border:1px solid #ffffff20;border-radius:15px;
+background:#11274b;display:flex;align-items:center;justify-content:center;
+flex-direction:column;gap:7px;font-size:12px;font-weight:800
+}
 .social-icon{font-size:27px;color:var(--gold)}
 
-.footer{padding:22px 15px;text-align:center;background:#040d20;color:#bdc8df;font-size:11px}
+.footer{
+padding:22px 15px;text-align:center;background:#040d20;
+color:#bdc8df;font-size:11px
+}
 .footer strong{color:white;font-size:14px}
 
-.bottom-nav{display:none;position:fixed;bottom:0;left:0;right:0;z-index:30;background:#171e50;border-top:1px solid #ffffff1a;padding:7px 5px max(8px,env(safe-area-inset-bottom));grid-template-columns:repeat(5,1fr)}
-.bottom-nav a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:8px 2px;border-radius:13px;font-size:10px;color:#dce5ff}
+.bottom-nav{
+display:none;position:fixed;bottom:0;left:0;right:0;z-index:30;
+background:#171e50;border-top:1px solid #ffffff1a;
+padding:7px 5px max(8px,env(safe-area-inset-bottom));
+grid-template-columns:repeat(5,1fr)
+}
+.bottom-nav a{
+display:flex;flex-direction:column;align-items:center;justify-content:center;
+gap:3px;padding:8px 2px;border-radius:13px;font-size:10px;color:#dce5ff
+}
 .bottom-nav a span{font-size:23px}
 .bottom-nav a.active{background:#ffffff18;color:#ffe18a}
 
 @media(max-width:650px){
-  .header-top{min-height:90px;padding:10px 12px;gap:8px}
-  .logo{max-width:250px;max-height:72px}
-  .menu-btn{width:47px;height:47px}
-  .nav{gap:5px;padding:4px 12px 12px}
-  .nav a{padding:12px;font-size:12px}
-  .search{height:58px;font-size:15px}
-  .hero{padding:35px 24px 28px}
-  .hero h1{font-size:clamp(36px,8.5vw,54px);margin-top:27px}
-  .hero-desc{font-size:15px}
-  .features{gap:11px 15px}
-  .features span{font-size:12px}
-  .btn{min-height:54px;padding:0 18px}
-  .dashboard{padding:12px 12px 30px}
-  .dash-card{min-height:135px;padding:14px 3px}
-  .bottom-nav{display:grid}
-  body{padding-bottom:75px}
+.header-top{min-height:90px;padding:10px 12px;gap:8px}
+.logo{max-width:250px;max-height:72px}
+.menu-btn{width:47px;height:47px}
+.nav{gap:5px;padding:4px 12px 12px}
+.nav a{padding:12px;font-size:12px}
+.search{height:58px;font-size:15px}
+.hero{padding:35px 24px 28px}
+.hero h1{font-size:clamp(36px,8.5vw,54px);margin-top:27px}
+.hero-desc{font-size:15px}
+.features{gap:11px 15px}
+.features span{font-size:12px}
+.btn{min-height:54px;padding:0 18px}
+.dashboard{padding:12px 12px 30px}
+.dash-card{min-height:135px;padding:14px 3px}
+.bottom-nav{display:grid}
+body{padding-bottom:75px}
 }
 
 @media(max-width:390px){
-  .header-top{min-height:76px;padding:8px;gap:5px}
-  .logo{max-width:190px;max-height:58px}
-  .menu-btn{width:39px;height:41px;font-size:21px}
-  .hero{padding:29px 17px 25px}
-  .hero h1{font-size:35px}
-  .hero h2{font-size:21px}
-  .hero-desc{font-size:13px}
-  .features{gap:9px}
-  .features span{font-size:11px}
-  .btn{font-size:11px;padding:0 13px}
-  .illustration{min-height:155px}
-  .create-badge{width:80px;height:80px;font-size:10px}
-  .person{transform:scale(.85);transform-origin:bottom}
-  .float-icon{width:36px;height:36px;font-size:18px}
-  .dash-card{min-height:112px}
-  .dash-icon{font-size:25px}
-  .dash-card strong{font-size:10px}
-  .dash-card small{font-size:9px}
+.header-top{min-height:76px;padding:8px;gap:5px}
+.logo{max-width:190px;max-height:58px}
+.menu-btn{width:39px;height:41px;font-size:21px}
+.hero{padding:29px 17px 25px}
+.hero h1{font-size:35px}
+.hero h2{font-size:21px}
+.hero-desc{font-size:13px}
+.features{gap:9px}
+.features span{font-size:11px}
+.btn{font-size:11px;padding:0 13px}
+.illustration{min-height:155px}
+.create-badge{width:80px;height:80px;font-size:10px}
+.person{transform:scale(.85);transform-origin:bottom}
+.float-icon{width:36px;height:36px;font-size:18px}
+.dash-card{min-height:112px}
+.dash-icon{font-size:25px}
+.dash-card strong{font-size:10px}
+.dash-card small{font-size:9px}
 }
 </style>
 </head>
@@ -164,14 +281,13 @@ button{cursor:pointer}
     <a class="brand" href="#top" aria-label="B-TITAN Home">
       <img class="logo" src="btitan-logo-1.png" alt="B-TITAN - The Ultimate Bitcoin Rush">
     </a>
-
     <div class="header-actions">
       <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false">☰</button>
     </div>
   </div>
 
   <div class="search-wrap">
-    <input class="search" id="searchInput" type="search" placeholder="🔎  Search posts, media, platforms..." aria-label="Search">
+    <input class="search" id="searchInput" type="search" placeholder="🔎 Search posts, media, platforms..." aria-label="Search">
   </div>
 
   <nav class="nav">
@@ -263,7 +379,6 @@ button{cursor:pointer}
     <h2>Important Links</h2>
     <p>B-TITAN resources and important links</p>
   </div>
-
   <div class="link-grid">
     <article class="link-card"><span class="link-icon">▶️</span><h3>Complete Plan Video</h3><p>Watch the plan presentation.</p><a class="link-btn" href="https://youtu.be/jg6a-Jo_acE" target="_blank" rel="noopener">WATCH VIDEO ↗</a></article>
     <article class="link-card"><span class="link-icon">📄</span><h3>Plan Presentation PDF</h3><p>Open the plan presentation document.</p><a class="link-btn" href="https://docs.google.com/presentation/d/1ZhQFHnTPKTx4Lqs4LjZRFQjwZjct5FGL/export/pdf" target="_blank" rel="noopener">OPEN PDF ↗</a></article>
@@ -277,12 +392,7 @@ button{cursor:pointer}
 </section>
 
 <section class="section" id="zoom">
-  <div class="section-head">
-    <small>ONLINE MEETINGS</small>
-    <h2>Zoom Meetings</h2>
-    <p>Join the online sessions</p>
-  </div>
-
+  <div class="section-head"><small>ONLINE MEETINGS</small><h2>Zoom Meetings</h2><p>Join the online sessions</p></div>
   <div class="zoom-grid">
     <article class="zoom-card"><h3>🌅 Morning Zoom</h3><div class="zoom-time">Daily · 9:00 AM IST</div><p>Morning meeting and team discussion.</p><a class="link-btn" href="https://zoom.us/j/7890581048?pwd=0c3cExXWU7Xt1sBfLuvo0DlWej9xmV.1" target="_blank" rel="noopener">JOIN ZOOM ↗</a></article>
     <article class="zoom-card"><h3>🌙 Evening Zoom</h3><div class="zoom-time">Daily · 9:00 PM IST</div><p>Evening meeting and team discussion.</p><a class="link-btn" href="https://zoom.us/j/6053096493?pwd=v43dprpzbo7Xqc4omNKu95IJVx6pR9.1" target="_blank" rel="noopener">JOIN ZOOM ↗</a></article>
@@ -290,12 +400,7 @@ button{cursor:pointer}
 </section>
 
 <section class="section" id="social">
-  <div class="section-head">
-    <small>STAY CONNECTED</small>
-    <h2>Social Hub</h2>
-    <p>Connect with the community</p>
-  </div>
-
+  <div class="section-head"><small>STAY CONNECTED</small><h2>Social Hub</h2><p>Connect with the community</p></div>
   <div class="social-grid">
     <a class="social-card" href="https://www.facebook.com/profile.php?id=61590478625779" target="_blank" rel="noopener"><span class="social-icon">f</span>Facebook</a>
     <a class="social-card" href="https://youtube.com/@gautamdigitalacademy?si=yEkIv6-54rAN0h6e" target="_blank" rel="noopener"><span class="social-icon">▶</span>YouTube</a>
@@ -307,12 +412,7 @@ button{cursor:pointer}
 </section>
 
 <section class="section" id="media">
-  <div class="section-head">
-    <small>MEDIA</small>
-    <h2>Photo &amp; Video</h2>
-    <p>Select media from your device to share.</p>
-  </div>
-
+  <div class="section-head"><small>MEDIA</small><h2>Photo &amp; Video</h2><p>Select media from your device to share.</p></div>
   <div style="text-align:center">
     <input type="file" id="mediaPicker" accept="image/*,video/*" multiple style="max-width:100%;background:#10264b;padding:14px;border-radius:12px;color:white">
     <p id="mediaStatus" style="font-size:12px;color:#c5d0e8;margin-top:10px"></p>
@@ -320,11 +420,9 @@ button{cursor:pointer}
 </section>
 
 <footer class="footer">
-  <strong>B-TITAN</strong><br>
-  THE ULTIMATE BITCOIN RUSH<br><br>
+  <strong>B-TITAN</strong><br>THE ULTIMATE BITCOIN RUSH<br><br>
   <a href="https://btitan.net/" style="color:#ffd52e;font-weight:900">₿ B-TITAN</a><br><br>
-  Digital assets involve risk. No income or profit is guaranteed.<br>
-  © 2026 B-TITAN
+  Digital assets involve risk. No income or profit is guaranteed.<br>© 2026 B-TITAN
 </footer>
 </main>
 
