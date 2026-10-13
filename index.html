@@ -5,196 +5,126 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#07142f">
-<meta name="description" content="GS Digital Academy - Your Digital World">
+<meta name="description" content="GS Digital Academy — Your Digital World">
 <title>GS DIGITAL ACADEMY | Your Digital World</title>
 
 <style>
-:root{
+:root {
   --navy:#07142f;
-  --blue:#153a78;
+  --blue:#123d7a;
   --purple:#422477;
   --gold:#ffd75e;
-  --white:#fff;
-  --muted:#c1cce0;
+  --white:#ffffff;
+  --muted:#bdcbe0;
 }
 *{box-sizing:border-box;margin:0;padding:0;scroll-behavior:smooth}
-body{
-  font-family:Arial,Helvetica,sans-serif;
-  background:var(--navy);color:white;line-height:1.6
-}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--navy);color:var(--white);line-height:1.6;overflow-x:hidden}
 a{text-decoration:none;color:inherit}
-.topbar{
-  position:sticky;top:0;z-index:10;
-  background:#07142ff5;
-  border-bottom:1px solid #ffd75e40
-}
-.nav{
-  max-width:1050px;margin:auto;min-height:72px;
-  padding:10px 16px;display:flex;
-  align-items:center;justify-content:space-between;gap:10px
-}
-.brand{display:flex;align-items:center;gap:10px}
-.gs-mark{
-  width:43px;height:43px;flex-shrink:0;
-  border-radius:12px;display:grid;place-items:center;
-  background:linear-gradient(135deg,#1769d2,#6335a7);
-  border:1px solid var(--gold);font-weight:900;font-size:18px
-}
-.brand-title{font-size:14px;font-weight:900;white-space:nowrap}
-.brand-tag{font-size:8px;color:var(--gold);letter-spacing:1px}
-.header-actions{display:flex;align-items:center;gap:8px}
-.btitan{
-  display:flex;align-items:center;gap:7px;padding:8px 11px;
-  border:1px solid #d9a82c;border-radius:12px;
-  color:var(--gold);font-weight:900;font-size:12px;
-  background:linear-gradient(145deg,#1a2440,#090f20)
-}
-.coin{
-  width:27px;height:27px;border:2px solid var(--gold);
-  border-radius:50%;display:grid;place-items:center;
-  font-size:18px;font-weight:bold
-}
-.menu{
-  display:none;background:#12244a;border:1px solid #ffffff30;
-  color:white;border-radius:9px;padding:7px 10px;font-size:20px
-}
-.navlinks{display:flex;gap:7px}
-.navlinks a{
-  font-size:10px;font-weight:bold;padding:8px;
-  border-radius:8px;background:#ffffff0c
-}
+.topbar{position:sticky;top:0;z-index:100;background:#06132df7;border-bottom:1px solid #ffd75e35}
+.nav{max-width:1100px;margin:auto;min-height:76px;padding:10px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;position:relative}
+.brand{display:flex;align-items:center;gap:10px;min-width:0}
+.gs-logo{width:48px;height:48px;flex-shrink:0;border-radius:13px;display:grid;place-items:center;background:linear-gradient(135deg,#1769d2,#6335a7);border:1px solid var(--gold);font-size:19px;font-weight:900}
+.brand-title{font-size:15px;font-weight:900;white-space:nowrap}
+.brand-tag{font-size:8px;color:var(--gold);letter-spacing:1px;white-space:nowrap}
+.actions{display:flex;align-items:center;gap:9px}
+.btitan{display:flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid #d9a82c;border-radius:13px;color:var(--gold);font-weight:900;font-size:12px;background:linear-gradient(145deg,#1a2440,#090f20);white-space:nowrap}
+.coin{width:28px;height:28px;border:2px solid var(--gold);border-radius:50%;display:grid;place-items:center;font-size:18px;box-shadow:inset 0 0 7px #ffcf4a55}
+.menu{display:none;width:45px;height:44px;background:#12244a;border:1px solid #ffffff30;color:white;border-radius:12px;font-size:23px;cursor:pointer}
+.navlinks{display:flex;align-items:center;gap:8px}
+.navlinks a{font-size:10px;font-weight:800;padding:9px 11px;border-radius:9px;background:#ffffff0c}
 .navlinks a:hover{background:var(--gold);color:var(--navy)}
 
-.hero{
-  padding:48px 18px;text-align:center;
-  background:
-  radial-gradient(ellipse at 15% 0%,#7043a755,transparent 42%),
-  radial-gradient(ellipse at 85% 45%,#008dff55,transparent 40%),
-  linear-gradient(135deg,#07142f,#123a7b 58%,#3a246d)
-}
-.eyebrow{
-  display:inline-block;color:var(--gold);
-  border:1px solid #ffd75e50;background:#06132d88;
-  border-radius:999px;padding:6px 12px;
-  font-size:10px;letter-spacing:1px;font-weight:800
-}
-.hero h1{
-  font-size:clamp(34px,7vw,58px);
-  line-height:1.12;margin:17px 0 12px;font-weight:900
-}
+.hero{padding:44px 17px 38px;text-align:center;background:radial-gradient(ellipse at 85% 40%,#087de766,transparent 43%),radial-gradient(ellipse at 12% 0%,#6334a655,transparent 45%),linear-gradient(135deg,#07142f,#073e79 55%,#35236e)}
+.eyebrow{display:inline-block;padding:8px 14px;border:1px solid #ffd75e55;border-radius:999px;background:#06142d88;color:var(--gold);font-size:10px;letter-spacing:1.3px;font-weight:900}
+.hero h1{font-size:clamp(36px,7vw,57px);line-height:1.15;margin:18px 0 14px;font-weight:900;letter-spacing:-1px}
 .hero h1 span{color:var(--gold)}
-.hero p{max-width:600px;margin:auto;color:#e0e8f7;font-size:14px}
-.hero-buttons{
-  display:flex;justify-content:center;flex-wrap:wrap;
-  gap:10px;margin-top:22px
-}
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;
-  min-height:43px;padding:0 16px;border-radius:10px;
-  font-size:11px;font-weight:900
-}
+.hero p{max-width:640px;margin:auto;color:#e0e8f7;font-size:14px;line-height:1.8}
+.hero-buttons{display:flex;justify-content:center;flex-wrap:wrap;gap:11px;margin-top:23px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:45px;padding:0 17px;border-radius:13px;font-size:11px;font-weight:900}
 .gold-btn{background:var(--gold);color:#101a30}
-.outline-btn{border:1px solid #ffffff88;background:#ffffff0c}
+.outline-btn{border:1px solid #ffffff88;background:#ffffff09;color:white}
 
-section{padding:40px 16px}
+section{padding:43px 16px}
 .container{max-width:1000px;margin:auto}
-.section-head{text-align:center;margin-bottom:23px}
-.section-head small{
-  font-size:9px;letter-spacing:2px;
-  color:var(--gold);font-weight:900
-}
-.section-head h2{font-size:29px;line-height:1.2;margin:6px 0}
-.section-head p{color:var(--muted);font-size:12px}
+.section-head{text-align:center;margin-bottom:25px}
+.section-head small{font-size:9px;letter-spacing:2px;color:var(--gold);font-weight:900}
+.section-head h2{font-size:clamp(26px,5vw,35px);line-height:1.2;margin:7px 0 9px}
+.section-head p{color:var(--muted);font-size:13px}
 
 .links-section,.social-section{background:#08152d}
-.cards{
-  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px
-}
-.card{
-  background:linear-gradient(145deg,#172d52,#0b1933);
-  border:1px solid #ffffff18;border-radius:14px;
-  padding:18px;display:flex;flex-direction:column;
-  align-items:flex-start;min-height:175px
-}
-.ico{font-size:25px;margin-bottom:6px}
-.card h3{font-size:15px;margin-bottom:5px}
-.card p{color:var(--muted);font-size:12px;margin-bottom:13px;flex:1}
-.card-link{
-  display:inline-flex;align-items:center;justify-content:center;
-  min-height:36px;padding:0 12px;border-radius:8px;
-  background:var(--gold);color:#101a30;font-size:10px;font-weight:900
-}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.card{background:linear-gradient(145deg,#172d52,#0b1933);border:1px solid #ffffff18;border-radius:17px;padding:20px;display:flex;flex-direction:column;align-items:flex-start;min-height:180px;transition:.2s}
+.card:hover,.zoom-card:hover,.social:hover{border-color:#ffd75e99;transform:translateY(-2px)}
+.ico{font-size:27px;margin-bottom:7px}
+.card h3{font-size:16px;margin-bottom:5px}
+.card p{color:var(--muted);font-size:12px;line-height:1.6;margin-bottom:14px;flex:1}
+.card-link{display:inline-flex;align-items:center;justify-content:center;min-height:39px;padding:0 13px;border-radius:10px;background:var(--gold);color:#101a30;font-size:10px;font-weight:900}
 
-.zoom-section{
-  background:radial-gradient(ellipse at top,#164f9438,transparent 55%),#07142f
-}
-.zoom-cards{display:grid;grid-template-columns:1fr 1fr;gap:13px}
-.zoom-card{
-  padding:22px;border:1px solid #ffd75e40;border-radius:15px;
-  background:linear-gradient(145deg,#172d52,#0b1933)
-}
-.zoom-card h3{font-size:18px}
+.zoom-section{background:radial-gradient(ellipse at top,#164f9438,transparent 55%),#07142f}
+.zoom-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.zoom-card{padding:23px;border:1px solid #ffd75e40;border-radius:16px;background:linear-gradient(145deg,#172d52,#0b1933);transition:.2s}
+.zoom-card h3{font-size:19px}
 .time{color:var(--gold);font-weight:900;margin:7px 0}
-.zoom-card p{font-size:12px;color:var(--muted);margin-bottom:13px}
-.zoom-link{
-  display:inline-flex;padding:10px 13px;
-  background:#176fca;border-radius:8px;font-size:10px;font-weight:900
-}
+.zoom-card p{font-size:12px;color:var(--muted);margin-bottom:14px}
+.zoom-link{display:inline-flex;align-items:center;justify-content:center;padding:10px 13px;background:#176fca;border-radius:9px;font-size:10px;font-weight:900}
 
-.socials{
-  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px
-}
-.social{
-  min-height:95px;display:flex;flex-direction:column;
-  align-items:center;justify-content:center;gap:6px;
-  border:1px solid #ffffff18;border-radius:13px;
-  background:linear-gradient(145deg,#172d52,#0b1933);
-  font-size:12px;font-weight:800
-}
-.social-icon{font-size:27px;color:var(--gold)}
-.card:hover,.zoom-card:hover,.social:hover{
-  border-color:#ffd75e99;transform:translateY(-2px)
-}
-.note{
-  padding:20px 15px;text-align:center;background:#050d1d;
-  color:#aebbd0;font-size:10px
-}
+.socials{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.social{min-height:100px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;border:1px solid #ffffff18;border-radius:14px;background:linear-gradient(145deg,#172d52,#0b1933);font-size:12px;font-weight:800;transition:.2s}
+.social-icon{font-size:27px;color:var(--gold);font-weight:900}
+
+.note{padding:19px 15px;text-align:center;background:#050d1d;color:#aebbd0;font-size:10px;line-height:1.7}
 .note strong{color:var(--gold)}
-footer{
-  text-align:center;padding:22px 12px;background:#030916;
-  border-top:1px solid #ffd75e28;font-size:11px;color:#aebbd0
-}
+footer{text-align:center;padding:22px 12px;background:#030916;border-top:1px solid #ffd75e28;font-size:11px;color:#aebbd0}
 footer strong{display:block;color:white;font-size:14px}
-footer .btitan-footer{color:var(--gold);margin:5px;font-weight:800}
+footer .btitan-footer{color:var(--gold);margin-top:5px;font-weight:900}
 
-@media(max-width:760px){
-  .navlinks{
-    display:none;position:absolute;top:100%;left:0;right:0;
-    padding:12px;background:#07142f;
-    border-bottom:1px solid #ffd75e40;flex-direction:column
-  }
+@media(max-width:850px){
+  .navlinks{display:none;position:absolute;top:100%;left:0;right:0;padding:12px;background:#061329;border-bottom:1px solid #d9b52d44;flex-direction:column;align-items:stretch}
   .navlinks.open{display:flex}
-  .navlinks a{padding:11px}
+  .navlinks a{padding:12px;font-size:12px}
   .menu{display:block}
-  .nav{min-height:64px;padding:8px 10px}
-  .gs-mark{width:37px;height:37px}
-  .brand-title{font-size:11px}
+  .nav{min-height:68px;padding:8px 12px}
+  .gs-logo{width:42px;height:42px}
+  .brand-title{font-size:12px}
   .brand-tag{font-size:7px}
-  .btitan{padding:6px 8px;font-size:10px}
-  .coin{width:23px;height:23px;font-size:15px}
   .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .hero{padding:38px 14px}
+  .hero{padding:38px 15px}
 }
-@media(max-width:420px){
-  .brand{gap:6px}
-  .brand-title{font-size:10px}
-  .brand-tag{font-size:6px}
-  .header-actions{gap:5px}
-  .btitan{gap:4px;padding:5px 6px;font-size:9px}
-  .menu{padding:6px 8px}
+@media(max-width:520px){
+  .nav{min-height:62px;padding:8px 10px;gap:5px}
+  .brand{gap:7px}
+  .gs-logo{width:38px;height:38px;border-radius:11px;font-size:16px}
+  .brand-title{font-size:10px;letter-spacing:0}
+  .brand-tag{font-size:6px;letter-spacing:.5px}
+  .actions{gap:5px}
+  .btitan{gap:5px;padding:5px 7px;font-size:9px}
+  .coin{width:23px;height:23px;font-size:15px}
+  .menu{width:39px;height:39px;font-size:20px;border-radius:10px}
+  .hero{padding:34px 15px 32px}
+  .eyebrow{font-size:9px;padding:7px 11px}
+  .hero h1{font-size:clamp(34px,9vw,42px);letter-spacing:-.8px;margin:17px 0 13px}
+  .hero p{font-size:13px;line-height:1.75}
+  .btn{min-height:43px;padding:0 14px;font-size:10px}
+  section{padding:39px 14px}
+  .section-head{margin-bottom:23px}
+  .section-head h2{font-size:27px}
+  .cards,.zoom-cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .card{padding:16px 14px;min-height:180px;border-radius:15px}
+  .card h3{font-size:14px;line-height:1.4}
+  .card p{font-size:11px}
+  .card-link{font-size:9px;padding:0 10px;min-height:36px}
+  .zoom-card{padding:16px 13px}
+  .zoom-card h3{font-size:15px}
+  .time{font-size:12px}
+  .zoom-card p{font-size:11px}
+  .zoom-link{font-size:9px;padding:9px 10px}
+  .socials{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .social{min-height:90px}
+}
+@media(max-width:370px){
   .cards,.zoom-cards{grid-template-columns:1fr}
-  .socials{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .hero h1{font-size:36px}
+  .brand-title{font-size:9px}
+  .btitan{font-size:8px}
 }
 </style>
 </head>
@@ -202,15 +132,15 @@ footer .btitan-footer{color:var(--gold);margin:5px;font-weight:800}
 <body>
 <header class="topbar">
   <div class="nav">
-    <a class="brand" href="#home">
-      <span class="gs-mark">GS</span>
+    <a class="brand" href="#home" aria-label="GS Digital Academy Home">
+      <span class="gs-logo">GS</span>
       <span>
         <span class="brand-title">GS DIGITAL ACADEMY</span><br>
         <span class="brand-tag">YOUR DIGITAL WORLD</span>
       </span>
     </a>
 
-    <div class="header-actions">
+    <div class="actions">
       <a class="btitan" href="https://btitan.net/" target="_blank" rel="noopener noreferrer">
         <span class="coin">₿</span><span>B-TITAN ↗</span>
       </a>
@@ -227,139 +157,148 @@ footer .btitan-footer{color:var(--gold);margin:5px;font-weight:800}
 </header>
 
 <main>
-<section class="hero" id="home">
-  <span class="eyebrow">ONE PLACE • IMPORTANT LINKS</span>
-  <h1>Your Digital <span>World</span></h1>
-  <p>Welcome to GS Digital Academy. Access B-TITAN resources, Zoom meetings and social media platforms from one simple page.</p>
-  <div class="hero-buttons">
-    <a class="btn gold-btn" href="#links">IMPORTANT LINKS</a>
-    <a class="btn outline-btn" href="#social">SOCIAL MEDIA</a>
+  <section class="hero" id="home">
+    <span class="eyebrow">ONE PLACE • IMPORTANT LINKS</span>
+    <h1>Your Digital <span>World</span></h1>
+    <p>Welcome to GS Digital Academy. Access B-TITAN resources, Zoom meetings and social media platforms from one simple page.</p>
+    <div class="hero-buttons">
+      <a class="btn gold-btn" href="#links">IMPORTANT LINKS</a>
+      <a class="btn outline-btn" href="#social">SOCIAL MEDIA</a>
+    </div>
+  </section>
+
+  <section class="links-section" id="links">
+    <div class="container">
+      <div class="section-head">
+        <small>QUICK ACCESS</small>
+        <h2>Important Links</h2>
+        <p>B-TITAN resources and Academy links</p>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <div class="ico">▶️</div>
+          <h3>Complete Plan Video</h3>
+          <p>Watch the B-TITAN plan presentation.</p>
+          <a class="card-link" href="https://youtu.be/jg6a-Jo_acE" target="_blank" rel="noopener noreferrer">WATCH VIDEO ↗</a>
+        </article>
+
+        <article class="card">
+          <div class="ico">📄</div>
+          <h3>Plan Presentation PDF</h3>
+          <p>Open the plan presentation document.</p>
+          <a class="card-link" href="https://docs.google.com/presentation/d/1ZhQFHnTPKTx4Lqs4LjZRFQjwZjct5FGL/export/pdf" target="_blank" rel="noopener noreferrer">OPEN PDF ↗</a>
+        </article>
+
+        <article class="card">
+          <div class="ico">🆔</div>
+          <h3>ID Activation Guide</h3>
+          <p>Open the ID activation guide.</p>
+          <a class="card-link" href="https://tinyurl.com/4u6jnrrw" target="_blank" rel="noopener noreferrer">OPEN GUIDE ↗</a>
+        </article>
+
+        <article class="card">
+          <div class="ico">⚙️</div>
+          <h3>2×2 Matrix Guide</h3>
+          <p>Watch the technical matrix guide.</p>
+          <a class="card-link" href="https://youtu.be/HIxNEUneKYs" target="_blank" rel="noopener noreferrer">WATCH GUIDE ↗</a>
+        </article>
+
+        <article class="card">
+          <div class="ico">⛓️</div>
+          <h3>Blockchain ID Video</h3>
+          <p>Learn about the blockchain ID process.</p>
+          <a class="card-link" href="https://youtube.com/shorts/-fIVG9pZtEo?si=nclwN9l8L6Fo1tLa" target="_blank" rel="noopener noreferrer">WATCH VIDEO ↗</a>
+        </article>
+
+        <article class="card">
+          <div class="ico">🌐</div>
+          <h3>Decentralized System</h3>
+          <p>Watch the educational overview.</p>
+          <a class="card-link" href="https://youtu.be/MCNicgjFkxA" target="_blank" rel="noopener noreferrer">WATCH VIDEO ↗</a>
+        </article>
+
+        <article class="card">
+          <div class="ico">₿</div>
+          <h3>B-TITAN Website</h3>
+          <p>Visit the B-TITAN website.</p>
+          <a class="card-link" href="https://btitan.net/" target="_blank" rel="noopener noreferrer">OPEN WEBSITE ↗</a>
+        </article>
+
+        <article class="card">
+          <div class="ico">🚀</div>
+          <h3>B-TITAN Registration</h3>
+          <p>Open the registration page.</p>
+          <a class="card-link" href="https://btitan.net/register?id=10203" target="_blank" rel="noopener noreferrer">OPEN REGISTRATION ↗</a>
+        </article>
+
+        <article class="card">
+          <div class="ico">🎓</div>
+          <h3>Academy Hub</h3>
+          <p>Visit the GS Digital Academy link hub.</p>
+          <a class="card-link" href="https://beacons.ai/gsdigitalacademy" target="_blank" rel="noopener noreferrer">OPEN HUB ↗</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="zoom-section" id="zoom">
+    <div class="container">
+      <div class="section-head">
+        <small>ONLINE MEETINGS</small>
+        <h2>Zoom Meetings</h2>
+        <p>Join the online sessions</p>
+      </div>
+
+      <div class="zoom-cards">
+        <article class="zoom-card">
+          <h3>🌅 Morning Zoom</h3>
+          <div class="time">Daily • 8:15 AM IST</div>
+          <p>Morning meeting and team discussion.</p>
+          <a class="zoom-link" href="https://zoom.us/j/7890581048?pwd=0c3cExXWU7Xt1sBfLuvo0DlWej9xmV.1" target="_blank" rel="noopener noreferrer">JOIN MORNING ZOOM ↗</a>
+        </article>
+
+        <article class="zoom-card">
+          <h3>🌙 Evening Zoom</h3>
+          <div class="time">Daily • 9:00 PM IST</div>
+          <p>Evening meeting and team discussion.</p>
+          <a class="zoom-link" href="https://zoom.us/j/6053096493?pwd=v43dprpzbo7Xqc4omNKu95IJVx6pR9.1" target="_blank" rel="noopener noreferrer">JOIN EVENING ZOOM ↗</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="social-section" id="social">
+    <div class="container">
+      <div class="section-head">
+        <small>STAY CONNECTED</small>
+        <h2>Social Media Platforms</h2>
+        <p>Connect with GS Digital Academy</p>
+      </div>
+
+      <div class="socials">
+        <a class="social" href="https://www.facebook.com/profile.php?id=61590478625779" target="_blank" rel="noopener noreferrer">
+          <span class="social-icon">f</span>Facebook
+        </a>
+        <a class="social" href="https://youtube.com/@gautamdigitalacademy?si=yEkIv6-54rAN0h6e" target="_blank" rel="noopener noreferrer">
+          <span class="social-icon">▶</span>YouTube
+        </a>
+        <a class="social" href="https://www.instagram.com/btitanchampions?psln=MzZheDgwdTUzcnJ0" target="_blank" rel="noopener noreferrer">
+          <span class="social-icon">◎</span>Instagram
+        </a>
+        <a class="social" href="https://wa.me/918368960385?text=Am_interested_in_B-TITAN" target="_blank" rel="noopener noreferrer">
+          <span class="social-icon">☏</span>WhatsApp
+        </a>
+        <a class="social" href="https://beacons.ai/gsdigitalacademy" target="_blank" rel="noopener noreferrer">
+          <span class="social-icon">🔗</span>Academy Hub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="note">
+    <strong>Important:</strong> Digital assets involve risk. Verify project details independently. No income or profit is guaranteed.
   </div>
-</section>
-
-<section class="links-section" id="links">
-<div class="container">
-  <div class="section-head">
-    <small>QUICK ACCESS</small>
-    <h2>Important Links</h2>
-    <p>B-TITAN resources and Academy links</p>
-  </div>
-
-  <div class="cards">
-    <article class="card">
-      <div class="ico">▶️</div><h3>Complete Plan Video</h3>
-      <p>Watch the B-TITAN plan presentation.</p>
-      <a class="card-link" href="https://youtu.be/jg6a-Jo_acE" target="_blank" rel="noopener">WATCH VIDEO ↗</a>
-    </article>
-
-    <article class="card">
-      <div class="ico">📄</div><h3>Plan Presentation PDF</h3>
-      <p>Open the plan presentation document.</p>
-      <a class="card-link" href="https://docs.google.com/presentation/d/1ZhQFHnTPKTx4Lqs4LjZRFQjwZjct5FGL/export/pdf" target="_blank" rel="noopener">OPEN PDF ↗</a>
-    </article>
-
-    <article class="card">
-      <div class="ico">🆔</div><h3>ID Activation Guide</h3>
-      <p>Open the ID activation guide.</p>
-      <a class="card-link" href="https://tinyurl.com/4u6jnrrw" target="_blank" rel="noopener">OPEN GUIDE ↗</a>
-    </article>
-
-    <article class="card">
-      <div class="ico">⚙️</div><h3>2×2 Matrix Guide</h3>
-      <p>Watch the matrix guide.</p>
-      <a class="card-link" href="https://youtu.be/HIxNEUneKYs" target="_blank" rel="noopener">WATCH GUIDE ↗</a>
-    </article>
-
-    <article class="card">
-      <div class="ico">⛓️</div><h3>Blockchain ID Video</h3>
-      <p>Learn about the blockchain ID process.</p>
-      <a class="card-link" href="https://youtube.com/shorts/-fIVG9pZtEo?si=nclwN9l8L6Fo1tLa" target="_blank" rel="noopener">WATCH VIDEO ↗</a>
-    </article>
-
-    <article class="card">
-      <div class="ico">🌐</div><h3>Decentralized System</h3>
-      <p>Watch the educational overview.</p>
-      <a class="card-link" href="https://youtu.be/MCNicgjFkxA" target="_blank" rel="noopener">WATCH VIDEO ↗</a>
-    </article>
-
-    <article class="card">
-      <div class="ico">₿</div><h3>B-TITAN Website</h3>
-      <p>Visit the B-TITAN website.</p>
-      <a class="card-link" href="https://btitan.net/" target="_blank" rel="noopener">OPEN WEBSITE ↗</a>
-    </article>
-
-    <article class="card">
-      <div class="ico">🚀</div><h3>B-TITAN Registration</h3>
-      <p>Review the registration page and details.</p>
-      <a class="card-link" href="https://btitan.net/register?id=10203" target="_blank" rel="noopener">OPEN REGISTRATION ↗</a>
-    </article>
-
-    <article class="card">
-      <div class="ico">🎓</div><h3>Academy Hub</h3>
-      <p>Visit GS Digital Academy's link hub.</p>
-      <a class="card-link" href="https://beacons.ai/gsdigitalacademy" target="_blank" rel="noopener">OPEN HUB ↗</a>
-    </article>
-  </div>
-</div>
-</section>
-
-<section class="zoom-section" id="zoom">
-<div class="container">
-  <div class="section-head">
-    <small>ONLINE MEETINGS</small>
-    <h2>Zoom Meetings</h2>
-    <p>Join the online sessions</p>
-  </div>
-
-  <div class="zoom-cards">
-    <article class="zoom-card">
-      <h3>🌅 Morning Zoom</h3>
-      <div class="time">Daily • 9:00 AM IST</div>
-      <p>Morning meeting and team discussion.</p>
-      <a class="zoom-link" href="https://zoom.us/j/7890581048?pwd=0c3cExXWU7Xt1sBfLuvo0DlWej9xmV.1" target="_blank" rel="noopener">JOIN MORNING ZOOM ↗</a>
-    </article>
-
-    <article class="zoom-card">
-      <h3>🌙 Evening Zoom</h3>
-      <div class="time">Daily • 9:00 PM IST</div>
-      <p>Evening meeting and team discussion.</p>
-      <a class="zoom-link" href="https://zoom.us/j/6053096493?pwd=v43dprpzbo7Xqc4omNKu95IJVx6pR9.1" target="_blank" rel="noopener">JOIN EVENING ZOOM ↗</a>
-    </article>
-  </div>
-</div>
-</section>
-
-<section class="social-section" id="social">
-<div class="container">
-  <div class="section-head">
-    <small>STAY CONNECTED</small>
-    <h2>Social Media Platforms</h2>
-    <p>Connect with GS Digital Academy</p>
-  </div>
-
-  <div class="socials">
-    <a class="social" href="https://www.facebook.com/profile.php?id=61590478625779" target="_blank" rel="noopener">
-      <span class="social-icon">f</span>Facebook
-    </a>
-    <a class="social" href="https://youtube.com/@gautamdigitalacademy?si=yEkIv6-54rAN0h6e" target="_blank" rel="noopener">
-      <span class="social-icon">▶</span>YouTube
-    </a>
-    <a class="social" href="https://www.instagram.com/btitanchampions?psln=MzZheDgwdTUzcnJ0" target="_blank" rel="noopener">
-      <span class="social-icon">◎</span>Instagram
-    </a>
-    <a class="social" href="https://wa.me/918368960385?text=Am_interested_in_B-TITAN" target="_blank" rel="noopener">
-      <span class="social-icon">☏</span>WhatsApp
-    </a>
-    <a class="social" href="https://beacons.ai/gsdigitalacademy" target="_blank" rel="noopener">
-      <span class="social-icon">🔗</span>Academy Hub
-    </a>
-  </div>
-</div>
-</section>
-
-<div class="note">
-  <strong>Important:</strong> Digital assets involve risk. Verify project details independently. No income or profit is guaranteed.
-</div>
 </main>
 
 <footer>
