@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -10,222 +10,187 @@
 
 <style>
 :root{
-  --blue:#071b70;
-  --navy:#06152f;
+  --navy:#07142f;
+  --blue:#092d87;
   --purple:#6500d8;
   --gold:#ffd52e;
-  --white:#fff;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:150px}
-body{
-  font-family:Arial,Helvetica,sans-serif;
-  background:#07152f;color:#fff;overflow-x:hidden;
-}
+html{scroll-behavior:smooth;scroll-padding-top:160px}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--navy);color:#fff;overflow-x:hidden}
 a{text-decoration:none;color:inherit}
 button,input{font:inherit}
 button{cursor:pointer}
 
 .header{
+  position:sticky;top:0;z-index:50;
   background:linear-gradient(110deg,#07194e,#082b87 70%,#310b78);
-  border-bottom:1px solid #ffffff22;
-  position:sticky;top:0;z-index:20;
+  border-bottom:1px solid #ffffff20;
 }
 .header-top{
-  min-height:83px;padding:12px 16px;
-  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:9px;padding:10px 15px;min-height:83px;
 }
-.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.brand{display:flex;align-items:center;gap:10px;min-width:0}
 .logo{
-  width:65px;height:65px;border-radius:50%;flex-shrink:0;
-  border:2px solid var(--gold);background:#091d5a;
-  display:grid;place-items:center;text-align:center;
-  font-size:19px;font-weight:900;color:var(--gold);
-  box-shadow:0 0 14px #ffd52e22;
+  width:65px;height:65px;flex-shrink:0;border-radius:50%;
+  overflow:hidden;border:1px solid var(--gold);background:#091d5a;
+  display:flex;align-items:center;justify-content:center;
 }
-.brand-name{font-size:clamp(13px,2.5vw,19px);font-weight:900;white-space:nowrap}
+.logo img{width:100%;height:100%;object-fit:contain;display:block}
+.brand-name{font-size:clamp(11px,2.7vw,18px);font-weight:900;white-space:nowrap}
 .brand-name span{color:var(--gold)}
-.brand-tag{font-size:10px;letter-spacing:2px;margin-top:5px;color:#e0e8ff}
-.header-actions{display:flex;align-items:center;gap:9px}
+.brand-tag{font-size:9px;letter-spacing:2px;color:#e0e8ff;margin-top:5px}
+.actions{display:flex;align-items:center;gap:8px}
 .btitan{
   display:flex;align-items:center;gap:7px;
-  padding:9px 12px;border:1px solid var(--gold);
-  border-radius:24px;color:var(--gold);font-weight:900;
-  white-space:nowrap;font-size:12px;
-  background:#06183c;
+  padding:8px 10px;border:1px solid var(--gold);
+  border-radius:22px;background:#06183c;color:var(--gold);
+  font-size:11px;font-weight:900;white-space:nowrap;
 }
 .coin{
-  width:31px;height:31px;border:2px solid var(--gold);
-  border-radius:50%;display:grid;place-items:center;
-  font-size:20px;color:var(--gold);
+  width:29px;height:29px;border:2px solid var(--gold);
+  border-radius:50%;display:grid;place-items:center;font-size:19px;
 }
 .menu-btn{
-  width:49px;height:49px;border:1px solid #ffffff30;
-  border-radius:13px;background:#ffffff0c;color:white;font-size:27px;
+  width:48px;height:48px;border:1px solid #ffffff30;
+  border-radius:13px;background:#ffffff0c;color:white;font-size:26px;
 }
-.search-wrap{padding:0 16px 12px}
+.search-wrap{padding:0 16px 11px}
 .search{
-  width:100%;height:56px;border-radius:40px;border:0;
-  outline:none;padding:0 20px;background:white;color:#222;font-size:15px;
+  width:100%;height:56px;border:0;outline:none;border-radius:40px;
+  padding:0 20px;background:white;color:#222;font-size:15px;
 }
-.search::placeholder{color:#858585}
 .nav{
-  display:flex;align-items:center;gap:7px;padding:5px 12px 13px;
+  display:flex;gap:6px;padding:5px 12px 12px;
   overflow-x:auto;scrollbar-width:none;
 }
 .nav::-webkit-scrollbar{display:none}
 .nav a{
-  flex-shrink:0;padding:12px 14px;border-radius:13px;
-  font-size:13px;font-weight:700;white-space:nowrap;
+  flex-shrink:0;padding:12px;border-radius:13px;
+  font-size:12px;font-weight:700;white-space:nowrap;
 }
 .nav a.active{background:var(--gold);color:#111}
 .mobile-menu{
-  display:none;padding:10px 16px 14px;
-  background:#071744;border-top:1px solid #ffffff14;
+  display:none;padding:12px;grid-template-columns:1fr 1fr;gap:8px;
+  background:#071744;border-top:1px solid #ffffff15;
 }
-.mobile-menu.open{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.mobile-menu a{padding:11px;border-radius:9px;background:#ffffff12;font-size:13px}
+.mobile-menu.open{display:grid}
+.mobile-menu a{padding:11px;background:#ffffff12;border-radius:9px;font-size:12px}
 
 .hero{
-  position:relative;overflow:hidden;
-  padding:36px 25px 35px;
+  position:relative;overflow:hidden;padding:35px 25px 28px;
   background:
     radial-gradient(ellipse at 82% 20%,#9c00ffb5,transparent 48%),
     radial-gradient(ellipse at 20% 70%,#006cff66,transparent 50%),
     linear-gradient(115deg,#062e83,#101f9a 53%,#4d08b0);
 }
-.hero:before{
-  content:"";position:absolute;width:380px;height:380px;
-  border:1px solid #ffffff18;border-radius:50%;
-  right:-100px;top:-80px;pointer-events:none;
-}
 .welcome{
-  display:inline-block;border:1px solid #ffd52e70;
-  background:#ffffff0b;border-radius:30px;padding:11px 16px;
-  color:#ffe16c;font-weight:700;font-size:14px;
+  display:inline-block;padding:10px 14px;border:1px solid #ffd52e70;
+  border-radius:30px;background:#ffffff0b;color:#ffe16c;
+  font-size:13px;font-weight:700;
 }
 .hero h1{
-  font-size:clamp(37px,7.4vw,68px);line-height:1.13;
-  letter-spacing:-1.5px;margin:27px 0 13px;font-weight:900;
+  font-size:clamp(35px,7.5vw,66px);line-height:1.13;
+  letter-spacing:-1.5px;margin:26px 0 14px;font-weight:900;
 }
 .hero h1 span{color:var(--gold)}
-.hero h2{font-size:clamp(21px,4vw,30px);margin-bottom:20px}
-.hero-desc{font-size:16px;line-height:1.8;color:#e5eaff;margin-bottom:25px}
-.features{display:flex;flex-wrap:wrap;gap:12px 18px;margin:22px 0 28px}
-.features span{font-size:13px;display:flex;align-items:center;gap:7px}
+.hero h2{font-size:clamp(21px,4vw,30px);margin-bottom:19px}
+.hero-desc{font-size:15px;line-height:1.8;color:#e5eaff}
+.features{display:flex;flex-wrap:wrap;gap:12px 15px;margin:24px 0 27px}
+.features span{font-size:12px;display:flex;align-items:center;gap:7px}
 .check{
   width:25px;height:25px;border-radius:50%;background:var(--gold);
-  color:#14204c;display:inline-grid;place-items:center;font-weight:900;
+  color:#14204c;display:grid;place-items:center;font-weight:900;
 }
-.hero-buttons{display:flex;flex-wrap:wrap;gap:12px}
+.hero-buttons{display:flex;flex-wrap:wrap;gap:11px}
 .btn{
-  min-height:55px;padding:0 22px;border-radius:17px;
+  min-height:53px;padding:0 17px;border-radius:16px;
   display:inline-flex;align-items:center;justify-content:center;
-  font-weight:800;font-size:14px;border:1px solid #ffffff45;
+  font-weight:800;font-size:12px;border:1px solid #ffffff45;
 }
 .btn-gold{background:var(--gold);color:#101530;border:0}
 .btn-outline{background:#ffffff0a;color:white}
-.hero-foot{margin-top:24px;color:#d9e4ff;font-size:14px}
+.hero-foot{margin-top:23px;color:#d9e4ff;font-size:13px}
 
 .illustration{
-  min-height:185px;max-width:660px;margin:18px auto 0;
+  min-height:185px;max-width:660px;margin:17px auto 0;
   position:relative;display:flex;align-items:flex-end;justify-content:center;
-}
-.person{
-  width:175px;height:150px;position:relative;z-index:1;
-  display:flex;justify-content:center;
-}
-.hair{
-  position:absolute;top:6px;width:138px;height:138px;
-  background:#30282b;border-radius:70px 70px 42px 42px;
-}
-.face{
-  position:absolute;top:35px;width:100px;height:100px;
-  background:#ffdfbf;border-radius:48% 48% 45% 45%;z-index:2;
-}
-.eye{position:absolute;top:43px;width:13px;height:17px;border-radius:50%;background:#34313a}
-.eye.left{left:23px}.eye.right{right:23px}
-.smile{
-  position:absolute;bottom:16px;left:37px;width:27px;height:12px;
-  border-bottom:3px solid #ad6a57;border-radius:50%;
-}
-.laptop{
-  position:absolute;z-index:3;bottom:0;width:180px;height:67px;
-  border-radius:12px 12px 3px 3px;background:#b9becb;
-  border:5px solid #e5e7ef;text-align:center;color:#7e8492;
-  font-size:26px;padding-top:10px;
 }
 .orbit{
   position:absolute;width:90%;height:105px;bottom:12px;
   border:2px solid #f8d9698c;border-radius:50%;transform:rotate(-15deg);
 }
+.person{width:175px;height:150px;position:relative;z-index:1;display:flex;justify-content:center}
+.hair{position:absolute;top:6px;width:138px;height:138px;background:#30282b;border-radius:70px 70px 42px 42px}
+.face{position:absolute;top:35px;width:100px;height:100px;background:#ffdfbf;border-radius:48% 48% 45% 45%;z-index:2}
+.eye{position:absolute;top:43px;width:13px;height:17px;border-radius:50%;background:#34313a}
+.eye.left{left:23px}.eye.right{right:23px}
+.smile{position:absolute;bottom:16px;left:37px;width:27px;height:12px;border-bottom:3px solid #ad6a57;border-radius:50%}
+.laptop{position:absolute;z-index:3;bottom:0;width:180px;height:67px;border-radius:12px 12px 3px 3px;background:#b9becb;border:5px solid #e5e7ef;text-align:center;color:#7e8492;font-size:26px;padding-top:10px}
 .float-icon{
-  position:absolute;z-index:4;width:48px;height:48px;
-  border:1px solid #ffffff77;border-radius:50%;display:grid;
-  place-items:center;font-size:23px;background:#ffffff10;
-  box-shadow:0 0 18px #c077ff77;
+  position:absolute;z-index:4;width:45px;height:45px;border:1px solid #ffffff77;
+  border-radius:50%;display:grid;place-items:center;font-size:23px;
+  background:#ffffff10;box-shadow:0 0 18px #c077ff77;
 }
-.float-icon.one{left:6%;bottom:47px}
-.float-icon.two{left:29%;bottom:55px}
-.float-icon.three{right:26%;bottom:48px}
-.float-icon.four{right:5%;bottom:52px}
+.float-icon.one{left:5%;bottom:45px}
+.float-icon.two{left:28%;bottom:55px}
+.float-icon.three{right:25%;bottom:45px}
+.float-icon.four{right:4%;bottom:52px}
 .create-badge{
-  position:absolute;right:2%;top:4px;z-index:5;
-  width:102px;height:102px;border:4px solid var(--gold);
-  border-radius:50%;background:#071b56;
+  position:absolute;right:1%;top:4px;z-index:5;width:100px;height:100px;
+  border:4px solid var(--gold);border-radius:50%;background:#071b56;
   display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;font-size:12px;line-height:1.35;
+  text-align:center;font-size:11px;line-height:1.4;
 }
 
 .dashboard{
-  background:#f7f8ff;color:#111d3b;padding:13px 12px 35px;
-  border-radius:27px 27px 0 0;position:relative;z-index:2;
-  margin-top:-1px;
+  background:#f7f8ff;color:#111d3b;padding:12px 12px 25px;
+  border-radius:26px 26px 0 0;position:relative;z-index:2;
 }
 .dashboard-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
 .dash-card{
-  min-height:135px;padding:17px 6px 12px;
+  min-height:132px;padding:15px 4px 12px;
   display:flex;flex-direction:column;align-items:center;justify-content:center;
   text-align:center;background:linear-gradient(145deg,#fff,#eaf0ff);
-  border:1px solid #e0e5f0;border-radius:20px;color:#111d3b;
+  border:1px solid #e0e5f0;border-radius:19px;color:#111d3b;
 }
-.dash-icon{font-size:31px;margin-bottom:7px}
-.dash-card strong{font-size:13px}
-.dash-card small{font-size:11px;color:#637391;margin-top:6px}
+.dash-icon{font-size:30px;margin-bottom:7px}
+.dash-card strong{font-size:12px}
+.dash-card small{font-size:10px;color:#637391;margin-top:6px}
 
-.section{padding:35px 16px}
+.section{padding:35px 15px}
 .section-head{text-align:center;margin-bottom:22px}
 .section-head small{font-size:10px;letter-spacing:2px;color:var(--gold);font-weight:900}
 .section-head h2{font-size:27px;margin:7px 0}
-.section-head p{font-size:13px;color:#c5d0e8}
-.link-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.section-head p{font-size:12px;color:#c5d0e8}
+.link-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
 .link-card{
-  border:1px solid #ffffff20;border-radius:16px;
-  padding:17px;background:linear-gradient(145deg,#122e54,#091a36);
-  display:flex;flex-direction:column;align-items:flex-start;min-height:160px;
+  border:1px solid #ffffff20;border-radius:16px;padding:16px;
+  background:linear-gradient(145deg,#122e54,#091a36);
+  display:flex;flex-direction:column;align-items:flex-start;min-height:155px;
 }
 .link-icon{font-size:25px;margin-bottom:7px}
-.link-card h3{font-size:15px;margin-bottom:6px}
-.link-card p{font-size:12px;color:#c1cde1;flex:1;margin-bottom:13px}
+.link-card h3{font-size:14px;margin-bottom:6px}
+.link-card p{font-size:11px;color:#c1cde1;flex:1;margin-bottom:12px}
 .link-btn{
-  padding:10px 13px;border-radius:10px;background:var(--gold);
+  padding:10px 12px;border-radius:9px;background:var(--gold);
   color:#121a32;font-weight:900;font-size:10px;display:inline-block;
 }
 .zoom-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.zoom-card{padding:19px;border:1px solid #ffd52e55;border-radius:16px;background:#10264b}
-.zoom-card h3{font-size:17px}
-.zoom-time{color:var(--gold);font-weight:800;margin:7px 0}
-.zoom-card p{font-size:12px;color:#c1cde1;margin-bottom:14px}
-.social-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.zoom-card{padding:17px;border:1px solid #ffd52e55;border-radius:16px;background:#10264b}
+.zoom-card h3{font-size:16px}
+.zoom-time{color:var(--gold);font-weight:800;margin:7px 0;font-size:12px}
+.zoom-card p{font-size:11px;color:#c1cde1;margin-bottom:13px}
+.social-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}
 .social-card{
-  min-height:92px;border:1px solid #ffffff20;border-radius:15px;
+  min-height:90px;border:1px solid #ffffff20;border-radius:15px;
   background:#11274b;display:flex;align-items:center;justify-content:center;
   flex-direction:column;gap:7px;font-size:12px;font-weight:800;
 }
-.social-icon{font-size:27px;color:var(--gold)}
+.social-icon{font-size:26px;color:var(--gold)}
 .footer{padding:22px 15px;text-align:center;background:#040d20;color:#bdc8df;font-size:11px}
 .footer strong{color:white;font-size:14px}
-
 .bottom-nav{
   display:none;position:fixed;bottom:0;left:0;right:0;z-index:30;
   background:#171e50;border-top:1px solid #ffffff1a;
@@ -234,59 +199,54 @@ button{cursor:pointer}
 }
 .bottom-nav a{
   display:flex;flex-direction:column;align-items:center;justify-content:center;
-  gap:3px;padding:8px 2px;border-radius:13px;font-size:10px;color:#dce5ff;
+  gap:3px;padding:7px 2px;border-radius:13px;font-size:10px;color:#dce5ff;
 }
-.bottom-nav a span{font-size:23px}
+.bottom-nav a span{font-size:22px}
 .bottom-nav a.active{background:#ffffff18;color:#ffe18a}
 
 @media(max-width:650px){
-  .header-top{min-height:82px;padding:10px 14px}
-  .logo{width:62px;height:62px}
-  .brand{gap:10px}
-  .brand-name{font-size:clamp(12px,3.1vw,17px)}
-  .brand-tag{font-size:9px;letter-spacing:1.5px}
-  .btitan{font-size:11px;padding:7px 9px;gap:5px}
-  .coin{width:28px;height:28px;font-size:18px}
-  .menu-btn{width:47px;height:47px}
-  .nav{gap:5px;padding:4px 12px 12px}
-  .nav a{padding:12px;font-size:12px}
-  .search{height:58px;font-size:15px}
-  .hero{padding:35px 24px 28px}
-  .hero h1{font-size:clamp(36px,8.5vw,54px);margin-top:27px}
-  .hero-desc{font-size:15px}
-  .features{gap:11px 15px}
-  .features span{font-size:12px}
-  .btn{min-height:54px;padding:0 18px}
-  .dashboard{padding:12px 12px 30px}
-  .dash-card{min-height:135px;padding:14px 3px}
+  .header-top{min-height:80px;padding:9px 12px}
+  .logo{width:58px;height:58px}
+  .brand{gap:8px}
+  .brand-name{font-size:clamp(10px,2.8vw,16px)}
+  .brand-tag{font-size:8px;letter-spacing:1.5px}
+  .btitan{font-size:10px;padding:6px 8px;gap:5px}
+  .coin{width:26px;height:26px;font-size:17px}
+  .menu-btn{width:43px;height:43px;font-size:23px}
+  .hero{padding:33px 18px 26px}
+  .hero h1{font-size:clamp(35px,8.5vw,53px)}
+  .hero-desc{font-size:13px}
+  .features{gap:10px 12px}
+  .features span{font-size:11px}
+  .btn{min-height:49px;padding:0 13px;font-size:11px}
+  .dashboard{padding:12px 11px 28px}
+  .dash-card{min-height:120px}
   .bottom-nav{display:grid}
-  body{padding-bottom:75px}
+  body{padding-bottom:78px}
 }
 @media(max-width:390px){
-  .header-top{padding:9px 9px;gap:5px}
-  .logo{width:49px;height:49px;font-size:16px}
-  .brand{gap:6px}
-  .brand-name{font-size:10px}
-  .brand-tag{font-size:7px;letter-spacing:1px}
-  .header-actions{gap:5px}
-  .btitan{font-size:9px;padding:6px 6px}
-  .coin{width:24px;height:24px;font-size:15px}
-  .menu-btn{width:39px;height:41px;font-size:21px}
-  .hero{padding:29px 17px 25px}
-  .hero h1{font-size:35px}
-  .hero h2{font-size:21px}
-  .hero-desc{font-size:13px}
-  .features{gap:9px}
-  .features span{font-size:11px}
-  .btn{font-size:11px;padding:0 13px}
-  .illustration{min-height:155px}
-  .create-badge{width:80px;height:80px;font-size:10px}
+  .header-top{padding:8px;gap:5px}
+  .logo{width:46px;height:46px}
+  .brand{gap:5px}
+  .brand-name{font-size:9px}
+  .brand-tag{font-size:6px;letter-spacing:.7px}
+  .actions{gap:4px}
+  .btitan{font-size:8px;padding:5px 6px}
+  .coin{width:22px;height:22px;font-size:14px}
+  .menu-btn{width:37px;height:39px;font-size:20px}
+  .hero{padding:27px 15px 23px}
+  .hero h1{font-size:34px;letter-spacing:-1px}
+  .hero h2{font-size:20px}
+  .features span{font-size:10px}
+  .check{width:21px;height:21px}
+  .illustration{min-height:150px}
   .person{transform:scale(.85);transform-origin:bottom}
-  .float-icon{width:38px;height:38px;font-size:19px}
-  .dash-card{min-height:120px}
-  .dash-icon{font-size:27px}
-  .dash-card strong{font-size:11px}
-  .dash-card small{font-size:10px}
+  .create-badge{width:78px;height:78px;font-size:9px}
+  .float-icon{width:36px;height:36px;font-size:18px}
+  .dash-card{min-height:112px}
+  .dash-icon{font-size:25px}
+  .dash-card strong{font-size:10px}
+  .dash-card small{font-size:9px}
 }
 </style>
 </head>
@@ -294,16 +254,19 @@ button{cursor:pointer}
 <body>
 <header class="header" id="top">
   <div class="header-top">
-    <a class="brand" href="#top">
-      <div class="logo">GS</div>
+    <a class="brand" href="#top" aria-label="GS Digital Academy Home">
+      <div class="logo">
+        <img src="gs-digital-academy-logo.png" alt="GS DIGITAL ACADEMY Logo">
+      </div>
       <div>
         <div class="brand-name">GS DIGITAL <span>ACADEMY</span></div>
         <div class="brand-tag">YOUR DIGITAL WORLD</div>
       </div>
     </a>
-    <div class="header-actions">
-      <a class="btitan" href="https://btitan.net/" target="_blank" rel="noopener">
-        <span class="coin">₿</span> B-TITAN ↗
+
+    <div class="actions">
+      <a class="btitan" href="https://btitan.net/" target="_blank" rel="noopener noreferrer">
+        <span class="coin">₿</span>B-TITAN ↗
       </a>
       <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false">☰</button>
     </div>
@@ -321,6 +284,7 @@ button{cursor:pointer}
     <a href="#social">● Social Hub</a>
     <a href="#media">▣ Media Library</a>
   </nav>
+
   <div class="mobile-menu" id="mobileMenu">
     <a href="#top">⌂ Home</a>
     <a href="#profile">👤 My Profile</a>
@@ -332,7 +296,7 @@ button{cursor:pointer}
 </header>
 
 <main>
-<section class="hero" id="top">
+<section class="hero" id="home">
   <div class="welcome">👑 Welcome to GS DIGITAL ACADEMY</div>
   <h1>YOUR DIGITAL <span>WORLD</span></h1>
   <h2>One Hub. Every Platform.</h2>
@@ -341,12 +305,12 @@ button{cursor:pointer}
   </p>
 
   <div class="features">
-    <span><b class="check">✓</b> Create Posts</span>
-    <span><b class="check">✓</b> Photo &amp; Video</span>
-    <span><b class="check">✓</b> Multi-Platform Sharing</span>
-    <span><b class="check">✓</b> Save Profile Links</span>
-    <span><b class="check">✓</b> One-Tap Share</span>
-    <span><b class="check">✓</b> Secure Setup</span>
+    <span><b class="check">✓</b>Create Posts</span>
+    <span><b class="check">✓</b>Photo &amp; Video</span>
+    <span><b class="check">✓</b>Multi-Platform Sharing</span>
+    <span><b class="check">✓</b>Save Profile Links</span>
+    <span><b class="check">✓</b>One-Tap Share</span>
+    <span><b class="check">✓</b>Secure Setup</span>
   </div>
 
   <div class="hero-buttons">
@@ -356,7 +320,7 @@ button{cursor:pointer}
 
   <div class="hero-foot">✨ Create · Share · Connect · Grow</div>
 
-  <div class="illustration" aria-label="Digital creator illustration">
+  <div class="illustration">
     <div class="orbit"></div>
     <div class="float-icon one">f</div>
     <div class="float-icon two">◎</div>
@@ -378,28 +342,22 @@ button{cursor:pointer}
 <section class="dashboard" id="profile">
   <div class="dashboard-grid">
     <a class="dash-card" href="https://beacons.ai/gsdigitalacademy" target="_blank" rel="noopener">
-      <span class="dash-icon">👤</span>
-      <strong>My Profile</strong><small>Add Social Links →</small>
+      <span class="dash-icon">👤</span><strong>My Profile</strong><small>Add Social Links →</small>
     </a>
     <a class="dash-card" href="#promotion">
-      <span class="dash-icon">🚀</span>
-      <strong>Promotion Studio</strong><small>Create Posts →</small>
+      <span class="dash-icon">🚀</span><strong>Promotion Studio</strong><small>Create Posts →</small>
     </a>
     <a class="dash-card" href="#social">
-      <span class="dash-icon">🔗</span>
-      <strong>Social Hub</strong><small>All Links →</small>
+      <span class="dash-icon">🔗</span><strong>Social Hub</strong><small>All Links →</small>
     </a>
     <a class="dash-card" href="#media">
-      <span class="dash-icon">🖼️</span>
-      <strong>Photo &amp; Video</strong><small>Select Media →</small>
+      <span class="dash-icon">🖼️</span><strong>Photo &amp; Video</strong><small>Select Media →</small>
     </a>
     <button class="dash-card" id="copyMessage" type="button">
-      <span class="dash-icon">📄</span>
-      <strong>Copy Message</strong><small>Quick Copy →</small>
+      <span class="dash-icon">📄</span><strong>Copy Message</strong><small>Quick Copy →</small>
     </button>
     <button class="dash-card" id="shareApp" type="button">
-      <span class="dash-icon">📲</span>
-      <strong>Share App</strong><small>Invite Others →</small>
+      <span class="dash-icon">📲</span><strong>Share App</strong><small>Invite Others →</small>
     </button>
   </div>
 </section>
@@ -410,10 +368,11 @@ button{cursor:pointer}
     <h2>Important Links</h2>
     <p>B-TITAN resources and Academy links</p>
   </div>
+
   <div class="link-grid">
     <article class="link-card">
       <span class="link-icon">▶️</span><h3>Complete Plan Video</h3>
-      <p>Watch the plan presentation.</p>
+      <p>Watch the B-TITAN plan presentation.</p>
       <a class="link-btn" href="https://youtu.be/jg6a-Jo_acE" target="_blank" rel="noopener">WATCH VIDEO ↗</a>
     </article>
     <article class="link-card">
@@ -443,7 +402,7 @@ button{cursor:pointer}
     </article>
     <article class="link-card">
       <span class="link-icon">₿</span><h3>B-TITAN Website</h3>
-      <p>Visit the official website.</p>
+      <p>Visit the B-TITAN website.</p>
       <a class="link-btn" href="https://btitan.net/" target="_blank" rel="noopener">OPEN WEBSITE ↗</a>
     </article>
     <article class="link-card">
@@ -451,13 +410,17 @@ button{cursor:pointer}
       <p>Open the registration page.</p>
       <a class="link-btn" href="https://btitan.net/register?id=10203" target="_blank" rel="noopener">REGISTER ↗</a>
     </article>
+    <article class="link-card">
+      <span class="link-icon">🎓</span><h3>Academy Hub</h3>
+      <p>Visit GS Digital Academy.</p>
+      <a class="link-btn" href="https://beacons.ai/gsdigitalacademy" target="_blank" rel="noopener">OPEN HUB ↗</a>
+    </article>
   </div>
 </section>
 
 <section class="section" id="zoom">
   <div class="section-head">
-    <small>ONLINE MEETINGS</small>
-    <h2>Zoom Meetings</h2>
+    <small>ONLINE MEETINGS</small><h2>Zoom Meetings</h2>
     <p>Join the online sessions</p>
   </div>
   <div class="zoom-grid">
@@ -478,8 +441,7 @@ button{cursor:pointer}
 
 <section class="section" id="social">
   <div class="section-head">
-    <small>STAY CONNECTED</small>
-    <h2>Social Hub</h2>
+    <small>STAY CONNECTED</small><h2>Social Hub</h2>
     <p>Connect with GS Digital Academy</p>
   </div>
   <div class="social-grid">
@@ -495,22 +457,22 @@ button{cursor:pointer}
 <section class="section" id="media">
   <div class="section-head">
     <small>MEDIA</small><h2>Photo &amp; Video</h2>
-    <p>Select media from your device to share.</p>
+    <p>Select photos or videos from your device.</p>
   </div>
   <div style="text-align:center">
     <input type="file" id="mediaPicker" accept="image/*,video/*" multiple
-      style="max-width:100%;background:#10264b;padding:14px;border-radius:12px;color:white">
+      style="max-width:100%;background:#10264b;padding:12px;border-radius:12px;color:white">
     <p id="mediaStatus" style="font-size:12px;color:#c5d0e8;margin-top:10px"></p>
   </div>
 </section>
 
-<div class="footer">
-  <strong>GS DIGITAL ACADEMY</strong>
+<footer class="footer">
+  <strong>GS DIGITAL ACADEMY</strong><br>
   YOUR DIGITAL WORLD<br><br>
   <a href="https://btitan.net/" style="color:#ffd52e;font-weight:900">₿ B-TITAN</a><br><br>
   Digital assets involve risk. No income or profit is guaranteed.<br>
   © 2026 GS Digital Academy
-</div>
+</footer>
 </main>
 
 <nav class="bottom-nav">
@@ -535,37 +497,25 @@ mobileMenu.querySelectorAll('a').forEach(a=>{
 });
 
 document.getElementById('searchInput').addEventListener('input',function(){
-  const query=this.value.trim().toLowerCase();
+  const q=this.value.trim().toLowerCase();
   document.querySelectorAll('.link-card,.zoom-card,.social-card,.dash-card').forEach(card=>{
-    card.style.display=(!query||card.textContent.toLowerCase().includes(query))?'':'none';
+    card.style.display=(!q||card.textContent.toLowerCase().includes(q))?'':'none';
   });
 });
 
 document.getElementById('copyMessage').addEventListener('click',async()=>{
   const message='GS DIGITAL ACADEMY — Your Digital World\nB-TITAN: https://btitan.net/\nAcademy Hub: https://beacons.ai/gsdigitalacademy';
-  try{
-    await navigator.clipboard.writeText(message);
-    alert('Message copied!');
-  }catch(e){
-    prompt('Copy this message:',message);
-  }
+  try{await navigator.clipboard.writeText(message);alert('Message copied!')}
+  catch(e){prompt('Copy this message:',message)}
 });
 
 async function shareAcademy(){
-  const data={
-    title:'GS DIGITAL ACADEMY',
-    text:'Visit GS Digital Academy — Your Digital World',
-    url:location.href
-  };
+  const data={title:'GS DIGITAL ACADEMY',text:'Visit GS Digital Academy — Your Digital World',url:location.href};
   if(navigator.share){
     try{await navigator.share(data)}catch(e){}
   }else{
-    try{
-      await navigator.clipboard.writeText(location.href);
-      alert('Page link copied!');
-    }catch(e){
-      prompt('Copy page link:',location.href);
-    }
+    try{await navigator.clipboard.writeText(location.href);alert('Page link copied!')}
+    catch(e){prompt('Copy page link:',location.href)}
   }
 }
 document.getElementById('shareApp').addEventListener('click',shareAcademy);
@@ -574,9 +524,8 @@ document.getElementById('bottomShare').addEventListener('click',e=>{
 });
 
 document.getElementById('mediaPicker').addEventListener('change',function(){
-  const count=this.files.length;
   document.getElementById('mediaStatus').textContent=
-    count ? count+' file(s) selected. Sharing depends on your device and browser.' : '';
+    this.files.length ? this.files.length+' file(s) selected.' : '';
 });
 
 document.querySelectorAll('.bottom-nav a').forEach(a=>{
