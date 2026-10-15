@@ -5,724 +5,435 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#07111f">
-<meta name="description" content="B-TITAN — The Ultimate Bitcoin Rush. Explore the platform, registration and live on-chain slot dashboard.">
+<meta name="description" content="B-TITAN Live Dashboard and Slot Achievement Counter">
 <title>B-TITAN | The Ultimate Bitcoin Rush</title>
-
 <style>
-:root{
-  --bg:#07111f;
-  --panel:#101d30;
-  --panel2:#14243a;
-  --gold:#f5c451;
-  --gold2:#ffe6a0;
-  --text:#f5f7fb;
-  --muted:#a9b7ca;
-  --green:#50dfa0;
-  --border:rgba(245,196,81,.24);
-  --radius:18px;
-}
+:root{--bg:#07111f;--panel:#102037;--gold:#f5c451;--text:#f5f7fb;--muted:#a9b7ca;--border:#51452c;--green:#50dfa0}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{
-  margin:0;
-  font-family:Arial,Helvetica,sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.6;
-}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.6}
 a{color:inherit;text-decoration:none}
-button{font:inherit;cursor:pointer}
+button{cursor:pointer;font:inherit}
 .container{width:min(1120px,92%);margin:auto}
-header{
-  position:sticky;top:0;z-index:20;
-  background:rgba(7,17,31,.95);
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid var(--border);
-}
-.nav{
-  min-height:76px;display:flex;align-items:center;
-  justify-content:space-between;gap:16px;
-}
-.brand{display:flex;align-items:center;gap:10px;min-width:0}
+header{position:sticky;top:0;z-index:5;background:#07111ff5;border-bottom:1px solid var(--border)}
+.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:10px}
 .brand img{width:54px;height:54px;object-fit:contain}
-.brand-name{font-weight:900;letter-spacing:1px;color:var(--gold)}
-.brand small{display:block;color:var(--muted);font-size:11px}
-.nav-links{display:flex;align-items:center;gap:18px}
-.nav-links a{font-size:13px;color:var(--muted)}
-.nav-links a:hover{color:var(--gold)}
-.menu-btn{
-  display:none;background:transparent;color:var(--gold);
-  border:1px solid var(--border);border-radius:10px;padding:8px 12px;
-}
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;
-  gap:8px;padding:12px 18px;border-radius:11px;
-  font-weight:800;border:1px solid var(--border);
-  transition:.2s;min-height:44px;
-}
-.btn:hover{transform:translateY(-2px)}
-.btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#17130a}
-.btn-outline{background:transparent;color:var(--gold)}
-.hero{
-  padding:65px 0 48px;
-  background:
-    radial-gradient(ellipse at 80% 10%,rgba(139,76,255,.16),transparent 40%),
-    radial-gradient(ellipse at 10% 60%,rgba(245,196,81,.11),transparent 38%);
-}
-.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:34px;align-items:center}
-.eyebrow{color:var(--gold);font-weight:800;letter-spacing:2px;font-size:12px}
-h1{font-size:clamp(36px,6vw,66px);line-height:1.06;margin:12px 0 18px}
+.brand b{display:block;color:var(--gold);font-size:18px}
+.brand small{color:var(--muted)}
+.navlinks{display:flex;align-items:center;gap:16px}
+.navlinks a{font-size:13px;color:var(--muted)}
+.menu{display:none}
+.btn{display:inline-flex;justify-content:center;align-items:center;padding:12px 16px;border-radius:10px;border:1px solid var(--border);font-weight:bold;min-height:44px}
+.goldbtn{background:var(--gold);color:#17130a}
+.outline{color:var(--gold);background:transparent}
+.hero{padding:60px 0;background:radial-gradient(ellipse at 80% 15%,#6c4aa126,transparent 40%),radial-gradient(ellipse at 10% 60%,#f5c45115,transparent 40%)}
+.heroGrid{display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:center}
+.eyebrow{color:var(--gold);font-weight:bold;letter-spacing:2px;font-size:12px}
+h1{font-size:clamp(38px,6vw,65px);line-height:1.08;margin:12px 0}
+h2{font-size:clamp(25px,4vw,36px);line-height:1.2}
 .gold{color:var(--gold)}
-.hero p,.muted{color:var(--muted)}
-.hero p{font-size:17px;max-width:620px}
-.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
-.hero-card{
-  background:linear-gradient(145deg,#14243a,#0c1727);
-  border:1px solid var(--border);border-radius:24px;padding:25px;
-  box-shadow:0 20px 60px #0003;
-}
-.hero-logo{display:block;width:min(240px,75%);height:auto;object-fit:contain;margin:0 auto 15px}
-.hero-card h2{text-align:center;margin:8px 0;color:var(--gold)}
-.hero-card p{text-align:center;font-size:14px}
-section{padding:42px 0;scroll-margin-top:85px}
-.section-head{text-align:center;margin-bottom:25px}
-.section-head h2{font-size:clamp(25px,4vw,36px);margin:0 0 8px}
-.section-head p{color:var(--muted);margin:0}
-.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.card{
-  background:var(--panel);border:1px solid var(--border);
-  border-radius:var(--radius);padding:20px;min-width:0;
-}
-.card h3{margin:0 0 8px;font-size:18px}
-.card p{color:var(--muted);font-size:14px}
-.icon-box{font-size:26px;margin-bottom:8px}
-.live-section{background:linear-gradient(180deg,#091625,#0a1423)}
-.live-status{display:flex;justify-content:center;align-items:center;gap:8px;color:var(--muted);font-size:13px;margin:12px 0 22px}
-.dot{width:8px;height:8px;background:var(--green);border-radius:50%;display:inline-block}
+p,.muted{color:var(--muted)}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.heroCard,.card,.stat,.slotCard{background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:20px}
+.heroCard{text-align:center}
+.heroLogo{width:min(230px,80%);height:auto;object-fit:contain}
+section{padding:40px 0;scroll-margin-top:85px}
+.sectionHead{text-align:center;margin-bottom:24px}
+.sectionHead h2{margin:8px 0}
 .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-.stat{
-  padding:20px;background:var(--panel);border:1px solid var(--border);
-  border-radius:16px;text-align:center;min-width:0;
+.stat{text-align:center}
+.statLabel{font-size:13px;color:var(--muted)}
+.statValue{font-size:clamp(23px,4vw,32px);font-weight:900;color:var(--gold);overflow-wrap:anywhere}
+.statNote{font-size:11px;color:var(--muted)}
+.status{display:flex;justify-content:center;align-items:center;gap:8px;color:var(--muted);margin:18px 0}
+.dot{width:8px;height:8px;background:var(--green);border-radius:50%}
+.slotGrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.slotCard{text-align:center;padding:16px 8px}
+.slotName{font-weight:bold;color:var(--gold)}
+.slotCount{font-size:27px;font-weight:900;margin:8px 0}
+.small{font-size:11px;color:var(--muted)}
+.track{height:5px;background:#28364a;border-radius:8px;overflow:hidden;margin-top:10px}
+.bar{height:100%;width:0;background:var(--gold)}
+.notice{background:#141f2d;border:1px solid var(--border);border-radius:12px;padding:14px;margin-top:16px;font-size:13px;color:var(--muted)}
+.actions.center{justify-content:center}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.card h3{margin-top:0}
+.card p{font-size:14px}
+.resource{display:flex;justify-content:space-between;gap:10px;padding:12px;margin:8px 0;border:1px solid var(--border);border-radius:10px}
+.resource b{color:var(--gold)}
+textarea,input{width:100%;padding:12px;background:#091523;color:var(--text);border:1px solid var(--border);border-radius:10px;margin:5px 0}
+textarea{min-height:110px}
+.platforms{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.platform{text-align:center;padding:14px 6px;border:1px solid var(--border);border-radius:10px;background:var(--panel)}
+footer{border-top:1px solid var(--border);padding:25px 0;color:var(--muted);font-size:12px}
+@media(max-width:800px){
+ .heroGrid{grid-template-columns:1fr}
+ .navlinks{display:none;position:absolute;top:76px;left:0;right:0;background:#07111f;padding:16px;flex-direction:column;align-items:stretch}
+ .navlinks.open{display:flex}
+ .menu{display:block;background:transparent;border:1px solid var(--border);border-radius:10px;color:var(--gold);padding:10px}
+ .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .slotGrid{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .grid3{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
-.stat-label{font-size:12px;color:var(--muted)}
-.stat-value{font-size:clamp(22px,4vw,32px);font-weight:900;color:var(--gold);overflow-wrap:anywhere}
-.stat-note{font-size:11px;color:var(--muted)}
-.slot-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:18px}
-.slot-card{
-  background:var(--panel2);border:1px solid var(--border);
-  border-radius:14px;padding:16px 10px;text-align:center;
-}
-.slot-number{font-weight:900;color:var(--gold);font-size:15px}
-.slot-count{font-size:26px;font-weight:900;margin:5px 0}
-.slot-caption{font-size:11px;color:var(--muted)}
-.progress-track{height:5px;background:#27364a;border-radius:20px;overflow:hidden;margin-top:10px}
-.progress-bar{height:100%;width:0;background:linear-gradient(90deg,var(--gold),#fff0b6);transition:width .3s}
-.counter-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:20px 0}
-.notice{
-  padding:14px 16px;background:#171f2b;border:1px solid var(--border);
-  border-radius:12px;color:var(--muted);font-size:13px;margin-top:16px;
-}
-.error{color:#ff9c9c}
-.resource-link{
-  display:flex;align-items:center;justify-content:space-between;gap:12px;
-  padding:14px 15px;border:1px solid var(--border);
-  border-radius:12px;background:var(--panel);margin:9px 0;
-}
-.resource-link span{color:var(--muted);font-size:13px}
-.resource-link b{color:var(--gold)}
-.resource-link:hover{border-color:var(--gold)}
-.profile-form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-input,textarea,select{
-  width:100%;padding:12px;border-radius:10px;
-  border:1px solid var(--border);background:#091523;color:var(--text);
-}
-textarea{min-height:100px;resize:vertical}
-.full{grid-column:1/-1}
-.form-actions{display:flex;flex-wrap:wrap;gap:10px}
-.platforms{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
-.platform{
-  display:block;text-align:center;padding:14px 8px;
-  border-radius:12px;background:var(--panel2);border:1px solid var(--border);
-  font-size:13px;
-}
-.platform:hover{color:var(--gold);border-color:var(--gold)}
-footer{padding:30px 0;border-top:1px solid var(--border);color:var(--muted);font-size:12px}
-.footer-inner{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
-.hidden{display:none!important}
-@media(max-width:850px){
-  .nav-links{
-    display:none;position:absolute;top:76px;left:0;right:0;
-    padding:18px;background:#07111f;border-bottom:1px solid var(--border);
-    flex-direction:column;align-items:stretch;
-  }
-  .nav-links.open{display:flex}
-  .nav-links a{padding:7px}
-  .menu-btn{display:block}
-  .hero-grid{grid-template-columns:1fr}
-  .hero-card{max-width:460px;margin:auto;width:100%}
-  .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .slot-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
-}
-@media(max-width:520px){
-  .brand img{width:44px;height:44px}
-  .brand-name{font-size:13px}
-  .brand small{font-size:10px}
-  .hero{padding:42px 0 30px}
-  .hero p{font-size:15px}
-  .grid,.stats{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .slot-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .stat{padding:14px 8px}
-  .profile-form{grid-template-columns:1fr}
-  .full{grid-column:auto}
-  .platforms{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:500px){
+ .slotGrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .grid3{grid-template-columns:1fr}
+ .brand img{width:44px;height:44px}
+ .brand b{font-size:15px}
+ .brand small{font-size:11px}
 }
 </style>
 </head>
-
 <body>
 <header>
-  <div class="container nav">
-    <a class="brand" href="#home" aria-label="B-TITAN Home">
-      <img src="./btitan-logo-1.png" alt="B-TITAN Logo">
-      <div>
-        <div class="brand-name">B-TITAN</div>
-        <small>The Ultimate Bitcoin Rush</small>
-      </div>
-    </a>
-    <button class="menu-btn" id="menuBtn" aria-label="Open navigation" aria-expanded="false">☰ Menu</button>
-    <nav class="nav-links" id="navLinks">
-      <a href="#home">Home</a>
-      <a href="#live">Live Dashboard</a>
-      <a href="#profile">Profile</a>
-      <a href="#resources">Resources</a>
-      <a href="#zoom">Zoom</a>
-      <a href="#social">Social Hub</a>
-      <a href="#share">Share</a>
-    </nav>
-  </div>
+ <div class="container nav">
+  <a class="brand" href="#home">
+   <img src="./btitan-logo-1.png" alt="B-TITAN Logo">
+   <span><b>B-TITAN</b><small>The Ultimate Bitcoin Rush</small></span>
+  </a>
+  <button class="menu" id="menuBtn" aria-expanded="false">☰ Menu</button>
+  <nav class="navlinks" id="navLinks">
+   <a href="#home">Home</a><a href="#live">Live Counter</a>
+   <a href="#resources">Resources</a><a href="#zoom">Zoom</a>
+   <a href="#social">Social Hub</a><a href="#share">Share</a>
+  </nav>
+ </div>
 </header>
 
 <main>
 <section class="hero" id="home">
-  <div class="container hero-grid">
-    <div>
-      <div class="eyebrow">WELCOME TO B-TITAN</div>
-      <h1>THE ULTIMATE<br><span class="gold">BITCOIN RUSH</span></h1>
-      <p>Explore the B-TITAN platform, access registration and community resources, and check publicly readable on-chain contract information.</p>
-      <div class="hero-actions">
-        <a class="btn btn-gold" href="https://btitan.net/register?id=10203" target="_blank" rel="noopener">Register / Join ↗</a>
-        <a class="btn btn-outline" href="#live">View Live Dashboard ↓</a>
-      </div>
-      <p class="muted" style="font-size:12px">Always verify contract details and transaction risks before connecting a wallet or sending funds.</p>
-    </div>
-    <div class="hero-card">
-      <img class="hero-logo" src="./btitan-logo-1.png" alt="B-TITAN">
-      <h2>BUILD YOUR FUTURE</h2>
-      <p>Community • Technology • On-chain information</p>
-      <a class="btn btn-gold" style="width:100%" href="https://btitan.net/" target="_blank" rel="noopener">Visit Official Website ↗</a>
-    </div>
+ <div class="container heroGrid">
+  <div>
+   <div class="eyebrow">WELCOME TO B-TITAN</div>
+   <h1>THE ULTIMATE<br><span class="gold">BITCOIN RUSH</span></h1>
+   <p>Explore B-TITAN, access project resources and check public information from the BNB Smart Chain contract.</p>
+   <div class="actions">
+    <a class="btn goldbtn" href="https://btitan.net/register?id=10203" target="_blank" rel="noopener">Register / Join ↗</a>
+    <a class="btn outline" href="#live">Live Dashboard ↓</a>
+   </div>
+   <p class="small">Verify the contract and understand the risks before sending any funds.</p>
   </div>
+  <div class="heroCard">
+   <img class="heroLogo" src="./btitan-logo-1.png" alt="B-TITAN">
+   <h2 class="gold">B-TITAN</h2>
+   <p>Community • Technology • On-chain information</p>
+   <a class="btn goldbtn" href="https://btitan.net/" target="_blank" rel="noopener">Official Website ↗</a>
+  </div>
+ </div>
 </section>
 
-<section class="live-section" id="live">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">ON-CHAIN DASHBOARD</div>
-      <h2>B-TITAN <span class="gold">Live Counter</span></h2>
-      <p>Data is read from the BNB Smart Chain contract.</p>
-    </div>
-
-    <div class="live-status"><span class="dot"></span><span id="connectionStatus">Connecting to BNB Smart Chain…</span></div>
-
-    <div class="stats">
-      <div class="stat">
-        <div class="stat-label">Registered IDs</div>
-        <div class="stat-value" id="registeredIds">—</div>
-        <div class="stat-note">Estimated from the contract's sequential ID counter</div>
-      </div>
-      <div class="stat">
-        <div class="stat-label">Last Assigned ID</div>
-        <div class="stat-value" id="latestId">—</div>
-        <div class="stat-note">Updated from contract state</div>
-      </div>
-      <div class="stat">
-        <div class="stat-label">Partner Initialization</div>
-        <div class="stat-value" id="partnerStatus" style="font-size:20px">—</div>
-        <div class="stat-note">Contract initialization status</div>
-      </div>
-    </div>
-
-    <div class="section-head" style="margin-top:38px">
-      <h2>Slot 1–12 <span class="gold">Achievement Counter</span></h2>
-      <p>Counts IDs for which each slot is currently active.</p>
-    </div>
-
-    <div class="slot-grid" id="slotGrid">
-      <div class="card">Loading slot dashboard…</div>
-    </div>
-
-    <div class="counter-actions">
-      <button class="btn btn-gold" id="scanSlotsBtn">Scan Slot Counts</button>
-      <button class="btn btn-outline" id="refreshBtn">Refresh Contract Data</button>
-    </div>
-
-    <div class="stat" style="text-align:left">
-      <div class="stat-label">Slot scan progress</div>
-      <div class="stat-value" id="scanProgress" style="font-size:18px">Not scanned yet</div>
-      <div class="progress-track"><div class="progress-bar" id="scanBar"></div></div>
-      <div class="stat-note" id="scanDetail" style="margin-top:8px">Press “Scan Slot Counts” to count active slots across registered IDs.</div>
-    </div>
-
-    <div class="notice">
-      <b>Important:</b> An active slot is not necessarily proof of a separate payout or a particular income. This dashboard counts the contract's current active-slot status. A full scan may take a long time for a large number of IDs, and the public RPC may rate-limit requests.
-    </div>
-    <div class="notice" id="rpcNotice">Contract: <span id="contractShort"></span> · Network: BNB Smart Chain</div>
+<section id="live">
+ <div class="container">
+  <div class="sectionHead">
+   <div class="eyebrow">ON-CHAIN DASHBOARD</div>
+   <h2>B-TITAN <span class="gold">Live Counter</span></h2>
+   <p>Contract state is read directly from BNB Smart Chain.</p>
   </div>
-</section>
-
-<section id="profile">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">YOUR COMMUNITY</div>
-      <h2>Profile & <span class="gold">Quick Access</span></h2>
-      <p>Save a local profile on this device and open your B-TITAN resources.</p>
-    </div>
-    <div class="grid">
-      <div class="card">
-        <h3>Member Profile</h3>
-        <p>Profile details are stored only in this browser. They are not sent to the smart contract.</p>
-        <form id="profileForm" class="profile-form">
-          <input id="memberName" placeholder="Your name" autocomplete="name">
-          <input id="memberId" placeholder="Member / Referral ID">
-          <input id="memberPhone" placeholder="Phone (optional)" inputmode="tel">
-          <input id="memberCity" placeholder="City (optional)">
-          <div class="form-actions full">
-            <button class="btn btn-gold" type="submit">Save Profile</button>
-            <button class="btn btn-outline" type="button" id="clearProfile">Clear</button>
-          </div>
-        </form>
-        <div id="profileMessage" class="muted" style="font-size:12px;margin-top:8px"></div>
-      </div>
-      <div class="card">
-        <h3>Quick Links</h3>
-        <a class="resource-link" href="https://btitan.net/" target="_blank" rel="noopener"><b>Official Website</b><span>Open ↗</span></a>
-        <a class="resource-link" href="https://btitan.net/register?id=10203" target="_blank" rel="noopener"><b>Registration Link</b><span>Open ↗</span></a>
-        <a class="resource-link" href="https://bscscan.com/address/0xD6759d47Fccdef7b8E318479cEC4D128366f2a44#code" target="_blank" rel="noopener"><b>Smart Contract</b><span>Verify ↗</span></a>
-      </div>
-      <div class="card">
-        <h3>Referral Sharing</h3>
-        <p>Copy your B-TITAN registration link and share it with your community.</p>
-        <input id="referralLink" value="https://btitan.net/register?id=10203" readonly>
-        <div class="form-actions" style="margin-top:12px">
-          <button class="btn btn-gold" id="copyReferral" type="button">Copy Link</button>
-          <button class="btn btn-outline" id="shareReferral" type="button">Share</button>
-        </div>
-        <div id="referralMessage" class="muted" style="font-size:12px;margin-top:8px"></div>
-      </div>
-    </div>
+  <div class="status"><span class="dot"></span><span id="connectionStatus">Connecting…</span></div>
+  <div class="stats">
+   <div class="stat"><div class="statLabel">Registered IDs</div><div class="statValue" id="registeredIds">—</div><div class="statNote">Sequential contract ID estimate</div></div>
+   <div class="stat"><div class="statLabel">Last Assigned ID</div><div class="statValue" id="latestId">—</div><div class="statNote">From contract counter</div></div>
+   <div class="stat"><div class="statLabel">Partner Initialization</div><div class="statValue" id="partnerStatus" style="font-size:20px">—</div><div class="statNote">Contract initialization status</div></div>
   </div>
+
+  <div class="sectionHead" style="margin-top:35px">
+   <h2>Slot 1–12 <span class="gold">Achievement Counter</span></h2>
+   <p>Counts IDs for which each slot is currently active.</p>
+  </div>
+  <div class="slotGrid" id="slotGrid"></div>
+  <div class="actions center">
+   <button class="btn goldbtn" id="scanSlotsBtn">Scan Slot Counts</button>
+   <button class="btn outline" id="refreshBtn">Refresh Contract Data</button>
+  </div>
+  <div class="stat" style="text-align:left;margin-top:16px">
+   <div class="statLabel">Scan progress</div>
+   <div class="statValue" id="scanProgress" style="font-size:19px">Not started</div>
+   <div class="track"><div class="bar" id="scanBar"></div></div>
+   <div class="statNote" id="scanDetail" style="margin-top:8px">Press Scan Slot Counts to start.</div>
+  </div>
+  <div class="notice"><b>Important:</b> The counter measures active slots, not income or payouts. A partial scan is not a verified final count. Failed RPC reads are reported separately.</div>
+  <div class="notice">Contract: <a href="https://bscscan.com/address/0xD6759d47Fccdef7b8E318479cEC4D128366f2a44#code" target="_blank" rel="noopener">View on BscScan ↗</a></div>
+ </div>
 </section>
 
 <section id="resources">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">LEARN & EXPLORE</div>
-      <h2>Promotion & <span class="gold">Resources</span></h2>
-      <p>Open the official site and smart-contract explorer to review information.</p>
-    </div>
-    <div class="grid">
-      <div class="card">
-        <div class="icon-box">🌐</div>
-        <h3>Official B-TITAN Website</h3>
-        <p>Visit the project website for current platform information.</p>
-        <a class="btn btn-gold" href="https://btitan.net/" target="_blank" rel="noopener">Open Website ↗</a>
-      </div>
-      <div class="card">
-        <div class="icon-box">🔎</div>
-        <h3>Smart Contract Verification</h3>
-        <p>Check the contract address and source code on BscScan.</p>
-        <a class="btn btn-outline" href="https://bscscan.com/address/0xD6759d47Fccdef7b8E318479cEC4D128366f2a44#code" target="_blank" rel="noopener">Open BscScan ↗</a>
-      </div>
-      <div class="card">
-        <div class="icon-box">📣</div>
-        <h3>Promotion Message</h3>
-        <p>Copy a short invitation message to share with your contacts.</p>
-        <button class="btn btn-gold" id="copyPromo" type="button">Copy Message</button>
-      </div>
-    </div>
+ <div class="container">
+  <div class="sectionHead"><div class="eyebrow">LEARN & EXPLORE</div><h2>Project <span class="gold">Resources</span></h2></div>
+  <div class="grid3">
+   <div class="card"><h3>Official Website</h3><p>Visit the B-TITAN website for project information.</p><a class="btn goldbtn" href="https://btitan.net/" target="_blank" rel="noopener">Open Website ↗</a></div>
+   <div class="card"><h3>Smart Contract</h3><p>Review the contract address and source code on BscScan.</p><a class="btn outline" href="https://bscscan.com/address/0xD6759d47Fccdef7b8E318479cEC4D128366f2a44#code" target="_blank" rel="noopener">Verify Contract ↗</a></div>
+   <div class="card"><h3>Registration</h3><p>Open the registration link directly.</p><a class="btn goldbtn" href="https://btitan.net/register?id=10203" target="_blank" rel="noopener">Register ↗</a></div>
   </div>
+ </div>
 </section>
 
 <section id="zoom">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">TEAM MEETINGS</div>
-      <h2>B-TITAN <span class="gold">Zoom Meetings</span></h2>
-      <p>Use the meeting link provided by your team before joining.</p>
-    </div>
-    <div class="grid">
-      <div class="card">
-        <h3>Morning Zoom</h3>
-        <p>Check with your team for the latest meeting time and link.</p>
-        <a class="btn btn-gold" href="https://us04web.zoom.us/j/7890581048" target="_blank" rel="noopener">Join Zoom ↗</a>
-      </div>
-      <div class="card">
-        <h3>Night Zoom</h3>
-        <p>Meeting availability and schedule may change.</p>
-        <a class="btn btn-outline" href="https://us04web.zoom.us/j/6053096493" target="_blank" rel="noopener">Join Zoom ↗</a>
-      </div>
-      <div class="card">
-        <h3>Official Project Site</h3>
-        <p>Review current project announcements and information.</p>
-        <a class="btn btn-gold" href="https://btitan.net/" target="_blank" rel="noopener">Visit Site ↗</a>
-      </div>
-    </div>
+ <div class="container">
+  <div class="sectionHead"><div class="eyebrow">TEAM MEETINGS</div><h2>B-TITAN <span class="gold">Zoom</span></h2><p>Confirm the current meeting link and schedule with your team.</p></div>
+  <div class="grid3">
+   <div class="card"><h3>Morning Zoom</h3><p>Check the latest meeting details before joining.</p><a class="btn goldbtn" href="https://zoom.us/" target="_blank" rel="noopener">Open Zoom ↗</a></div>
+   <div class="card"><h3>Night Zoom</h3><p>Meeting schedules and links can change.</p><a class="btn outline" href="https://zoom.us/" target="_blank" rel="noopener">Open Zoom ↗</a></div>
+   <div class="card"><h3>Official Website</h3><p>Review current project information.</p><a class="btn goldbtn" href="https://btitan.net/" target="_blank" rel="noopener">Visit Site ↗</a></div>
   </div>
+ </div>
 </section>
 
 <section id="social">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">COMMUNITY CONNECTION</div>
-      <h2>Social <span class="gold">Hub</span></h2>
-      <p>Share your invitation through the apps available on your device.</p>
-    </div>
-    <div class="platforms">
-      <a class="platform" href="https://wa.me/?text=Join%20me%20to%20learn%20about%20B-TITAN%3A%20https%3A%2F%2Fbtitan.net%2Fregister%3Fid%3D10203" target="_blank" rel="noopener">🟢 WhatsApp</a>
-      <a class="platform" href="https://www.facebook.com/" target="_blank" rel="noopener">🔵 Facebook</a>
-      <a class="platform" href="https://www.instagram.com/" target="_blank" rel="noopener">📸 Instagram</a>
-      <a class="platform" href="https://t.me/share/url?url=https%3A%2F%2Fbtitan.net%2Fregister%3Fid%3D10203&text=Explore%20B-TITAN" target="_blank" rel="noopener">✈️ Telegram</a>
-      <a class="platform" href="https://www.youtube.com/" target="_blank" rel="noopener">▶️ YouTube</a>
-      <a class="platform" href="https://www.linkedin.com/" target="_blank" rel="noopener">💼 LinkedIn</a>
-    </div>
-    <div class="notice">These links open the relevant platform or its share interface. They do not automatically publish posts to Facebook, Instagram, groups or channels. Platform APIs and permissions are required for automatic posting.</div>
+ <div class="container">
+  <div class="sectionHead"><div class="eyebrow">COMMUNITY</div><h2>Social <span class="gold">Hub</span></h2><p>Open a platform to share through its supported interface.</p></div>
+  <div class="platforms">
+   <a class="platform" href="https://wa.me/?text=Explore%20B-TITAN%3A%20https%3A%2F%2Fbtitan.net%2F" target="_blank" rel="noopener">🟢 WhatsApp</a>
+   <a class="platform" href="https://www.facebook.com/" target="_blank" rel="noopener">🔵 Facebook</a>
+   <a class="platform" href="https://www.instagram.com/" target="_blank" rel="noopener">📸 Instagram</a>
+   <a class="platform" href="https://t.me/share/url?url=https%3A%2F%2Fbtitan.net%2F" target="_blank" rel="noopener">✈️ Telegram</a>
+   <a class="platform" href="https://www.youtube.com/" target="_blank" rel="noopener">▶️ YouTube</a>
+   <a class="platform" href="https://www.linkedin.com/" target="_blank" rel="noopener">💼 LinkedIn</a>
   </div>
+  <div class="notice">These links do not automatically publish to profiles, groups or channels. Automatic publishing requires each platform's supported API and permissions.</div>
+ </div>
 </section>
 
 <section id="share">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">CREATE YOUR MESSAGE</div>
-      <h2>Share <span class="gold">B-TITAN</span></h2>
-      <p>Prepare a message, then use your device's sharing options.</p>
-    </div>
-    <div class="card">
-      <label for="shareMessage">Promotion message</label>
-      <textarea id="shareMessage">Explore B-TITAN — The Ultimate Bitcoin Rush.
+ <div class="container">
+  <div class="sectionHead"><div class="eyebrow">SHARE</div><h2>Create a <span class="gold">Message</span></h2></div>
+  <div class="card">
+   <textarea id="shareMessage">Explore B-TITAN — The Ultimate Bitcoin Rush.
 
-Official website: https://btitan.net/
-Registration link: https://btitan.net/register?id=10203
+Website: https://btitan.net/
+Registration: https://btitan.net/register?id=10203
 
-Please review the project details, smart contract and risks before participating.</textarea>
-      <div class="form-actions" style="margin-top:12px">
-        <button class="btn btn-gold" type="button" id="copyMessage">Copy Message</button>
-        <button class="btn btn-outline" type="button" id="shareMessageBtn">Share Message</button>
-        <button class="btn btn-outline" type="button" id="resetMessage">Reset</button>
-      </div>
-      <div id="shareStatus" class="muted" style="font-size:12px;margin-top:10px"></div>
-    </div>
+Please verify project information and understand the risks before participating.</textarea>
+   <div class="actions">
+    <button class="btn goldbtn" id="copyMessage">Copy Message</button>
+    <button class="btn outline" id="shareMessageBtn">Share Message</button>
+   </div>
+   <p id="shareStatus" class="small"></p>
   </div>
+ </div>
 </section>
 </main>
 
-<footer>
-  <div class="container footer-inner">
-    <div>© <span id="year"></span> B-TITAN Community Landing Page</div>
-    <div><a href="https://btitan.net/" target="_blank" rel="noopener">Official Website</a> · <a href="#live">Live Dashboard</a> · <a href="#home">Back to Top ↑</a></div>
-  </div>
-  <div class="container" style="margin-top:12px">
-    This page is a community interface and does not guarantee earnings or investment returns. Blockchain data may be delayed or unavailable. Always verify information independently.
-  </div>
-</footer>
+<footer><div class="container">© <span id="year"></span> B-TITAN Community Landing Page. Blockchain data may be delayed or unavailable. No earnings are guaranteed.</div></footer>
 
 <script src="https://cdn.jsdelivr.net/npm/ethers@6.13.5/dist/ethers.umd.min.js"></script>
 <script>
 "use strict";
 
-/* B-TITAN contract configuration */
 const CONTRACT_ADDRESS = "0xD6759d47Fccdef7b8E318479cEC4D128366f2a44";
 const RPC_URL = "https://bsc-dataseed.binance.org/";
+const MULTICALL3_ADDRESS = "0xca11bde05977b3631167028862be2a173976ca11";
 
 const ABI = [
-  "function lastUserId() view returns (uint256)",
-  "function partnersInitialized() view returns (bool)",
-  "function isUserSlotActive(uint256 userId, uint8 slot) view returns (bool)"
+ "function lastUserId() view returns (uint256)",
+ "function partnersInitialized() view returns (bool)",
+ "function isUserSlotActive(uint256 userId,uint8 slot) view returns (bool)"
 ];
 
-const $ = (id) => document.getElementById(id);
-const DEFAULT_MESSAGE =
-  "Explore B-TITAN — The Ultimate Bitcoin Rush.\n\n" +
-  "Official website: https://btitan.net/\n" +
-  "Registration link: https://btitan.net/register?id=10203\n\n" +
-  "Please review the project details, smart contract and risks before participating.";
+const MULTICALL_ABI = [
+ "function aggregate3((address target,bool allowFailure,bytes callData)[] calls) payable returns ((bool success,bytes returnData)[] returnData)"
+];
 
-let provider = null;
-let contract = null;
-let latestKnownId = 0;
-let scanRunning = false;
+const $ = id => document.getElementById(id);
+const slotInterface = new ethers.Interface([
+ "function isUserSlotActive(uint256 userId,uint8 slot) view returns (bool)"
+]);
+const multicallInterface = new ethers.Interface(MULTICALL_ABI);
+
+let provider, contract, latestKnownId = 0, scanRunning = false;
 
 $("year").textContent = new Date().getFullYear();
-$("contractShort").textContent = CONTRACT_ADDRESS;
 
-function formatNumber(value) {
-  return Number(value || 0).toLocaleString("en-IN");
+function number(n){return Number(n).toLocaleString("en-IN")}
+function setStatus(text,error=false){
+ $("connectionStatus").textContent=text;
+ $("connectionStatus").style.color=error?"#ff9999":"";
 }
 
-function setStatus(message, isError = false) {
-  $("connectionStatus").textContent = message;
-  $("connectionStatus").classList.toggle("error", isError);
+function renderSlotCards(counts=null){
+ $("slotGrid").innerHTML="";
+ for(let slot=1;slot<=12;slot++){
+  const count=counts?counts[slot]:null;
+  const el=document.createElement("div");
+  el.className="slotCard";
+  el.innerHTML=`
+   <div class="slotName">SLOT ${slot}</div>
+   <div class="slotCount">${count===null?"—":number(count)}</div>
+   <div class="small">${count===null?"Awaiting scan":"IDs with active slot"}</div>
+   <div class="track"><div class="bar" style="width:${count===null||!latestKnownId?0:Math.min(100,count/latestKnownId*100)}%"></div></div>`;
+  $("slotGrid").appendChild(el);
+ }
 }
 
-function renderSlotCards(counts = null) {
-  $("slotGrid").innerHTML = "";
-  for (let slot = 1; slot <= 12; slot++) {
-    const count = counts ? counts[slot] : null;
-    const card = document.createElement("div");
-    card.className = "slot-card";
-    card.innerHTML = `
-      <div class="slot-number">SLOT ${slot}</div>
-      <div class="slot-count">${count === null ? "—" : formatNumber(count)}</div>
-      <div class="slot-caption">${count === null ? "Awaiting scan" : "IDs with active slot"}</div>
-      <div class="progress-track"><div class="progress-bar" style="width:${count === null || !latestKnownId ? 0 : Math.min(100, count / latestKnownId * 100)}%"></div></div>
-    `;
-    $("slotGrid").appendChild(card);
-  }
+async function connectContract(){
+ if(!window.ethers){setStatus("Ethers library failed to load.",true);return false}
+ try{
+  if(!provider)provider=new ethers.JsonRpcProvider(RPC_URL);
+  if(!contract)contract=new ethers.Contract(CONTRACT_ADDRESS,ABI,provider);
+
+  const [nextId,initialized]=await Promise.all([
+   contract.lastUserId(),
+   contract.partnersInitialized()
+  ]);
+
+  latestKnownId=initialized?Math.max(1,Number(nextId)-1):1;
+  $("registeredIds").textContent=number(latestKnownId);
+  $("latestId").textContent=number(latestKnownId);
+  $("partnerStatus").textContent=initialized?"Initialized":"Pending";
+  setStatus("Connected to contract read endpoint");
+  return true;
+ }catch(error){
+  console.error(error);
+  setStatus("Contract read failed. Check RPC/network.",true);
+  return false;
+ }
 }
 
-async function connectContract() {
-  if (!window.ethers) {
-    setStatus("Unable to load ethers library. Check your internet connection.", true);
-    return false;
+async function refreshData(){
+ $("refreshBtn").disabled=true;
+ $("refreshBtn").textContent="Refreshing…";
+ try{
+  if(await connectContract()){
+   $("scanDetail").textContent="Contract data refreshed. Run a new slot scan for current counts.";
   }
-  provider = new ethers.JsonRpcProvider(RPC_URL);
-  contract = new ethers.Contract(CONTRACT_ADDRESS, ABI, provider);
-
-  try {
-    // A successful call verifies that the RPC can read this contract.
-    const nextId = await contract.lastUserId();
-    const initialized = await contract.partnersInitialized();
-
-    latestKnownId = initialized ? Math.max(1, Number(nextId) - 1) : 1;
-    $("registeredIds").textContent = formatNumber(latestKnownId);
-    $("latestId").textContent = formatNumber(latestKnownId);
-    $("partnerStatus").textContent = initialized ? "Initialized" : "Pending";
-    setStatus("Connected to contract read endpoint");
-    return true;
-  } catch (error) {
-    console.error(error);
-    setStatus("RPC read failed. Try again later.", true);
-    $("scanDetail").textContent =
-      "The contract could not be read. Check the contract address, network or public RPC availability.";
-    return false;
-  }
-}
-
-async function refreshContractData() {
-  $("refreshBtn").disabled = true;
-  $("refreshBtn").textContent = "Refreshing…";
-  try {
-    const ok = await connectContract();
-    if (ok) {
-      $("scanDetail").textContent =
-        "Contract data refreshed. Run a slot scan to update the Slot 1–12 counts.";
-    }
-  } finally {
-    $("refreshBtn").disabled = false;
-    $("refreshBtn").textContent = "Refresh Contract Data";
-  }
+ }finally{
+  $("refreshBtn").disabled=false;
+  $("refreshBtn").textContent="Refresh Contract Data";
+ }
 }
 
 /*
- * Exact on-chain scan:
- * checks isUserSlotActive(userId, slot) for each ID and each slot.
- * Requests are made in small batches to reduce RPC overload.
+ Multicall3 batches many isUserSlotActive calls into one eth_call.
+ 8 IDs × 12 slots = 96 subcalls per batch.
  */
-async function scanSlotCounts() {
-  if (scanRunning) return;
-  scanRunning = true;
-  $("scanSlotsBtn").disabled = true;
-  $("scanSlotsBtn").textContent = "Scanning…";
-  $("scanBar").style.width = "0%";
+async function scanSlotCounts(){
+ if(scanRunning)return;
+ scanRunning=true;
+ $("scanSlotsBtn").disabled=true;
+ $("scanSlotsBtn").textContent="Scanning…";
+ $("scanBar").style.width="0%";
 
-  try {
-    const ok = await connectContract();
-    if (!ok) return;
+ const counts=Array(13).fill(0);
+ const failedIds=new Set();
 
-    const totalIds = latestKnownId;
-    const counts = Array(13).fill(0);
-    let checkedIds = 0;
-    const idsPerBatch = 3;
+ try{
+  if(!(await connectContract()))return;
 
-    $("scanProgress").textContent = "0%";
-    $("scanDetail").textContent = `Checking IDs 1–${formatNumber(totalIds)}. Please keep this page open.`;
+  const totalIds=latestKnownId;
+  const BATCH_IDS=8;
+  let checkedIds=0;
 
-    for (let firstId = 1; firstId <= totalIds; firstId += idsPerBatch) {
-      const lastId = Math.min(totalIds, firstId + idsPerBatch - 1);
-      const calls = [];
+  $("scanProgress").textContent="0%";
+  $("scanDetail").textContent=`Starting batched scan for ${number(totalIds)} IDs…`;
 
-      for (let userId = firstId; userId <= lastId; userId++) {
-        for (let slot = 1; slot <= 12; slot++) {
-          calls.push(
-            contract.isUserSlotActive(userId, slot)
-              .then(active => ({ slot, active }))
-              .catch(error => {
-                console.warn(`Could not read ID ${userId}, slot ${slot}`, error);
-                return { slot, active: false, failed: true };
-              })
-          );
-        }
-      }
+  for(let firstId=1;firstId<=totalIds;firstId+=BATCH_IDS){
+   const lastId=Math.min(totalIds,firstId+BATCH_IDS-1);
+   const calls=[],meta=[];
 
-      const results = await Promise.all(calls);
-      let failedInBatch = 0;
-
-      for (const result of results) {
-        if (result.failed) failedInBatch++;
-        if (result.active) counts[result.slot]++;
-      }
-
-      checkedIds = lastId;
-      const percent = Math.floor(checkedIds / totalIds * 100);
-      $("scanProgress").textContent = `${percent}%`;
-      $("scanBar").style.width = `${percent}%`;
-      $("scanDetail").textContent =
-        `Checked IDs ${formatNumber(checkedIds)} / ${formatNumber(totalIds)}.` +
-        (failedInBatch ? ` ${failedInBatch} reads failed in the latest batch; counts may be incomplete.` : "");
-
-      // Yield to the browser between batches.
-      await new Promise(resolve => setTimeout(resolve, 100));
+   for(let id=firstId;id<=lastId;id++){
+    for(let slot=1;slot<=12;slot++){
+     calls.push({
+      target:CONTRACT_ADDRESS,
+      allowFailure:true,
+      callData:slotInterface.encodeFunctionData("isUserSlotActive",[id,slot])
+     });
+     meta.push({id,slot});
     }
+   }
 
-    renderSlotCards(counts);
-    $("scanProgress").textContent = "Scan complete";
-    $("scanDetail").textContent =
-      `Finished checking ${formatNumber(totalIds)} IDs. If any RPC reads failed, some counts may be incomplete.`;
-    setStatus("Contract connected · slot scan finished");
-  } catch (error) {
-    console.error(error);
-    $("scanProgress").textContent = "Scan interrupted";
-    $("scanDetail").textContent =
-      "The scan stopped because of an RPC or network error. Refresh the contract data and try again.";
-    setStatus("Slot scan interrupted; RPC may be rate-limited.", true);
-  } finally {
-    scanRunning = false;
-    $("scanSlotsBtn").disabled = false;
-    $("scanSlotsBtn").textContent = "Scan Slot Counts";
-  }
-}
+   try{
+    const data=multicallInterface.encodeFunctionData("aggregate3",[calls]);
+    const raw=await provider.call({to:MULTICALL3_ADDRESS,data});
+    const [results]=multicallInterface.decodeFunctionResult("aggregate3",raw);
 
-$("refreshBtn").addEventListener("click", refreshContractData);
-$("scanSlotsBtn").addEventListener("click", scanSlotCounts);
-
-/* Mobile navigation */
-$("menuBtn").addEventListener("click", () => {
-  const nav = $("navLinks");
-  const isOpen = nav.classList.toggle("open");
-  $("menuBtn").setAttribute("aria-expanded", String(isOpen));
-});
-document.querySelectorAll("#navLinks a").forEach(link => {
-  link.addEventListener("click", () => {
-    $("navLinks").classList.remove("open");
-    $("menuBtn").setAttribute("aria-expanded", "false");
-  });
-});
-
-/* Local profile storage */
-const PROFILE_KEY = "btitanCommunityProfile";
-function loadProfile() {
-  try {
-    const p = JSON.parse(localStorage.getItem(PROFILE_KEY) || "{}");
-    $("memberName").value = p.name || "";
-    $("memberId").value = p.id || "";
-    $("memberPhone").value = p.phone || "";
-    $("memberCity").value = p.city || "";
-  } catch (e) {
-    console.warn("Could not load saved profile", e);
-  }
-}
-$("profileForm").addEventListener("submit", event => {
-  event.preventDefault();
-  const profile = {
-    name: $("memberName").value.trim(),
-    id: $("memberId").value.trim(),
-    phone: $("memberPhone").value.trim(),
-    city: $("memberCity").value.trim()
-  };
-  try {
-    localStorage.setItem(PROFILE_KEY, JSON.stringify(profile));
-    $("profileMessage").textContent = "Profile saved on this device.";
-  } catch (e) {
-    $("profileMessage").textContent = "This browser could not save the profile.";
-  }
-});
-$("clearProfile").addEventListener("click", () => {
-  localStorage.removeItem(PROFILE_KEY);
-  $("profileForm").reset();
-  $("profileMessage").textContent = "Saved profile cleared from this device.";
-});
-loadProfile();
-
-/* Copy and share actions */
-async function copyText(value, statusElement) {
-  try {
-    await navigator.clipboard.writeText(value);
-    if (statusElement) statusElement.textContent = "Copied successfully.";
-  } catch (e) {
-    const temp = document.createElement("textarea");
-    temp.value = value;
-    document.body.appendChild(temp);
-    temp.select();
-    const copied = document.execCommand("copy");
-    temp.remove();
-    if (statusElement) statusElement.textContent =
-      copied ? "Copied successfully." : "Copy failed. Please select and copy manually.";
-  }
-}
-
-$("copyReferral").addEventListener("click", () =>
-  copyText($("referralLink").value, $("referralMessage"))
-);
-$("shareReferral").addEventListener("click", async () => {
-  const data = {
-    title: "B-TITAN",
-    text: "Explore B-TITAN — The Ultimate Bitcoin Rush.",
-    url: $("referralLink").value
-  };
-  try {
-    if (navigator.share) await navigator.share(data);
-    else await copyText(data.text + "\n" + data.url, $("referralMessage"));
-  } catch (e) {
-    if (e.name !== "AbortError") $("referralMessage").textContent = "Sharing was not completed.";
-  }
-});
-
-$("copyPromo").addEventListener("click", () => copyText(DEFAULT_MESSAGE, $("shareStatus")));
-$("copyMessage").addEventListener("click", () =>
-  copyText($("shareMessage").value, $("shareStatus"))
-);
-$("resetMessage").addEventListener("click", () => {
-  $("shareMessage").value = DEFAULT_MESSAGE;
-  $("shareStatus").textContent = "Message reset.";
-});
-$("shareMessageBtn").addEventListener("click", async () => {
-  const message = $("shareMessage").value.trim();
-  if (!message) {
-    $("shareStatus").textContent = "Please enter a message first.";
-    return;
-  }
-  try {
-    if (navigator.share) {
-      await navigator.share({ title: "B-TITAN", text: message });
-      $("shareStatus").textContent = "Share sheet opened.";
-    } else {
-      await copyText(message, $("shareStatus"));
+    for(let i=0;i<results.length;i++){
+     const r=results[i],m=meta[i];
+     if(!r.success){failedIds.add(m.id);continue}
+     try{
+      const [active]=slotInterface.decodeFunctionResult("isUserSlotActive",r.returnData);
+      if(active)counts[m.slot]++;
+     }catch(e){failedIds.add(m.id)}
     }
-  } catch (e) {
-    if (e.name !== "AbortError") $("shareStatus").textContent = "Sharing was not completed.";
+   }catch(batchError){
+    console.warn("Batch failed",firstId,lastId,batchError);
+    for(let id=firstId;id<=lastId;id++)failedIds.add(id);
+   }
+
+   checkedIds=lastId;
+   const pct=Math.floor(checkedIds/totalIds*100);
+   $("scanProgress").textContent=pct+"%";
+   $("scanBar").style.width=pct+"%";
+   $("scanDetail").textContent=
+    `Checked ${number(checkedIds)} / ${number(totalIds)} IDs. IDs with failed reads: ${number(failedIds.size)}.`;
+
+   // Give the public RPC a short pause between batches.
+   await new Promise(resolve=>setTimeout(resolve,100));
   }
+
+  renderSlotCards(counts);
+
+  if(failedIds.size){
+   $("scanProgress").textContent="PARTIAL RESULT";
+   $("scanDetail").textContent=
+    `${number(checkedIds)} IDs checked. ${number(failedIds.size)} IDs had one or more failed reads. Counts may be too low; retry after the RPC recovers.`;
+   setStatus("Scan finished with failed reads",true);
+  }else{
+   $("scanProgress").textContent="SCAN COMPLETE";
+   $("scanDetail").textContent=
+    `All ${number(totalIds)} IDs were checked for all 12 slots.`;
+   setStatus("All slot checks completed");
+  }
+ }catch(error){
+  console.error(error);
+  $("scanProgress").textContent="SCAN INTERRUPTED";
+  $("scanDetail").textContent="RPC/network error interrupted the scan. Refresh and retry.";
+  setStatus("Scan interrupted",true);
+ }finally{
+  scanRunning=false;
+  $("scanSlotsBtn").disabled=false;
+  $("scanSlotsBtn").textContent="Scan Slot Counts";
+ }
+}
+
+$("scanSlotsBtn").addEventListener("click",scanSlotCounts);
+$("refreshBtn").addEventListener("click",refreshData);
+
+$("menuBtn").addEventListener("click",()=>{
+ const open=$("navLinks").classList.toggle("open");
+ $("menuBtn").setAttribute("aria-expanded",String(open));
+});
+document.querySelectorAll("#navLinks a").forEach(a=>a.addEventListener("click",()=>{
+ $("navLinks").classList.remove("open");
+ $("menuBtn").setAttribute("aria-expanded","false");
+}));
+
+async function copyText(text,status){
+ try{
+  await navigator.clipboard.writeText(text);
+  status.textContent="Copied successfully.";
+ }catch(e){
+  const t=document.createElement("textarea");
+  t.value=text;document.body.appendChild(t);t.select();
+  const ok=document.execCommand("copy");t.remove();
+  status.textContent=ok?"Copied successfully.":"Copy failed. Please copy manually.";
+ }
+}
+$("copyMessage").addEventListener("click",()=>copyText($("shareMessage").value,$("shareStatus")));
+$("shareMessageBtn").addEventListener("click",async()=>{
+ const text=$("shareMessage").value.trim();
+ if(!text){$("shareStatus").textContent="Please enter a message.";return}
+ try{
+  if(navigator.share){
+   await navigator.share({title:"B-TITAN",text});
+   $("shareStatus").textContent="Share menu opened.";
+  }else{
+   await copyText(text,$("shareStatus"));
+  }
+ }catch(e){
+  if(e.name!=="AbortError")$("shareStatus").textContent="Sharing was not completed.";
+ }
 });
 
-/* Initial page load */
 renderSlotCards();
 connectContract();
 </script>
