@@ -6,61 +6,129 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#080d32">
 <meta name="description" content="B-TITAN Champions Hub">
-<title>B-TITAN | Champions Hub</title>
+<title>B-TITAN Champions Hub</title>
 <script src="https://cdn.jsdelivr.net/npm/ethers@6.13.5/dist/ethers.umd.min.js"></script>
 
 <style>
 :root{
-  --bg:#080d2d;--panel:#111a40;--gold:#f5c75e;--gold2:#ffe7a0;
-  --white:#f8f9ff;--muted:#b9c3e4;--blue:#315dff;--purple:#792cff;
-  --border:rgba(255,255,255,.12)
+  --bg:#080d2d;--panel:#11183c;--panel2:#171d48;
+  --gold:#f5c75e;--gold2:#ffe8a1;--white:#f8f9ff;
+  --muted:#b9c3e4;--blue:#315dff;--purple:#792cff;
+  --border:rgba(255,255,255,.13);
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:100px}
-body{margin:0;background:radial-gradient(ellipse at 80% 0%,#21134c 0,transparent 35%),var(--bg);color:var(--white);font-family:Arial,Helvetica,sans-serif}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:radial-gradient(ellipse at 85% 0%,#211348,transparent 35%),var(--bg);
+  color:var(--white);font-family:Arial,Helvetica,sans-serif
+}
 a{color:inherit;text-decoration:none}
 button,select{font:inherit}
 .container{width:min(1100px,92%);margin:auto}
-header{position:sticky;top:0;z-index:20;background:rgba(7,11,36,.97);border-bottom:1px solid var(--border);backdrop-filter:blur(15px)}
-.header-inner{padding:12px 0;display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap}
-.brand{display:flex;align-items:center;gap:13px}
-.brand img{width:82px;height:64px;object-fit:contain;display:block}
+
+header{
+  position:sticky;top:0;z-index:20;
+  background:rgba(7,11,36,.97);border-bottom:1px solid var(--border);
+  backdrop-filter:blur(15px)
+}
+.header-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:12px;padding:12px 0
+}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{
+  display:block;width:86px;height:66px;object-fit:contain;
+  flex-shrink:0
+}
 .brand-name{font-size:21px;font-weight:900;letter-spacing:1.5px;color:var(--gold)}
 .brand-sub{font-size:10px;letter-spacing:3px;color:var(--muted);margin-top:5px}
-nav{display:flex;align-items:center;gap:5px;max-width:100%;overflow-x:auto;scrollbar-width:none}
+nav{display:flex;align-items:center;gap:4px;max-width:100%;overflow-x:auto;scrollbar-width:none}
 nav::-webkit-scrollbar{display:none}
-nav a{white-space:nowrap;padding:11px 12px;border-radius:10px;font-size:12px;font-weight:700;color:#e0e5ff}
+nav a{
+  white-space:nowrap;padding:11px 12px;border-radius:10px;
+  font-size:12px;font-weight:700;color:#e0e5ff
+}
 nav a.active,nav a:hover{background:rgba(245,199,94,.12);color:var(--gold2)}
-nav .join-link{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#17112b;font-weight:900}
-section{display:none;min-height:70vh;padding:38px 0 65px}
-section.page-active{display:block}
-#home{padding-top:32px}
-.hero{position:relative;overflow:hidden;text-align:center;padding:35px 24px 45px;border:1px solid rgba(245,199,94,.3);border-radius:26px;background:radial-gradient(ellipse at 85% 10%,rgba(121,44,255,.24),transparent 42%),linear-gradient(145deg,#111a43,#0b102d);box-shadow:0 22px 65px rgba(0,0,0,.24)}
-.hero-logo{width:min(220px,65%);height:160px;object-fit:contain;display:block;margin:0 auto 20px;filter:drop-shadow(0 8px 18px rgba(245,199,94,.12))}
-.eyebrow{font-size:11px;letter-spacing:2px;color:var(--gold2);font-weight:800;text-transform:uppercase}
-.hero h1{font-size:clamp(35px,7vw,64px);line-height:1.1;letter-spacing:-1px;margin:19px 0}
-.gold{color:var(--gold);background:linear-gradient(90deg,#fff0b9,#f5c75e,#dca63a);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.hero p{max-width:570px;margin:0 auto;color:#c4cdec;line-height:1.8;font-size:15px}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 20px;border-radius:12px;font-weight:800;font-size:13px;border:1px solid var(--border);cursor:pointer}
+nav a.join-link{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#17112b}
+
+main{min-height:65vh}
+.page{display:none;padding:36px 0 60px;min-height:70vh}
+.page.active{display:block}
+
+/* HOME: no other section cards */
+#home{padding-top:30px}
+.hero{
+  position:relative;overflow:hidden;text-align:center;
+  padding:38px 24px 44px;border:1px solid rgba(245,199,94,.32);
+  border-radius:26px;
+  background:
+    radial-gradient(ellipse at 85% 5%,rgba(121,44,255,.26),transparent 43%),
+    radial-gradient(ellipse at 0% 100%,rgba(49,93,255,.20),transparent 45%),
+    linear-gradient(145deg,#111a43,#0b102d);
+  box-shadow:0 22px 65px rgba(0,0,0,.25)
+}
+.hero-logo{
+  display:block;width:min(230px,70%);height:165px;
+  object-fit:contain;margin:0 auto 18px;
+  filter:drop-shadow(0 6px 18px rgba(245,199,94,.12))
+}
+.eyebrow{
+  font-size:11px;letter-spacing:2px;color:var(--gold2);
+  font-weight:800;text-transform:uppercase
+}
+.hero h1{
+  font-size:clamp(37px,7vw,64px);line-height:1.1;
+  letter-spacing:-1.3px;margin:20px 0
+}
+.gold{
+  color:var(--gold);
+  background:linear-gradient(90deg,#fff0b9,#f5c75e,#dca63a);
+  background-clip:text;-webkit-background-clip:text;
+  -webkit-text-fill-color:transparent
+}
+.hero p{
+  max-width:570px;margin:0 auto;color:#c4cdec;
+  line-height:1.8;font-size:15px
+}
+.actions{
+  display:flex;justify-content:center;flex-wrap:wrap;
+  gap:12px;margin-top:25px
+}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:14px 20px;border-radius:12px;font-weight:800;
+  font-size:13px;border:1px solid var(--border);cursor:pointer
+}
 .btn-gold{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#17112b;border:0}
 .btn-blue{background:linear-gradient(135deg,var(--blue),var(--purple));color:white;border:0}
 .btn-outline{background:rgba(255,255,255,.04);color:white}
-.hero-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:25px}
-.quote{max-width:700px;margin:22px auto 0;padding:19px;border:1px solid rgba(245,199,94,.2);background:rgba(245,199,94,.04);border-radius:15px;text-align:center}
-.quote p{margin:0;color:var(--gold2);font-size:16px;font-weight:700;line-height:1.7}
+.quote{
+  max-width:700px;margin:20px auto 0;padding:20px;
+  border:1px solid rgba(245,199,94,.2);
+  background:rgba(245,199,94,.04);border-radius:15px;text-align:center
+}
+.quote strong{color:var(--gold2);font-size:16px;line-height:1.7}
 .quote small{display:block;margin-top:8px;color:var(--muted);font-size:10px;letter-spacing:1.5px}
-.section-heading{margin-bottom:24px}
+
+/* SECTION HEADINGS AND CARDS */
+.section-heading{margin-bottom:25px}
 .section-heading .eyebrow{margin-bottom:10px}
 .section-heading h2{font-size:clamp(28px,5vw,40px);margin:0 0 12px}
 .section-heading p{color:var(--muted);font-size:14px;line-height:1.7;max-width:700px}
 .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
 .grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
-.card{padding:22px;border-radius:17px;background:linear-gradient(145deg,#151e49,#0d1434);border:1px solid var(--border);overflow-wrap:anywhere}
+.card{
+  min-width:0;padding:22px;border-radius:17px;
+  background:linear-gradient(145deg,#151e49,#0d1434);
+  border:1px solid var(--border);overflow-wrap:anywhere
+}
 .card-icon{font-size:25px;margin-bottom:13px}
 .card h3{margin:0 0 10px;font-size:16px}
 .card p{margin:0;color:var(--muted);font-size:13px;line-height:1.75}
 .card .btn{margin-top:17px}
 .label{color:var(--gold);font-size:10px;letter-spacing:1.5px;font-weight:800;margin-bottom:12px}
+
+/* COUNTER */
 .counter-panel{padding:22px;border:1px solid rgba(245,199,94,.25);border-radius:18px;background:#10183b}
 .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:20px}
 .stat{padding:15px;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid var(--border);min-width:0}
@@ -78,47 +146,69 @@ select{background:#10183b;color:white;border:1px solid var(--border);border-radi
 .result-head,.result-row{display:grid;grid-template-columns:1fr 1fr;padding:12px;gap:8px;font-size:12px}
 .result-head{color:var(--gold2);background:rgba(255,255,255,.05);font-weight:bold}
 .result-row{border-top:1px solid var(--border);color:var(--muted)}
+
+/* VIDEO RESOURCES */
 .resource-list{display:grid;gap:10px}
-.resource{display:flex;align-items:center;gap:13px;padding:15px;border-radius:13px;background:rgba(255,255,255,.035);border:1px solid var(--border)}
+.resource{
+  display:flex;align-items:center;gap:13px;padding:15px;
+  border-radius:13px;background:rgba(255,255,255,.035);
+  border:1px solid var(--border)
+}
 .resource:hover{border-color:rgba(245,199,94,.4)}
 .resource-icon{font-size:22px;width:35px;flex-shrink:0}
 .resource-text{flex:1;min-width:0}
 .resource-text strong{display:block;font-size:13px;margin-bottom:5px}
 .resource-text small{font-size:11px;line-height:1.5;color:var(--muted)}
 .arrow{color:var(--gold)}
-.join-box{text-align:center;padding:45px 22px;border-radius:23px;border:1px solid rgba(245,199,94,.35);background:radial-gradient(ellipse at 50% 100%,rgba(121,44,255,.2),transparent 65%),#111637}
+
+/* JOIN */
+.join-box{
+  text-align:center;padding:45px 22px;border-radius:23px;
+  border:1px solid rgba(245,199,94,.35);
+  background:radial-gradient(ellipse at 50% 100%,rgba(121,44,255,.2),transparent 65%),#111637
+}
 .join-box h2{font-size:clamp(28px,5vw,43px);margin:16px 0}
 .join-box p{max-width:580px;margin:0 auto 24px;color:var(--muted);font-size:14px;line-height:1.8}
+
 footer{text-align:center;padding:25px 0 95px;color:var(--muted);font-size:11px;line-height:1.8}
 footer strong{color:var(--gold);letter-spacing:2px}
 .mobile-nav{display:none}
+
 @media(max-width:850px){
- .header-inner{justify-content:center}
- .brand{width:100%;justify-content:flex-start}
- nav{width:100%}
- .grid.three{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .header-inner{justify-content:center}
+  .brand{width:100%;justify-content:flex-start}
+  nav{width:100%}
+  .grid.three{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media(max-width:600px){
- .container{width:92%}
- .header-inner{padding:10px 0}
- .brand img{width:78px;height:60px}
- .brand-name{font-size:19px}
- nav a{font-size:11px;padding:10px 9px}
- section{padding:27px 0 40px}
- #home{padding-top:20px}
- .hero{padding:25px 18px 30px;border-radius:21px}
- .hero-logo{width:min(210px,70%);height:150px;margin-bottom:17px}
- .hero h1{font-size:40px}
- .hero p{font-size:14px}
- .hero-actions .btn{width:100%}
- .grid,.grid.three{grid-template-columns:1fr}
- .stats{grid-template-columns:1fr}
- .controls{align-items:stretch}
- .field,.controls .btn{width:100%}
- .mobile-nav{position:fixed;bottom:0;left:0;right:0;z-index:30;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));padding:7px 2px calc(7px + env(safe-area-inset-bottom));background:rgba(7,11,36,.98);border-top:1px solid var(--border)}
- .mobile-nav a{display:flex;min-width:0;flex-direction:column;align-items:center;gap:4px;padding:5px 0;color:var(--muted);font-size:9px}
- .mobile-nav a span:first-child{font-size:17px}
- .mobile-nav a.active{color:var(--gold)}
+  .container{width:92%}
+  .header-inner{padding:10px 0}
+  .brand img{width:82px;height:64px}
+  .brand-name{font-size:19px}
+  nav a{font-size:11px;padding:10px 9px}
+  .page{padding:25px 0 40px}
+  #home{padding-top:20px}
+  .hero{padding:26px 18px 30px;border-radius:21px}
+  .hero-logo{width:min(220px,75%);height:155px;margin-bottom:17px}
+  .hero h1{font-size:40px}
+  .hero p{font-size:14px}
+  .actions .btn{width:100%}
+  .grid,.grid.three{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr}
+  .controls{align-items:stretch}
+  .field,.controls .btn{width:100%}
+  .mobile-nav{
+    position:fixed;bottom:0;left:0;right:0;z-index:30;
+    display:grid;grid-template-columns:repeat(6,minmax(0,1fr));
+    padding:7px 2px calc(7px + env(safe-area-inset-bottom));
+    background:rgba(7,11,36,.98);border-top:1px solid var(--border)
+  }
+  .mobile-nav a{
+    display:flex;min-width:0;flex-direction:column;align-items:center;
+    gap:4px;padding:5px 0;color:var(--muted);font-size:9px
+  }
+  .mobile-nav a span:first-child{font-size:17px}
+  .mobile-nav a.active{color:var(--gold)}
 }
 </style>
 </head>
@@ -145,28 +235,28 @@ footer strong{color:var(--gold);letter-spacing:2px}
 </header>
 
 <main>
-  <!-- HOME: ONLY WELCOME CONTENT -->
-  <section id="home" class="page-active">
+  <!-- HOME: ONLY HOME CONTENT -->
+  <section id="home" class="page active">
     <div class="container">
       <div class="hero">
         <img class="hero-logo" src="btitan-logo-1.png" alt="Official B-TITAN Logo">
         <div class="eyebrow">✦ Welcome to B-TITAN Champions Hub ✦</div>
         <h1>Good Morning,<br><span class="gold">Champions!</span></h1>
-        <p>Welcome to our community. Learn, connect, stay informed and take your next step with knowledge and responsible decisions.</p>
-        <div class="hero-actions">
+        <p>Welcome to our community. Learn, connect, stay informed and move forward with knowledge and responsible decisions.</p>
+        <div class="actions">
           <a class="btn btn-gold" href="#join">♛ Join B-TITAN</a>
-          <a class="btn btn-outline" href="#live-counter">▦ Live Counter</a>
+          <a class="btn btn-outline" href="#live-counter">▦ Open Live Counter</a>
         </div>
       </div>
       <div class="quote">
-        <p>“Dream Big. Learn Every Day. Move Forward With Confidence.”</p>
+        <strong>“Dream Big. Learn Every Day. Move Forward With Confidence.”</strong>
         <small>YOUR DAILY MOTIVATION</small>
       </div>
     </div>
   </section>
 
-  <!-- LIVE COUNTER: SEPARATE PAGE -->
-  <section id="live-counter">
+  <!-- LIVE COUNTER -->
+  <section id="live-counter" class="page">
     <div class="container">
       <div class="section-heading">
         <div class="eyebrow">SMART CONTRACT DATA</div>
@@ -196,18 +286,20 @@ footer strong{color:var(--gold);letter-spacing:2px}
           <button class="btn btn-outline" id="cancel-btn">Cancel Scan</button>
         </div>
         <div class="progress"><div id="scan-progress"></div></div>
-        <div id="counter-message" class="status">Connect to retrieve the current contract data.</div>
+        <div id="counter-message" class="status">Connect to retrieve current contract data.</div>
         <div class="results">
           <div class="result-head"><span>User ID</span><span>Selected Slot</span></div>
           <div id="results-body"><div class="result-row"><span>—</span><span>Waiting for scan</span></div></div>
         </div>
-        <p style="font-size:11px;color:var(--muted);line-height:1.7;margin-top:16px">The counter reads the contract method isUserSlotActive. It does not verify income, payouts or future rewards.</p>
+        <p style="font-size:11px;color:var(--muted);line-height:1.7;margin-top:16px">
+          This counter reads isUserSlotActive from the supplied contract. It does not verify income, payouts or future rewards.
+        </p>
       </div>
     </div>
   </section>
 
   <!-- ZOOM -->
-  <section id="zoom">
+  <section id="zoom" class="page">
     <div class="container">
       <div class="section-heading">
         <div class="eyebrow">MEET THE COMMUNITY</div>
@@ -229,8 +321,8 @@ footer strong{color:var(--gold);letter-spacing:2px}
     </div>
   </section>
 
-  <!-- SOCIAL HUB -->
-  <section id="social">
+  <!-- SOCIAL MEDIA HUB -->
+  <section id="social" class="page">
     <div class="container">
       <div class="section-heading">
         <div class="eyebrow">CONNECT WITH US</div>
@@ -248,8 +340,8 @@ footer strong{color:var(--gold);letter-spacing:2px}
     </div>
   </section>
 
-  <!-- VIDEOS -->
-  <section id="videos">
+  <!-- ALL VIDEOS -->
+  <section id="videos" class="page">
     <div class="container">
       <div class="section-heading">
         <div class="eyebrow">LEARNING RESOURCES</div>
@@ -269,7 +361,7 @@ footer strong{color:var(--gold);letter-spacing:2px}
   </section>
 
   <!-- JOIN NOW -->
-  <section id="join">
+  <section id="join" class="page">
     <div class="container">
       <div class="join-box">
         <div class="eyebrow">B-TITAN REGISTRATION</div>
@@ -290,6 +382,7 @@ footer strong{color:var(--gold);letter-spacing:2px}
   </div>
 </footer>
 
+<!-- MOBILE NAVIGATION -->
 <div class="mobile-nav" aria-label="Mobile navigation">
   <a href="#home" class="active"><span>⌂</span><span>Home</span></a>
   <a href="#live-counter"><span>▦</span><span>Counter</span></a>
@@ -320,12 +413,12 @@ const $ = id => document.getElementById(id);
 let provider, contract, multicall, lastUserId = 0;
 let scanning = false, cancelRequested = false;
 
-function message(text,type=""){
-  $("counter-message").textContent = text;
-  $("counter-message").className = "status" + (type ? " " + type : "");
+function setMessage(text,type=""){
+  $("counter-message").textContent=text;
+  $("counter-message").className="status"+(type?" "+type:"");
 }
-function number(n){return Number(n).toLocaleString("en-IN");}
-function progress(p){$("scan-progress").style.width=Math.max(0,Math.min(100,p))+"%";}
+function fmt(n){return Number(n).toLocaleString("en-IN");}
+function setProgress(p){$("scan-progress").style.width=Math.max(0,Math.min(100,p))+"%";}
 
 function showResults(ids,slot){
   const body=$("results-body");
@@ -339,16 +432,19 @@ function showResults(ids,slot){
   }
   ids.forEach(id=>{
     const row=document.createElement("div");row.className="result-row";
-    const a=document.createElement("strong");a.textContent="#"+number(id);
+    const a=document.createElement("strong");a.textContent="#"+fmt(id);
     const b=document.createElement("span");b.textContent="Slot "+slot+" active";
     row.append(a,b);body.append(row);
   });
 }
 
-async function connect(){
-  if(!window.ethers){message("Ethers library failed to load. Check internet and reload.","error");return;}
+async function connectContract(){
+  if(!window.ethers){
+    setMessage("Ethers library failed to load. Check internet and reload.","error");
+    return;
+  }
   $("connect-btn").disabled=true;
-  message("Connecting to BNB Smart Chain...");
+  setMessage("Connecting to BNB Smart Chain...");
   try{
     const p=new ethers.JsonRpcProvider(RPC_URL);
     const c=new ethers.Contract(CONTRACT_ADDRESS,ABI,p);
@@ -359,50 +455,63 @@ async function connect(){
     if(Number(network.chainId)!==56)throw new Error("RPC did not report BNB Smart Chain mainnet.");
     provider=p;contract=c;multicall=mc;lastUserId=Number(idResult);
     $("contract-status").textContent="Connected";
-    $("last-user-id").textContent=number(lastUserId);
+    $("last-user-id").textContent=fmt(lastUserId);
     $("active-count").textContent="—";
-    message("Connected. Partners initialized: "+(initialized?"Yes":"No")+
+    setMessage("Connected. Partners initialized: "+(initialized?"Yes":"No")+
       ". Scan range: IDs 1 to "+Math.max(0,lastUserId-1)+".","good");
   }catch(e){
     console.error(e);
     $("contract-status").textContent="Connection Error";
-    message("Connection failed: "+(e.shortMessage||e.message||"Unknown RPC error"),"error");
+    setMessage("Connection failed: "+(e.shortMessage||e.message||"Unknown RPC error"),"error");
   }finally{$("connect-btn").disabled=false;}
 }
 
-async function scan(){
-  if(!contract||!multicall){message("Connect the contract first.","error");return;}
-  if(scanning){message("A scan is already running.");return;}
-  if(!Number.isSafeInteger(lastUserId)||lastUserId<1){message("Invalid or empty user ID range.","error");return;}
+async function scanSlot(){
+  if(!contract||!multicall){
+    setMessage("Please connect the contract first.","error");return;
+  }
+  if(scanning){setMessage("A scan is already running.");return;}
+  if(!Number.isSafeInteger(lastUserId)||lastUserId<1){
+    setMessage("Invalid or empty user ID range.","error");return;
+  }
 
   const slot=Number($("slot-select").value);
   const endId=lastUserId-1;
-  if(endId<1){$("active-count").textContent="0";showResults([],slot);message("No user IDs available.");return;}
+  if(endId<1){
+    $("active-count").textContent="0";showResults([],slot);
+    setMessage("No user IDs available.");return;
+  }
 
   scanning=true;cancelRequested=false;
   $("scan-btn").disabled=true;$("connect-btn").disabled=true;$("slot-select").disabled=true;
-  $("active-count").textContent="0";progress(0);
+  $("active-count").textContent="0";setProgress(0);
+
   const found=[];let completed=0,failed=0;
   const iface=new ethers.Interface(ABI);
   const batchSize=50;
 
-  async function batch(start,end){
+  async function processBatch(start,end){
     if(cancelRequested)return;
     const calls=[];
     for(let id=start;id<=end;id++){
-      calls.push({target:CONTRACT_ADDRESS,allowFailure:true,
-        callData:iface.encodeFunctionData("isUserSlotActive",[id,slot])});
+      calls.push({
+        target:CONTRACT_ADDRESS,allowFailure:true,
+        callData:iface.encodeFunctionData("isUserSlotActive",[id,slot])
+      });
     }
     let results;
-    try{results=await multicall.aggregate3.staticCall(calls);}
-    catch(e){
+    try{
+      results=await multicall.aggregate3.staticCall(calls);
+    }catch(e){
       if(cancelRequested)return;
       if(end>start){
         const mid=Math.floor((start+end)/2);
-        await batch(start,mid);await batch(mid+1,end);return;
-      }
-      failed++;completed++;return;
+        await processBatch(start,mid);
+        await processBatch(mid+1,end);
+      }else{failed++;completed++;}
+      return;
     }
+
     for(let i=0;i<results.length;i++){
       if(cancelRequested)return;
       if(!results[i].success)failed++;
@@ -414,62 +523,73 @@ async function scan(){
       }
       completed++;
     }
-    $("active-count").textContent=number(found.length);
-    progress(completed/endId*100);
+    $("active-count").textContent=fmt(found.length);
+    setProgress(completed/endId*100);
     showResults(found,slot);
-    message("Scanning Slot "+slot+": "+number(completed)+" / "+number(endId)+
-      " IDs checked. Active IDs found: "+number(found.length)+
-      (failed?". Failed reads: "+number(failed):""));
+    setMessage("Scanning Slot "+slot+": "+fmt(completed)+" / "+fmt(endId)+
+      " IDs checked. Active IDs found: "+fmt(found.length)+
+      (failed?". Failed reads: "+fmt(failed):""));
   }
 
   try{
     for(let start=1;start<=endId;start+=batchSize){
       if(cancelRequested)break;
-      await batch(start,Math.min(start+batchSize-1,endId));
+      await processBatch(start,Math.min(start+batchSize-1,endId));
     }
     if(cancelRequested){
-      message("Scan cancelled. Count includes only IDs processed before cancellation.");
+      setMessage("Scan cancelled. Count includes only IDs processed before cancellation.");
     }else if(failed){
-      message("Scan finished with incomplete reads. Active IDs found: "+number(found.length)+
-        "; failed reads: "+number(failed)+". Results may be incomplete.","error");
+      setMessage("Scan finished with incomplete reads. Active IDs found: "+fmt(found.length)+
+        "; failed reads: "+fmt(failed)+". Results may be incomplete.","error");
     }else{
-      message("Scan completed. "+number(found.length)+" active IDs found for Slot "+slot+".","good");
+      setMessage("Scan completed. "+fmt(found.length)+" active IDs found for Slot "+slot+".","good");
     }
   }catch(e){
-    console.error(e);message("Scan error: "+(e.shortMessage||e.message||"Unknown error"),"error");
+    console.error(e);
+    setMessage("Scan error: "+(e.shortMessage||e.message||"Unknown error"),"error");
   }finally{
-    scanning=false;$("scan-btn").disabled=false;$("connect-btn").disabled=false;$("slot-select").disabled=false;
+    scanning=false;
+    $("scan-btn").disabled=false;
+    $("connect-btn").disabled=false;
+    $("slot-select").disabled=false;
   }
 }
 
-$("connect-btn").addEventListener("click",connect);
-$("scan-btn").addEventListener("click",scan);
+$("connect-btn").addEventListener("click",connectContract);
+$("scan-btn").addEventListener("click",scanSlot);
 $("cancel-btn").addEventListener("click",()=>{
-  if(scanning){cancelRequested=true;message("Cancellation requested. Waiting for current RPC call.");}
-  else message("No scan is running.");
+  if(scanning){
+    cancelRequested=true;
+    setMessage("Cancellation requested. Waiting for the current RPC call.");
+  }else setMessage("No scan is running.");
 });
 
-/* These links open separate sections; the Home section contains no other content. */
+/* Each navigation option opens ONLY its own page section. */
+const validPages=["home","live-counter","zoom","social","videos","join"];
+
 function showPage(){
-  const id=(location.hash||"#home").slice(1);
-  const valid=["home","live-counter","zoom","social","videos","join"];
-  const target=valid.includes(id)?id:"home";
+  let id=(location.hash||"#home").slice(1);
+  if(!validPages.includes(id))id="home";
 
-  document.querySelectorAll("main section").forEach(s=>{
-    s.classList.toggle("page-active",s.id===target);
+  document.querySelectorAll("main .page").forEach(section=>{
+    section.classList.toggle("active",section.id===id);
   });
-  document.querySelectorAll("nav a[href^='#'],.mobile-nav a[href^='#']").forEach(a=>{
-    a.classList.toggle("active",a.getAttribute("href")==="#"+target);
+
+  document.querySelectorAll('nav a[href^="#"],.mobile-nav a[href^="#"]').forEach(link=>{
+    link.classList.toggle("active",link.getAttribute("href")==="#"+id);
   });
-  window.scrollTo({top:0,behavior:"auto"});
+
+  window.scrollTo(0,0);
 }
-window.addEventListener("hashchange",showPage);
-document.querySelectorAll("nav a[href^='#'],.mobile-nav a[href^='#'],.hero-actions a[href^='#']").forEach(a=>{
-  a.addEventListener("click",()=>{
-    const hash=a.getAttribute("href");
-    if(hash && location.hash===hash)showPage();
+
+document.querySelectorAll('nav a[href^="#"],.mobile-nav a[href^="#"],.hero a[href^="#"]').forEach(link=>{
+  link.addEventListener("click",()=>{
+    const hash=link.getAttribute("href");
+    if(location.hash===hash)showPage();
   });
 });
+
+window.addEventListener("hashchange",showPage);
 showPage();
 })();
 </script>
