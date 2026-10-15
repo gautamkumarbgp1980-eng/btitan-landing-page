@@ -9,218 +9,248 @@
 <title>B-TITAN | The Ultimate Bitcoin Rush</title>
 
 <style>
-:root{--navy:#06152f;--gold:#ffd52e;--panel:#10264b;--green:#50dfa0;--red:#ff9a9a}
+:root {
+  --navy:#06152f;
+  --blue:#082b87;
+  --purple:#4d08b0;
+  --gold:#ffd52e;
+  --panel:#10264b;
+  --muted:#c5d0e8;
+  --green:#50dfa0;
+  --red:#ff9a9a;
+}
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:150px}
-body{font-family:Arial,Helvetica,sans-serif;background:var(--navy);color:#fff;overflow-x:hidden}
+html{scroll-behavior:smooth;scroll-padding-top:130px}
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--navy);color:white;overflow-x:hidden;
+  padding-bottom:76px
+}
 a{text-decoration:none;color:inherit}
-button,input,select,textarea{font:inherit}
+button,select{font:inherit}
 button{cursor:pointer}
+.container{width:100%;max-width:1150px;margin:auto;padding-left:16px;padding-right:16px}
 
+/* HEADER */
 .header{
-background:linear-gradient(110deg,#07194e,#082b87 70%,#310b78);
-border-bottom:1px solid #ffffff22;
-position:sticky;top:0;z-index:20
+  position:sticky;top:0;z-index:50;
+  background:linear-gradient(110deg,#07194e,#082b87 70%,#310b78);
+  border-bottom:1px solid #ffffff22
 }
 .header-top{
-min-height:90px;padding:10px 12px;
-display:flex;align-items:center;justify-content:space-between;gap:8px
+  min-height:88px;padding:10px 14px;
+  display:flex;align-items:center;justify-content:space-between;gap:10px
 }
-.brand{display:flex;align-items:center;flex:1;min-width:0}
+.brand{display:flex;align-items:center;min-width:0}
 .logo{
-display:block;width:100%;max-width:340px;max-height:85px;height:auto;
-object-fit:contain;object-position:left center;background:transparent;
-border:0;border-radius:0;box-shadow:none;mix-blend-mode:screen;flex-shrink:1
+  width:min(340px,70vw);max-height:78px;height:auto;
+  object-fit:contain;object-position:left center;mix-blend-mode:screen
 }
-.header-actions{display:flex;align-items:center;flex-shrink:0}
 .menu-btn{
-width:49px;height:49px;border:1px solid #ffffff30;
-border-radius:13px;background:#ffffff0c;color:white;font-size:27px
-}
-.search-wrap{padding:0 16px 12px}
-.search{
-width:100%;height:56px;border-radius:40px;border:0;outline:none;
-padding:0 20px;background:white;color:#222;font-size:15px
+  width:46px;height:46px;border:1px solid #ffffff35;
+  border-radius:13px;background:#ffffff0b;color:white;font-size:25px;
+  flex-shrink:0
 }
 .nav{
-display:flex;align-items:center;gap:7px;padding:5px 12px 13px;
-overflow-x:auto;scrollbar-width:none
+  display:flex;align-items:center;gap:7px;padding:5px 12px 12px;
+  overflow-x:auto;scrollbar-width:none
 }
 .nav::-webkit-scrollbar{display:none}
 .nav a{
-flex-shrink:0;padding:12px 14px;border-radius:13px;
-font-size:13px;font-weight:700;white-space:nowrap
+  flex-shrink:0;padding:12px 14px;border-radius:13px;
+  font-size:13px;font-weight:800;white-space:nowrap
 }
 .nav a.active{background:var(--gold);color:#111}
 .mobile-menu{
-display:none;padding:10px 16px 14px;
-background:#071744;border-top:1px solid #ffffff14
+  display:none;padding:10px 14px 14px;
+  background:#071744;border-top:1px solid #ffffff20;
+  grid-template-columns:1fr 1fr;gap:8px
 }
-.mobile-menu.open{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.mobile-menu a{padding:11px;border-radius:9px;background:#ffffff12;font-size:13px}
+.mobile-menu.open{display:grid}
+.mobile-menu a{
+  padding:12px;border-radius:10px;
+  background:#ffffff12;font-size:13px;font-weight:bold
+}
 
+/* HOME */
 .hero{
-position:relative;overflow:hidden;padding:36px 25px 35px;
-background:
-radial-gradient(ellipse at 82% 20%,#9c00ffb5,transparent 48%),
-radial-gradient(ellipse at 20% 70%,#006cff66,transparent 50%),
-linear-gradient(115deg,#062e83,#101f9a 53%,#4d08b0)
+  position:relative;overflow:hidden;padding:38px 24px 35px;
+  background:
+    radial-gradient(ellipse at 82% 20%,#9c00ffb5,transparent 48%),
+    radial-gradient(ellipse at 20% 70%,#006cff66,transparent 50%),
+    linear-gradient(115deg,#062e83,#101f9a 53%,#4d08b0)
 }
 .hero:before{
-content:"";position:absolute;width:380px;height:380px;
-border:1px solid #ffffff18;border-radius:50%;
-right:-100px;top:-80px;pointer-events:none
+  content:"";position:absolute;width:380px;height:380px;
+  border:1px solid #ffffff18;border-radius:50%;
+  right:-100px;top:-80px;pointer-events:none
 }
+.hero-content{position:relative;z-index:1;max-width:950px}
 .welcome{
-display:inline-block;border:1px solid #ffd52e70;background:#ffffff0b;
-border-radius:30px;padding:11px 16px;color:#ffe16c;
-font-weight:700;font-size:14px
+  display:inline-block;border:1px solid #ffd52e70;background:#ffffff0b;
+  border-radius:30px;padding:11px 16px;color:#ffe16c;
+  font-weight:700;font-size:14px
 }
 .hero h1{
-font-size:clamp(37px,7.4vw,68px);line-height:1.13;
-letter-spacing:-1.5px;margin:27px 0 13px;font-weight:900
+  font-size:clamp(37px,7.4vw,68px);line-height:1.12;
+  letter-spacing:-1.5px;margin:27px 0 15px;font-weight:900
 }
 .hero h1 span{color:var(--gold)}
 .hero h2{font-size:clamp(21px,4vw,30px);margin-bottom:20px}
-.hero-desc{font-size:16px;line-height:1.8;color:#e5eaff;margin-bottom:25px}
+.hero-desc{font-size:16px;line-height:1.8;color:#e5eaff;margin-bottom:24px}
 .features{display:flex;flex-wrap:wrap;gap:12px 18px;margin:22px 0 28px}
 .features span{font-size:13px;display:flex;align-items:center;gap:7px}
 .check{
-width:25px;height:25px;border-radius:50%;background:var(--gold);
-color:#14204c;display:inline-grid;place-items:center;font-weight:900
+  width:25px;height:25px;border-radius:50%;background:var(--gold);
+  color:#14204c;display:inline-grid;place-items:center;font-weight:900
 }
-.hero-buttons{display:flex;flex-wrap:wrap;gap:12px}
 .btn{
-min-height:48px;padding:0 18px;border-radius:13px;
-display:inline-flex;align-items:center;justify-content:center;
-font-weight:800;font-size:13px;border:1px solid #ffffff45;color:#fff;background:#ffffff0a
+  min-height:48px;padding:0 19px;border-radius:14px;
+  display:inline-flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:13px;border:1px solid #ffffff45
 }
 .btn-gold{background:var(--gold);color:#101530;border:0}
 .btn-outline{background:#ffffff0a;color:white}
+.hero-buttons{display:flex;flex-wrap:wrap;gap:12px}
 .hero-foot{margin-top:24px;color:#d9e4ff;font-size:14px}
 
-.illustration{
-min-height:185px;max-width:660px;margin:18px auto 0;
-position:relative;display:flex;align-items:flex-end;justify-content:center
-}
-.person{width:175px;height:150px;position:relative;z-index:1;display:flex;justify-content:center}
-.hair{position:absolute;top:6px;width:138px;height:138px;background:#30282b;border-radius:70px 70px 42px 42px}
-.face{position:absolute;top:35px;width:100px;height:100px;background:#ffdfbf;border-radius:48% 48% 45% 45%;z-index:2}
-.eye{position:absolute;top:43px;width:13px;height:17px;border-radius:50%;background:#34313a}
-.eye.left{left:23px}.eye.right{right:23px}
-.smile{position:absolute;bottom:16px;left:37px;width:27px;height:12px;border-bottom:3px solid #ad6a57;border-radius:50%}
-.laptop{position:absolute;z-index:3;bottom:0;width:180px;height:67px;border-radius:12px 12px 3px 3px;background:#b9becb;border:5px solid #e5e7ef;text-align:center;color:#7e8492;font-size:26px;padding-top:10px}
-.orbit{position:absolute;width:90%;height:105px;bottom:12px;border:2px solid #f8d9698c;border-radius:50%;transform:rotate(-15deg)}
-.float-icon{position:absolute;z-index:4;width:48px;height:48px;border:1px solid #ffffff77;border-radius:50%;display:grid;place-items:center;font-size:23px;background:#ffffff10;box-shadow:0 0 18px #c077ff77}
-.float-icon.one{left:6%;bottom:47px}.float-icon.two{left:29%;bottom:55px}.float-icon.three{right:26%;bottom:48px}.float-icon.four{right:5%;bottom:52px}
-.create-badge{position:absolute;right:2%;top:4px;z-index:5;width:102px;height:102px;border:4px solid var(--gold);border-radius:50%;background:#071b56;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-size:12px;line-height:1.35}
-
-.dashboard{background:#f7f8ff;color:#111d3b;padding:13px 12px 35px;border-radius:27px 27px 0 0;position:relative;z-index:2;margin-top:-1px}
-.dashboard-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
-.dash-card{min-height:135px;padding:17px 6px 12px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:linear-gradient(145deg,#fff,#eaf0ff);border:1px solid #e0e5f0;border-radius:20px;color:#111d3b}
-.dash-icon{font-size:31px;margin-bottom:7px}
-.dash-card strong{font-size:13px}
-.dash-card small{font-size:11px;color:#637391;margin-top:6px}
-
-.section{padding:35px 16px;scroll-margin-top:150px}
-.section-head{text-align:center;margin-bottom:22px}
+/* COMMON SECTION */
+.section{padding:36px 16px;scroll-margin-top:130px}
+.section-head{text-align:center;margin-bottom:24px}
 .section-head small{font-size:10px;letter-spacing:2px;color:var(--gold);font-weight:900}
-.section-head h2{font-size:27px;margin:7px 0}
-.section-head p{font-size:13px;color:#c5d0e8}
-.link-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.link-card{border:1px solid #ffffff20;border-radius:16px;padding:17px;background:linear-gradient(145deg,#122e54,#091a36);display:flex;flex-direction:column;align-items:flex-start;min-height:160px}
-.link-icon{font-size:25px;margin-bottom:7px}
-.link-card h3{font-size:15px;margin-bottom:6px}
-.link-card p{font-size:12px;color:#c1cde1;flex:1;margin-bottom:13px}
-.link-btn{padding:10px 13px;border-radius:10px;background:var(--gold);color:#121a32;font-weight:900;font-size:10px;display:inline-block}
-.zoom-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.zoom-card{padding:19px;border:1px solid #ffd52e55;border-radius:16px;background:#10264b}
-.zoom-card h3{font-size:17px}
-.zoom-time{color:var(--gold);font-weight:800;margin:7px 0}
-.zoom-card p{font-size:12px;color:#c1cde1;margin-bottom:14px}
-.social-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-.social-card{min-height:92px;border:1px solid #ffffff20;border-radius:15px;background:#11274b;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:7px;font-size:12px;font-weight:800}
-.social-icon{font-size:27px;color:var(--gold)}
-.footer{padding:22px 15px;text-align:center;background:#040d20;color:#bdc8df;font-size:11px}
-.footer strong{color:white;font-size:14px}
-.bottom-nav{display:none;position:fixed;bottom:0;left:0;right:0;z-index:30;background:#171e50;border-top:1px solid #ffffff1a;padding:7px 5px max(8px,env(safe-area-inset-bottom));grid-template-columns:repeat(5,1fr)}
-.bottom-nav a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:8px 2px;border-radius:13px;font-size:10px;color:#dce5ff}
-.bottom-nav a span{font-size:23px}
-.bottom-nav a.active{background:#ffffff18;color:#ffe18a}
+.section-head h2{font-size:clamp(24px,5vw,32px);margin:8px 0}
+.section-head p{font-size:13px;color:var(--muted);line-height:1.7}
+.gold{color:var(--gold)}
 
 /* LIVE COUNTER */
 #liveCounter{background:linear-gradient(180deg,#071a3b,#06152f)}
-.counter-status{display:flex;justify-content:center;align-items:center;gap:8px;color:#c5d0e8;margin:15px 0 22px;font-size:13px;overflow-wrap:anywhere}
+.counter-status{
+  display:flex;justify-content:center;align-items:center;gap:8px;
+  color:var(--muted);margin:15px 0 22px;font-size:13px;
+  overflow-wrap:anywhere;text-align:center
+}
 .counter-dot{width:9px;height:9px;background:var(--green);border-radius:50%;flex-shrink:0}
 .counter-dot.offline{background:var(--red)}
 .counter-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-.counter-stat{background:linear-gradient(145deg,#122e54,#091a36);border:1px solid #ffffff24;border-radius:16px;padding:18px 8px;text-align:center;min-width:0}
-.counter-label{font-size:12px;color:#c5d0e8}
-.counter-value{font-size:clamp(20px,4vw,29px);font-weight:900;color:var(--gold);margin:7px 0;overflow-wrap:anywhere}
-.counter-small{font-size:10px;color:#c5d0e8}
+.counter-stat{
+  background:linear-gradient(145deg,#122e54,#091a36);
+  border:1px solid #ffffff24;border-radius:16px;padding:18px 8px;text-align:center
+}
+.counter-label{font-size:12px;color:var(--muted)}
+.counter-value{
+  font-size:clamp(20px,4vw,29px);font-weight:900;
+  color:var(--gold);margin:7px 0;overflow-wrap:anywhere
+}
+.counter-small{font-size:10px;color:var(--muted)}
+.slot-heading{margin-top:32px}
 .slot-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
-.slot-card{min-width:0;width:100%;padding:15px 7px;text-align:center;color:#fff;background:#10264b;border:1px solid #ffffff24;border-radius:15px}
+.slot-card{
+  min-width:0;width:100%;padding:15px 7px;text-align:center;color:white;
+  background:#10264b;border:1px solid #ffffff24;border-radius:15px
+}
 .slot-card.selected{border:2px solid var(--gold);background:#172f54}
 .slot-name{font-weight:900;color:var(--gold);font-size:14px}
 .slot-count{font-size:25px;font-weight:900;margin:8px 0;overflow-wrap:anywhere}
-.slot-caption{font-size:10px;color:#c5d0e8;line-height:1.5}
+.slot-caption{font-size:10px;color:var(--muted);line-height:1.5}
 .counter-track{height:7px;background:#29394c;border-radius:10px;overflow:hidden;margin-top:12px}
 .counter-bar{height:100%;width:0;background:var(--gold);transition:width .15s}
 .counter-panel{background:#10264b;border:1px solid #ffffff24;border-radius:16px;padding:18px;margin-top:18px}
-.counter-panel .counter-value{font-size:23px}
 .counter-actions{display:flex;flex-wrap:wrap;gap:9px;margin:15px 0}
-.counter-actions button{flex:1 1 145px}
-.counter-btn{min-height:45px;padding:11px 14px;border-radius:10px;border:1px solid #ffffff35;background:transparent;color:#fff;font-weight:800;font-size:12px}
+.counter-btn{
+  flex:1 1 140px;min-height:45px;padding:11px 14px;border-radius:10px;
+  border:1px solid #ffffff35;background:transparent;color:white;
+  font-weight:800;font-size:12px
+}
 .counter-btn.primary{background:var(--gold);color:#11172c;border-color:var(--gold)}
 .counter-btn:disabled{opacity:.5;cursor:not-allowed}
-.counter-notice{padding:13px;background:#0b1d37;border:1px solid #ffffff20;border-radius:12px;color:#c5d0e8;font-size:12px;line-height:1.7;margin-top:13px;overflow-wrap:anywhere}
+.counter-detail,.counter-result{font-size:12px;line-height:1.7;color:var(--muted);margin-top:9px;overflow-wrap:anywhere}
 .counter-error{color:var(--red)!important}
 .counter-success{color:var(--green)!important}
-.counter-label-block{font-size:12px;color:#c5d0e8}
-#counterDetail,#counterResult{font-size:12px;line-height:1.6;color:#c5d0e8;margin-top:9px;overflow-wrap:anywhere}
-.counter-contract-link{color:var(--gold);font-weight:bold;text-decoration:underline}
-[hidden]{display:none!important}
+.counter-notice{
+  padding:13px;background:#0b1d37;border:1px solid #ffffff20;
+  border-radius:12px;color:var(--muted);font-size:12px;
+  line-height:1.7;margin-top:13px;overflow-wrap:anywhere
+}
+.counter-notice a{color:var(--gold);font-weight:bold;text-decoration:underline}
+
+/* ZOOM */
+.zoom-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.zoom-card{
+  padding:20px;border:1px solid #ffd52e55;border-radius:16px;
+  background:linear-gradient(145deg,#122e54,#091a36)
+}
+.zoom-card h3{font-size:18px}
+.zoom-time{color:var(--gold);font-weight:800;margin:9px 0}
+.zoom-card p{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:16px}
+
+/* SOCIAL HUB */
+.social-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.social-card{
+  min-height:95px;border:1px solid #ffffff20;border-radius:15px;
+  background:#11274b;display:flex;align-items:center;justify-content:center;
+  flex-direction:column;gap:8px;font-size:12px;font-weight:800;text-align:center
+}
+.social-icon{font-size:27px;color:var(--gold)}
+
+/* ALL VIDEOS */
+.video-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.video-card{
+  border:1px solid #ffffff20;border-radius:15px;padding:17px;
+  background:linear-gradient(145deg,#122e54,#091a36);
+  display:flex;flex-direction:column;align-items:flex-start;gap:10px
+}
+.video-icon{font-size:28px}
+.video-card h3{font-size:15px}
+.video-card p{font-size:12px;line-height:1.6;color:var(--muted);flex:1}
+.video-card .link-btn{
+  padding:10px 13px;border-radius:10px;background:var(--gold);
+  color:#121a32;font-weight:900;font-size:11px;display:inline-block
+}
+
+/* FOOTER + BOTTOM NAV */
+.footer{padding:22px 15px;text-align:center;background:#040d20;color:#bdc8df;font-size:11px;line-height:1.8}
+.footer strong{color:white;font-size:14px}
+.bottom-nav{
+  display:none;position:fixed;bottom:0;left:0;right:0;z-index:60;
+  background:#171e50;border-top:1px solid #ffffff1a;
+  padding:7px 4px max(8px,env(safe-area-inset-bottom));
+  grid-template-columns:repeat(5,1fr)
+}
+.bottom-nav a{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:3px;padding:8px 2px;border-radius:12px;font-size:10px;color:#dce5ff;
+  min-width:0
+}
+.bottom-nav a span{font-size:21px}
+.bottom-nav a.active{background:#ffffff18;color:#ffe18a}
 
 @media(max-width:650px){
-.header-top{min-height:90px;padding:10px 12px;gap:8px}
-.logo{max-width:250px;max-height:72px}
-.menu-btn{width:47px;height:47px}
-.nav{gap:5px;padding:4px 12px 12px}
-.nav a{padding:12px;font-size:12px}
-.search{height:58px;font-size:15px}
-.hero{padding:35px 24px 28px}
-.hero h1{font-size:clamp(36px,8.5vw,54px);margin-top:27px}
-.hero-desc{font-size:15px}
-.features{gap:11px 15px}
-.features span{font-size:12px}
-.btn{min-height:48px;padding:0 14px}
-.dashboard{padding:12px 12px 30px}
-.bottom-nav{display:grid}
-body{padding-bottom:75px}
-.counter-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
-.slot-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .header-top{min-height:80px;padding:9px 12px}
+  .logo{max-width:250px;max-height:68px}
+  .nav{gap:4px;padding:4px 10px 11px}
+  .nav a{padding:12px 11px;font-size:12px}
+  .hero{padding:34px 20px 30px}
+  .hero h1{font-size:clamp(35px,8.5vw,54px)}
+  .hero-desc{font-size:14px}
+  .features{gap:11px 13px}
+  .features span{font-size:12px}
+  .counter-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .slot-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .social-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .bottom-nav{display:grid}
 }
 @media(max-width:390px){
-.header-top{min-height:76px;padding:8px;gap:5px}
-.logo{max-width:190px;max-height:58px}
-.menu-btn{width:39px;height:41px;font-size:21px}
-.hero{padding:29px 17px 25px}
-.hero h1{font-size:35px}
-.hero h2{font-size:21px}
-.hero-desc{font-size:13px}
-.features{gap:9px}
-.features span{font-size:11px}
-.btn{font-size:11px;padding:0 11px}
-.illustration{min-height:155px}
-.create-badge{width:80px;height:80px;font-size:10px}
-.person{transform:scale(.85);transform-origin:bottom}
-.float-icon{width:36px;height:36px;font-size:18px}
-.dash-card{min-height:112px}
-.dash-icon{font-size:25px}
-.dash-card strong{font-size:10px}
-.dash-card small{font-size:9px}
-.slot-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-.counter-panel{padding:13px}
+  .header-top{min-height:72px;padding:8px}
+  .logo{max-width:205px;max-height:57px}
+  .menu-btn{width:40px;height:41px;font-size:21px}
+  .hero{padding:28px 17px}
+  .hero h1{font-size:35px}
+  .hero h2{font-size:21px}
+  .features span{font-size:11px}
+  .slot-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .video-grid{grid-template-columns:1fr}
+  .zoom-grid{grid-template-columns:1fr}
+  .counter-panel{padding:13px}
 }
 </style>
 </head>
@@ -228,299 +258,285 @@ body{padding-bottom:75px}
 <body>
 <header class="header" id="top">
   <div class="header-top">
-    <a class="brand" href="#top" aria-label="B-TITAN Home">
+    <a class="brand" href="#home" aria-label="B-TITAN Home">
       <img class="logo" src="btitan-logo-1.png" alt="B-TITAN - The Ultimate Bitcoin Rush">
     </a>
-    <div class="header-actions">
-      <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false">☰</button>
-    </div>
-  </div>
-
-  <div class="search-wrap">
-    <input class="search" id="searchInput" type="search" placeholder="🔎 Search posts, media, platforms..." aria-label="Search">
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
   </div>
 
   <nav class="nav" id="mainNav">
-    <a class="active" href="#top">⌂ Home</a>
-    <a href="#profile">👤 My Profile</a>
-    <a href="#promotion">🚀 Promotion Studio</a>
+    <a class="active" href="#home">⌂ Home</a>
     <a href="#liveCounter">₿ Live Counter</a>
-    <a href="#social">● Social Hub</a>
-    <a href="#media">▣ Media Library</a>
+    <a href="#zoom">🎥 Zoom</a>
+    <a href="#socialHub">🌐 Social Media Hub</a>
+    <a href="#allVideos">▶ All Videos</a>
   </nav>
 
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#top">⌂ Home</a>
-    <a href="#profile">👤 My Profile</a>
-    <a href="#promotion">🚀 Promotion Studio</a>
+    <a href="#home">⌂ Home</a>
     <a href="#liveCounter">₿ Live Counter</a>
-    <a href="#social">● Social Hub</a>
-    <a href="#media">▣ Media Library</a>
-    <a href="#zoom">🎥 Zoom Meetings</a>
+    <a href="#zoom">🎥 Zoom</a>
+    <a href="#socialHub">🌐 Social Media Hub</a>
+    <a href="#allVideos">▶ All Videos</a>
   </div>
 </header>
 
 <main>
+<!-- HOME -->
 <section class="hero" id="home">
-  <div class="welcome">👑 Welcome to B-TITAN</div>
-  <h1>THE ULTIMATE <span>BITCOIN RUSH</span></h1>
-  <h2>One Hub. Every Platform.</h2>
-  <p class="hero-desc">एक जगह पोस्ट तैयार करें, अपने सोशल मीडिया लिंक व्यवस्थित करें और आसानी से शेयर करें।</p>
+  <div class="hero-content">
+    <div class="welcome">👑 Welcome to B-TITAN</div>
+    <h1>THE ULTIMATE <span>BITCOIN RUSH</span></h1>
+    <h2>One Hub. Every Platform.</h2>
+    <p class="hero-desc">
+      B-TITAN की जानकारी, Live Counter, Zoom Meetings, Social Media और सभी वीडियो एक ही जगह।
+    </p>
 
-  <div class="features">
-    <span><b class="check">✓</b>Create Posts</span>
-    <span><b class="check">✓</b>Photo &amp; Video</span>
-    <span><b class="check">✓</b>Multi-Platform Sharing</span>
-    <span><b class="check">✓</b>Save Profile Links</span>
-    <span><b class="check">✓</b>One-Tap Share</span>
-    <span><b class="check">✓</b>Secure Setup</span>
-  </div>
-
-  <div class="hero-buttons">
-    <a class="btn btn-gold" href="#promotion">▶ Explore B-TITAN Links →</a>
-    <a class="btn btn-outline" href="#social">▦ Explore Social Hub →</a>
-  </div>
-
-  <div class="hero-foot">✨ Explore · Connect · Learn</div>
-
-  <div class="illustration" aria-label="Digital creator illustration">
-    <div class="orbit"></div>
-    <div class="float-icon one">₿</div>
-    <div class="float-icon two">◎</div>
-    <div class="float-icon three">▶</div>
-    <div class="float-icon four">✈</div>
-    <div class="person">
-      <div class="hair"></div>
-      <div class="face">
-        <span class="eye left"></span>
-        <span class="eye right"></span>
-        <span class="smile"></span>
-      </div>
-      <div class="laptop">₿</div>
+    <div class="features">
+      <span><b class="check">✓</b>Live Counter</span>
+      <span><b class="check">✓</b>Zoom Meetings</span>
+      <span><b class="check">✓</b>Social Media Hub</span>
+      <span><b class="check">✓</b>All Videos</span>
     </div>
-    <div class="create-badge">♛<br><strong>B-TITAN</strong><br>Explore<br>Connect<br>Learn</div>
+
+    <div class="hero-buttons">
+      <a class="btn btn-gold" href="#liveCounter">₿ Check Live Counter →</a>
+      <a class="btn btn-outline" href="#allVideos">▶ Watch Videos →</a>
+    </div>
+
+    <div class="hero-foot">✨ Explore · Connect · Learn</div>
   </div>
 </section>
 
-<section class="dashboard" id="profile">
-  <div class="dashboard-grid">
-    <a class="dash-card" href="https://beacons.ai/gsdigitalacademy" target="_blank" rel="noopener">
-      <span class="dash-icon">👤</span><strong>My Profile</strong><small>Open Profile →</small>
-    </a>
-    <a class="dash-card" href="#promotion">
-      <span class="dash-icon">🚀</span><strong>Promotion Studio</strong><small>Explore Links →</small>
-    </a>
-    <a class="dash-card" href="#social">
-      <span class="dash-icon">🔗</span><strong>Social Hub</strong><small>All Links →</small>
-    </a>
-    <a class="dash-card" href="#media">
-      <span class="dash-icon">🖼️</span><strong>Photo &amp; Video</strong><small>Select Media →</small>
-    </a>
-    <button class="dash-card" id="copyMessage" type="button">
-      <span class="dash-icon">📄</span><strong>Copy Message</strong><small>Quick Copy →</small>
-    </button>
-    <button class="dash-card" id="shareApp" type="button">
-      <span class="dash-icon">📲</span><strong>Share Page</strong><small>Share Link →</small>
-    </button>
-  </div>
-</section>
-
-<section class="section" id="promotion">
-  <div class="section-head">
-    <small>QUICK ACCESS</small>
-    <h2>Important Links</h2>
-    <p>B-TITAN resources and important links</p>
-  </div>
-  <div class="link-grid">
-    <article class="link-card"><span class="link-icon">▶️</span><h3>Complete Plan Video</h3><p>Watch the plan presentation.</p><a class="link-btn" href="https://youtu.be/jg6a-Jo_acE" target="_blank" rel="noopener">WATCH VIDEO ↗</a></article>
-    <article class="link-card"><span class="link-icon">📄</span><h3>Plan Presentation PDF</h3><p>Open the plan presentation document.</p><a class="link-btn" href="https://docs.google.com/presentation/d/1ZhQFHnTPKTx4Lqs4LjZRFQjwZjct5FGL/export/pdf" target="_blank" rel="noopener">OPEN PDF ↗</a></article>
-    <article class="link-card"><span class="link-icon">🆔</span><h3>ID Activation Guide</h3><p>Open the ID activation guide.</p><a class="link-btn" href="https://tinyurl.com/4u6jnrrw" target="_blank" rel="noopener">OPEN GUIDE ↗</a></article>
-    <article class="link-card"><span class="link-icon">⚙️</span><h3>2×2 Matrix Guide</h3><p>Watch the matrix guide.</p><a class="link-btn" href="https://youtu.be/HIxNEUneKYs" target="_blank" rel="noopener">WATCH GUIDE ↗</a></article>
-    <article class="link-card"><span class="link-icon">⛓️</span><h3>Blockchain ID Video</h3><p>Learn about blockchain ID.</p><a class="link-btn" href="https://youtube.com/shorts/-fIVG9pZtEo?si=nclwN9l8L6Fo1tLa" target="_blank" rel="noopener">WATCH VIDEO ↗</a></article>
-    <article class="link-card"><span class="link-icon">🌐</span><h3>Decentralized System</h3><p>Watch the educational overview.</p><a class="link-btn" href="https://youtu.be/MCNicgjFkxA" target="_blank" rel="noopener">WATCH VIDEO ↗</a></article>
-    <article class="link-card"><span class="link-icon">₿</span><h3>B-TITAN Website</h3><p>Visit the website.</p><a class="link-btn" href="https://btitan.net/" target="_blank" rel="noopener">OPEN WEBSITE ↗</a></article>
-    <article class="link-card"><span class="link-icon">🚀</span><h3>B-TITAN Registration</h3><p>Open the registration page.</p><a class="link-btn" href="https://btitan.net/register?id=10203" target="_blank" rel="noopener">REGISTER ↗</a></article>
-  </div>
-</section>
-
-<!-- LIVE COUNTER ADDED TO THE ORIGINAL WEBSITE -->
+<!-- LIVE COUNTER -->
 <section class="section" id="liveCounter">
   <div class="section-head">
     <small>ON-CHAIN DASHBOARD</small>
-    <h2>B-TITAN <span style="color:var(--gold)">Live Counter</span></h2>
-    <p>अपना Slot चुनें। केवल चुने हुए Slot की जाँच होगी।</p>
+    <h2>B-TITAN <span class="gold">Live Counter</span></h2>
+    <p>Slot चुनें और उसी Slot की गिनती जाँचें।</p>
   </div>
 
-  <div class="counter-status">
-    <span class="counter-dot" id="connectionDot"></span>
-    <span id="connectionStatus">Contract से कनेक्ट हो रहा है...</span>
-  </div>
-
-  <div class="counter-stats">
-    <div class="counter-stat">
-      <div class="counter-label">Registered IDs</div>
-      <div class="counter-value" id="registeredIds">—</div>
-      <div class="counter-small">Contract counter से</div>
-    </div>
-    <div class="counter-stat">
-      <div class="counter-label">Last Assigned ID</div>
-      <div class="counter-value" id="latestId">—</div>
-      <div class="counter-small">Contract state</div>
-    </div>
-    <div class="counter-stat">
-      <div class="counter-label">Partner Initialization</div>
-      <div class="counter-value" id="partnerStatus" style="font-size:19px">—</div>
-      <div class="counter-small">Contract status</div>
-    </div>
-  </div>
-
-  <div class="section-head" style="margin-top:32px">
-    <small>SLOT DASHBOARD</small>
-    <h2>Slot 1–12 <span style="color:var(--gold)">Counter</span></h2>
-    <p>जिस Slot को देखना है, उसी कार्ड पर क्लिक करें।</p>
-  </div>
-
-  <div class="slot-grid" id="slotGrid"></div>
-
-  <div class="counter-panel">
-    <div class="counter-label-block">Selected Slot</div>
-    <div class="counter-value" id="selectedSlot">SLOT 1</div>
-    <p id="selectedInfo" style="font-size:13px;color:#c5d0e8;line-height:1.6">Slot चुनें और जाँच शुरू करें।</p>
-
-    <div class="counter-actions">
-      <button class="counter-btn primary" id="scanBtn" type="button">Check Selected Slot</button>
-      <button class="counter-btn" id="cancelBtn" type="button" disabled>Cancel Scan</button>
-      <button class="counter-btn" id="refreshBtn" type="button">Refresh Contract Data</button>
+  <div class="container">
+    <div class="counter-status">
+      <span class="counter-dot" id="connectionDot"></span>
+      <span id="connectionStatus">Contract से कनेक्ट हो रहा है...</span>
     </div>
 
-    <div class="counter-label-block">Scan Progress</div>
-    <div class="counter-value" id="progressText">Not started</div>
-    <div class="counter-track"><div class="counter-bar" id="progressBar"></div></div>
-    <p id="counterDetail">Slot चुनकर Check Selected Slot दबाएँ।</p>
-    <p id="counterResult">अभी किसी Slot की verified count उपलब्ध नहीं है।</p>
-  </div>
+    <div class="counter-stats">
+      <div class="counter-stat">
+        <div class="counter-label">Registered IDs</div>
+        <div class="counter-value" id="registeredIds">—</div>
+        <div class="counter-small">Contract से पढ़ी गई संख्या</div>
+      </div>
+      <div class="counter-stat">
+        <div class="counter-label">Last Assigned ID</div>
+        <div class="counter-value" id="latestId">—</div>
+        <div class="counter-small">Contract ID counter</div>
+      </div>
+      <div class="counter-stat">
+        <div class="counter-label">Initialization</div>
+        <div class="counter-value" id="partnerStatus" style="font-size:18px">—</div>
+        <div class="counter-small">Contract status</div>
+      </div>
+    </div>
 
-  <div class="counter-notice">
-    यह counter चुने गए Slot को सभी Registered IDs के लिए जाँचता है। दूसरे 11 Slots की जाँच नहीं होती। बहुत अधिक IDs होने पर स्कैन में समय लग सकता है या सार्वजनिक RPC की सीमा के कारण रुक सकता है। अधूरी जाँच को अंतिम verified count नहीं माना जाएगा।
-  </div>
-  <div class="counter-notice">
-    Contract: <a class="counter-contract-link" href="https://bscscan.com/address/0xD6759d47Fccdef7b8E318479cEC4D128366f2a44#code" target="_blank" rel="noopener">BscScan पर Contract देखें ↗</a>
+    <div class="section-head slot-heading">
+      <h2>Slot 1–12 <span class="gold">Counter</span></h2>
+      <p>किसी एक Slot पर क्लिक करें।</p>
+    </div>
+
+    <div class="slot-grid" id="slotGrid"></div>
+
+    <div class="counter-panel">
+      <div class="counter-label">Selected Slot</div>
+      <div class="counter-value" id="selectedSlot">SLOT 1</div>
+      <p id="selectedInfo" style="font-size:13px;color:var(--muted);line-height:1.7">Slot चुनें और जाँच शुरू करें।</p>
+
+      <div class="counter-actions">
+        <button class="counter-btn primary" id="scanBtn" type="button">Check Selected Slot</button>
+        <button class="counter-btn" id="cancelBtn" type="button" disabled>Cancel Scan</button>
+        <button class="counter-btn" id="refreshBtn" type="button">Refresh</button>
+      </div>
+
+      <div class="counter-label">Scan Progress</div>
+      <div class="counter-value" id="progressText">Not started</div>
+      <div class="counter-track"><div class="counter-bar" id="progressBar"></div></div>
+      <p class="counter-detail" id="counterDetail">Slot चुनकर Check Selected Slot दबाएँ।</p>
+      <p class="counter-result" id="counterResult">अभी किसी Slot की verified count उपलब्ध नहीं है।</p>
+    </div>
+
+    <div class="counter-notice">
+      चुने गए Slot की सभी Registered IDs जाँची जाती हैं। दूसरे 11 Slots स्कैन नहीं होते। बहुत बड़ी ID संख्या पर RPC धीमा हो सकता है। अधूरी जाँच को verified final count नहीं माना जाएगा।
+    </div>
+
+    <div class="counter-notice">
+      Contract:
+      <a href="https://bscscan.com/address/0xD6759d47Fccdef7b8E318479cEC4D128366f2a44#code" target="_blank" rel="noopener">BscScan पर देखें ↗</a>
+    </div>
   </div>
 </section>
 
+<!-- ZOOM -->
 <section class="section" id="zoom">
-  <div class="section-head"><small>ONLINE MEETINGS</small><h2>Zoom Meetings</h2><p>Join the online sessions</p></div>
-  <div class="zoom-grid">
-    <article class="zoom-card"><h3>🌅 Morning Zoom</h3><div class="zoom-time">Daily · 9:00 AM IST</div><p>Morning meeting and team discussion.</p><a class="link-btn" href="https://zoom.us/j/7890581048?pwd=0c3cExXWU7Xt1sBfLuvo0DlWej9xmV.1" target="_blank" rel="noopener">JOIN ZOOM ↗</a></article>
-    <article class="zoom-card"><h3>🌙 Evening Zoom</h3><div class="zoom-time">Daily · 9:00 PM IST</div><p>Evening meeting and team discussion.</p><a class="link-btn" href="https://zoom.us/j/6053096493?pwd=v43dprpzbo7Xqc4omNKu95IJVx6pR9.1" target="_blank" rel="noopener">JOIN ZOOM ↗</a></article>
+  <div class="section-head">
+    <small>ONLINE MEETINGS</small>
+    <h2>Zoom <span class="gold">Meetings</span></h2>
+    <p>Online sessions से जुड़ें।</p>
+  </div>
+
+  <div class="container zoom-grid">
+    <article class="zoom-card">
+      <h3>🌅 Morning Zoom</h3>
+      <div class="zoom-time">Daily · 9:00 AM IST</div>
+      <p>Morning meeting and team discussion.</p>
+      <a class="btn btn-gold" href="https://zoom.us/j/7890581048?pwd=0c3cExXWU7Xt1sBfLuvo0DlWej9xmV.1" target="_blank" rel="noopener">JOIN ZOOM ↗</a>
+    </article>
+
+    <article class="zoom-card">
+      <h3>🌙 Evening Zoom</h3>
+      <div class="zoom-time">Daily · 9:00 PM IST</div>
+      <p>Evening meeting and team discussion.</p>
+      <a class="btn btn-gold" href="https://zoom.us/j/6053096493?pwd=v43dprpzbo7Xqc4omNKu95IJVx6pR9.1" target="_blank" rel="noopener">JOIN ZOOM ↗</a>
+    </article>
   </div>
 </section>
 
-<section class="section" id="social">
-  <div class="section-head"><small>STAY CONNECTED</small><h2>Social Hub</h2><p>Connect with the community</p></div>
-  <div class="social-grid">
-    <a class="social-card" href="https://www.facebook.com/profile.php?id=61590478625779" target="_blank" rel="noopener"><span class="social-icon">f</span>Facebook</a>
-    <a class="social-card" href="https://youtube.com/@gautamdigitalacademy?si=yEkIv6-54rAN0h6e" target="_blank" rel="noopener"><span class="social-icon">▶</span>YouTube</a>
-    <a class="social-card" href="https://www.instagram.com/btitanchampions?psln=MzZheDgwdTUzcnJ0" target="_blank" rel="noopener"><span class="social-icon">◎</span>Instagram</a>
-    <a class="social-card" href="https://wa.me/918368960385?text=Hello%20B-TITAN" target="_blank" rel="noopener"><span class="social-icon">☏</span>WhatsApp</a>
-    <a class="social-card" href="https://beacons.ai/gsdigitalacademy" target="_blank" rel="noopener"><span class="social-icon">🔗</span>Community Hub</a>
-    <a class="social-card" href="https://t.me/" target="_blank" rel="noopener"><span class="social-icon">✈</span>Telegram</a>
+<!-- SOCIAL MEDIA HUB -->
+<section class="section" id="socialHub">
+  <div class="section-head">
+    <small>STAY CONNECTED</small>
+    <h2>Social Media <span class="gold">Hub</span></h2>
+    <p>B-TITAN community के सोशल प्लेटफॉर्म।</p>
+  </div>
+
+  <div class="container social-grid">
+    <a class="social-card" href="https://www.facebook.com/profile.php?id=61590478625779" target="_blank" rel="noopener">
+      <span class="social-icon">f</span>Facebook
+    </a>
+    <a class="social-card" href="https://youtube.com/@gautamdigitalacademy?si=yEkIv6-54rAN0h6e" target="_blank" rel="noopener">
+      <span class="social-icon">▶</span>YouTube
+    </a>
+    <a class="social-card" href="https://www.instagram.com/btitanchampions?psln=MzZheDgwdTUzcnJ0" target="_blank" rel="noopener">
+      <span class="social-icon">◎</span>Instagram
+    </a>
+    <a class="social-card" href="https://wa.me/918368960385?text=Hello%20B-TITAN" target="_blank" rel="noopener">
+      <span class="social-icon">☏</span>WhatsApp
+    </a>
+    <a class="social-card" href="https://beacons.ai/gsdigitalacademy" target="_blank" rel="noopener">
+      <span class="social-icon">🔗</span>Community Hub
+    </a>
+    <a class="social-card" href="https://t.me/" target="_blank" rel="noopener">
+      <span class="social-icon">✈</span>Telegram
+    </a>
   </div>
 </section>
 
-<section class="section" id="media">
-  <div class="section-head"><small>MEDIA</small><h2>Photo &amp; Video</h2><p>Select media from your device to share.</p></div>
-  <div style="text-align:center">
-    <input type="file" id="mediaPicker" accept="image/*,video/*" multiple style="max-width:100%;background:#10264b;padding:14px;border-radius:12px;color:white">
-    <p id="mediaStatus" style="font-size:12px;color:#c5d0e8;margin-top:10px"></p>
+<!-- ALL VIDEOS -->
+<section class="section" id="allVideos">
+  <div class="section-head">
+    <small>VIDEO LIBRARY</small>
+    <h2>All <span class="gold">Videos</span></h2>
+    <p>B-TITAN के उपलब्ध educational videos और guides।</p>
+  </div>
+
+  <div class="container video-grid">
+    <article class="video-card">
+      <span class="video-icon">▶️</span>
+      <h3>Complete Plan Video</h3>
+      <p>Plan presentation वीडियो देखें।</p>
+      <a class="link-btn" href="https://youtu.be/jg6a-Jo_acE" target="_blank" rel="noopener">WATCH VIDEO ↗</a>
+    </article>
+
+    <article class="video-card">
+      <span class="video-icon">⚙️</span>
+      <h3>2×2 Matrix Guide</h3>
+      <p>Matrix guide वीडियो देखें।</p>
+      <a class="link-btn" href="https://youtu.be/HIxNEUneKYs" target="_blank" rel="noopener">WATCH GUIDE ↗</a>
+    </article>
+
+    <article class="video-card">
+      <span class="video-icon">⛓️</span>
+      <h3>Blockchain ID Video</h3>
+      <p>Blockchain ID के बारे में जानें।</p>
+      <a class="link-btn" href="https://youtube.com/shorts/-fIVG9pZtEo?si=nclwN9l8L6Fo1tLa" target="_blank" rel="noopener">WATCH VIDEO ↗</a>
+    </article>
+
+    <article class="video-card">
+      <span class="video-icon">🌐</span>
+      <h3>Decentralized System</h3>
+      <p>Decentralized system का educational overview देखें।</p>
+      <a class="link-btn" href="https://youtu.be/MCNicgjFkxA" target="_blank" rel="noopener">WATCH VIDEO ↗</a>
+    </article>
+
+    <article class="video-card">
+      <span class="video-icon">🆔</span>
+      <h3>ID Activation Guide</h3>
+      <p>ID activation guide खोलें।</p>
+      <a class="link-btn" href="https://tinyurl.com/4u6jnrrw" target="_blank" rel="noopener">OPEN GUIDE ↗</a>
+    </article>
+
+    <article class="video-card">
+      <span class="video-icon">📄</span>
+      <h3>Plan Presentation PDF</h3>
+      <p>Plan presentation document खोलें।</p>
+      <a class="link-btn" href="https://docs.google.com/presentation/d/1ZhQFHnTPKTx4Lqs4LjZRFQjwZjct5FGL/export/pdf" target="_blank" rel="noopener">OPEN PDF ↗</a>
+    </article>
   </div>
 </section>
 
 <footer class="footer">
-  <strong>B-TITAN</strong><br>THE ULTIMATE BITCOIN RUSH<br><br>
-  <a href="https://btitan.net/" style="color:#ffd52e;font-weight:900">₿ B-TITAN</a><br><br>
-  Digital assets involve risk. No income or profit is guaranteed.<br>© 2026 B-TITAN
+  <strong>B-TITAN</strong><br>
+  THE ULTIMATE BITCOIN RUSH<br><br>
+  <a href="https://btitan.net/" class="gold">₿ Official Website ↗</a><br><br>
+  Digital assets involve risk. No income or profit is guaranteed.<br>
+  © <span id="year"></span> B-TITAN
 </footer>
 </main>
 
-<nav class="bottom-nav">
-  <a class="active" href="#top"><span>⌂</span>Home</a>
-  <a href="#profile"><span>👤</span>Profile</a>
-  <a href="#promotion"><span>🚀</span>Promote</a>
-  <a href="#social"><span>🌐</span>Social</a>
-  <a href="#shareApp" id="bottomShare"><span>↗</span>Share</a>
+<nav class="bottom-nav" aria-label="Main navigation">
+  <a class="active" href="#home"><span>⌂</span>Home</a>
+  <a href="#liveCounter"><span>₿</span>Live Counter</a>
+  <a href="#zoom"><span>🎥</span>Zoom</a>
+  <a href="#socialHub"><span>🌐</span>Social Hub</a>
+  <a href="#allVideos"><span>▶</span>All Videos</a>
 </nav>
 
 <script src="https://cdn.jsdelivr.net/npm/ethers@6.13.5/dist/ethers.umd.min.js"></script>
 <script>
 "use strict";
 
-/* ORIGINAL PAGE FUNCTIONS */
+/* MENU */
 const menuBtn=document.getElementById("menuBtn");
 const mobileMenu=document.getElementById("mobileMenu");
 
 menuBtn.addEventListener("click",()=>{
-  const open=mobileMenu.classList.toggle("open");
-  menuBtn.setAttribute("aria-expanded",String(open));
+  const opened=mobileMenu.classList.toggle("open");
+  menuBtn.setAttribute("aria-expanded",String(opened));
 });
+
 mobileMenu.querySelectorAll("a").forEach(a=>{
-  a.addEventListener("click",()=>mobileMenu.classList.remove("open"));
-});
-
-document.getElementById("searchInput").addEventListener("input",function(){
-  const q=this.value.trim().toLowerCase();
-  document.querySelectorAll(".link-card,.zoom-card,.social-card,.dash-card").forEach(c=>{
-    c.style.display=(!q||c.textContent.toLowerCase().includes(q))?"":"none";
-  });
-});
-
-document.getElementById("copyMessage").addEventListener("click",async()=>{
-  const msg="B-TITAN — The Ultimate Bitcoin Rush\nWebsite: https://btitan.net/\nCommunity Hub: https://beacons.ai/gsdigitalacademy";
-  try{
-    await navigator.clipboard.writeText(msg);
-    alert("Message copied!");
-  }catch(e){
-    prompt("Copy this message:",msg);
-  }
-});
-
-async function sharePage(){
-  const data={
-    title:"B-TITAN",
-    text:"Visit B-TITAN — The Ultimate Bitcoin Rush",
-    url:location.href
-  };
-  if(navigator.share){
-    try{await navigator.share(data)}catch(e){}
-  }else{
-    try{
-      await navigator.clipboard.writeText(location.href);
-      alert("Page link copied!");
-    }catch(e){
-      prompt("Copy page link:",location.href);
-    }
-  }
-}
-document.getElementById("shareApp").addEventListener("click",sharePage);
-document.getElementById("bottomShare").addEventListener("click",e=>{
-  e.preventDefault();
-  sharePage();
-});
-document.getElementById("mediaPicker").addEventListener("change",function(){
-  document.getElementById("mediaStatus").textContent=
-    this.files.length
-      ?this.files.length+" file(s) selected. Sharing depends on your device and browser."
-      :"";
-});
-document.querySelectorAll(".bottom-nav a").forEach(a=>{
-  if(a.id==="bottomShare")return;
   a.addEventListener("click",()=>{
-    document.querySelectorAll(".bottom-nav a").forEach(x=>x.classList.remove("active"));
-    a.classList.add("active");
+    mobileMenu.classList.remove("open");
+    menuBtn.setAttribute("aria-expanded","false");
   });
 });
 
-/* LIVE CONTRACT COUNTER */
+/* ACTIVE NAVIGATION */
+const allNavLinks=document.querySelectorAll(
+  "#mainNav a,.bottom-nav a"
+);
+allNavLinks.forEach(link=>{
+  link.addEventListener("click",()=>{
+    const target=link.getAttribute("href");
+    document.querySelectorAll("#mainNav a,.bottom-nav a").forEach(a=>{
+      a.classList.toggle("active",a.getAttribute("href")===target);
+    });
+  });
+});
+
+document.getElementById("year").textContent=new Date().getFullYear();
+
+/* LIVE COUNTER */
 const CONTRACT_ADDRESS="0xD6759d47Fccdef7b8E318479cEC4D128366f2a44";
 const RPC_URL="https://bsc-dataseed.binance.org/";
 const MULTICALL_ADDRESS="0xca11bde05977b3631167028862be2a173976ca11";
@@ -530,6 +546,7 @@ const CONTRACT_ABI=[
   "function partnersInitialized() view returns (bool)",
   "function isUserSlotActive(uint256 userId,uint8 slot) view returns (bool)"
 ];
+
 const MULTICALL_ABI=[
   "function aggregate3((address target,bool allowFailure,bytes callData)[] calls) payable returns ((bool success,bytes returnData)[] returnData)"
 ];
@@ -540,11 +557,18 @@ const slotInterface=new ethers.Interface([
 ]);
 const multicallInterface=new ethers.Interface(MULTICALL_ABI);
 
-let provider=null,contract=null,latestKnownId=0;
-let selectedSlot=1,scanRunning=false,cancelRequested=false,scanToken=0;
+let provider=null;
+let contract=null;
+let latestKnownId=0;
+let selectedSlot=1;
+let scanRunning=false;
+let cancelRequested=false;
+let scanToken=0;
 const slotResults={};
 
-function fmt(n){return Number(n).toLocaleString("en-IN")}
+function fmt(n){
+  return Number(n).toLocaleString("en-IN");
+}
 
 function setConnection(text,isError=false){
   $("connectionStatus").textContent=text;
@@ -552,7 +576,7 @@ function setConnection(text,isError=false){
   $("connectionStatus").classList.toggle("counter-error",isError);
 }
 
-function setProgressDetail(text,isError=false){
+function setDetail(text,isError=false){
   $("counterDetail").textContent=text;
   $("counterDetail").classList.toggle("counter-error",isError);
   $("counterDetail").classList.toggle("counter-success",!isError);
@@ -569,35 +593,33 @@ function renderSlots(){
     btn.className="slot-card"+(s===selectedSlot?" selected":"");
     btn.setAttribute("aria-pressed",String(s===selectedSlot));
 
-    const count=saved&&saved.complete?fmt(saved.count):"—";
-    const caption=saved&&saved.complete
-      ?"Completed scan"
-      :saved&&saved.partial
-        ?"Partial scan — retry"
-        :"Tap to select";
-
     const name=document.createElement("div");
     name.className="slot-name";
     name.textContent="SLOT "+s;
 
-    const countEl=document.createElement("div");
-    countEl.className="slot-count";
-    countEl.textContent=count;
+    const count=document.createElement("div");
+    count.className="slot-count";
+    count.textContent=saved&&saved.complete?fmt(saved.count):"—";
 
-    const captionEl=document.createElement("div");
-    captionEl.className="slot-caption";
-    captionEl.textContent=caption;
+    const caption=document.createElement("div");
+    caption.className="slot-caption";
+    caption.textContent=saved&&saved.complete
+      ?"Completed scan"
+      :saved&&saved.partial
+        ?"Partial — retry"
+        :"Tap to select";
 
     const track=document.createElement("div");
     track.className="counter-track";
+
     const bar=document.createElement("div");
     bar.className="counter-bar";
     bar.style.width=saved&&saved.complete&&latestKnownId
       ?Math.min(100,saved.count/latestKnownId*100)+"%"
       :"0%";
-    track.appendChild(bar);
 
-    btn.append(name,countEl,captionEl,track);
+    track.appendChild(bar);
+    btn.append(name,count,caption,track);
     btn.addEventListener("click",()=>selectSlot(s));
     grid.appendChild(btn);
   }
@@ -606,32 +628,40 @@ function renderSlots(){
 function selectSlot(slot){
   if(scanRunning)return;
   selectedSlot=slot;
+
   $("selectedSlot").textContent="SLOT "+slot;
   $("scanBtn").textContent=slotResults[slot]?.complete
     ?"Recheck Slot "+slot
-    :"Check Slot "+slot;
+    :"Check Selected Slot";
 
   $("selectedInfo").textContent=slotResults[slot]?.complete
     ?"Last completed count: "+fmt(slotResults[slot].count)+" active IDs."
-    :"Ready to scan only Slot "+slot+".";
+    :"Only Slot "+slot+" will be checked.";
 
   $("progressText").textContent="Not started";
   $("progressBar").style.width="0%";
-  setProgressDetail("Press Check Selected Slot to begin.");
+  setDetail("Check Selected Slot दबाकर जाँच शुरू करें।");
+
   $("counterResult").textContent=slotResults[slot]?.complete
-    ?"Previous completed result: "+fmt(slotResults[slot].count)+". A new scan can verify the current state."
-    :"No verified count available for this Slot yet.";
+    ?"Previous completed result: "+fmt(slotResults[slot].count)+". Refresh scan to check again."
+    :"अभी इस Slot की verified count उपलब्ध नहीं है।";
+
   renderSlots();
 }
 
 async function connectContract(){
   try{
     if(!window.ethers)throw new Error("Ethers library did not load.");
+
     if(!provider)provider=new ethers.JsonRpcProvider(RPC_URL);
-    if(!contract)contract=new ethers.Contract(CONTRACT_ADDRESS,CONTRACT_ABI,provider);
+    if(!contract)contract=new ethers.Contract(
+      CONTRACT_ADDRESS,CONTRACT_ABI,provider
+    );
 
     const network=await provider.getNetwork();
-    if(network.chainId!==56n)throw new Error("RPC is not connected to BNB Smart Chain.");
+    if(network.chainId!==56n){
+      throw new Error("RPC is not connected to BNB Smart Chain.");
+    }
 
     const [nextId,initialized]=await Promise.all([
       contract.lastUserId(),
@@ -640,20 +670,21 @@ async function connectContract(){
 
     const nextNumber=Number(nextId);
     if(!Number.isSafeInteger(nextNumber)||nextNumber<1){
-      throw new Error("Contract returned an invalid ID counter.");
+      throw new Error("Invalid ID counter returned by contract.");
     }
 
     latestKnownId=initialized?Math.max(1,nextNumber-1):1;
     $("registeredIds").textContent=fmt(latestKnownId);
     $("latestId").textContent=fmt(nextNumber);
     $("partnerStatus").textContent=initialized?"Initialized":"Pending";
+
     setConnection("Connected to BNB Smart Chain read endpoint");
     return true;
-  }catch(e){
-    console.error(e);
+  }catch(error){
+    console.error(error);
     setConnection("Contract/RPC connection failed",true);
-    setProgressDetail(
-      "Contract data नहीं पढ़ा जा सका। Internet connection जाँचें या Refresh करें.",
+    setDetail(
+      "Contract data नहीं पढ़ा जा सका। Internet जाँचें या Refresh करें।",
       true
     );
     return false;
@@ -664,10 +695,11 @@ async function refreshContractData(){
   if(scanRunning)return;
   $("refreshBtn").disabled=true;
   setConnection("Refreshing contract data…");
+
   try{
     if(await connectContract()){
       $("progressText").textContent="Ready";
-      setProgressDetail("Contract data refreshed. Select a Slot and scan it.");
+      setDetail("Contract data refresh हो गया। Slot चुनकर scan करें।");
     }
   }finally{
     $("refreshBtn").disabled=false;
@@ -679,7 +711,7 @@ async function scanSelectedSlot(){
 
   scanRunning=true;
   cancelRequested=false;
-  const thisToken=++scanToken;
+  const token=++scanToken;
   const slot=selectedSlot;
 
   $("scanBtn").disabled=true;
@@ -689,22 +721,28 @@ async function scanSelectedSlot(){
   $("selectedInfo").textContent="Scanning only Slot "+slot+".";
   $("progressText").textContent="0%";
   $("progressBar").style.width="0%";
-  $("counterResult").textContent="Final count तभी दिखेगी जब सभी IDs की जाँच सफल होगी।";
+  $("counterResult").textContent="सभी IDs की सफल जाँच से पहले final count नहीं दिखाई जाएगी।";
 
   try{
     if(!(await connectContract()))return;
 
     const total=latestKnownId;
-    let activeCount=0,checked=0,failed=0;
+    let activeCount=0;
+    let checked=0;
+    let failed=0;
     const BATCH_SIZE=100;
-    const multicall=new ethers.Contract(MULTICALL_ADDRESS,MULTICALL_ABI,provider);
 
-    setProgressDetail(
-      "Slot "+slot+" के लिए "+fmt(total)+" IDs जाँची जाएँगी। दूसरे Slots नहीं जाँचे जाएँगे।"
+    const multicall=new ethers.Contract(
+      MULTICALL_ADDRESS,MULTICALL_ABI,provider
+    );
+
+    setDetail(
+      "Slot "+slot+" के लिए "+fmt(total)+
+      " IDs जाँची जाएँगी। दूसरे Slots नहीं जाँचे जाएँगे।"
     );
 
     for(let first=1;first<=total;first+=BATCH_SIZE){
-      if(cancelRequested||thisToken!==scanToken)break;
+      if(cancelRequested||token!==scanToken)break;
 
       const last=Math.min(total,first+BATCH_SIZE-1);
       const calls=[];
@@ -724,21 +762,29 @@ async function scanSelectedSlot(){
       let results=[];
 
       try{
-        const data=multicallInterface.encodeFunctionData("aggregate3",[calls]);
+        const data=multicallInterface.encodeFunctionData(
+          "aggregate3",[calls]
+        );
         const raw=await provider.call({to:MULTICALL_ADDRESS,data});
-        const decoded=multicallInterface.decodeFunctionResult("aggregate3",raw);
+        const decoded=multicallInterface.decodeFunctionResult(
+          "aggregate3",raw
+        );
         results=Array.from(decoded[0]);
       }catch(batchError){
-        console.warn("Batch failed; retrying smaller groups",batchError);
+        console.warn("Batch failed; retrying smaller batches",batchError);
 
         for(let i=0;i<calls.length;i+=10){
-          if(cancelRequested||thisToken!==scanToken)break;
+          if(cancelRequested||token!==scanToken)break;
           const subCalls=calls.slice(i,i+10);
 
           try{
-            const data=multicallInterface.encodeFunctionData("aggregate3",[subCalls]);
+            const data=multicallInterface.encodeFunctionData(
+              "aggregate3",[subCalls]
+            );
             const raw=await provider.call({to:MULTICALL_ADDRESS,data});
-            const decoded=multicallInterface.decodeFunctionResult("aggregate3",raw);
+            const decoded=multicallInterface.decodeFunctionResult(
+              "aggregate3",raw
+            );
             results.push(...Array.from(decoded[0]));
           }catch(subError){
             console.warn("Sub-batch failed",subError);
@@ -749,32 +795,34 @@ async function scanSelectedSlot(){
         }
       }
 
-      if(cancelRequested||thisToken!==scanToken)break;
+      if(cancelRequested||token!==scanToken)break;
 
       for(let i=0;i<ids.length;i++){
-        const r=results[i];
-        if(!r||!r.success){
+        const result=results[i];
+
+        if(!result||!result.success){
           failed++;
           continue;
         }
 
         try{
           const decoded=slotInterface.decodeFunctionResult(
-            "isUserSlotActive",r.returnData
+            "isUserSlotActive",result.returnData
           );
           if(decoded[0])activeCount++;
           checked++;
-        }catch(e){
+        }catch(error){
           failed++;
         }
       }
 
       const processed=Math.min(last,total);
-      const pct=processed/total*100;
-      $("progressText").textContent=pct.toFixed(1)+"%";
-      $("progressBar").style.width=pct+"%";
+      const percentage=processed/total*100;
 
-      setProgressDetail(
+      $("progressText").textContent=percentage.toFixed(1)+"%";
+      $("progressBar").style.width=percentage+"%";
+
+      setDetail(
         "Slot "+slot+": ID "+fmt(processed)+" / "+fmt(total)+
         ". Successful reads: "+fmt(checked)+
         "; failed reads: "+fmt(failed)+"."
@@ -783,15 +831,16 @@ async function scanSelectedSlot(){
       await new Promise(resolve=>setTimeout(resolve,50));
     }
 
-    if(cancelRequested||thisToken!==scanToken){
+    if(cancelRequested||token!==scanToken){
       slotResults[slot]={count:activeCount,partial:true,complete:false};
       $("progressText").textContent="Cancelled";
-      setProgressDetail(
-        "Scan cancelled. "+fmt(checked)+" successful reads; "+
-        fmt(failed)+" failed reads. Final count नहीं दिखाई गई.",
+      setDetail(
+        "Scan cancel हो गया। "+fmt(checked)+
+        " successful reads; "+fmt(failed)+" failed reads.",
         true
       );
-      $("counterResult").textContent="Partial scan only. Verified final count पाने के लिए दोबारा scan करें.";
+      $("counterResult").textContent=
+        "Partial scan है। Final verified count के लिए दोबारा scan करें।";
       renderSlots();
       return;
     }
@@ -799,35 +848,46 @@ async function scanSelectedSlot(){
     if(failed>0||checked!==total){
       slotResults[slot]={count:activeCount,partial:true,complete:false};
       $("progressText").textContent="Incomplete";
-      setProgressDetail(
-        "Incomplete scan: "+fmt(checked)+" successful reads और "+
-        fmt(failed)+" failed reads. Retry करें.",
+      setDetail(
+        "Incomplete scan: "+fmt(checked)+
+        " successful reads और "+fmt(failed)+" failed reads। Retry करें।",
         true
       );
-      $("counterResult").textContent="कुछ IDs जाँची नहीं जा सकीं, इसलिए final count को verified नहीं माना गया.";
+      $("counterResult").textContent=
+        "कुछ IDs जाँची नहीं जा सकीं। Final count को verified नहीं माना गया।";
       renderSlots();
       return;
     }
 
-    slotResults[slot]={count:activeCount,partial:false,complete:true};
+    slotResults[slot]={
+      count:activeCount,
+      partial:false,
+      complete:true
+    };
+
     $("progressText").textContent="100%";
     $("progressBar").style.width="100%";
-    setProgressDetail(
-      "Slot "+slot+" के लिए सभी "+fmt(total)+" IDs की जाँच पूरी हुई।"
+
+    setDetail(
+      "Slot "+slot+" के लिए सभी "+fmt(total)+
+      " IDs की जाँच पूरी हुई।"
     );
+
     $("counterResult").textContent=
-      "COMPLETED SCAN RESULT — Slot "+slot+": "+
-      fmt(activeCount)+" IDs में यह Slot active पाया गया.";
+      "COMPLETED SCAN — Slot "+slot+": "+
+      fmt(activeCount)+" IDs में यह Slot active पाया गया।";
+
     $("selectedInfo").textContent=
       "Completed count: "+fmt(activeCount)+" active IDs.";
+
     setConnection("Slot "+slot+" scan completed");
     renderSlots();
 
-  }catch(e){
-    console.error(e);
+  }catch(error){
+    console.error(error);
     $("progressText").textContent="Error";
-    setProgressDetail("RPC/network error के कारण scan रुक गया। Retry करें.",true);
-    $("counterResult").textContent="इस scan के लिए verified count उपलब्ध नहीं है.";
+    setDetail("RPC/network error के कारण scan रुक गया। Retry करें।",true);
+    $("counterResult").textContent="Verified count उपलब्ध नहीं है।";
   }finally{
     scanRunning=false;
     $("scanBtn").disabled=false;
@@ -835,20 +895,21 @@ async function scanSelectedSlot(){
     $("refreshBtn").disabled=false;
     $("scanBtn").textContent=slotResults[selectedSlot]?.complete
       ?"Recheck Slot "+selectedSlot
-      :"Check Slot "+selectedSlot;
+      :"Check Selected Slot";
   }
 }
 
 $("scanBtn").addEventListener("click",scanSelectedSlot);
+
 $("cancelBtn").addEventListener("click",()=>{
   if(!scanRunning)return;
   cancelRequested=true;
   $("cancelBtn").disabled=true;
   $("counterDetail").textContent="Cancellation requested…";
 });
+
 $("refreshBtn").addEventListener("click",refreshContractData);
 
-/* Initialisation */
 renderSlots();
 selectSlot(1);
 connectContract();
