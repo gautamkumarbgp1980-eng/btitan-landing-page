@@ -4,204 +4,254 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#080d32">
+<meta name="theme-color" content="#050a25">
 <meta name="description" content="B-TITAN Champions Hub">
-<title>B-TITAN Champions Hub</title>
+<title>B-TITAN | Champions Hub</title>
 <script src="https://cdn.jsdelivr.net/npm/ethers@6.13.5/dist/ethers.umd.min.js"></script>
 
 <style>
 :root{
-  --bg:#080d2d;--panel:#11183c;--panel2:#171d48;
-  --gold:#f5c75e;--gold2:#ffe8a1;--white:#f8f9ff;
-  --muted:#b9c3e4;--blue:#315dff;--purple:#792cff;
-  --border:rgba(255,255,255,.13);
+  --bg:#050a25;--nav:#070d2b;--panel:#0b1437;
+  --gold:#f5c451;--gold2:#ffe8a0;--blue:#176cff;
+  --purple:#742bff;--white:#f8f9ff;--muted:#c0c9e8;
+  --border:rgba(245,196,81,.28)
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
-  margin:0;background:radial-gradient(ellipse at 85% 0%,#211348,transparent 35%),var(--bg);
-  color:var(--white);font-family:Arial,Helvetica,sans-serif
+  margin:0;background:var(--bg);color:var(--white);
+  font-family:Arial,Helvetica,sans-serif
 }
 a{color:inherit;text-decoration:none}
 button,select{font:inherit}
-.container{width:min(1100px,92%);margin:auto}
+.container{width:min(1180px,94%);margin:auto}
 
+/* HEADER */
 header{
-  position:sticky;top:0;z-index:20;
-  background:rgba(7,11,36,.97);border-bottom:1px solid var(--border);
-  backdrop-filter:blur(15px)
+  position:sticky;top:0;z-index:50;
+  background:rgba(5,10,37,.97);
+  border:1px solid rgba(91,111,194,.35);
+  border-radius:0 0 22px 22px;
+  backdrop-filter:blur(16px)
 }
 .header-inner{
-  display:flex;align-items:center;justify-content:space-between;
-  flex-wrap:wrap;gap:12px;padding:12px 0
+  min-height:78px;display:flex;align-items:center;
+  justify-content:space-between;gap:16px;padding:9px 16px
 }
-.brand{display:flex;align-items:center;gap:12px}
-.brand img{
-  display:block;width:86px;height:66px;object-fit:contain;
-  flex-shrink:0
-}
-.brand-name{font-size:21px;font-weight:900;letter-spacing:1.5px;color:var(--gold)}
-.brand-sub{font-size:10px;letter-spacing:3px;color:var(--muted);margin-top:5px}
-nav{display:flex;align-items:center;gap:4px;max-width:100%;overflow-x:auto;scrollbar-width:none}
+.brand{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.brand img{width:66px;height:58px;object-fit:contain;display:block}
+.brand-name{font-size:22px;font-weight:900;color:var(--gold);letter-spacing:1px}
+.brand-sub{font-size:10px;letter-spacing:2.5px;color:#e0e5fa;margin-top:4px}
+nav{display:flex;align-items:center;gap:4px;overflow-x:auto;scrollbar-width:none}
 nav::-webkit-scrollbar{display:none}
 nav a{
-  white-space:nowrap;padding:11px 12px;border-radius:10px;
-  font-size:12px;font-weight:700;color:#e0e5ff
+  white-space:nowrap;padding:12px 13px;border-radius:12px;
+  font-size:13px;font-weight:700;color:#f2f4ff
 }
-nav a.active,nav a:hover{background:rgba(245,199,94,.12);color:var(--gold2)}
-nav a.join-link{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#17112b}
+nav a.active,nav a:hover{
+  color:var(--gold2);
+  background:linear-gradient(135deg,rgba(245,196,81,.2),rgba(116,43,255,.13))
+}
+nav a.join-link{
+  color:#090e28;background:linear-gradient(135deg,#fff0b1,#f5bd42);
+  box-shadow:0 0 22px rgba(245,196,81,.18);font-weight:900
+}
 
-main{min-height:65vh}
-.page{display:none;padding:36px 0 60px;min-height:70vh}
+/* PAGE SWITCHING */
+.page{display:none;min-height:70vh;padding:36px 0 65px}
 .page.active{display:block}
 
-/* HOME: no other section cards */
-#home{padding-top:30px}
-.hero{
-  position:relative;overflow:hidden;text-align:center;
-  padding:38px 24px 44px;border:1px solid rgba(245,199,94,.32);
-  border-radius:26px;
+/* HOME DESIGN */
+#home{padding-top:0}
+.home-stage{
+  position:relative;isolation:isolate;overflow:hidden;
+  min-height:calc(100vh - 100px);
+  display:flex;align-items:center;justify-content:center;
+  padding:40px 0 55px;
   background:
-    radial-gradient(ellipse at 85% 5%,rgba(121,44,255,.26),transparent 43%),
-    radial-gradient(ellipse at 0% 100%,rgba(49,93,255,.20),transparent 45%),
-    linear-gradient(145deg,#111a43,#0b102d);
-  box-shadow:0 22px 65px rgba(0,0,0,.25)
+    radial-gradient(ellipse at 50% 22%,rgba(0,100,255,.25),transparent 34%),
+    radial-gradient(ellipse at 0% 58%,rgba(112,26,255,.2),transparent 35%),
+    radial-gradient(ellipse at 100% 55%,rgba(0,80,255,.19),transparent 35%),
+    linear-gradient(180deg,#060b27,#07143b 58%,#050a25)
 }
-.hero-logo{
-  display:block;width:min(230px,70%);height:165px;
-  object-fit:contain;margin:0 auto 18px;
-  filter:drop-shadow(0 6px 18px rgba(245,199,94,.12))
+.home-stage:before{
+  content:"";position:absolute;z-index:-1;
+  width:min(750px,85vw);height:min(750px,85vw);
+  top:25px;left:50%;transform:translateX(-50%);
+  border:1px solid rgba(245,196,81,.35);border-radius:50%;
+  box-shadow:0 0 0 22px rgba(245,196,81,.025),
+    0 0 0 50px rgba(51,96,255,.035),
+    inset 0 0 70px rgba(29,97,255,.13);
+  pointer-events:none
 }
-.eyebrow{
-  font-size:11px;letter-spacing:2px;color:var(--gold2);
+.home-stage:after{
+  content:"";position:absolute;z-index:-1;bottom:0;left:-5%;right:-5%;
+  height:26%;border-top:1px solid rgba(245,196,81,.4);
+  background:linear-gradient(180deg,rgba(31,65,152,.08),transparent);
+  transform:perspective(400px) rotateX(8deg);
+  pointer-events:none
+}
+.hero{
+  width:min(900px,100%);margin:auto;text-align:center;
+  padding:16px 18px 0
+}
+.logo-hero{
+  display:block;width:min(260px,65vw);height:190px;
+  object-fit:contain;margin:0 auto 12px;
+  filter:drop-shadow(0 0 24px rgba(245,196,81,.22))
+}
+.welcome-label{
+  display:flex;justify-content:center;align-items:center;gap:12px;
+  color:var(--gold2);font-size:12px;letter-spacing:3px;
   font-weight:800;text-transform:uppercase
 }
-.hero h1{
-  font-size:clamp(37px,7vw,64px);line-height:1.1;
-  letter-spacing:-1.3px;margin:20px 0
+.welcome-label:before,.welcome-label:after{
+  content:"";width:55px;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold))
 }
-.gold{
+.welcome-label:after{transform:rotate(180deg)}
+.hero h1{
+  margin:23px 0 19px;font-size:clamp(38px,7.2vw,78px);
+  font-weight:900;line-height:1.06;letter-spacing:-2px;
+  text-shadow:0 5px 25px rgba(0,0,0,.2)
+}
+.gold-text{
   color:var(--gold);
-  background:linear-gradient(90deg,#fff0b9,#f5c75e,#dca63a);
+  background:linear-gradient(180deg,#fff5ca 0%,#ffda75 45%,#edae2e 100%);
   background-clip:text;-webkit-background-clip:text;
   -webkit-text-fill-color:transparent
 }
-.hero p{
-  max-width:570px;margin:0 auto;color:#c4cdec;
-  line-height:1.8;font-size:15px
+.hero-description{
+  max-width:670px;margin:0 auto;color:#e0e6fa;
+  font-size:clamp(14px,2vw,17px);line-height:1.9
 }
-.actions{
-  display:flex;justify-content:center;flex-wrap:wrap;
-  gap:12px;margin-top:25px
+.hero-actions{
+  display:flex;justify-content:center;flex-wrap:wrap;gap:14px;
+  margin-top:30px
 }
 .btn{
-  display:inline-flex;align-items:center;justify-content:center;
-  padding:14px 20px;border-radius:12px;font-weight:800;
-  font-size:13px;border:1px solid var(--border);cursor:pointer
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  min-height:48px;padding:14px 22px;border-radius:13px;
+  font-weight:900;font-size:14px;border:1px solid transparent;
+  cursor:pointer;transition:transform .2s,filter .2s
 }
-.btn-gold{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#17112b;border:0}
-.btn-blue{background:linear-gradient(135deg,var(--blue),var(--purple));color:white;border:0}
-.btn-outline{background:rgba(255,255,255,.04);color:white}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.07)}
+.btn-gold{
+  color:#0a0e28;background:linear-gradient(135deg,#fff1b7,#ffd45d,#eeb43c);
+  box-shadow:0 0 28px rgba(245,196,81,.2)
+}
+.btn-blue{color:#fff;background:linear-gradient(135deg,#176cff,#742bff)}
+.btn-outline{color:#fff;background:rgba(255,255,255,.045);border-color:rgba(255,255,255,.16)}
 .quote{
-  max-width:700px;margin:20px auto 0;padding:20px;
-  border:1px solid rgba(245,199,94,.2);
-  background:rgba(245,199,94,.04);border-radius:15px;text-align:center
+  width:min(700px,100%);margin:38px auto 0;padding:22px 20px;
+  border:1px solid rgba(245,196,81,.55);border-radius:20px;
+  background:linear-gradient(135deg,rgba(7,13,39,.93),rgba(16,19,54,.9));
+  box-shadow:0 12px 35px rgba(0,0,0,.2)
 }
-.quote strong{color:var(--gold2);font-size:16px;line-height:1.7}
-.quote small{display:block;margin-top:8px;color:var(--muted);font-size:10px;letter-spacing:1.5px}
+.quote p{
+  margin:0;color:var(--gold2);font-size:clamp(17px,2.6vw,24px);
+  font-weight:700;font-style:italic;line-height:1.6
+}
+.quote small{display:block;margin-top:12px;color:#d6def5;font-size:10px;letter-spacing:3px}
 
-/* SECTION HEADINGS AND CARDS */
-.section-heading{margin-bottom:25px}
-.section-heading .eyebrow{margin-bottom:10px}
-.section-heading h2{font-size:clamp(28px,5vw,40px);margin:0 0 12px}
-.section-heading p{color:var(--muted);font-size:14px;line-height:1.7;max-width:700px}
+/* OTHER SECTIONS */
+.section-heading{margin-bottom:26px}
+.eyebrow{color:var(--gold2);font-size:11px;font-weight:800;letter-spacing:2px}
+.section-heading h2{font-size:clamp(28px,5vw,42px);margin:12px 0}
+.section-heading p{max-width:720px;color:var(--muted);font-size:14px;line-height:1.8}
 .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
 .grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
 .card{
-  min-width:0;padding:22px;border-radius:17px;
-  background:linear-gradient(145deg,#151e49,#0d1434);
-  border:1px solid var(--border);overflow-wrap:anywhere
+  padding:23px;min-width:0;overflow-wrap:anywhere;
+  border:1px solid rgba(125,147,230,.19);border-radius:17px;
+  background:linear-gradient(145deg,#101b45,#0a112e)
 }
-.card-icon{font-size:25px;margin-bottom:13px}
-.card h3{margin:0 0 10px;font-size:16px}
-.card p{margin:0;color:var(--muted);font-size:13px;line-height:1.75}
-.card .btn{margin-top:17px}
-.label{color:var(--gold);font-size:10px;letter-spacing:1.5px;font-weight:800;margin-bottom:12px}
+.card-icon{font-size:27px;margin-bottom:14px}
+.card h3{margin:0 0 10px;font-size:17px}
+.card p{margin:0;color:var(--muted);font-size:13px;line-height:1.8}
+.card .btn{margin-top:18px}
+.card-label{font-size:10px;letter-spacing:2px;color:var(--gold);font-weight:800;margin-bottom:12px}
 
 /* COUNTER */
-.counter-panel{padding:22px;border:1px solid rgba(245,199,94,.25);border-radius:18px;background:#10183b}
-.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:20px}
-.stat{padding:15px;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid var(--border);min-width:0}
+.counter-panel{padding:22px;border:1px solid var(--border);border-radius:18px;background:#0b1437}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px;margin-bottom:20px}
+.stat{padding:16px;border:1px solid var(--border);border-radius:12px;background:#101a40;min-width:0}
 .stat small{display:block;color:var(--muted);font-size:11px;margin-bottom:8px}
-.stat strong{font-size:clamp(17px,3vw,26px);color:var(--gold2);overflow-wrap:anywhere}
+.stat strong{font-size:clamp(17px,3vw,27px);color:var(--gold2);overflow-wrap:anywhere}
 .controls{display:flex;flex-wrap:wrap;align-items:end;gap:10px}
 .field{display:flex;flex-direction:column;gap:7px;min-width:145px}
 .field label{font-size:12px;color:var(--muted)}
-select{background:#10183b;color:white;border:1px solid var(--border);border-radius:9px;padding:12px}
-.status{margin-top:16px;padding:13px;background:rgba(255,255,255,.04);border-radius:10px;font-size:12px;line-height:1.7;color:var(--muted);overflow-wrap:anywhere}
-.status.good{color:#62e6ae}.status.error{color:#ff9c9c}
-.progress{height:6px;margin-top:12px;background:#252b4d;border-radius:10px;overflow:hidden}
-.progress div{height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--purple),var(--gold))}
+select{padding:12px;background:#0b1437;color:white;border:1px solid var(--border);border-radius:10px}
+.status{margin-top:16px;padding:13px;border-radius:10px;background:rgba(255,255,255,.04);font-size:12px;line-height:1.8;color:var(--muted);overflow-wrap:anywhere}
+.status.good{color:#6ae6b1}.status.error{color:#ff9c9c}
+.progress{height:6px;margin-top:12px;background:#20294c;border-radius:10px;overflow:hidden}
+.progress div{height:100%;width:0;background:linear-gradient(90deg,#176cff,#742bff,#f5c451)}
 .results{margin-top:18px;border:1px solid var(--border);border-radius:12px;overflow:hidden}
 .result-head,.result-row{display:grid;grid-template-columns:1fr 1fr;padding:12px;gap:8px;font-size:12px}
 .result-head{color:var(--gold2);background:rgba(255,255,255,.05);font-weight:bold}
 .result-row{border-top:1px solid var(--border);color:var(--muted)}
 
-/* VIDEO RESOURCES */
+/* VIDEO LINKS */
 .resource-list{display:grid;gap:10px}
 .resource{
-  display:flex;align-items:center;gap:13px;padding:15px;
-  border-radius:13px;background:rgba(255,255,255,.035);
-  border:1px solid var(--border)
+  display:flex;align-items:center;gap:14px;padding:16px;
+  border-radius:14px;background:#0c1535;border:1px solid var(--border)
 }
-.resource:hover{border-color:rgba(245,199,94,.4)}
-.resource-icon{font-size:22px;width:35px;flex-shrink:0}
+.resource:hover{border-color:var(--gold)}
+.resource-icon{font-size:23px;width:35px;flex-shrink:0}
 .resource-text{flex:1;min-width:0}
 .resource-text strong{display:block;font-size:13px;margin-bottom:5px}
-.resource-text small{font-size:11px;line-height:1.5;color:var(--muted)}
-.arrow{color:var(--gold)}
+.resource-text small{font-size:11px;color:var(--muted);line-height:1.5}
+.arrow{color:var(--gold);font-size:19px}
 
 /* JOIN */
 .join-box{
-  text-align:center;padding:45px 22px;border-radius:23px;
-  border:1px solid rgba(245,199,94,.35);
-  background:radial-gradient(ellipse at 50% 100%,rgba(121,44,255,.2),transparent 65%),#111637
+  padding:48px 22px;text-align:center;border-radius:24px;
+  border:1px solid rgba(245,196,81,.4);
+  background:radial-gradient(ellipse at 50% 100%,rgba(116,43,255,.22),transparent 65%),#0b1437
 }
-.join-box h2{font-size:clamp(28px,5vw,43px);margin:16px 0}
-.join-box p{max-width:580px;margin:0 auto 24px;color:var(--muted);font-size:14px;line-height:1.8}
-
-footer{text-align:center;padding:25px 0 95px;color:var(--muted);font-size:11px;line-height:1.8}
+.join-box h2{font-size:clamp(29px,5vw,46px);margin:16px 0}
+.join-box p{max-width:600px;margin:0 auto 25px;color:var(--muted);font-size:14px;line-height:1.8}
+footer{text-align:center;padding:28px 0 95px;color:var(--muted);font-size:11px;line-height:1.9}
 footer strong{color:var(--gold);letter-spacing:2px}
 .mobile-nav{display:none}
 
-@media(max-width:850px){
-  .header-inner{justify-content:center}
-  .brand{width:100%;justify-content:flex-start}
+@media(max-width:900px){
+  .header-inner{flex-wrap:wrap}
+  .brand{width:100%}
   nav{width:100%}
   .grid.three{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media(max-width:600px){
   .container{width:92%}
-  .header-inner{padding:10px 0}
-  .brand img{width:82px;height:64px}
-  .brand-name{font-size:19px}
+  .header-inner{padding:9px 10px;gap:8px}
+  .brand img{width:68px;height:55px}
+  .brand-name{font-size:20px}
+  .brand-sub{font-size:9px;letter-spacing:2px}
   nav a{font-size:11px;padding:10px 9px}
-  .page{padding:25px 0 40px}
-  #home{padding-top:20px}
-  .hero{padding:26px 18px 30px;border-radius:21px}
-  .hero-logo{width:min(220px,75%);height:155px;margin-bottom:17px}
-  .hero h1{font-size:40px}
-  .hero p{font-size:14px}
-  .actions .btn{width:100%}
+  .page{padding:26px 0 45px}
+  #home{padding:0}
+  .home-stage{min-height:calc(100svh - 150px);padding:30px 0 36px}
+  .hero{padding:22px 8px 0}
+  .logo-hero{height:150px;width:min(220px,70vw);margin-bottom:15px}
+  .welcome-label{font-size:9px;letter-spacing:1.7px;gap:7px}
+  .welcome-label:before,.welcome-label:after{width:23px}
+  .hero h1{font-size:clamp(38px,10vw,54px);letter-spacing:-1.2px;margin:21px 0}
+  .hero-description{font-size:14px;line-height:1.8}
+  .hero-actions{gap:10px;margin-top:24px}
+  .hero-actions .btn{width:100%;min-height:50px}
+  .quote{margin-top:27px;padding:18px 13px}
+  .quote p{font-size:17px}
   .grid,.grid.three{grid-template-columns:1fr}
   .stats{grid-template-columns:1fr}
   .controls{align-items:stretch}
   .field,.controls .btn{width:100%}
   .mobile-nav{
-    position:fixed;bottom:0;left:0;right:0;z-index:30;
+    position:fixed;bottom:0;left:0;right:0;z-index:60;
     display:grid;grid-template-columns:repeat(6,minmax(0,1fr));
     padding:7px 2px calc(7px + env(safe-area-inset-bottom));
-    background:rgba(7,11,36,.98);border-top:1px solid var(--border)
+    background:rgba(5,10,37,.98);border-top:1px solid rgba(245,196,81,.2);
+    backdrop-filter:blur(16px)
   }
   .mobile-nav a{
     display:flex;min-width:0;flex-direction:column;align-items:center;
@@ -216,8 +266,8 @@ footer strong{color:var(--gold);letter-spacing:2px}
 <body>
 <header>
   <div class="container header-inner">
-    <a class="brand" href="#home" aria-label="B-TITAN Home">
-      <img src="btitan-logo-1.png" alt="B-TITAN Logo">
+    <a class="brand" href="#home">
+      <img src="btitan-logo-1.png" alt="Official B-TITAN Logo">
       <div>
         <div class="brand-name">B-TITAN</div>
         <div class="brand-sub">CHAMPIONS HUB</div>
@@ -235,22 +285,27 @@ footer strong{color:var(--gold);letter-spacing:2px}
 </header>
 
 <main>
-  <!-- HOME: ONLY HOME CONTENT -->
+  <!-- HOME PAGE -->
   <section id="home" class="page active">
-    <div class="container">
-      <div class="hero">
-        <img class="hero-logo" src="btitan-logo-1.png" alt="Official B-TITAN Logo">
-        <div class="eyebrow">✦ Welcome to B-TITAN Champions Hub ✦</div>
-        <h1>Good Morning,<br><span class="gold">Champions!</span></h1>
-        <p>Welcome to our community. Learn, connect, stay informed and move forward with knowledge and responsible decisions.</p>
-        <div class="actions">
-          <a class="btn btn-gold" href="#join">♛ Join B-TITAN</a>
-          <a class="btn btn-outline" href="#live-counter">▦ Open Live Counter</a>
+    <div class="home-stage">
+      <div class="container">
+        <div class="hero">
+          <img class="logo-hero" src="btitan-logo-1.png" alt="B-TITAN Champions Hub Logo">
+          <div class="welcome-label">Welcome to B-TITAN Champions Hub</div>
+          <h1>Good Morning,<br><span class="gold-text">Champions!</span></h1>
+          <p class="hero-description">
+            Welcome to your B-TITAN learning and community hub.
+            Explore blockchain education, community meetings and available project resources.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-gold" href="#join">♛ JOIN B-TITAN NOW ↗</a>
+            <a class="btn btn-outline" href="#live-counter">▦ Open Live Counter</a>
+          </div>
+          <div class="quote">
+            <p>“Dream Big. Learn Every Day.<br>Move Forward With Confidence.”</p>
+            <small>YOUR DAILY MOTIVATION</small>
+          </div>
         </div>
-      </div>
-      <div class="quote">
-        <strong>“Dream Big. Learn Every Day. Move Forward With Confidence.”</strong>
-        <small>YOUR DAILY MOTIVATION</small>
       </div>
     </div>
   </section>
@@ -260,7 +315,7 @@ footer strong{color:var(--gold);letter-spacing:2px}
     <div class="container">
       <div class="section-heading">
         <div class="eyebrow">SMART CONTRACT DATA</div>
-        <h2>Live <span class="gold">Counter</span></h2>
+        <h2>Live <span class="gold-text">Counter</span></h2>
         <p>Connect to the BNB Smart Chain contract and scan the selected slot. Large scans may take time or return incomplete results.</p>
       </div>
       <div class="counter-panel">
@@ -291,8 +346,8 @@ footer strong{color:var(--gold);letter-spacing:2px}
           <div class="result-head"><span>User ID</span><span>Selected Slot</span></div>
           <div id="results-body"><div class="result-row"><span>—</span><span>Waiting for scan</span></div></div>
         </div>
-        <p style="font-size:11px;color:var(--muted);line-height:1.7;margin-top:16px">
-          This counter reads isUserSlotActive from the supplied contract. It does not verify income, payouts or future rewards.
+        <p style="font-size:11px;color:var(--muted);line-height:1.8;margin-top:16px">
+          The counter reads the isUserSlotActive contract method. It does not verify income, payouts or future rewards.
         </p>
       </div>
     </div>
@@ -303,17 +358,17 @@ footer strong{color:var(--gold);letter-spacing:2px}
     <div class="container">
       <div class="section-heading">
         <div class="eyebrow">MEET THE COMMUNITY</div>
-        <h2>Zoom <span class="gold">Meetings</span></h2>
+        <h2>Zoom <span class="gold-text">Meetings</span></h2>
         <p>Open the relevant meeting link and confirm the schedule with your team.</p>
       </div>
       <div class="grid">
         <article class="card">
-          <div class="card-icon">🌅</div><div class="label">MORNING SESSION</div>
+          <div class="card-icon">🌅</div><div class="card-label">MORNING SESSION</div>
           <h3>Morning Zoom Meeting</h3><p>Daily team meeting and learning session.</p>
           <a class="btn btn-blue" target="_blank" rel="noopener noreferrer" href="https://zoom.us/j/7890581048?pwd=0c3cExXWU7Xt1sBfLuvo0DlWej9xmV.1">Join Morning Zoom ↗</a>
         </article>
         <article class="card">
-          <div class="card-icon">🌙</div><div class="label">EVENING SESSION</div>
+          <div class="card-icon">🌙</div><div class="card-label">EVENING SESSION</div>
           <h3>Evening Zoom Meeting</h3><p>Community meeting and project discussion.</p>
           <a class="btn btn-blue" target="_blank" rel="noopener noreferrer" href="https://zoom.us/j/6053096493?pwd=v43dprpzbo7Xqc4omNKu95IJVx6pR9.1">Join Evening Zoom ↗</a>
         </article>
@@ -326,7 +381,7 @@ footer strong{color:var(--gold);letter-spacing:2px}
     <div class="container">
       <div class="section-heading">
         <div class="eyebrow">CONNECT WITH US</div>
-        <h2>Social Media <span class="gold">Hub</span></h2>
+        <h2>Social Media <span class="gold-text">Hub</span></h2>
         <p>Open the available community and social media links.</p>
       </div>
       <div class="grid three">
@@ -345,7 +400,7 @@ footer strong{color:var(--gold);letter-spacing:2px}
     <div class="container">
       <div class="section-heading">
         <div class="eyebrow">LEARNING RESOURCES</div>
-        <h2>All <span class="gold">Videos</span></h2>
+        <h2>All <span class="gold-text">Videos</span></h2>
         <p>Open the supplied videos and project resources.</p>
       </div>
       <div class="resource-list">
@@ -365,7 +420,7 @@ footer strong{color:var(--gold);letter-spacing:2px}
     <div class="container">
       <div class="join-box">
         <div class="eyebrow">B-TITAN REGISTRATION</div>
-        <h2>Join <span class="gold">B-TITAN</span></h2>
+        <h2>Join <span class="gold-text">B-TITAN</span></h2>
         <p>Review the project information and terms. Understand the risks and independently verify the smart contract before connecting a wallet or transferring cryptocurrency.</p>
         <a class="btn btn-gold" target="_blank" rel="noopener noreferrer" href="https://btitan.net/register?id=10203">♛ JOIN B-TITAN NOW ↗</a>
       </div>
@@ -382,7 +437,7 @@ footer strong{color:var(--gold);letter-spacing:2px}
   </div>
 </footer>
 
-<!-- MOBILE NAVIGATION -->
+<!-- MOBILE NAV -->
 <div class="mobile-nav" aria-label="Mobile navigation">
   <a href="#home" class="active"><span>⌂</span><span>Home</span></a>
   <a href="#live-counter"><span>▦</span><span>Counter</span></a>
@@ -396,199 +451,160 @@ footer strong{color:var(--gold);letter-spacing:2px}
 (() => {
 "use strict";
 
-const CONTRACT_ADDRESS = "0xD6759d47Fccdef7b8E318479cEC4D128366f2a44";
-const RPC_URL = "https://bsc-dataseed.binance.org/";
-const MULTICALL_ADDRESS = "0xca11bde05977b3631167028862be2a173976ca11";
+const CONTRACT_ADDRESS="0xD6759d47Fccdef7b8E318479cEC4D128366f2a44";
+const RPC_URL="https://bsc-dataseed.binance.org/";
+const MULTICALL_ADDRESS="0xca11bde05977b3631167028862be2a173976ca11";
 
-const ABI = [
+const ABI=[
  "function lastUserId() view returns (uint256)",
  "function partnersInitialized() view returns (bool)",
  "function isUserSlotActive(uint256 userId,uint8 slot) view returns (bool)"
 ];
-const MULTICALL_ABI = [
+const MULTICALL_ABI=[
  "function aggregate3(tuple(address target,bool allowFailure,bytes callData)[] calls) payable returns (tuple(bool success,bytes returnData)[] returnData)"
 ];
 
-const $ = id => document.getElementById(id);
-let provider, contract, multicall, lastUserId = 0;
-let scanning = false, cancelRequested = false;
+const $=id=>document.getElementById(id);
+let contract=null,multicall=null,lastUserId=0;
+let scanning=false,cancelRequested=false;
 
-function setMessage(text,type=""){
-  $("counter-message").textContent=text;
-  $("counter-message").className="status"+(type?" "+type:"");
+function msg(text,type=""){
+ $("counter-message").textContent=text;
+ $("counter-message").className="status"+(type?" "+type:"");
 }
 function fmt(n){return Number(n).toLocaleString("en-IN");}
 function setProgress(p){$("scan-progress").style.width=Math.max(0,Math.min(100,p))+"%";}
 
 function showResults(ids,slot){
-  const body=$("results-body");
-  body.replaceChildren();
-  if(!ids.length){
-    const row=document.createElement("div");
-    row.className="result-row";
-    const a=document.createElement("span");a.textContent="No matching IDs found";
-    const b=document.createElement("span");b.textContent="Slot "+slot;
-    row.append(a,b);body.append(row);return;
-  }
-  ids.forEach(id=>{
-    const row=document.createElement("div");row.className="result-row";
-    const a=document.createElement("strong");a.textContent="#"+fmt(id);
-    const b=document.createElement("span");b.textContent="Slot "+slot+" active";
-    row.append(a,b);body.append(row);
-  });
+ const body=$("results-body");body.replaceChildren();
+ if(!ids.length){
+  const row=document.createElement("div");row.className="result-row";
+  const a=document.createElement("span");a.textContent="No matching IDs found";
+  const b=document.createElement("span");b.textContent="Slot "+slot;
+  row.append(a,b);body.append(row);return;
+ }
+ ids.forEach(id=>{
+  const row=document.createElement("div");row.className="result-row";
+  const a=document.createElement("strong");a.textContent="#"+fmt(id);
+  const b=document.createElement("span");b.textContent="Slot "+slot+" active";
+  row.append(a,b);body.append(row);
+ });
 }
 
 async function connectContract(){
-  if(!window.ethers){
-    setMessage("Ethers library failed to load. Check internet and reload.","error");
-    return;
-  }
-  $("connect-btn").disabled=true;
-  setMessage("Connecting to BNB Smart Chain...");
-  try{
-    const p=new ethers.JsonRpcProvider(RPC_URL);
-    const c=new ethers.Contract(CONTRACT_ADDRESS,ABI,p);
-    const mc=new ethers.Contract(MULTICALL_ADDRESS,MULTICALL_ABI,p);
-    const [network,idResult,initialized]=await Promise.all([
-      p.getNetwork(),c.lastUserId(),c.partnersInitialized().catch(()=>false)
-    ]);
-    if(Number(network.chainId)!==56)throw new Error("RPC did not report BNB Smart Chain mainnet.");
-    provider=p;contract=c;multicall=mc;lastUserId=Number(idResult);
-    $("contract-status").textContent="Connected";
-    $("last-user-id").textContent=fmt(lastUserId);
-    $("active-count").textContent="—";
-    setMessage("Connected. Partners initialized: "+(initialized?"Yes":"No")+
-      ". Scan range: IDs 1 to "+Math.max(0,lastUserId-1)+".","good");
-  }catch(e){
-    console.error(e);
-    $("contract-status").textContent="Connection Error";
-    setMessage("Connection failed: "+(e.shortMessage||e.message||"Unknown RPC error"),"error");
-  }finally{$("connect-btn").disabled=false;}
+ if(!window.ethers){msg("Ethers library failed to load. Check your internet connection.","error");return;}
+ $("connect-btn").disabled=true;msg("Connecting to BNB Smart Chain...");
+ try{
+  const p=new ethers.JsonRpcProvider(RPC_URL);
+  const c=new ethers.Contract(CONTRACT_ADDRESS,ABI,p);
+  const mc=new ethers.Contract(MULTICALL_ADDRESS,MULTICALL_ABI,p);
+  const [network,idResult,initialized]=await Promise.all([
+   p.getNetwork(),c.lastUserId(),c.partnersInitialized().catch(()=>false)
+  ]);
+  if(Number(network.chainId)!==56)throw new Error("RPC did not report BNB Smart Chain mainnet.");
+  contract=c;multicall=mc;lastUserId=Number(idResult);
+  $("contract-status").textContent="Connected";
+  $("last-user-id").textContent=fmt(lastUserId);
+  $("active-count").textContent="—";
+  msg("Connected. Partners initialized: "+(initialized?"Yes":"No")+
+   ". Scan range: IDs 1 to "+Math.max(0,lastUserId-1)+".","good");
+ }catch(e){
+  console.error(e);$("contract-status").textContent="Connection Error";
+  msg("Connection failed: "+(e.shortMessage||e.message||"Unknown RPC error"),"error");
+ }finally{$("connect-btn").disabled=false;}
 }
 
 async function scanSlot(){
-  if(!contract||!multicall){
-    setMessage("Please connect the contract first.","error");return;
+ if(!contract||!multicall){msg("Please connect the contract first.","error");return;}
+ if(scanning){msg("A scan is already running.");return;}
+ if(!Number.isSafeInteger(lastUserId)||lastUserId<1){msg("Invalid or empty user ID range.","error");return;}
+ const slot=Number($("slot-select").value),endId=lastUserId-1;
+ if(endId<1){$("active-count").textContent="0";showResults([],slot);msg("No user IDs available.");return;}
+
+ scanning=true;cancelRequested=false;
+ $("scan-btn").disabled=true;$("connect-btn").disabled=true;$("slot-select").disabled=true;
+ $("active-count").textContent="0";setProgress(0);
+ const found=[];let completed=0,failed=0;
+ const iface=new ethers.Interface(ABI),batchSize=50;
+
+ async function runBatch(start,end){
+  if(cancelRequested)return;
+  const calls=[];
+  for(let id=start;id<=end;id++){
+   calls.push({target:CONTRACT_ADDRESS,allowFailure:true,
+    callData:iface.encodeFunctionData("isUserSlotActive",[id,slot])});
   }
-  if(scanning){setMessage("A scan is already running.");return;}
-  if(!Number.isSafeInteger(lastUserId)||lastUserId<1){
-    setMessage("Invalid or empty user ID range.","error");return;
+  let results;
+  try{results=await multicall.aggregate3.staticCall(calls);}
+  catch(e){
+   if(cancelRequested)return;
+   if(end>start){
+    const mid=Math.floor((start+end)/2);
+    await runBatch(start,mid);await runBatch(mid+1,end);
+   }else{failed++;completed++;}
+   return;
   }
-
-  const slot=Number($("slot-select").value);
-  const endId=lastUserId-1;
-  if(endId<1){
-    $("active-count").textContent="0";showResults([],slot);
-    setMessage("No user IDs available.");return;
-  }
-
-  scanning=true;cancelRequested=false;
-  $("scan-btn").disabled=true;$("connect-btn").disabled=true;$("slot-select").disabled=true;
-  $("active-count").textContent="0";setProgress(0);
-
-  const found=[];let completed=0,failed=0;
-  const iface=new ethers.Interface(ABI);
-  const batchSize=50;
-
-  async function processBatch(start,end){
-    if(cancelRequested)return;
-    const calls=[];
-    for(let id=start;id<=end;id++){
-      calls.push({
-        target:CONTRACT_ADDRESS,allowFailure:true,
-        callData:iface.encodeFunctionData("isUserSlotActive",[id,slot])
-      });
-    }
-    let results;
+  for(let i=0;i<results.length;i++){
+   if(cancelRequested)return;
+   if(!results[i].success)failed++;
+   else{
     try{
-      results=await multicall.aggregate3.staticCall(calls);
-    }catch(e){
-      if(cancelRequested)return;
-      if(end>start){
-        const mid=Math.floor((start+end)/2);
-        await processBatch(start,mid);
-        await processBatch(mid+1,end);
-      }else{failed++;completed++;}
-      return;
-    }
-
-    for(let i=0;i<results.length;i++){
-      if(cancelRequested)return;
-      if(!results[i].success)failed++;
-      else{
-        try{
-          const decoded=iface.decodeFunctionResult("isUserSlotActive",results[i].returnData);
-          if(decoded[0])found.push(start+i);
-        }catch(e){failed++;}
-      }
-      completed++;
-    }
-    $("active-count").textContent=fmt(found.length);
-    setProgress(completed/endId*100);
-    showResults(found,slot);
-    setMessage("Scanning Slot "+slot+": "+fmt(completed)+" / "+fmt(endId)+
-      " IDs checked. Active IDs found: "+fmt(found.length)+
-      (failed?". Failed reads: "+fmt(failed):""));
+     const decoded=iface.decodeFunctionResult("isUserSlotActive",results[i].returnData);
+     if(decoded[0])found.push(start+i);
+    }catch(e){failed++;}
+   }
+   completed++;
   }
+  $("active-count").textContent=fmt(found.length);
+  setProgress(completed/endId*100);showResults(found,slot);
+  msg("Scanning Slot "+slot+": "+fmt(completed)+" / "+fmt(endId)+
+   " IDs checked. Active IDs found: "+fmt(found.length)+
+   (failed?". Failed reads: "+fmt(failed):""));
+ }
 
-  try{
-    for(let start=1;start<=endId;start+=batchSize){
-      if(cancelRequested)break;
-      await processBatch(start,Math.min(start+batchSize-1,endId));
-    }
-    if(cancelRequested){
-      setMessage("Scan cancelled. Count includes only IDs processed before cancellation.");
-    }else if(failed){
-      setMessage("Scan finished with incomplete reads. Active IDs found: "+fmt(found.length)+
-        "; failed reads: "+fmt(failed)+". Results may be incomplete.","error");
-    }else{
-      setMessage("Scan completed. "+fmt(found.length)+" active IDs found for Slot "+slot+".","good");
-    }
-  }catch(e){
-    console.error(e);
-    setMessage("Scan error: "+(e.shortMessage||e.message||"Unknown error"),"error");
-  }finally{
-    scanning=false;
-    $("scan-btn").disabled=false;
-    $("connect-btn").disabled=false;
-    $("slot-select").disabled=false;
+ try{
+  for(let start=1;start<=endId;start+=batchSize){
+   if(cancelRequested)break;
+   await runBatch(start,Math.min(start+batchSize-1,endId));
   }
+  if(cancelRequested)msg("Scan cancelled. Count includes only IDs processed before cancellation.");
+  else if(failed)msg("Scan finished with incomplete reads. Active IDs found: "+fmt(found.length)+
+   "; failed reads: "+fmt(failed)+". Results may be incomplete.","error");
+  else msg("Scan completed. "+fmt(found.length)+" active IDs found for Slot "+slot+".","good");
+ }catch(e){
+  console.error(e);msg("Scan error: "+(e.shortMessage||e.message||"Unknown error"),"error");
+ }finally{
+  scanning=false;$("scan-btn").disabled=false;$("connect-btn").disabled=false;$("slot-select").disabled=false;
+ }
 }
 
 $("connect-btn").addEventListener("click",connectContract);
 $("scan-btn").addEventListener("click",scanSlot);
 $("cancel-btn").addEventListener("click",()=>{
-  if(scanning){
-    cancelRequested=true;
-    setMessage("Cancellation requested. Waiting for the current RPC call.");
-  }else setMessage("No scan is running.");
+ if(scanning){cancelRequested=true;msg("Cancellation requested. Waiting for current RPC call.");}
+ else msg("No scan is running.");
 });
 
-/* Each navigation option opens ONLY its own page section. */
-const validPages=["home","live-counter","zoom","social","videos","join"];
+/* Show only the section selected in the navigation. */
+const pageIds=["home","live-counter","zoom","social","videos","join"];
 
 function showPage(){
-  let id=(location.hash||"#home").slice(1);
-  if(!validPages.includes(id))id="home";
-
-  document.querySelectorAll("main .page").forEach(section=>{
-    section.classList.toggle("active",section.id===id);
-  });
-
-  document.querySelectorAll('nav a[href^="#"],.mobile-nav a[href^="#"]').forEach(link=>{
-    link.classList.toggle("active",link.getAttribute("href")==="#"+id);
-  });
-
-  window.scrollTo(0,0);
+ let id=(location.hash||"#home").slice(1);
+ if(!pageIds.includes(id))id="home";
+ document.querySelectorAll("main .page").forEach(page=>{
+  page.classList.toggle("active",page.id===id);
+ });
+ document.querySelectorAll('nav a[href^="#"],.mobile-nav a[href^="#"]').forEach(link=>{
+  link.classList.toggle("active",link.getAttribute("href")==="#"+id);
+ });
+ window.scrollTo(0,0);
 }
 
 document.querySelectorAll('nav a[href^="#"],.mobile-nav a[href^="#"],.hero a[href^="#"]').forEach(link=>{
-  link.addEventListener("click",()=>{
-    const hash=link.getAttribute("href");
-    if(location.hash===hash)showPage();
-  });
+ link.addEventListener("click",()=>{
+  if(location.hash===link.getAttribute("href"))showPage();
+ });
 });
-
 window.addEventListener("hashchange",showPage);
 showPage();
 })();
