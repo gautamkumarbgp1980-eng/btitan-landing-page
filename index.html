@@ -4,334 +4,197 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#070d30">
-<meta name="description" content="B-TITAN Champions Hub - Community, education, meetings and project resources.">
+<meta name="description" content="B-TITAN Champions Hub - Community and learning resources">
 <title>B-TITAN | Champions Hub</title>
 
 <style>
-:root{
-  --navy:#070d30;
-  --blue:#102b83;
-  --purple:#5724b7;
-  --gold:#ffd365;
-  --gold2:#e9a92e;
-  --white:#f7f7ff;
-}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:85px}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
 body{
   margin:0;
-  background:var(--navy);
-  color:var(--white);
   font-family:Arial,Helvetica,sans-serif;
+  background:#070d30;
+  color:#fff;
 }
 a{color:inherit;text-decoration:none}
-button{font:inherit}
-.container{width:min(1150px,92%);margin:auto}
-
-/* HEADER */
+button{font:inherit;cursor:pointer}
+:root{
+  --navy:#070d30;
+  --gold:#ffd365;
+  --gold2:#f3ad30;
+}
 header{
-  position:sticky;
-  top:0;
-  z-index:100;
-  background:rgba(5,10,37,.97);
-  border:1px solid rgba(255,211,101,.35);
-  border-radius:0 0 22px 22px;
-  box-shadow:0 5px 30px #0008;
-  backdrop-filter:blur(14px);
+  position:sticky;top:0;z-index:100;
+  background:rgba(5,10,37,.98);
+  border:1px solid #dcb65455;
+  border-radius:0 0 20px 20px;
+  box-shadow:0 5px 25px #0008;
 }
 .nav{
-  min-height:78px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:16px;
-  padding:10px 3%;
+  width:min(1200px,94%);
+  margin:auto;
+  min-height:76px;
+  display:flex;align-items:center;
+  justify-content:space-between;gap:14px;
 }
-.brand{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  flex-shrink:0;
-}
-.brand img{
-  width:48px;height:48px;object-fit:contain;
-}
-.brand-name{
-  font-size:23px;
-  font-weight:900;
-  color:var(--gold);
-  letter-spacing:1px;
-}
-.brand-sub{
-  font-size:10px;
-  letter-spacing:3px;
-  color:#fff;
-  margin-top:3px;
-}
-.navlinks{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:6px;
-}
+.brand{display:flex;align-items:center;gap:9px;flex-shrink:0}
+.brand img{width:45px;height:45px;object-fit:contain}
+.brand-name{font-size:22px;font-weight:900;color:var(--gold)}
+.brand-sub{font-size:9px;letter-spacing:3px;margin-top:3px}
+.navlinks{display:flex;align-items:center;gap:4px}
 .navlinks a{
-  padding:13px 15px;
-  border-radius:15px;
-  font-size:14px;
-  white-space:nowrap;
-  transition:.2s;
+  padding:13px 12px;border-radius:13px;
+  font-size:14px;white-space:nowrap
 }
-.navlinks a:hover,
-.navlinks a.active{
-  color:var(--gold);
-  background:linear-gradient(135deg,#493b32,#151735);
-  box-shadow:0 0 20px #e7ad4733;
+.navlinks a:hover,.navlinks a.active{
+  background:linear-gradient(135deg,#55432b,#181a38);
+  color:var(--gold)
 }
 .gold-btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-  padding:15px 23px;
-  border:1px solid #fff0ad;
-  border-radius:15px;
-  color:#17101c;
-  font-weight:900;
-  background:linear-gradient(110deg,#ffe88c,#ffca43,#f3a92a);
-  box-shadow:0 0 24px #ffc84b30,inset 0 1px #fff;
-  transition:transform .2s,box-shadow .2s;
-  cursor:pointer;
+  display:inline-flex;align-items:center;justify-content:center;
+  gap:9px;padding:15px 23px;
+  background:linear-gradient(110deg,#ffe992,#ffca43,#efa62a);
+  color:#17101c;border:1px solid #fff0b0;
+  border-radius:15px;font-weight:900;
+  box-shadow:0 0 22px #ffc84b35;
+  transition:.2s
 }
-.gold-btn:hover{
-  transform:translateY(-2px);
-  box-shadow:0 0 32px #ffc84b66;
-}
+.gold-btn:hover{transform:translateY(-2px)}
 .menu-toggle{
-  display:none;
-  background:transparent;
-  color:var(--gold);
-  border:1px solid #ffffff40;
-  border-radius:10px;
-  padding:9px 12px;
-  font-size:22px;
-  cursor:pointer;
+  display:none;color:var(--gold);background:none;
+  border:1px solid #ffffff44;border-radius:10px;
+  padding:8px 12px;font-size:22px
 }
 
-/* REFERENCE HERO */
+/* HOME: Uses your uploaded GitHub image */
 .hero{
-  position:relative;
+  background:radial-gradient(ellipse at 50% 25%,#173b9c,#070d30 72%);
   overflow:hidden;
-  background:
-    radial-gradient(ellipse at 50% 28%,#173b9c 0,#0a174d 38%,#070d30 75%);
 }
 .hero-art{
   position:relative;
-  width:100%;
-  max-width:1024px;
-  margin:0 auto;
-  aspect-ratio:2/3;
-  overflow:hidden;
-  background:#070d30;
+  width:100%;max-width:1024px;
+  margin:auto;
 }
 .hero-art img{
-  width:100%;
-  height:100%;
-  display:block;
-  object-fit:cover;
+  display:block;width:100%;height:auto;
 }
-/* Clickable areas on the supplied reference image */
+/* Clickable areas over the menu and Join buttons in the image */
 .hotspot{
-  position:absolute;
-  z-index:3;
-  display:block;
-  background:transparent;
-  border-radius:12px;
-  cursor:pointer;
+  position:absolute;display:block;z-index:2;
+  border-radius:10px;background:transparent
 }
-.hotspot:focus-visible{
-  outline:3px solid #ffe28a;
-  outline-offset:2px;
-}
-.hot-home{left:24.5%;top:1.5%;width:8%;height:3.4%}
-.hot-counter{left:32.5%;top:1.5%;width:12%;height:3.4%}
-.hot-zoom{left:44%;top:1.5%;width:7%;height:3.4%}
-.hot-social{left:51%;top:1.5%;width:17%;height:3.4%}
-.hot-videos{left:68%;top:1.5%;width:12%;height:3.4%}
-.hot-join-top{left:82%;top:1%;width:15%;height:4.2%}
-.hot-join-main{left:24%;top:75%;width:52%;height:6.5%}
+.hotspot:focus-visible{outline:3px solid var(--gold)}
+.hot-home{left:24%;top:1%;width:9%;height:4%}
+.hot-counter{left:32%;top:1%;width:12%;height:4%}
+.hot-zoom{left:44%;top:1%;width:7%;height:4%}
+.hot-social{left:51%;top:1%;width:17%;height:4%}
+.hot-videos{left:68%;top:1%;width:12%;height:4%}
+.hot-join-top{left:82%;top:1%;width:15%;height:4.5%}
+.hot-join-main{left:24%;top:75%;width:52%;height:7%}
 
-/* SECTIONS */
-section.content-section{
-  padding:68px 0;
-  border-top:1px solid #ffffff12;
-  background:
-    radial-gradient(ellipse at top,#17265a 0,transparent 65%),
-    #070d30;
+/* CONTENT SECTIONS */
+section.content{
+  padding:65px 0;
+  border-top:1px solid #ffffff15;
+  background:radial-gradient(ellipse at top,#17265a,transparent 70%),#070d30;
 }
-.section-title{
-  text-align:center;
-  font-size:clamp(27px,4vw,40px);
-  margin:0 0 12px;
-  font-weight:900;
+.container{width:min(1100px,92%);margin:auto}
+.title{
+  margin:0;text-align:center;
+  font-size:clamp(27px,4vw,40px);font-weight:900
 }
-.section-title span{color:var(--gold)}
-.section-intro{
-  max-width:720px;
-  margin:0 auto 32px;
-  color:#cbd2f3;
-  text-align:center;
-  line-height:1.8;
+.title span{color:var(--gold)}
+.line{
+  height:3px;width:90px;margin:18px auto 25px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent)
 }
-.gold-line{
-  width:95px;height:3px;
-  background:linear-gradient(90deg,transparent,var(--gold),transparent);
-  margin:18px auto 25px;
+.intro{
+  max-width:720px;margin:0 auto 32px;
+  text-align:center;color:#d1d8f3;line-height:1.8
 }
 .grid{
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:18px;
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:18px
 }
 .card{
-  min-width:0;
-  padding:24px;
-  border:1px solid #eac15c50;
-  border-radius:19px;
+  padding:24px;border:1px solid #eac15c55;
+  border-radius:18px;
   background:linear-gradient(145deg,#121d4a,#0a102e);
-  box-shadow:0 12px 35px #0002;
+  overflow-wrap:anywhere
 }
 .card h3{margin:0 0 12px;font-size:20px}
-.card p{color:#cbd2f3;line-height:1.7;font-size:14px}
+.card p{font-size:14px;line-height:1.7;color:#cbd2f3}
 .card .gold-btn{margin-top:8px}
-.icon{
-  font-size:29px;
-  margin-bottom:13px;
-}
+.icon{font-size:28px;margin-bottom:13px}
 .link-list{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:12px;
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px
 }
 .link-card{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:12px;
-  border:1px solid #ffffff20;
-  border-radius:13px;
-  padding:17px;
-  background:#111a40;
-  transition:.2s;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:17px;border:1px solid #ffffff24;border-radius:13px;
+  background:#111a40
 }
-.link-card:hover{
-  border-color:var(--gold);
-  transform:translateY(-2px);
-}
+.link-card:hover{border-color:var(--gold)}
 .link-card span:last-child{color:var(--gold)}
-.status{
-  color:#f8d97b;
-  font-size:13px;
-  margin-top:14px;
-  overflow-wrap:anywhere;
+.controls{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:22px 0
 }
-.counter-controls{
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:10px;
-  margin:20px 0;
-}
-.counter-controls select,
-.counter-controls input{
-  color:white;
-  background:#101a40;
-  border:1px solid #eac15c66;
-  border-radius:10px;
-  padding:12px;
+.controls input,.controls select{
+  min-width:130px;max-width:100%;
+  padding:12px;background:#101a40;color:#fff;
+  border:1px solid #eac15c66;border-radius:10px
 }
 .stats{
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:12px;
-  margin-top:25px;
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px
 }
 .stat{
-  text-align:center;
-  border:1px solid #eac15c50;
-  background:#10183c;
-  border-radius:15px;
-  padding:20px 8px;
+  padding:20px 8px;text-align:center;
+  border:1px solid #eac15c50;border-radius:14px;background:#10183c
 }
 .stat strong{
-  display:block;
-  font-size:clamp(22px,4vw,34px);
-  color:var(--gold);
-  margin-bottom:7px;
+  display:block;color:var(--gold);
+  font-size:clamp(22px,4vw,32px);margin-bottom:7px
 }
 .stat span{font-size:12px;color:#d4dcf8}
+.status{font-size:13px;color:#f8d97b;line-height:1.7;overflow-wrap:anywhere}
 .quote{
-  max-width:800px;
-  text-align:center;
-  margin:35px auto 0;
-  padding:26px;
-  border:1px solid #eac15c80;
-  border-radius:20px;
-  color:#ffdc79;
-  font-size:clamp(18px,3vw,25px);
-  font-style:italic;
-  line-height:1.6;
-  background:#090f2b;
+  max-width:800px;margin:35px auto 0;padding:25px;
+  border:1px solid #eac15c80;border-radius:18px;
+  background:#090f2b;text-align:center;
+  color:#ffdc79;font-size:clamp(18px,3vw,25px);
+  font-style:italic;line-height:1.6
 }
 footer{
-  padding:30px 15px;
-  text-align:center;
+  padding:30px 16px;text-align:center;
   border-top:1px solid #eac15c50;
-  color:#bfc8e9;
-  font-size:13px;
-  line-height:1.8;
+  color:#c5cce6;font-size:13px;line-height:1.8
 }
 footer strong{color:var(--gold)}
 .back-top{
-  position:fixed;
-  bottom:18px;
-  right:16px;
-  z-index:50;
-  width:46px;height:46px;
-  display:grid;place-items:center;
-  background:var(--gold);
-  color:#111;
-  border-radius:50%;
-  font-weight:900;
-  box-shadow:0 5px 20px #0007;
+  position:fixed;bottom:16px;right:16px;z-index:50;
+  width:45px;height:45px;display:grid;place-items:center;
+  border-radius:50%;background:var(--gold);color:#111;font-weight:900
 }
-
 @media(max-width:900px){
-  .nav{flex-wrap:wrap}
+  .nav{flex-wrap:wrap;padding:10px 0}
   .menu-toggle{display:block;margin-left:auto}
+  .nav>.gold-btn{display:none}
   .navlinks{
-    display:none;
-    width:100%;
-    flex-direction:column;
-    align-items:stretch;
-    order:5;
+    display:none;width:100%;order:5;
+    flex-direction:column;align-items:stretch
   }
   .navlinks.open{display:flex}
   .navlinks a{padding:13px}
-  .nav>.gold-btn{display:none}
   .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media(max-width:560px){
-  .nav{min-height:65px;padding:8px 4%}
   .brand img{width:39px;height:39px}
   .brand-name{font-size:19px}
   .brand-sub{font-size:8px;letter-spacing:2px}
-  .hero-art{aspect-ratio:2/3}
-  section.content-section{padding:48px 0}
-  .grid{grid-template-columns:1fr}
-  .link-list{grid-template-columns:1fr}
+  section.content{padding:46px 0}
+  .grid,.link-list,.stats{grid-template-columns:1fr}
   .card{padding:20px}
-  .stats{grid-template-columns:1fr}
-  .stat{padding:16px}
 }
 </style>
 </head>
@@ -339,10 +202,9 @@ footer strong{color:var(--gold)}
 <body id="top">
 
 <header>
-  <nav class="nav container" aria-label="Main navigation">
-    <a href="#home" class="brand" aria-label="B-TITAN Champions Hub Home">
-      <img src="btitan-logo-1.png" alt="B-TITAN logo"
-           onerror="this.style.display='none'">
+  <nav class="nav" aria-label="Main navigation">
+    <a href="#home" class="brand" aria-label="B-TITAN Home">
+      <img src="btitan-logo-1.png" alt="B-TITAN logo">
       <div>
         <div class="brand-name">B-TITAN</div>
         <div class="brand-sub">CHAMPIONS HUB</div>
@@ -350,7 +212,7 @@ footer strong{color:var(--gold)}
     </a>
 
     <button class="menu-toggle" id="menuToggle"
-            aria-label="Open navigation menu" aria-expanded="false">☰</button>
+      aria-label="Toggle menu" aria-expanded="false">☰</button>
 
     <div class="navlinks" id="navLinks">
       <a class="active" href="#home">Home</a>
@@ -361,23 +223,21 @@ footer strong{color:var(--gold)}
     </div>
 
     <a class="gold-btn" href="https://btitan.net/register?id=10203"
-       target="_blank" rel="noopener noreferrer">Join Now ↗</a>
+      target="_blank" rel="noopener noreferrer">Join Now ↗</a>
   </nav>
 </header>
 
 <main>
-  <!-- Reference design image: save it as btitan-home-reference.png -->
-  <section class="hero" id="home" aria-label="B-TITAN Champions Hub home">
+  <section class="hero" id="home" aria-label="B-TITAN home">
     <div class="hero-art">
-      <img src="btitan-home-reference.png"
-           alt="B-TITAN Champions Hub premium blue and gold welcome design"
-           fetchpriority="high">
+      <img
+        src="file_00000000177c822f9f0e70a02fb46ba6.png"
+        alt="B-TITAN Champions Hub blue and gold welcome design"
+        fetchpriority="high">
 
-      <!-- The image already contains the visual menu and Join buttons.
-           These transparent hotspots make those areas clickable. -->
       <a class="hotspot hot-home" href="#home" aria-label="Home"></a>
       <a class="hotspot hot-counter" href="#counter" aria-label="Live Counter"></a>
-      <a class="hotspot hot-zoom" href="#zoom" aria-label="Zoom meetings"></a>
+      <a class="hotspot hot-zoom" href="#zoom" aria-label="Zoom"></a>
       <a class="hotspot hot-social" href="#social" aria-label="Social Media Hub"></a>
       <a class="hotspot hot-videos" href="#videos" aria-label="All Videos"></a>
       <a class="hotspot hot-join-top"
@@ -389,226 +249,115 @@ footer strong{color:var(--gold)}
     </div>
   </section>
 
-  <!-- LIVE COUNTER -->
-  <section class="content-section" id="counter">
+  <section class="content" id="counter">
     <div class="container">
-      <h2 class="section-title">B-TITAN <span>Live Counter</span></h2>
-      <div class="gold-line"></div>
-      <p class="section-intro">
-        Check publicly readable contract data from BNB Smart Chain.
-        Counts are based on the contract methods below and are not a
-        guarantee of earnings or future rewards.
+      <h2 class="title">B-TITAN <span>Live Counter</span></h2>
+      <div class="line"></div>
+      <p class="intro">
+        Read publicly available contract data from BNB Smart Chain.
+        Displayed information depends on the actual contract methods.
       </p>
-
       <div class="card">
         <h3>On-chain Slot Status</h3>
-        <p>Contract: <span id="contractAddress">0xD6759d47Fccdef7b8E318479cEC4D128366f2a44</span></p>
-
-        <div class="counter-controls">
-          <select id="slotSelect" aria-label="Choose slot">
-            <option value="1">Slot 1</option>
-            <option value="2">Slot 2</option>
-            <option value="3">Slot 3</option>
-            <option value="4">Slot 4</option>
-            <option value="5">Slot 5</option>
-            <option value="6">Slot 6</option>
-            <option value="7">Slot 7</option>
-            <option value="8">Slot 8</option>
-            <option value="9">Slot 9</option>
-            <option value="10">Slot 10</option>
-            <option value="11">Slot 11</option>
-            <option value="12">Slot 12</option>
+        <p>Contract: 0xD6759d47Fccdef7b8E318479cEC4D128366f2a44</p>
+        <div class="controls">
+          <select id="slotSelect" aria-label="Select slot">
+            <option value="1">Slot 1</option><option value="2">Slot 2</option>
+            <option value="3">Slot 3</option><option value="4">Slot 4</option>
+            <option value="5">Slot 5</option><option value="6">Slot 6</option>
+            <option value="7">Slot 7</option><option value="8">Slot 8</option>
+            <option value="9">Slot 9</option><option value="10">Slot 10</option>
+            <option value="11">Slot 11</option><option value="12">Slot 12</option>
           </select>
           <input id="userIdInput" type="number" min="1"
-                 placeholder="Enter user ID" aria-label="Enter user ID">
+            placeholder="User ID" aria-label="User ID">
           <button class="gold-btn" id="checkUserBtn">Check User</button>
           <button class="gold-btn" id="refreshBtn">Refresh Data</button>
         </div>
-
         <div class="stats">
-          <div class="stat">
-            <strong id="lastUserId">—</strong>
-            <span>Last User ID</span>
-          </div>
-          <div class="stat">
-            <strong id="initializedUsers">—</strong>
-            <span>Initialized Partners</span>
-          </div>
-          <div class="stat">
-            <strong id="slotResult">—</strong>
-            <span>Selected Slot Status</span>
-          </div>
+          <div class="stat"><strong id="lastUserId">—</strong><span>Last User ID</span></div>
+          <div class="stat"><strong id="initializedUsers">—</strong><span>Initialized Partners</span></div>
+          <div class="stat"><strong id="slotResult">—</strong><span>Selected Slot Status</span></div>
         </div>
-        <div class="status" id="counterStatus" role="status">
+        <p class="status" id="counterStatus" role="status">
           Press Refresh Data to connect to BNB Smart Chain.
-        </div>
-        <p class="status">
-          This section only reads the contract. A failed request or an
-          unsupported ABI may prevent data from loading.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- ZOOM -->
-  <section class="content-section" id="zoom">
+  <section class="content" id="zoom">
     <div class="container">
-      <h2 class="section-title">Daily <span>Zoom Meetings</span></h2>
-      <div class="gold-line"></div>
-      <p class="section-intro">
-        Join the available online sessions for project information,
-        learning and community discussions. Confirm the schedule with
-        your team before joining.
-      </p>
+      <h2 class="title">Daily <span>Zoom Meetings</span></h2>
+      <div class="line"></div>
+      <p class="intro">Join the available online learning and community sessions.</p>
       <div class="grid">
         <article class="card">
           <div class="icon">🌅</div>
           <h3>Morning Zoom</h3>
-          <p>Daily session · 8:15 AM IST</p>
+          <p>Daily · 8:15 AM IST</p>
           <a class="gold-btn"
-             href="https://zoom.us/j/7890581048?pwd=0c3cExXWU7Xt1sBfLuvo0DlWej9xmV.1"
-             target="_blank" rel="noopener noreferrer">Join Morning Zoom ↗</a>
+            href="https://zoom.us/j/7890581048?pwd=0c3cExXWU7Xt1sBfLuvo0DlWej9xmV.1"
+            target="_blank" rel="noopener noreferrer">Join Morning Zoom ↗</a>
         </article>
         <article class="card">
           <div class="icon">🌙</div>
           <h3>Night Zoom</h3>
-          <p>Daily session · 9:00 PM IST</p>
+          <p>Daily · 9:00 PM IST</p>
           <a class="gold-btn"
-             href="https://zoom.us/j/6053096493?pwd=v43dprpzbo7Xqc4omNKu95IJVx6pR9.1"
-             target="_blank" rel="noopener noreferrer">Join Night Zoom ↗</a>
+            href="https://zoom.us/j/6053096493?pwd=v43dprpzbo7Xqc4omNKu95IJVx6pR9.1"
+            target="_blank" rel="noopener noreferrer">Join Night Zoom ↗</a>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- SOCIAL MEDIA HUB -->
-  <section class="content-section" id="social">
+  <section class="content" id="social">
     <div class="container">
-      <h2 class="section-title">Social Media <span>Hub</span></h2>
-      <div class="gold-line"></div>
-      <p class="section-intro">
-        Connect with the community using the official links listed below.
-      </p>
-
+      <h2 class="title">Social Media <span>Hub</span></h2>
+      <div class="line"></div>
+      <p class="intro">Connect with the community through the available links.</p>
       <div class="link-list">
-        <a class="link-card"
-           href="https://www.facebook.com/profile.php?id=61590478625779"
-           target="_blank" rel="noopener noreferrer">
-          <span>📘 Facebook</span><span>Open ↗</span>
-        </a>
-        <a class="link-card"
-           href="https://youtube.com/@gautamdigitalacademy?si=yEkIv6-54rAN0h6e"
-           target="_blank" rel="noopener noreferrer">
-          <span>▶️ YouTube Channel</span><span>Open ↗</span>
-        </a>
-        <a class="link-card"
-           href="https://www.instagram.com/btitanchampions?psln=MzZheDgwdTUzcnJ0"
-           target="_blank" rel="noopener noreferrer">
-          <span>📸 Instagram</span><span>Open ↗</span>
-        </a>
-        <a class="link-card"
-           href="https://wa.me/918368960385?text=Hello%20B-TITAN"
-           target="_blank" rel="noopener noreferrer">
-          <span>💬 WhatsApp</span><span>Open ↗</span>
-        </a>
-        <a class="link-card"
-           href="https://beacons.ai/gsdigitalacademy"
-           target="_blank" rel="noopener noreferrer">
-          <span>🌐 Community & Resources</span><span>Open ↗</span>
-        </a>
-        <a class="link-card"
-           href="https://t.me/"
-           target="_blank" rel="noopener noreferrer">
-          <span>✈️ Telegram</span><span>Open ↗</span>
-        </a>
+        <a class="link-card" href="https://www.facebook.com/profile.php?id=61590478625779" target="_blank" rel="noopener noreferrer"><span>📘 Facebook</span><span>Open ↗</span></a>
+        <a class="link-card" href="https://youtube.com/@gautamdigitalacademy?si=yEkIv6-54rAN0h6e" target="_blank" rel="noopener noreferrer"><span>▶️ YouTube</span><span>Open ↗</span></a>
+        <a class="link-card" href="https://www.instagram.com/btitanchampions?psln=MzZheDgwdTUzcnJ0" target="_blank" rel="noopener noreferrer"><span>📸 Instagram</span><span>Open ↗</span></a>
+        <a class="link-card" href="https://wa.me/918368960385?text=Hello%20B-TITAN" target="_blank" rel="noopener noreferrer"><span>💬 WhatsApp</span><span>Open ↗</span></a>
+        <a class="link-card" href="https://beacons.ai/gsdigitalacademy" target="_blank" rel="noopener noreferrer"><span>🌐 Community Resources</span><span>Open ↗</span></a>
+        <a class="link-card" href="https://t.me/" target="_blank" rel="noopener noreferrer"><span>✈️ Telegram</span><span>Open ↗</span></a>
       </div>
     </div>
   </section>
 
-  <!-- VIDEOS AND RESOURCES -->
-  <section class="content-section" id="videos">
+  <section class="content" id="videos">
     <div class="container">
-      <h2 class="section-title">Videos & <span>Learning Resources</span></h2>
-      <div class="gold-line"></div>
-      <p class="section-intro">
-        Explore the available project videos and learning materials.
-        Review project details and risks before making financial decisions.
-      </p>
-
+      <h2 class="title">Videos & <span>Resources</span></h2>
+      <div class="line"></div>
+      <p class="intro">Explore the available project videos and learning materials.</p>
       <div class="grid">
-        <article class="card">
-          <div class="icon">🎬</div>
-          <h3>Project Video</h3>
-          <p>Open the shared B-TITAN video resource.</p>
-          <a class="gold-btn" href="https://youtu.be/jg6a-Jo_acE"
-             target="_blank" rel="noopener noreferrer">Watch Video ↗</a>
-        </article>
-        <article class="card">
-          <div class="icon">📘</div>
-          <h3>Plan Presentation</h3>
-          <p>Open the available plan presentation PDF.</p>
-          <a class="gold-btn"
-             href="https://docs.google.com/presentation/d/1ZhQFHnTPKTx4Lqs4LjZRFQjwZjct5FGL/export/pdf"
-             target="_blank" rel="noopener noreferrer">View PDF ↗</a>
-        </article>
-        <article class="card">
-          <div class="icon">📚</div>
-          <h3>Learning Resource</h3>
-          <p>Open the additional shared resource.</p>
-          <a class="gold-btn" href="https://tinyurl.com/4u6jnrrw"
-             target="_blank" rel="noopener noreferrer">Open Resource ↗</a>
-        </article>
-        <article class="card">
-          <div class="icon">▶️</div>
-          <h3>Training Video</h3>
-          <p>Watch the next learning video.</p>
-          <a class="gold-btn" href="https://youtu.be/HIxNEUneKYs"
-             target="_blank" rel="noopener noreferrer">Watch Video ↗</a>
-        </article>
-        <article class="card">
-          <div class="icon">📱</div>
-          <h3>Short Video</h3>
-          <p>Open the shared YouTube Short.</p>
-          <a class="gold-btn"
-             href="https://youtube.com/shorts/-fIVG9pZtEo?si=nclwN9l8L6Fo1tLa"
-             target="_blank" rel="noopener noreferrer">Watch Short ↗</a>
-        </article>
-        <article class="card">
-          <div class="icon">🎓</div>
-          <h3>More Learning</h3>
-          <p>Explore another available video resource.</p>
-          <a class="gold-btn" href="https://youtu.be/MCNicgjFkxA"
-             target="_blank" rel="noopener noreferrer">Watch Video ↗</a>
-        </article>
+        <article class="card"><div class="icon">🎬</div><h3>Project Video</h3><p>Shared video resource.</p><a class="gold-btn" href="https://youtu.be/jg6a-Jo_acE" target="_blank" rel="noopener noreferrer">Watch ↗</a></article>
+        <article class="card"><div class="icon">📘</div><h3>Plan Presentation</h3><p>Presentation PDF resource.</p><a class="gold-btn" href="https://docs.google.com/presentation/d/1ZhQFHnTPKTx4Lqs4LjZRFQjwZjct5FGL/export/pdf" target="_blank" rel="noopener noreferrer">View PDF ↗</a></article>
+        <article class="card"><div class="icon">📚</div><h3>Learning Resource</h3><p>Additional shared resource.</p><a class="gold-btn" href="https://tinyurl.com/4u6jnrrw" target="_blank" rel="noopener noreferrer">Open ↗</a></article>
+        <article class="card"><div class="icon">▶️</div><h3>Training Video</h3><p>Video learning resource.</p><a class="gold-btn" href="https://youtu.be/HIxNEUneKYs" target="_blank" rel="noopener noreferrer">Watch ↗</a></article>
+        <article class="card"><div class="icon">📱</div><h3>Short Video</h3><p>Shared YouTube Short.</p><a class="gold-btn" href="https://youtube.com/shorts/-fIVG9pZtEo?si=nclwN9l8L6Fo1tLa" target="_blank" rel="noopener noreferrer">Watch ↗</a></article>
+        <article class="card"><div class="icon">🎓</div><h3>More Learning</h3><p>Additional video resource.</p><a class="gold-btn" href="https://youtu.be/MCNicgjFkxA" target="_blank" rel="noopener noreferrer">Watch ↗</a></article>
       </div>
     </div>
   </section>
 
-  <!-- JOIN -->
-  <section class="content-section" id="join">
+  <section class="content" id="join">
     <div class="container">
-      <h2 class="section-title">Welcome to <span>B-TITAN</span></h2>
-      <div class="gold-line"></div>
-      <p class="section-intro">
-        Visit the official website to review the project information,
-        terms, smart-contract details and risks before deciding whether
-        to participate.
+      <h2 class="title">Welcome to <span>B-TITAN</span></h2>
+      <div class="line"></div>
+      <p class="intro">
+        Review project information, terms, smart-contract details and risks
+        independently before deciding whether to participate.
       </p>
       <div style="text-align:center">
-        <a class="gold-btn"
-           href="https://btitan.net/register?id=10203"
-           target="_blank" rel="noopener noreferrer">
-          JOIN B-TITAN NOW ↗
-        </a>
-        <p style="margin-top:22px">
-          <a href="https://btitan.net/" target="_blank"
-             rel="noopener noreferrer">Visit Official Website ↗</a>
-        </p>
+        <a class="gold-btn" href="https://btitan.net/register?id=10203"
+          target="_blank" rel="noopener noreferrer">JOIN B-TITAN NOW ↗</a>
+        <p style="margin-top:22px"><a href="https://btitan.net/" target="_blank" rel="noopener noreferrer">Official Website ↗</a></p>
       </div>
-      <div class="quote">
-        “Dream Big. Learn Every Day.<br>
-        Move Forward With Confidence.”
-      </div>
+      <div class="quote">“Dream Big. Learn Every Day.<br>Move Forward With Confidence.”</div>
     </div>
   </section>
 </main>
@@ -616,168 +365,124 @@ footer strong{color:var(--gold)}
 <footer>
   <strong>B-TITAN CHAMPIONS HUB</strong><br>
   Community information and learning resources.<br>
-  Crypto assets and smart-contract projects involve significant risk.
-  Verify all claims independently. No earnings are guaranteed.<br>
+  Crypto assets involve significant risk. Verify claims independently.
+  No earnings are guaranteed.<br>
   © <span id="year"></span> B-TITAN Champions Hub
 </footer>
 
-<a href="#top" class="back-top" aria-label="Back to top">↑</a>
+<a class="back-top" href="#top" aria-label="Back to top">↑</a>
 
 <script>
-/* MOBILE NAVIGATION */
 const menuToggle = document.getElementById("menuToggle");
 const navLinks = document.getElementById("navLinks");
 
 menuToggle.addEventListener("click", () => {
-  const isOpen = navLinks.classList.toggle("open");
-  menuToggle.setAttribute("aria-expanded", String(isOpen));
-  menuToggle.textContent = isOpen ? "✕" : "☰";
+  const open = navLinks.classList.toggle("open");
+  menuToggle.setAttribute("aria-expanded", String(open));
+  menuToggle.textContent = open ? "✕" : "☰";
 });
-
-navLinks.querySelectorAll("a").forEach(link => {
-  link.addEventListener("click", () => {
+navLinks.querySelectorAll("a").forEach(a => {
+  a.addEventListener("click", () => {
     navLinks.classList.remove("open");
     menuToggle.setAttribute("aria-expanded", "false");
     menuToggle.textContent = "☰";
   });
 });
-
 document.getElementById("year").textContent = new Date().getFullYear();
 
-/* HIGHLIGHT THE CURRENT SECTION */
-const sectionLinks = [...document.querySelectorAll(".navlinks a")];
-const observedSections = sectionLinks
-  .map(link => document.querySelector(link.getAttribute("href")))
-  .filter(Boolean);
-
+/* Highlight current section */
 if ("IntersectionObserver" in window) {
+  const links = [...document.querySelectorAll(".navlinks a")];
+  const sections = links.map(a => document.querySelector(a.getAttribute("href"))).filter(Boolean);
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        sectionLinks.forEach(link => {
-          link.classList.toggle(
-            "active",
-            link.getAttribute("href") === "#" + entry.target.id
-          );
-        });
+        links.forEach(a => a.classList.toggle("active", a.hash === "#" + entry.target.id));
       }
     });
   }, { rootMargin: "-25% 0px -60% 0px" });
-
-  observedSections.forEach(section => observer.observe(section));
+  sections.forEach(section => observer.observe(section));
 }
 
-/* READ-ONLY BNB SMART CHAIN COUNTER */
-const CONTRACT = "0xD6759d47Fccdef7b8E318479cEC4D128366f2a44";
+/* Read-only BNB Chain counter */
+const CONTRACT_ADDRESS = "0xD6759d47Fccdef7b8E318479cEC4D128366f2a44";
 const RPC_URL = "https://bsc-dataseed.binance.org/";
-const MULTICALL = "0xca11bde05977b3631167028862be2a173976ca11";
-
 const ABI = [
   "function lastUserId() view returns (uint256)",
   "function partnersInitialized() view returns (uint256)",
   "function isUserSlotActive(uint256,uint8) view returns (bool)"
 ];
 
-let provider;
-let contract;
-
+let contract = null;
 const statusEl = document.getElementById("counterStatus");
-const lastIdEl = document.getElementById("lastUserId");
-const initializedEl = document.getElementById("initializedUsers");
-const slotResultEl = document.getElementById("slotResult");
+const setStatus = text => statusEl.textContent = text;
 
-function setStatus(message) {
-  statusEl.textContent = message;
-}
-
-async function setupContract() {
+async function initContract() {
   if (!window.ethers) {
     await new Promise((resolve, reject) => {
       const script = document.createElement("script");
-      script.src =
-        "https://cdn.jsdelivr.net/npm/ethers@6.13.5/dist/ethers.umd.min.js";
+      script.src = "https://cdn.jsdelivr.net/npm/ethers@6.13.5/dist/ethers.umd.min.js";
       script.onload = resolve;
-      script.onerror = () => reject(new Error("Could not load ethers library."));
+      script.onerror = () => reject(new Error("Ethers library failed to load"));
       document.head.appendChild(script);
     });
   }
-
-  provider = new ethers.JsonRpcProvider(RPC_URL);
-  contract = new ethers.Contract(CONTRACT, ABI, provider);
+  const provider = new ethers.JsonRpcProvider(RPC_URL);
+  contract = new ethers.Contract(CONTRACT_ADDRESS, ABI, provider);
 }
 
 async function refreshCounter() {
-  const refreshButton = document.getElementById("refreshBtn");
-  refreshButton.disabled = true;
+  const button = document.getElementById("refreshBtn");
+  button.disabled = true;
   setStatus("Connecting to BNB Smart Chain…");
-
   try {
-    if (!contract) await setupContract();
-
-    const [lastUserId, initialized] = await Promise.all([
+    if (!contract) await initContract();
+    const [lastId, initialized] = await Promise.all([
       contract.lastUserId(),
       contract.partnersInitialized()
     ]);
-
-    lastIdEl.textContent = lastUserId.toString();
-    initializedEl.textContent = initialized.toString();
-    setStatus("Contract data loaded successfully.");
-
-    const userInput = document.getElementById("userIdInput");
-    if (!userInput.value) userInput.value = "1";
-
-    await checkUserSlot();
-  } catch (error) {
-    console.error(error);
-    setStatus(
-      "Could not read contract data. Check the RPC connection, contract address and ABI."
-    );
+    document.getElementById("lastUserId").textContent = lastId.toString();
+    document.getElementById("initializedUsers").textContent = initialized.toString();
+    setStatus("Contract data loaded.");
+    if (document.getElementById("userIdInput").value) await checkUserSlot();
+  } catch (e) {
+    console.error(e);
+    setStatus("Unable to read contract. Check the RPC, address and ABI.");
   } finally {
-    refreshButton.disabled = false;
+    button.disabled = false;
   }
 }
 
 async function checkUserSlot() {
   const userId = document.getElementById("userIdInput").value.trim();
   const slot = Number(document.getElementById("slotSelect").value);
-  const checkButton = document.getElementById("checkUserBtn");
-
-  if (!userId || !Number.isSafeInteger(Number(userId)) ||
-      Number(userId) < 1) {
-    slotResultEl.textContent = "—";
+  const button = document.getElementById("checkUserBtn");
+  if (!userId || !Number.isSafeInteger(Number(userId)) || Number(userId) < 1) {
+    document.getElementById("slotResult").textContent = "—";
     setStatus("Enter a valid positive user ID.");
     return;
   }
-
-  checkButton.disabled = true;
-  slotResultEl.textContent = "…";
-  setStatus("Checking the selected slot…");
-
+  button.disabled = true;
+  document.getElementById("slotResult").textContent = "…";
   try {
-    if (!contract) await setupContract();
-
+    if (!contract) await initContract();
     const active = await contract.isUserSlotActive(BigInt(userId), slot);
-    slotResultEl.textContent = active ? "ACTIVE" : "INACTIVE";
-    setStatus("Slot " + slot + " for user " + userId + " checked.");
-  } catch (error) {
-    console.error(error);
-    slotResultEl.textContent = "ERROR";
-    setStatus(
-      "Slot check failed. The contract method or ABI may differ from the configured version."
-    );
+    document.getElementById("slotResult").textContent = active ? "ACTIVE" : "INACTIVE";
+    setStatus("Checked slot " + slot + " for user " + userId + ".");
+  } catch (e) {
+    console.error(e);
+    document.getElementById("slotResult").textContent = "ERROR";
+    setStatus("Slot check failed. Confirm the contract ABI and method.");
   } finally {
-    checkButton.disabled = false;
+    button.disabled = false;
   }
 }
 
-document.getElementById("refreshBtn")
-  .addEventListener("click", refreshCounter);
-document.getElementById("checkUserBtn")
-  .addEventListener("click", checkUserSlot);
-document.getElementById("slotSelect")
-  .addEventListener("change", () => {
-    if (document.getElementById("userIdInput").value) checkUserSlot();
-  });
+document.getElementById("refreshBtn").addEventListener("click", refreshCounter);
+document.getElementById("checkUserBtn").addEventListener("click", checkUserSlot);
+document.getElementById("slotSelect").addEventListener("change", () => {
+  if (document.getElementById("userIdInput").value) checkUserSlot();
+});
 </script>
 </body>
 </html>
