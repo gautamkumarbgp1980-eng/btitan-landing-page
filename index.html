@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +9,11 @@
 <title>B-TITAN | The Ultimate Bitcoin Rush</title>
 
 <style>
-:root{--navy:#06152f;--gold:#ffd52e}
+:root{
+  --navy:#06152f;
+  --gold:#ffd52e;
+  --purple:#9c4dff;
+}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:150px}
 body{font-family:Arial,Helvetica,sans-serif;background:var(--navy);color:#fff;overflow-x:hidden}
@@ -26,36 +31,21 @@ min-height:90px;padding:10px 12px;
 display:flex;align-items:center;justify-content:space-between;gap:8px
 }
 .brand{display:flex;align-items:center;flex:1;min-width:0}
-
-/* B-TITAN LOGO */
 .logo{
-display:block;
-width:100%;
-max-width:340px;
-max-height:85px;
-height:auto;
-object-fit:contain;
-object-position:left center;
-background:transparent;
-border:0;
-border-radius:0;
-box-shadow:none;
-mix-blend-mode:screen;
-flex-shrink:1
+display:block;width:100%;max-width:340px;max-height:85px;height:auto;
+object-fit:contain;object-position:left center;background:transparent;
+border:0;border-radius:0;box-shadow:none;mix-blend-mode:screen;flex-shrink:1
 }
-
 .header-actions{display:flex;align-items:center;flex-shrink:0}
 .menu-btn{
 width:49px;height:49px;border:1px solid #ffffff30;
 border-radius:13px;background:#ffffff0c;color:white;font-size:27px
 }
-
 .search-wrap{padding:0 16px 12px}
 .search{
 width:100%;height:56px;border-radius:40px;border:0;outline:none;
 padding:0 20px;background:white;color:#222;font-size:15px
 }
-
 .nav{
 display:flex;align-items:center;gap:7px;padding:5px 12px 13px;
 overflow-x:auto;scrollbar-width:none
@@ -66,7 +56,6 @@ flex-shrink:0;padding:12px 14px;border-radius:13px;
 font-size:13px;font-weight:700;white-space:nowrap
 }
 .nav a.active{background:var(--gold);color:#111}
-
 .mobile-menu{
 display:none;padding:10px 16px 14px;
 background:#071744;border-top:1px solid #ffffff14
@@ -199,13 +188,11 @@ display:flex;flex-direction:column;align-items:flex-start;min-height:160px
 padding:10px 13px;border-radius:10px;background:var(--gold);
 color:#121a32;font-weight:900;font-size:10px;display:inline-block
 }
-
 .zoom-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .zoom-card{padding:19px;border:1px solid #ffd52e55;border-radius:16px;background:#10264b}
 .zoom-card h3{font-size:17px}
 .zoom-time{color:var(--gold);font-weight:800;margin:7px 0}
 .zoom-card p{font-size:12px;color:#c1cde1;margin-bottom:14px}
-
 .social-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
 .social-card{
 min-height:92px;border:1px solid #ffffff20;border-radius:15px;
@@ -213,13 +200,11 @@ background:#11274b;display:flex;align-items:center;justify-content:center;
 flex-direction:column;gap:7px;font-size:12px;font-weight:800
 }
 .social-icon{font-size:27px;color:var(--gold)}
-
 .footer{
 padding:22px 15px;text-align:center;background:#040d20;
 color:#bdc8df;font-size:11px
 }
 .footer strong{color:white;font-size:14px}
-
 .bottom-nav{
 display:none;position:fixed;bottom:0;left:0;right:0;z-index:30;
 background:#171e50;border-top:1px solid #ffffff1a;
@@ -232,6 +217,96 @@ gap:3px;padding:8px 2px;border-radius:13px;font-size:10px;color:#dce5ff
 }
 .bottom-nav a span{font-size:23px}
 .bottom-nav a.active{background:#ffffff18;color:#ffe18a}
+
+/* LIVE COUNTER */
+.live-counter{
+padding:35px 16px;
+background:linear-gradient(150deg,#10091c,#24102a,#090f27);
+color:#fff
+}
+.live-counter-inner{
+max-width:900px;margin:auto;padding:20px;
+border:1px solid #8d673b;border-radius:24px;
+background:#160e20;box-shadow:0 12px 35px #0004
+}
+.live-counter-head{text-align:center;margin-bottom:24px}
+.live-counter-head small{
+color:#ffd52e;font-size:10px;letter-spacing:2px;font-weight:900
+}
+.live-counter-head h2{
+font-size:clamp(25px,5vw,36px);margin:10px 0;color:#fff
+}
+.live-counter-head p{font-size:13px;color:#c5b7d5;line-height:1.7}
+.live-status{
+display:inline-flex;align-items:center;gap:7px;margin-top:12px;
+padding:8px 13px;border:1px solid #ffffff20;border-radius:30px;
+font-size:11px;color:#d7c9e3
+}
+.live-dot{
+width:8px;height:8px;border-radius:50%;background:#f0b84a;display:inline-block
+}
+.live-main{
+padding:24px 12px;text-align:center;border:1px solid #76552d;
+border-radius:17px;background:linear-gradient(135deg,#24111e,#100d20)
+}
+.live-label{font-size:11px;color:#d4c6dc;letter-spacing:1px}
+.live-number{
+display:block;font-size:clamp(36px,9vw,65px);font-weight:900;
+color:#ffd52e;margin:12px 0;overflow-wrap:anywhere
+}
+.live-sub{font-size:12px;color:#c8bad5;line-height:1.7}
+.live-stats{
+display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+gap:9px;margin-top:15px
+}
+.live-stat{
+min-width:0;text-align:center;padding:15px 6px;background:#21152b;
+border:1px solid #ffffff17;border-radius:13px
+}
+.live-stat small{display:block;font-size:10px;color:#c5b5d1;line-height:1.5}
+.live-stat strong{
+display:block;margin-top:8px;color:#ffd52e;
+font-size:clamp(17px,4vw,25px);overflow-wrap:anywhere
+}
+.live-stat em{font-size:10px;font-style:normal;color:#c5b5d1}
+.live-progress-wrap{
+margin-top:20px;padding:16px;border:1px solid #ffffff20;
+border-radius:14px;background:#1a1024
+}
+.live-progress-title{
+display:flex;justify-content:space-between;flex-wrap:wrap;
+gap:8px;font-size:12px;margin-bottom:12px
+}
+.live-progress-title strong{color:#ffdc5b}
+.live-progress{
+height:11px;background:#3b2949;border-radius:30px;overflow:hidden
+}
+.live-progress-bar{
+height:100%;width:0%;background:linear-gradient(90deg,#a83ee5,#ffd52e);
+border-radius:30px;transition:width .5s
+}
+.live-reserve{
+margin-top:15px;padding:17px;background:#21152b;
+border:1px solid #ffffff17;border-radius:14px
+}
+.live-reserve h3{color:#ffd52e;font-size:13px;margin-bottom:14px}
+.live-reserve-grid{
+display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px
+}
+.live-reserve-item{
+padding:12px 5px;text-align:center;background:#160e20;
+border-radius:10px;min-width:0
+}
+.live-reserve-item small{display:block;font-size:10px;color:#c5b5d1}
+.live-reserve-item strong{
+display:block;margin-top:8px;font-size:clamp(13px,3vw,20px);
+color:#fff;overflow-wrap:anywhere
+}
+.live-note{
+font-size:11px;line-height:1.7;color:#c5b7d5;
+text-align:center;margin-top:16px
+}
+.live-note a{color:#ffd52e;text-decoration:underline}
 
 @media(max-width:650px){
 .header-top{min-height:90px;padding:10px 12px;gap:8px}
@@ -247,11 +322,16 @@ gap:3px;padding:8px 2px;border-radius:13px;font-size:10px;color:#dce5ff
 .features span{font-size:12px}
 .btn{min-height:54px;padding:0 18px}
 .dashboard{padding:12px 12px 30px}
-.dash-card{min-height:135px;padding:14px 3px}
 .bottom-nav{display:grid}
 body{padding-bottom:75px}
 }
-
+@media(max-width:420px){
+.live-counter{padding:25px 10px}
+.live-counter-inner{padding:12px}
+.live-stats{gap:5px}
+.live-stat{padding:12px 3px}
+.live-reserve-grid{grid-template-columns:1fr}
+}
 @media(max-width:390px){
 .header-top{min-height:76px;padding:8px;gap:5px}
 .logo{max-width:190px;max-height:58px}
@@ -293,6 +373,7 @@ body{padding-bottom:75px}
   <nav class="nav">
     <a class="active" href="#top">⌂ Home</a>
     <a href="#profile">👤 My Profile</a>
+    <a href="#live-counter">₿ Live Counter</a>
     <a href="#promotion">🚀 Promotion Studio</a>
     <a href="#social">● Social Hub</a>
     <a href="#media">▣ Media Library</a>
@@ -301,6 +382,7 @@ body{padding-bottom:75px}
   <div class="mobile-menu" id="mobileMenu">
     <a href="#top">⌂ Home</a>
     <a href="#profile">👤 My Profile</a>
+    <a href="#live-counter">₿ Live Counter</a>
     <a href="#promotion">🚀 Promotion Studio</a>
     <a href="#social">● Social Hub</a>
     <a href="#media">▣ Media Library</a>
@@ -327,6 +409,7 @@ body{padding-bottom:75px}
   <div class="hero-buttons">
     <a class="btn btn-gold" href="#promotion">▶ Explore B-TITAN Links →</a>
     <a class="btn btn-outline" href="#social">▦ Explore Social Hub →</a>
+    <a class="btn btn-outline" href="#live-counter">₿ View Live Counter →</a>
   </div>
 
   <div class="hero-foot">✨ Explore · Connect · Learn</div>
@@ -350,9 +433,88 @@ body{padding-bottom:75px}
   </div>
 </section>
 
+<!-- LIVE COUNTER SECTION -->
+<section class="live-counter" id="live-counter">
+  <div class="live-counter-inner">
+
+    <div class="live-counter-head">
+      <small>BNB SMART CHAIN · LIVE DATA</small>
+      <h2>₿ B-TITAN Live Counter</h2>
+      <p>Registration activity · 24-hour growth · BTCB reserve · Milestone progress</p>
+      <div class="live-status">
+        <span class="live-dot" id="liveDot"></span>
+        <span id="liveStatus" aria-live="polite">Blockchain API setup required</span>
+      </div>
+    </div>
+
+    <div class="live-main">
+      <div class="live-label">LATEST REGISTERED SYSTEM ID</div>
+      <strong class="live-number" id="latestId">—</strong>
+      <div class="live-sub" id="lastRegistered">Waiting for verified contract data</div>
+      <div class="live-sub" style="margin-top:10px">Automatic refresh after API connection</div>
+    </div>
+
+    <div class="live-stats">
+      <div class="live-stat">
+        <small>REGISTERED · LAST 24H</small>
+        <strong id="registrations24h">—</strong>
+        <em>IDs</em>
+      </div>
+      <div class="live-stat">
+        <small>AVERAGE / HOUR</small>
+        <strong id="averageHour">—</strong>
+        <em>IDs</em>
+      </div>
+      <div class="live-stat">
+        <small>AVERAGE / MINUTE</small>
+        <strong id="averageMinute">—</strong>
+        <em>IDs</em>
+      </div>
+    </div>
+
+    <div class="live-progress-wrap">
+      <div class="live-progress-title">
+        <strong>🎯 3 Lakh Milestone</strong>
+        <span id="milestoneText">Awaiting verified data</span>
+      </div>
+      <div class="live-progress" id="milestoneProgress"
+           role="progressbar" aria-label="Registration milestone progress"
+           aria-valuemin="0" aria-valuemax="300000" aria-valuenow="0">
+        <div class="live-progress-bar" id="milestoneBar"></div>
+      </div>
+      <p class="live-note" id="milestoneDetail">Verified registration data has not been connected.</p>
+    </div>
+
+    <div class="live-reserve">
+      <h3>₿ SMART CONTRACT BTCB RESERVE</h3>
+      <div class="live-reserve-grid">
+        <div class="live-reserve-item">
+          <small>BTCB BALANCE</small>
+          <strong id="btcbBalance">—</strong>
+        </div>
+        <div class="live-reserve-item">
+          <small>VALUE IN USD</small>
+          <strong id="reserveUsd">—</strong>
+        </div>
+        <div class="live-reserve-item">
+          <small>VALUE IN INR</small>
+          <strong id="reserveInr">—</strong>
+        </div>
+      </div>
+    </div>
+
+    <p class="live-note">
+      Figures require a verified blockchain data source.
+      <a href="https://bscscan.com/" target="_blank" rel="noopener noreferrer">View BNB Smart Chain explorer ↗</a>
+    </p>
+
+  </div>
+</section>
+<!-- END LIVE COUNTER -->
+
 <section class="dashboard" id="profile">
   <div class="dashboard-grid">
-    <a class="dash-card" href="https://beacons.ai/gsdigitalacademy" target="_blank" rel="noopener">
+    <a class="dash-card" href="https://beacons.ai/gsdigitalacademy" target="_blank" rel="noopener noreferrer">
       <span class="dash-icon">👤</span><strong>My Profile</strong><small>Open Profile →</small>
     </a>
     <a class="dash-card" href="#promotion">
@@ -375,39 +537,46 @@ body{padding-bottom:75px}
 
 <section class="section" id="promotion">
   <div class="section-head">
-    <small>QUICK ACCESS</small>
-    <h2>Important Links</h2>
+    <small>QUICK ACCESS</small><h2>Important Links</h2>
     <p>B-TITAN resources and important links</p>
   </div>
   <div class="link-grid">
-    <article class="link-card"><span class="link-icon">▶️</span><h3>Complete Plan Video</h3><p>Watch the plan presentation.</p><a class="link-btn" href="https://youtu.be/jg6a-Jo_acE" target="_blank" rel="noopener">WATCH VIDEO ↗</a></article>
-    <article class="link-card"><span class="link-icon">📄</span><h3>Plan Presentation PDF</h3><p>Open the plan presentation document.</p><a class="link-btn" href="https://docs.google.com/presentation/d/1ZhQFHnTPKTx4Lqs4LjZRFQjwZjct5FGL/export/pdf" target="_blank" rel="noopener">OPEN PDF ↗</a></article>
-    <article class="link-card"><span class="link-icon">🆔</span><h3>ID Activation Guide</h3><p>Open the ID activation guide.</p><a class="link-btn" href="https://tinyurl.com/4u6jnrrw" target="_blank" rel="noopener">OPEN GUIDE ↗</a></article>
-    <article class="link-card"><span class="link-icon">⚙️</span><h3>2×2 Matrix Guide</h3><p>Watch the matrix guide.</p><a class="link-btn" href="https://youtu.be/HIxNEUneKYs" target="_blank" rel="noopener">WATCH GUIDE ↗</a></article>
-    <article class="link-card"><span class="link-icon">⛓️</span><h3>Blockchain ID Video</h3><p>Learn about blockchain ID.</p><a class="link-btn" href="https://youtube.com/shorts/-fIVG9pZtEo?si=nclwN9l8L6Fo1tLa" target="_blank" rel="noopener">WATCH VIDEO ↗</a></article>
-    <article class="link-card"><span class="link-icon">🌐</span><h3>Decentralized System</h3><p>Watch the educational overview.</p><a class="link-btn" href="https://youtu.be/MCNicgjFkxA" target="_blank" rel="noopener">WATCH VIDEO ↗</a></article>
-    <article class="link-card"><span class="link-icon">₿</span><h3>B-TITAN Website</h3><p>Visit the website.</p><a class="link-btn" href="https://btitan.net/" target="_blank" rel="noopener">OPEN WEBSITE ↗</a></article>
-    <article class="link-card"><span class="link-icon">🚀</span><h3>B-TITAN Registration</h3><p>Open the registration page.</p><a class="link-btn" href="https://btitan.net/register?id=10203" target="_blank" rel="noopener">REGISTER ↗</a></article>
+    <article class="link-card"><span class="link-icon">▶️</span><h3>Complete Plan Video</h3><p>Watch the plan presentation.</p><a class="link-btn" href="https://youtu.be/jg6a-Jo_acE" target="_blank" rel="noopener noreferrer">WATCH VIDEO ↗</a></article>
+    <article class="link-card"><span class="link-icon">📄</span><h3>Plan Presentation PDF</h3><p>Open the plan presentation document.</p><a class="link-btn" href="https://docs.google.com/presentation/d/1ZhQFHnTPKTx4Lqs4LjZRFQjwZjct5FGL/export/pdf" target="_blank" rel="noopener noreferrer">OPEN PDF ↗</a></article>
+    <article class="link-card"><span class="link-icon">🆔</span><h3>ID Activation Guide</h3><p>Open the ID activation guide.</p><a class="link-btn" href="https://tinyurl.com/4u6jnrrw" target="_blank" rel="noopener noreferrer">OPEN GUIDE ↗</a></article>
+    <article class="link-card"><span class="link-icon">⚙️</span><h3>2×2 Matrix Guide</h3><p>Watch the matrix guide.</p><a class="link-btn" href="https://youtu.be/HIxNEUneKYs" target="_blank" rel="noopener noreferrer">WATCH GUIDE ↗</a></article>
+    <article class="link-card"><span class="link-icon">⛓️</span><h3>Blockchain ID Video</h3><p>Learn about blockchain ID.</p><a class="link-btn" href="https://youtube.com/shorts/-fIVG9pZtEo?si=nclwN9l8L6Fo1tLa" target="_blank" rel="noopener noreferrer">WATCH VIDEO ↗</a></article>
+    <article class="link-card"><span class="link-icon">🌐</span><h3>Decentralized System</h3><p>Watch the educational overview.</p><a class="link-btn" href="https://youtu.be/MCNicgjFkxA" target="_blank" rel="noopener noreferrer">WATCH VIDEO ↗</a></article>
+    <article class="link-card"><span class="link-icon">₿</span><h3>B-TITAN Website</h3><p>Visit the website.</p><a class="link-btn" href="https://btitan.net/" target="_blank" rel="noopener noreferrer">OPEN WEBSITE ↗</a></article>
+    <article class="link-card"><span class="link-icon">🚀</span><h3>B-TITAN Registration</h3><p>Open the registration page.</p><a class="link-btn" href="https://btitan.net/register?id=10203" target="_blank" rel="noopener noreferrer">REGISTER ↗</a></article>
   </div>
 </section>
 
 <section class="section" id="zoom">
   <div class="section-head"><small>ONLINE MEETINGS</small><h2>Zoom Meetings</h2><p>Join the online sessions</p></div>
   <div class="zoom-grid">
-    <article class="zoom-card"><h3>🌅 Morning Zoom</h3><div class="zoom-time">Daily · 9:00 AM IST</div><p>Morning meeting and team discussion.</p><a class="link-btn" href="https://zoom.us/j/7890581048?pwd=0c3cExXWU7Xt1sBfLuvo0DlWej9xmV.1" target="_blank" rel="noopener">JOIN ZOOM ↗</a></article>
-    <article class="zoom-card"><h3>🌙 Evening Zoom</h3><div class="zoom-time">Daily · 9:00 PM IST</div><p>Evening meeting and team discussion.</p><a class="link-btn" href="https://zoom.us/j/6053096493?pwd=v43dprpzbo7Xqc4omNKu95IJVx6pR9.1" target="_blank" rel="noopener">JOIN ZOOM ↗</a></article>
+    <article class="zoom-card">
+      <h3>🌅 Morning Zoom</h3><div class="zoom-time">Daily · 9:00 AM IST</div>
+      <p>Morning meeting and team discussion.</p>
+      <a class="link-btn" href="https://zoom.us/j/7890581048?pwd=0c3cExXWU7Xt1sBfLuvo0DlWej9xmV.1" target="_blank" rel="noopener noreferrer">JOIN ZOOM ↗</a>
+    </article>
+    <article class="zoom-card">
+      <h3>🌙 Evening Zoom</h3><div class="zoom-time">Daily · 9:00 PM IST</div>
+      <p>Evening meeting and team discussion.</p>
+      <a class="link-btn" href="https://zoom.us/j/6053096493?pwd=v43dprpzbo7Xqc4omNKu95IJVx6pR9.1" target="_blank" rel="noopener noreferrer">JOIN ZOOM ↗</a>
+    </article>
   </div>
 </section>
 
 <section class="section" id="social">
   <div class="section-head"><small>STAY CONNECTED</small><h2>Social Hub</h2><p>Connect with the community</p></div>
   <div class="social-grid">
-    <a class="social-card" href="https://www.facebook.com/profile.php?id=61590478625779" target="_blank" rel="noopener"><span class="social-icon">f</span>Facebook</a>
-    <a class="social-card" href="https://youtube.com/@gautamdigitalacademy?si=yEkIv6-54rAN0h6e" target="_blank" rel="noopener"><span class="social-icon">▶</span>YouTube</a>
-    <a class="social-card" href="https://www.instagram.com/btitanchampions?psln=MzZheDgwdTUzcnJ0" target="_blank" rel="noopener"><span class="social-icon">◎</span>Instagram</a>
-    <a class="social-card" href="https://wa.me/918368960385?text=Hello%20B-TITAN" target="_blank" rel="noopener"><span class="social-icon">☏</span>WhatsApp</a>
-    <a class="social-card" href="https://beacons.ai/gsdigitalacademy" target="_blank" rel="noopener"><span class="social-icon">🔗</span>Community Hub</a>
-    <a class="social-card" href="https://t.me/" target="_blank" rel="noopener"><span class="social-icon">✈</span>Telegram</a>
+    <a class="social-card" href="https://www.facebook.com/profile.php?id=61590478625779" target="_blank" rel="noopener noreferrer"><span class="social-icon">f</span>Facebook</a>
+    <a class="social-card" href="https://youtube.com/@gautamdigitalacademy?si=yEkIv6-54rAN0h6e" target="_blank" rel="noopener noreferrer"><span class="social-icon">▶</span>YouTube</a>
+    <a class="social-card" href="https://www.instagram.com/btitanchampions?psln=MzZheDgwdTUzcnJ0" target="_blank" rel="noopener noreferrer"><span class="social-icon">◎</span>Instagram</a>
+    <a class="social-card" href="https://wa.me/918368960385?text=Hello%20B-TITAN" target="_blank" rel="noopener noreferrer"><span class="social-icon">☏</span>WhatsApp</a>
+    <a class="social-card" href="https://beacons.ai/gsdigitalacademy" target="_blank" rel="noopener noreferrer"><span class="social-icon">🔗</span>Community Hub</a>
+    <a class="social-card" href="https://t.me/" target="_blank" rel="noopener noreferrer"><span class="social-icon">✈</span>Telegram</a>
   </div>
 </section>
 
@@ -431,79 +600,252 @@ body{padding-bottom:75px}
   <a href="#profile"><span>👤</span>Profile</a>
   <a href="#promotion"><span>🚀</span>Promote</a>
   <a href="#social"><span>🌐</span>Social</a>
-  <a href="#shareApp" id="bottomShare"><span>↗</span>Share</a>
+  <a href="#live-counter"><span>₿</span>Live</a>
 </nav>
 
 <script>
-const menuBtn=document.getElementById('menuBtn');
-const mobileMenu=document.getElementById('mobileMenu');
+const menuBtn = document.getElementById("menuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
 
-menuBtn.addEventListener('click',()=>{
-  const open=mobileMenu.classList.toggle('open');
-  menuBtn.setAttribute('aria-expanded',String(open));
+menuBtn.addEventListener("click", () => {
+  const open = mobileMenu.classList.toggle("open");
+  menuBtn.setAttribute("aria-expanded", String(open));
 });
 
-mobileMenu.querySelectorAll('a').forEach(a=>{
-  a.addEventListener('click',()=>mobileMenu.classList.remove('open'));
-});
-
-document.getElementById('searchInput').addEventListener('input',function(){
-  const q=this.value.trim().toLowerCase();
-  document.querySelectorAll('.link-card,.zoom-card,.social-card,.dash-card').forEach(c=>{
-    c.style.display=(!q||c.textContent.toLowerCase().includes(q))?'':'none';
+mobileMenu.querySelectorAll("a").forEach(a => {
+  a.addEventListener("click", () => {
+    mobileMenu.classList.remove("open");
+    menuBtn.setAttribute("aria-expanded", "false");
   });
 });
 
-document.getElementById('copyMessage').addEventListener('click',async()=>{
-  const msg='B-TITAN — The Ultimate Bitcoin Rush\nWebsite: https://btitan.net/\nCommunity Hub: https://beacons.ai/gsdigitalacademy';
-  try{
+/* Search existing page cards */
+document.getElementById("searchInput").addEventListener("input", function() {
+  const q = this.value.trim().toLowerCase();
+  document.querySelectorAll(".link-card,.zoom-card,.social-card,.dash-card").forEach(card => {
+    card.style.display = (!q || card.textContent.toLowerCase().includes(q)) ? "" : "none";
+  });
+});
+
+/* Copy promotion message */
+document.getElementById("copyMessage").addEventListener("click", async () => {
+  const msg = "B-TITAN — The Ultimate Bitcoin Rush\nWebsite: https://btitan.net/\nCommunity Hub: https://beacons.ai/gsdigitalacademy";
+  try {
     await navigator.clipboard.writeText(msg);
-    alert('Message copied!');
-  }catch(e){
-    prompt('Copy this message:',msg);
+    alert("Message copied!");
+  } catch (e) {
+    prompt("Copy this message:", msg);
   }
 });
 
-async function sharePage(){
-  const data={
-    title:'B-TITAN',
-    text:'Visit B-TITAN — The Ultimate Bitcoin Rush',
-    url:location.href
+/* Share page */
+async function sharePage() {
+  const data = {
+    title: "B-TITAN",
+    text: "Visit B-TITAN — The Ultimate Bitcoin Rush",
+    url: location.href
   };
 
-  if(navigator.share){
-    try{await navigator.share(data)}catch(e){}
-  }else{
-    try{
+  if (navigator.share) {
+    try { await navigator.share(data); } catch (e) {}
+  } else {
+    try {
       await navigator.clipboard.writeText(location.href);
-      alert('Page link copied!');
-    }catch(e){
-      prompt('Copy page link:',location.href);
+      alert("Page link copied!");
+    } catch (e) {
+      prompt("Copy page link:", location.href);
     }
   }
 }
 
-document.getElementById('shareApp').addEventListener('click',sharePage);
+document.getElementById("shareApp").addEventListener("click", sharePage);
 
-document.getElementById('bottomShare').addEventListener('click',e=>{
-  e.preventDefault();
-  sharePage();
-});
-
-document.getElementById('mediaPicker').addEventListener('change',function(){
-  document.getElementById('mediaStatus').textContent=
+/* Media picker */
+document.getElementById("mediaPicker").addEventListener("change", function() {
+  document.getElementById("mediaStatus").textContent =
     this.files.length
-      ?this.files.length+' file(s) selected. Sharing depends on your device and browser.'
-      :'';
+      ? this.files.length + " file(s) selected. Sharing depends on your device and browser."
+      : "";
 });
 
-document.querySelectorAll('.bottom-nav a').forEach(a=>{
-  if(a.id==='bottomShare')return;
-  a.addEventListener('click',()=>{
-    document.querySelectorAll('.bottom-nav a').forEach(x=>x.classList.remove('active'));
-    a.classList.add('active');
+/* Bottom navigation active state */
+document.querySelectorAll(".bottom-nav a").forEach(a => {
+  a.addEventListener("click", () => {
+    document.querySelectorAll(".bottom-nav a").forEach(x => x.classList.remove("active"));
+    a.classList.add("active");
   });
 });
+
+/* =====================================================
+   LIVE COUNTER API CONFIGURATION
+
+   Leave empty until your verified backend is deployed.
+   Never put private keys, wallet seed phrases, or API
+   secrets in this public HTML file.
+
+   Expected backend JSON:
+   {
+     "latestId": 154708,
+     "registrations24h": 709,
+     "averageHour": 30,
+     "averageMinute": 0.5,
+     "lastRegistered": "Verified timestamp",
+     "milestoneTarget": 300000,
+     "btcbBalance": "4.31501535",
+     "reserveUsd": "346737",
+     "reserveInr": "36060625"
+   }
+
+   These numbers are an EXAMPLE OF THE RESPONSE FORMAT,
+   NOT REAL DATA. Do not copy them into the live API.
+===================================================== */
+
+const LIVE_COUNTER_API = "";
+
+function liveText(id, value) {
+  const element = document.getElementById(id);
+  if (element) element.textContent = value;
+}
+
+function liveFormat(value, decimals = 0) {
+  if (value === null || value === undefined || value === "") return "—";
+
+  const number = Number(value);
+  if (!Number.isFinite(number) || number < 0) return "—";
+
+  return number.toLocaleString("en-IN", {
+    maximumFractionDigits: decimals
+  });
+}
+
+function updateLiveCounter(data) {
+  const latestId = Number(data.latestId);
+  const count24h = Number(data.registrations24h);
+  const target = Number(data.milestoneTarget || 300000);
+
+  liveText(
+    "latestId",
+    Number.isSafeInteger(latestId) && latestId >= 0
+      ? liveFormat(latestId)
+      : "—"
+  );
+
+  liveText(
+    "registrations24h",
+    Number.isFinite(count24h) && count24h >= 0
+      ? liveFormat(count24h)
+      : "—"
+  );
+
+  liveText("averageHour", liveFormat(data.averageHour, 2));
+  liveText("averageMinute", liveFormat(data.averageMinute, 2));
+
+  liveText(
+    "lastRegistered",
+    data.lastRegistered
+      ? "Last registration: " + String(data.lastRegistered)
+      : "Verified timestamp unavailable"
+  );
+
+  liveText(
+    "btcbBalance",
+    data.btcbBalance != null
+      ? liveFormat(data.btcbBalance, 8) + " BTCB"
+      : "—"
+  );
+
+  liveText(
+    "reserveUsd",
+    data.reserveUsd != null ? "$" + liveFormat(data.reserveUsd, 2) : "—"
+  );
+
+  liveText(
+    "reserveInr",
+    data.reserveInr != null ? "₹" + liveFormat(data.reserveInr, 2) : "—"
+  );
+
+  const validTarget = Number.isFinite(target) && target > 0;
+  const validId = Number.isSafeInteger(latestId) && latestId >= 0;
+  const progress = validTarget && validId
+    ? Math.min(100, (latestId / target) * 100)
+    : 0;
+
+  const bar = document.getElementById("milestoneBar");
+  const progressElement = document.getElementById("milestoneProgress");
+
+  if (bar) bar.style.width = progress + "%";
+
+  if (progressElement) {
+    progressElement.setAttribute("aria-valuenow", String(
+      validTarget && validId ? Math.min(latestId, target) : 0
+    ));
+    progressElement.setAttribute("aria-valuemax", String(target));
+  }
+
+  liveText(
+    "milestoneText",
+    validTarget && validId ? progress.toFixed(2) + "% complete" : "—"
+  );
+
+  liveText(
+    "milestoneDetail",
+    validTarget && validId
+      ? liveFormat(Math.max(0, target - latestId)) +
+        " IDs remaining out of " + liveFormat(target)
+      : "Verified registration count is unavailable."
+  );
+}
+
+let liveCounterTimer = null;
+let liveCounterBusy = false;
+
+async function refreshLiveCounter() {
+  if (!LIVE_COUNTER_API) {
+    liveText("liveStatus", "Setup required: connect verified blockchain API");
+    return;
+  }
+
+  if (liveCounterBusy) return;
+  liveCounterBusy = true;
+
+  try {
+    const response = await fetch(LIVE_COUNTER_API, {
+      method: "GET",
+      headers: { Accept: "application/json" },
+      cache: "no-store"
+    });
+
+    if (!response.ok) throw new Error("API request failed");
+
+    const data = await response.json();
+
+    if (!data || typeof data !== "object") {
+      throw new Error("Invalid API response");
+    }
+
+    updateLiveCounter(data);
+
+    liveText("liveStatus", "Data received · source verification required");
+
+    const dot = document.getElementById("liveDot");
+    if (dot) dot.style.background = "#32df9b";
+
+  } catch (error) {
+    liveText("liveStatus", "Live data temporarily unavailable");
+
+    const dot = document.getElementById("liveDot");
+    if (dot) dot.style.background = "#ff6b6b";
+
+  } finally {
+    liveCounterBusy = false;
+  }
+}
+
+refreshLiveCounter();
+
+if (LIVE_COUNTER_API) {
+  liveCounterTimer = setInterval(refreshLiveCounter, 10000);
+}
 </script>
 </body>
 </html>
