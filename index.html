@@ -11,10 +11,16 @@
 
 <style>
 :root{
-  --bg:#050a25;--nav:#070d2b;--panel:#0b1437;
-  --gold:#f5c451;--gold2:#ffe8a0;--blue:#176cff;
-  --purple:#742bff;--white:#f8f9ff;--muted:#c0c9e8;
-  --border:rgba(245,196,81,.28)
+  --bg:#050a25;
+  --nav:#070d2b;
+  --panel:#0b1437;
+  --gold:#f5c451;
+  --gold2:#ffe8a0;
+  --blue:#176cff;
+  --purple:#742bff;
+  --white:#f8f9ff;
+  --muted:#c0c9e8;
+  --border:rgba(245,196,81,.35);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -57,27 +63,27 @@ nav a.join-link{
   box-shadow:0 0 22px rgba(245,196,81,.18);font-weight:900
 }
 
-/* PAGE SWITCHING */
+/* PAGE NAVIGATION */
 .page{display:none;min-height:70vh;padding:36px 0 65px}
 .page.active{display:block}
 
-/* HOME DESIGN */
-#home{padding-top:0}
+/* PREMIUM HOME */
+#home{padding:0}
 .home-stage{
   position:relative;isolation:isolate;overflow:hidden;
   min-height:calc(100vh - 100px);
   display:flex;align-items:center;justify-content:center;
-  padding:40px 0 55px;
+  padding:36px 0 45px;
   background:
-    radial-gradient(ellipse at 50% 22%,rgba(0,100,255,.25),transparent 34%),
-    radial-gradient(ellipse at 0% 58%,rgba(112,26,255,.2),transparent 35%),
-    radial-gradient(ellipse at 100% 55%,rgba(0,80,255,.19),transparent 35%),
+    radial-gradient(ellipse at 50% 17%,rgba(0,100,255,.32),transparent 33%),
+    radial-gradient(ellipse at 0% 48%,rgba(112,26,255,.23),transparent 35%),
+    radial-gradient(ellipse at 100% 48%,rgba(0,80,255,.22),transparent 35%),
     linear-gradient(180deg,#060b27,#07143b 58%,#050a25)
 }
 .home-stage:before{
   content:"";position:absolute;z-index:-1;
   width:min(750px,85vw);height:min(750px,85vw);
-  top:25px;left:50%;transform:translateX(-50%);
+  top:15px;left:50%;transform:translateX(-50%);
   border:1px solid rgba(245,196,81,.35);border-radius:50%;
   box-shadow:0 0 0 22px rgba(245,196,81,.025),
     0 0 0 50px rgba(51,96,255,.035),
@@ -86,19 +92,19 @@ nav a.join-link{
 }
 .home-stage:after{
   content:"";position:absolute;z-index:-1;bottom:0;left:-5%;right:-5%;
-  height:26%;border-top:1px solid rgba(245,196,81,.4);
-  background:linear-gradient(180deg,rgba(31,65,152,.08),transparent);
+  height:25%;border-top:1px solid rgba(245,196,81,.42);
+  background:linear-gradient(180deg,rgba(31,65,152,.12),transparent);
   transform:perspective(400px) rotateX(8deg);
   pointer-events:none
 }
 .hero{
   width:min(900px,100%);margin:auto;text-align:center;
-  padding:16px 18px 0
+  padding:12px 18px 0
 }
 .logo-hero{
-  display:block;width:min(260px,65vw);height:190px;
-  object-fit:contain;margin:0 auto 12px;
-  filter:drop-shadow(0 0 24px rgba(245,196,81,.22))
+  display:block;width:min(250px,65vw);height:180px;
+  object-fit:contain;margin:0 auto 15px;
+  filter:drop-shadow(0 0 24px rgba(245,196,81,.24))
 }
 .welcome-label{
   display:flex;justify-content:center;align-items:center;gap:12px;
@@ -106,7 +112,7 @@ nav a.join-link{
   font-weight:800;text-transform:uppercase
 }
 .welcome-label:before,.welcome-label:after{
-  content:"";width:55px;height:1px;
+  content:"";width:48px;height:1px;
   background:linear-gradient(90deg,transparent,var(--gold))
 }
 .welcome-label:after{transform:rotate(180deg)}
@@ -172,7 +178,7 @@ nav a.join-link{
 .card .btn{margin-top:18px}
 .card-label{font-size:10px;letter-spacing:2px;color:var(--gold);font-weight:800;margin-bottom:12px}
 
-/* COUNTER */
+/* LIVE COUNTER */
 .counter-panel{padding:22px;border:1px solid var(--border);border-radius:18px;background:#0b1437}
 .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px;margin-bottom:20px}
 .stat{padding:16px;border:1px solid var(--border);border-radius:12px;background:#101a40;min-width:0}
@@ -204,7 +210,7 @@ select{padding:12px;background:#0b1437;color:white;border:1px solid var(--border
 .resource-text small{font-size:11px;color:var(--muted);line-height:1.5}
 .arrow{color:var(--gold);font-size:19px}
 
-/* JOIN */
+/* JOIN PAGE */
 .join-box{
   padding:48px 22px;text-align:center;border-radius:24px;
   border:1px solid rgba(245,196,81,.4);
@@ -212,6 +218,7 @@ select{padding:12px;background:#0b1437;color:white;border:1px solid var(--border
 }
 .join-box h2{font-size:clamp(29px,5vw,46px);margin:16px 0}
 .join-box p{max-width:600px;margin:0 auto 25px;color:var(--muted);font-size:14px;line-height:1.8}
+
 footer{text-align:center;padding:28px 0 95px;color:var(--muted);font-size:11px;line-height:1.9}
 footer strong{color:var(--gold);letter-spacing:2px}
 .mobile-nav{display:none}
@@ -437,7 +444,7 @@ footer strong{color:var(--gold);letter-spacing:2px}
   </div>
 </footer>
 
-<!-- MOBILE NAV -->
+<!-- MOBILE BOTTOM NAVIGATION -->
 <div class="mobile-nav" aria-label="Mobile navigation">
   <a href="#home" class="active"><span>⌂</span><span>Home</span></a>
   <a href="#live-counter"><span>▦</span><span>Counter</span></a>
@@ -454,7 +461,6 @@ footer strong{color:var(--gold);letter-spacing:2px}
 const CONTRACT_ADDRESS="0xD6759d47Fccdef7b8E318479cEC4D128366f2a44";
 const RPC_URL="https://bsc-dataseed.binance.org/";
 const MULTICALL_ADDRESS="0xca11bde05977b3631167028862be2a173976ca11";
-
 const ABI=[
  "function lastUserId() view returns (uint256)",
  "function partnersInitialized() view returns (bool)",
@@ -468,7 +474,7 @@ const $=id=>document.getElementById(id);
 let contract=null,multicall=null,lastUserId=0;
 let scanning=false,cancelRequested=false;
 
-function msg(text,type=""){
+function setMessage(text,type=""){
  $("counter-message").textContent=text;
  $("counter-message").className="status"+(type?" "+type:"");
 }
@@ -492,8 +498,9 @@ function showResults(ids,slot){
 }
 
 async function connectContract(){
- if(!window.ethers){msg("Ethers library failed to load. Check your internet connection.","error");return;}
- $("connect-btn").disabled=true;msg("Connecting to BNB Smart Chain...");
+ if(!window.ethers){setMessage("Ethers library failed to load. Check internet.","error");return;}
+ $("connect-btn").disabled=true;
+ setMessage("Connecting to BNB Smart Chain...");
  try{
   const p=new ethers.JsonRpcProvider(RPC_URL);
   const c=new ethers.Contract(CONTRACT_ADDRESS,ABI,p);
@@ -506,20 +513,21 @@ async function connectContract(){
   $("contract-status").textContent="Connected";
   $("last-user-id").textContent=fmt(lastUserId);
   $("active-count").textContent="—";
-  msg("Connected. Partners initialized: "+(initialized?"Yes":"No")+
+  setMessage("Connected. Partners initialized: "+(initialized?"Yes":"No")+
    ". Scan range: IDs 1 to "+Math.max(0,lastUserId-1)+".","good");
  }catch(e){
-  console.error(e);$("contract-status").textContent="Connection Error";
-  msg("Connection failed: "+(e.shortMessage||e.message||"Unknown RPC error"),"error");
+  console.error(e);
+  $("contract-status").textContent="Connection Error";
+  setMessage("Connection failed: "+(e.shortMessage||e.message||"Unknown RPC error"),"error");
  }finally{$("connect-btn").disabled=false;}
 }
 
 async function scanSlot(){
- if(!contract||!multicall){msg("Please connect the contract first.","error");return;}
- if(scanning){msg("A scan is already running.");return;}
- if(!Number.isSafeInteger(lastUserId)||lastUserId<1){msg("Invalid or empty user ID range.","error");return;}
+ if(!contract||!multicall){setMessage("Please connect the contract first.","error");return;}
+ if(scanning){setMessage("A scan is already running.");return;}
+ if(!Number.isSafeInteger(lastUserId)||lastUserId<1){setMessage("Invalid or empty user ID range.","error");return;}
  const slot=Number($("slot-select").value),endId=lastUserId-1;
- if(endId<1){$("active-count").textContent="0";showResults([],slot);msg("No user IDs available.");return;}
+ if(endId<1){$("active-count").textContent="0";showResults([],slot);setMessage("No user IDs available.");return;}
 
  scanning=true;cancelRequested=false;
  $("scan-btn").disabled=true;$("connect-btn").disabled=true;$("slot-select").disabled=true;
@@ -540,7 +548,8 @@ async function scanSlot(){
    if(cancelRequested)return;
    if(end>start){
     const mid=Math.floor((start+end)/2);
-    await runBatch(start,mid);await runBatch(mid+1,end);
+    await runBatch(start,mid);
+    await runBatch(mid+1,end);
    }else{failed++;completed++;}
    return;
   }
@@ -557,7 +566,7 @@ async function scanSlot(){
   }
   $("active-count").textContent=fmt(found.length);
   setProgress(completed/endId*100);showResults(found,slot);
-  msg("Scanning Slot "+slot+": "+fmt(completed)+" / "+fmt(endId)+
+  setMessage("Scanning Slot "+slot+": "+fmt(completed)+" / "+fmt(endId)+
    " IDs checked. Active IDs found: "+fmt(found.length)+
    (failed?". Failed reads: "+fmt(failed):""));
  }
@@ -567,12 +576,13 @@ async function scanSlot(){
    if(cancelRequested)break;
    await runBatch(start,Math.min(start+batchSize-1,endId));
   }
-  if(cancelRequested)msg("Scan cancelled. Count includes only IDs processed before cancellation.");
-  else if(failed)msg("Scan finished with incomplete reads. Active IDs found: "+fmt(found.length)+
+  if(cancelRequested)setMessage("Scan cancelled. Count includes IDs processed before cancellation.");
+  else if(failed)setMessage("Scan finished with incomplete reads. Active IDs found: "+fmt(found.length)+
    "; failed reads: "+fmt(failed)+". Results may be incomplete.","error");
-  else msg("Scan completed. "+fmt(found.length)+" active IDs found for Slot "+slot+".","good");
+  else setMessage("Scan completed. "+fmt(found.length)+" active IDs found for Slot "+slot+".","good");
  }catch(e){
-  console.error(e);msg("Scan error: "+(e.shortMessage||e.message||"Unknown error"),"error");
+  console.error(e);
+  setMessage("Scan error: "+(e.shortMessage||e.message||"Unknown error"),"error");
  }finally{
   scanning=false;$("scan-btn").disabled=false;$("connect-btn").disabled=false;$("slot-select").disabled=false;
  }
@@ -581,13 +591,12 @@ async function scanSlot(){
 $("connect-btn").addEventListener("click",connectContract);
 $("scan-btn").addEventListener("click",scanSlot);
 $("cancel-btn").addEventListener("click",()=>{
- if(scanning){cancelRequested=true;msg("Cancellation requested. Waiting for current RPC call.");}
- else msg("No scan is running.");
+ if(scanning){cancelRequested=true;setMessage("Cancellation requested. Waiting for current RPC call.");}
+ else setMessage("No scan is running.");
 });
 
-/* Show only the section selected in the navigation. */
+/* Each menu option opens its own section only. */
 const pageIds=["home","live-counter","zoom","social","videos","join"];
-
 function showPage(){
  let id=(location.hash||"#home").slice(1);
  if(!pageIds.includes(id))id="home";
@@ -599,7 +608,6 @@ function showPage(){
  });
  window.scrollTo(0,0);
 }
-
 document.querySelectorAll('nav a[href^="#"],.mobile-nav a[href^="#"],.hero a[href^="#"]').forEach(link=>{
  link.addEventListener("click",()=>{
   if(location.hash===link.getAttribute("href"))showPage();
