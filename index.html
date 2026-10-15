@@ -10,35 +10,15 @@
 <style>
 :root{--navy:#070d30;--gold:#ffd365}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:80px}
+html{scroll-behavior:smooth;scroll-padding-top:20px}
 body{margin:0;background:var(--navy);color:#fff;font-family:Arial,sans-serif}
 a{text-decoration:none;color:inherit}
 button{cursor:pointer;font:inherit}
+button:disabled{opacity:.55;cursor:wait}
 
-header{
- position:sticky;top:0;z-index:100;
- background:#070d30;border-bottom:1px solid #dcb65455
-}
-.nav{
- max-width:1200px;width:94%;margin:auto;min-height:76px;
- display:flex;align-items:center;justify-content:space-between;gap:14px
-}
-.brand{display:flex;align-items:center;gap:9px}
-.brand img{width:46px;height:46px;object-fit:contain}
-.brand-name{font-size:22px;font-weight:900;color:var(--gold)}
-.brand-sub{font-size:9px;letter-spacing:3px;margin-top:3px}
-.navlinks{display:flex;gap:5px;align-items:center}
-.navlinks a{padding:13px 11px;border-radius:12px;font-size:14px}
-.navlinks a:hover,.navlinks a.active{background:#302b38;color:var(--gold)}
-.gold-btn{
- display:inline-flex;align-items:center;justify-content:center;
- padding:14px 22px;border:1px solid #fff0b0;border-radius:14px;
- color:#17101c;background:linear-gradient(110deg,#ffe992,#ffca43,#efa62a);
- font-weight:900;box-shadow:0 0 22px #ffc84b35
-}
-.menu-toggle{display:none}
+/* The reference image already contains the full website header */
+header{display:none!important}
 
-/* Reference image is the complete visual home design */
 .hero{background:#070d30;overflow:hidden}
 .hero-art{position:relative;width:100%;max-width:1024px;margin:auto}
 .hero-art img{display:block;width:100%;height:auto}
@@ -52,71 +32,98 @@ header{
 .hot-join-main{left:24%;top:75%;width:52%;height:7%}
 
 .content{
- padding:60px 0;border-top:1px solid #ffffff15;
+ padding:48px 0;
+ border-top:1px solid #ffffff15;
  background:radial-gradient(ellipse at top,#17265a,transparent 70%),#070d30
 }
 .container{width:min(1100px,92%);margin:auto}
 .title{text-align:center;font-size:clamp(27px,4vw,40px);margin:0;font-weight:900}
 .title span{color:var(--gold)}
-.line{width:90px;height:3px;margin:18px auto 25px;background:var(--gold)}
-.intro{max-width:720px;margin:0 auto 30px;text-align:center;color:#d1d8f3;line-height:1.8}
+.line{width:90px;height:3px;margin:16px auto 22px;background:var(--gold)}
+.intro{max-width:720px;margin:0 auto 25px;text-align:center;color:#d1d8f3;line-height:1.7}
 .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.card{padding:23px;border:1px solid #eac15c55;border-radius:18px;background:linear-gradient(145deg,#121d4a,#0a102e);overflow-wrap:anywhere}
-.card h3{margin:0 0 12px}
+.card{padding:22px;border:1px solid #eac15c55;border-radius:18px;background:linear-gradient(145deg,#121d4a,#0a102e);overflow-wrap:anywhere}
+.card h3{margin:0 0 10px}
 .card p{font-size:14px;line-height:1.7;color:#cbd2f3}
 .card .gold-btn{margin-top:8px}
 .icon{font-size:28px;margin-bottom:12px}
+.gold-btn{
+ display:inline-flex;align-items:center;justify-content:center;
+ padding:12px 17px;border:1px solid #fff0b0;border-radius:11px;
+ color:#17101c;background:linear-gradient(110deg,#ffe992,#ffca43,#efa62a);
+ font-weight:900;box-shadow:0 0 16px #ffc84b25
+}
+
+/* Compact Live Counter */
+.counter-card{max-width:760px;margin:auto;padding:clamp(14px,3vw,24px)}
+.counter-card h3{font-size:19px;margin:0 0 8px}
+.contract-address{
+ padding:10px 12px;background:#080f2b;border:1px solid #ffffff18;
+ border-radius:9px;color:#dce3ff;font-size:12px;line-height:1.6;
+ overflow-wrap:anywhere;margin:10px 0 14px
+}
+.contract-address strong{color:var(--gold)}
+.controls{
+ display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:14px 0
+}
+.controls input,.controls select{
+ width:100%;min-width:0;padding:12px;
+ background:#101a40;color:#fff;border:1px solid #eac15c66;
+ border-radius:10px;font-size:14px
+}
+.controls select option{background:#101a40;color:#fff}
+.controls .gold-btn{width:100%;padding:12px 8px;font-size:13px}
+.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px}
+.stat{
+ min-width:0;text-align:center;padding:16px 8px;
+ border:1px solid #eac15c50;border-radius:12px;background:#10183c
+}
+.stat strong{
+ display:block;color:var(--gold);font-size:clamp(20px,4vw,28px);
+ margin-bottom:6px;overflow-wrap:anywhere
+}
+.stat span{font-size:12px;color:#d4dcf8;line-height:1.5}
+.status{
+ margin:13px 0 0;padding:10px 12px;background:#080f2b;
+ border:1px solid #ffffff18;border-radius:9px;color:#f8d97b;
+ font-size:12px;line-height:1.6;overflow-wrap:anywhere;min-height:40px
+}
+.status.error{color:#ffaaaa;border-color:#ff777755}
+.counter-note{font-size:11px!important;color:#aebbe0!important;margin:12px 0 0!important;line-height:1.6!important}
 .link-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
 .link-card{display:flex;justify-content:space-between;gap:12px;padding:17px;border:1px solid #ffffff24;border-radius:13px;background:#111a40}
 .link-card span:last-child{color:var(--gold)}
-.controls{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:22px 0}
-.controls input,.controls select{min-width:120px;padding:12px;background:#101a40;color:white;border:1px solid #eac15c66;border-radius:10px}
-.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-.stat{text-align:center;padding:20px 8px;border:1px solid #eac15c50;border-radius:14px;background:#10183c}
-.stat strong{display:block;color:var(--gold);font-size:28px;margin-bottom:7px}
-.stat span{font-size:12px;color:#d4dcf8}
-.status{color:#f8d97b;font-size:13px;line-height:1.7;overflow-wrap:anywhere}
 .quote{max-width:800px;margin:30px auto 0;padding:25px;border:1px solid #eac15c80;border-radius:18px;text-align:center;color:#ffdc79;font-size:22px;font-style:italic;line-height:1.6}
 footer{text-align:center;padding:30px 16px;border-top:1px solid #eac15c50;color:#c5cce6;font-size:13px;line-height:1.8}
 footer strong{color:var(--gold)}
-.back-top{position:fixed;right:16px;bottom:16px;z-index:50;width:45px;height:45px;display:grid;place-items:center;border-radius:50%;background:var(--gold);color:#111;font-weight:900}
+.back-top{position:fixed;right:14px;bottom:14px;z-index:50;width:42px;height:42px;display:grid;place-items:center;border-radius:50%;background:var(--gold);color:#111;font-weight:900}
 
-/* Remove duplicate header on mobile: image already includes its own header */
 @media(max-width:900px){
- header{display:none!important}
- .navlinks{display:none!important}
  .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media(max-width:560px){
- .content{padding:42px 0}
- .grid,.link-list,.stats{grid-template-columns:1fr}
- .card{padding:19px}
+ .content{padding:32px 0}
+ .container{width:92%}
+ .grid{grid-template-columns:1fr}
+ .link-list{grid-template-columns:1fr}
+ .card{padding:16px}
+ .counter-card{padding:13px}
+ .controls{gap:8px}
+ .controls input,.controls select{padding:11px 9px;font-size:13px}
+ .controls .gold-btn{font-size:12px;padding:11px 5px}
+ .stat{padding:14px 5px}
+ .stat span{font-size:11px}
+ .quote{font-size:18px;padding:18px}
 }
 </style>
 </head>
+
 <body id="top">
-
-<header>
-<nav class="nav">
-<a href="#home" class="brand">
-<img src="btitan-logo-1.png" alt="B-TITAN">
-<div><div class="brand-name">B-TITAN</div><div class="brand-sub">CHAMPIONS HUB</div></div>
-</a>
-<div class="navlinks">
-<a href="#home" class="active">Home</a>
-<a href="#counter">Live Counter</a>
-<a href="#zoom">Zoom</a>
-<a href="#social">Social Media Hub</a>
-<a href="#videos">All Videos</a>
-</div>
-<a class="gold-btn" href="https://btitan.net/register?id=10203" target="_blank" rel="noopener">Join Now ↗</a>
-</nav>
-</header>
-
 <main>
 <section class="hero" id="home">
 <div class="hero-art">
-<img src="file_00000000177c822f9f0e70a02fb46ba6.png" alt="B-TITAN Champions Hub premium blue and gold home design">
+<img src="file_00000000177c822f9f0e70a02fb46ba6.png"
+ alt="B-TITAN Champions Hub premium blue and gold home design">
 <a class="hotspot hot-home" href="#home" aria-label="Home"></a>
 <a class="hotspot hot-counter" href="#counter" aria-label="Live Counter"></a>
 <a class="hotspot hot-zoom" href="#zoom" aria-label="Zoom"></a>
@@ -129,32 +136,64 @@ footer strong{color:var(--gold)}
 
 <section class="content" id="counter">
 <div class="container">
-<h2 class="title">B-TITAN <span>Live Counter</span></h2><div class="line"></div>
-<p class="intro">Read publicly available contract data from BNB Smart Chain.</p>
-<div class="card">
+<h2 class="title">B-TITAN <span>Live Counter</span></h2>
+<div class="line"></div>
+<p class="intro">Check publicly readable information from BNB Smart Chain.</p>
+
+<div class="card counter-card">
 <h3>On-chain Slot Status</h3>
-<p>Contract: 0xD6759d47Fccdef7b8E318479cEC4D128366f2a44</p>
+<div class="contract-address">
+<strong>Contract Address</strong><br>
+0xD6759d47Fccdef7b8E318479cEC4D128366f2a44
+</div>
+
 <div class="controls">
 <select id="slotSelect" aria-label="Select slot">
-<option value="1">Slot 1</option><option value="2">Slot 2</option><option value="3">Slot 3</option><option value="4">Slot 4</option><option value="5">Slot 5</option><option value="6">Slot 6</option><option value="7">Slot 7</option><option value="8">Slot 8</option><option value="9">Slot 9</option><option value="10">Slot 10</option><option value="11">Slot 11</option><option value="12">Slot 12</option>
+<option value="1">Slot 1</option>
+<option value="2">Slot 2</option>
+<option value="3">Slot 3</option>
+<option value="4">Slot 4</option>
+<option value="5">Slot 5</option>
+<option value="6">Slot 6</option>
+<option value="7">Slot 7</option>
+<option value="8">Slot 8</option>
+<option value="9">Slot 9</option>
+<option value="10">Slot 10</option>
+<option value="11">Slot 11</option>
+<option value="12">Slot 12</option>
 </select>
-<input id="userIdInput" type="number" min="1" placeholder="User ID" aria-label="User ID">
-<button class="gold-btn" id="checkUserBtn">Check User</button>
-<button class="gold-btn" id="refreshBtn">Refresh Data</button>
+<input id="userIdInput" type="number" min="1" step="1"
+ placeholder="Enter User ID" aria-label="User ID">
+<button class="gold-btn" id="checkUserBtn" type="button">Check Slot</button>
+<button class="gold-btn" id="refreshBtn" type="button">↻ Refresh Data</button>
 </div>
+
 <div class="stats">
-<div class="stat"><strong id="lastUserId">—</strong><span>Last User ID</span></div>
-<div class="stat"><strong id="initializedUsers">—</strong><span>Initialized Partners</span></div>
-<div class="stat"><strong id="slotResult">—</strong><span>Selected Slot Status</span></div>
+<div class="stat">
+<strong id="lastUserId">—</strong>
+<span>Last User ID</span>
 </div>
-<p class="status" id="counterStatus" role="status">Press Refresh Data to connect.</p>
+<div class="stat">
+<strong id="slotResult">—</strong>
+<span id="slotLabel">Selected Slot Status</span>
+</div>
+</div>
+
+<p class="status" id="counterStatus" role="status" aria-live="polite">
+Connecting to BNB Smart Chain…
+</p>
+<p class="counter-note">
+Only values successfully returned by the configured contract methods are shown.
+Slot status depends on the selected User ID and slot.
+</p>
 </div>
 </div>
 </section>
 
 <section class="content" id="zoom">
 <div class="container">
-<h2 class="title">Daily <span>Zoom Meetings</span></h2><div class="line"></div>
+<h2 class="title">Daily <span>Zoom Meetings</span></h2>
+<div class="line"></div>
 <p class="intro">Join available online learning and community sessions.</p>
 <div class="grid">
 <article class="card"><div class="icon">🌅</div><h3>Morning Zoom</h3><p>Daily · 8:15 AM IST</p><a class="gold-btn" href="https://zoom.us/j/7890581048?pwd=0c3cExXWU7Xt1sBfLuvo0DlWej9xmV.1" target="_blank" rel="noopener">Join Morning Zoom ↗</a></article>
@@ -165,7 +204,8 @@ footer strong{color:var(--gold)}
 
 <section class="content" id="social">
 <div class="container">
-<h2 class="title">Social Media <span>Hub</span></h2><div class="line"></div>
+<h2 class="title">Social Media <span>Hub</span></h2>
+<div class="line"></div>
 <p class="intro">Connect through the available community links.</p>
 <div class="link-list">
 <a class="link-card" href="https://www.facebook.com/profile.php?id=61590478625779" target="_blank" rel="noopener"><span>📘 Facebook</span><span>Open ↗</span></a>
@@ -180,7 +220,8 @@ footer strong{color:var(--gold)}
 
 <section class="content" id="videos">
 <div class="container">
-<h2 class="title">Videos & <span>Resources</span></h2><div class="line"></div>
+<h2 class="title">Videos & <span>Resources</span></h2>
+<div class="line"></div>
 <p class="intro">Explore available videos and learning materials.</p>
 <div class="grid">
 <article class="card"><div class="icon">🎬</div><h3>Project Video</h3><p>Shared video resource.</p><a class="gold-btn" href="https://youtu.be/jg6a-Jo_acE" target="_blank" rel="noopener">Watch ↗</a></article>
@@ -195,7 +236,8 @@ footer strong{color:var(--gold)}
 
 <section class="content" id="join">
 <div class="container">
-<h2 class="title">Welcome to <span>B-TITAN</span></h2><div class="line"></div>
+<h2 class="title">Welcome to <span>B-TITAN</span></h2>
+<div class="line"></div>
 <p class="intro">Review project details, terms and risks independently before deciding whether to participate.</p>
 <div style="text-align:center">
 <a class="gold-btn" href="https://btitan.net/register?id=10203" target="_blank" rel="noopener">JOIN B-TITAN NOW ↗</a>
@@ -206,68 +248,168 @@ footer strong{color:var(--gold)}
 </section>
 </main>
 
-<footer><strong>B-TITAN CHAMPIONS HUB</strong><br>Community information and learning resources.<br>Crypto assets involve significant risk. Verify claims independently. No earnings are guaranteed.<br>© <span id="year"></span> B-TITAN Champions Hub</footer>
+<footer>
+<strong>B-TITAN CHAMPIONS HUB</strong><br>
+Community information and learning resources.<br>
+Crypto assets involve significant risk. Verify claims independently. No earnings are guaranteed.<br>
+© <span id="year"></span> B-TITAN Champions Hub
+</footer>
 <a class="back-top" href="#top" aria-label="Back to top">↑</a>
 
 <script>
-document.getElementById("year").textContent=new Date().getFullYear();
+document.getElementById("year").textContent = new Date().getFullYear();
 
-const ADDRESS="0xD6759d47Fccdef7b8E318479cEC4D128366f2a44";
-const RPC="https://bsc-dataseed.binance.org/";
-const ABI=[
- "function lastUserId() view returns (uint256)",
- "function partnersInitialized() view returns (uint256)",
- "function isUserSlotActive(uint256,uint8) view returns (bool)"
+const ADDRESS = "0xD6759d47Fccdef7b8E318479cEC4D128366f2a44";
+const RPC = "https://bsc-dataseed.binance.org/";
+const ABI = [
+  "function lastUserId() view returns (uint256)",
+  "function isUserSlotActive(uint256,uint8) view returns (bool)"
 ];
-let contract=null;
-const statusEl=document.getElementById("counterStatus");
-async function initContract(){
- if(!window.ethers) await new Promise((resolve,reject)=>{
-  const s=document.createElement("script");
-  s.src="https://cdn.jsdelivr.net/npm/ethers@6.13.5/dist/ethers.umd.min.js";
-  s.onload=resolve;s.onerror=()=>reject(new Error("Could not load ethers"));
-  document.head.appendChild(s);
- });
- contract=new ethers.Contract(ADDRESS,ABI,new ethers.JsonRpcProvider(RPC));
+
+let contract = null;
+let lastKnownUserId = null;
+let ethersLoading = null;
+
+const statusEl = document.getElementById("counterStatus");
+const lastUserEl = document.getElementById("lastUserId");
+const slotResultEl = document.getElementById("slotResult");
+const slotLabelEl = document.getElementById("slotLabel");
+const userInput = document.getElementById("userIdInput");
+const slotSelect = document.getElementById("slotSelect");
+const refreshButton = document.getElementById("refreshBtn");
+const checkButton = document.getElementById("checkUserBtn");
+
+function setStatus(message, isError = false) {
+  statusEl.textContent = message;
+  statusEl.classList.toggle("error", isError);
 }
-async function refreshCounter(){
- const button=document.getElementById("refreshBtn");
- button.disabled=true;statusEl.textContent="Connecting to BNB Smart Chain…";
- try{
-  if(!contract) await initContract();
-  const [last,initialized]=await Promise.all([contract.lastUserId(),contract.partnersInitialized()]);
-  document.getElementById("lastUserId").textContent=last.toString();
-  document.getElementById("initializedUsers").textContent=initialized.toString();
-  statusEl.textContent="Contract data loaded.";
-  if(document.getElementById("userIdInput").value) await checkUser();
- }catch(e){
-  console.error(e);statusEl.textContent="Unable to read contract. Check RPC, address and ABI.";
- }finally{button.disabled=false;}
+
+function resetSlotResult() {
+  slotResultEl.textContent = "—";
+  slotLabelEl.textContent = "Selected Slot Status";
 }
-async function checkUser(){
- const id=document.getElementById("userIdInput").value.trim();
- const slot=Number(document.getElementById("slotSelect").value);
- const button=document.getElementById("checkUserBtn");
- if(!id||!Number.isSafeInteger(Number(id))||Number(id)<1){
-  document.getElementById("slotResult").textContent="—";
-  statusEl.textContent="Enter a valid positive user ID.";return;
- }
- button.disabled=true;document.getElementById("slotResult").textContent="…";
- try{
-  if(!contract) await initContract();
-  const active=await contract.isUserSlotActive(BigInt(id),slot);
-  document.getElementById("slotResult").textContent=active?"ACTIVE":"INACTIVE";
-  statusEl.textContent="Checked slot "+slot+" for user "+id+".";
- }catch(e){
-  console.error(e);document.getElementById("slotResult").textContent="ERROR";
-  statusEl.textContent="Slot check failed. Contract ABI or method may differ.";
- }finally{button.disabled=false;}
+
+async function initContract() {
+  if (!window.ethers) {
+    if (!ethersLoading) {
+      ethersLoading = new Promise((resolve, reject) => {
+        const script = document.createElement("script");
+        script.src = "https://cdn.jsdelivr.net/npm/ethers@6.13.5/dist/ethers.umd.min.js";
+        script.onload = resolve;
+        script.onerror = () => reject(new Error("Ethers library could not load."));
+        document.head.appendChild(script);
+      });
+    }
+    await ethersLoading;
+  }
+
+  if (!contract) {
+    const provider = new window.ethers.JsonRpcProvider(RPC);
+    contract = new window.ethers.Contract(ADDRESS, ABI, provider);
+  }
+
+  return contract;
 }
-document.getElementById("refreshBtn").addEventListener("click",refreshCounter);
-document.getElementById("checkUserBtn").addEventListener("click",checkUser);
-document.getElementById("slotSelect").addEventListener("change",()=>{
- if(document.getElementById("userIdInput").value) checkUser();
+
+async function refreshCounter() {
+  refreshButton.disabled = true;
+  setStatus("Connecting to BNB Smart Chain…");
+
+  try {
+    const c = await initContract();
+    const last = await c.lastUserId();
+    const lastNumber = Number(last);
+
+    if (!Number.isSafeInteger(lastNumber) || lastNumber < 0) {
+      throw new Error("Returned User ID is outside the safe display range.");
+    }
+
+    lastKnownUserId = lastNumber;
+    lastUserEl.textContent = last.toString();
+    setStatus("Live contract read successful.");
+
+    if (userInput.value.trim()) {
+      await checkUser();
+    } else {
+      resetSlotResult();
+    }
+  } catch (error) {
+    console.error(error);
+    setStatus("Could not load verified contract data. Please try Refresh Data again.", true);
+  } finally {
+    refreshButton.disabled = false;
+  }
+}
+
+async function checkUser() {
+  const rawId = userInput.value.trim();
+  const idNumber = Number(rawId);
+  const slot = Number(slotSelect.value);
+
+  if (!rawId || !Number.isSafeInteger(idNumber) || idNumber < 1) {
+    resetSlotResult();
+    setStatus("Please enter a valid positive User ID.", true);
+    return;
+  }
+
+  if (!Number.isInteger(slot) || slot < 1 || slot > 12) {
+    resetSlotResult();
+    setStatus("Please select a slot from 1 to 12.", true);
+    return;
+  }
+
+  if (lastKnownUserId === null) {
+    setStatus("Load contract data first using Refresh Data.", true);
+    return;
+  }
+
+  if (idNumber > lastKnownUserId) {
+    resetSlotResult();
+    setStatus("This User ID is above the latest User ID returned by the contract.", true);
+    return;
+  }
+
+  checkButton.disabled = true;
+  slotResultEl.textContent = "…";
+  slotLabelEl.textContent = "Slot " + slot + " Status";
+  setStatus("Checking User ID " + idNumber + ", Slot " + slot + "…");
+
+  try {
+    const c = await initContract();
+    const active = await c.isUserSlotActive(BigInt(rawId), slot);
+
+    slotResultEl.textContent = active ? "ACTIVE" : "INACTIVE";
+    slotLabelEl.textContent = "Slot " + slot + " Status";
+    setStatus("Contract response received for User ID " + idNumber + ", Slot " + slot + ".");
+  } catch (error) {
+    console.error(error);
+    slotResultEl.textContent = "—";
+    slotLabelEl.textContent = "Slot " + slot + " Status";
+    setStatus("Could not verify this slot. The contract method or RPC may be unavailable.", true);
+  } finally {
+    checkButton.disabled = false;
+  }
+}
+
+refreshButton.addEventListener("click", refreshCounter);
+checkButton.addEventListener("click", checkUser);
+
+slotSelect.addEventListener("change", () => {
+  if (userInput.value.trim()) {
+    checkUser();
+  } else {
+    resetSlotResult();
+  }
 });
+
+userInput.addEventListener("keydown", event => {
+  if (event.key === "Enter") checkUser();
+});
+
+userInput.addEventListener("input", resetSlotResult);
+
+/* Automatically try loading the counter when the page opens. */
+refreshCounter();
 </script>
 </body>
 </html>
