@@ -1,570 +1,272 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#070d30">
-<meta name="description" content="B-TITAN Champions Hub - Community, Zoom meetings and learning resources.">
 <title>B-TITAN Champions Hub</title>
 
 <style>
-:root {
-  --navy: #070d30;
-  --blue: #102b83;
-  --gold: #ffd365;
-  --gold2: #f3ad30;
-  --white: #f7f7ff;
-}
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 75px; }
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  color: var(--white);
-  background: var(--navy);
-}
-a { color: inherit; text-decoration: none; }
-button { font: inherit; cursor: pointer; }
+:root{--navy:#070d30;--gold:#ffd365}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--navy);color:#fff;font-family:Arial,sans-serif}
+a{text-decoration:none;color:inherit}
+button{cursor:pointer;font:inherit}
 
-/* SINGLE HEADER */
-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: rgba(5,10,37,.97);
-  border: 1px solid #dcb65455;
-  border-radius: 0 0 20px 20px;
-  box-shadow: 0 5px 25px #0008;
-  backdrop-filter: blur(12px);
+header{
+ position:sticky;top:0;z-index:100;
+ background:#070d30;border-bottom:1px solid #dcb65455
 }
-.nav {
-  width: min(1200px, 94%);
-  min-height: 76px;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
+.nav{
+ max-width:1200px;width:94%;margin:auto;min-height:76px;
+ display:flex;align-items:center;justify-content:space-between;gap:14px
 }
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  flex-shrink: 0;
+.brand{display:flex;align-items:center;gap:9px}
+.brand img{width:46px;height:46px;object-fit:contain}
+.brand-name{font-size:22px;font-weight:900;color:var(--gold)}
+.brand-sub{font-size:9px;letter-spacing:3px;margin-top:3px}
+.navlinks{display:flex;gap:5px;align-items:center}
+.navlinks a{padding:13px 11px;border-radius:12px;font-size:14px}
+.navlinks a:hover,.navlinks a.active{background:#302b38;color:var(--gold)}
+.gold-btn{
+ display:inline-flex;align-items:center;justify-content:center;
+ padding:14px 22px;border:1px solid #fff0b0;border-radius:14px;
+ color:#17101c;background:linear-gradient(110deg,#ffe992,#ffca43,#efa62a);
+ font-weight:900;box-shadow:0 0 22px #ffc84b35
 }
-.brand img {
-  width: 46px;
-  height: 46px;
-  object-fit: contain;
-}
-.brand-name {
-  color: var(--gold);
-  font-size: 22px;
-  font-weight: 900;
-}
-.brand-sub {
-  font-size: 9px;
-  letter-spacing: 3px;
-  margin-top: 3px;
-}
-.navlinks {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-.navlinks a {
-  padding: 13px 12px;
-  border-radius: 13px;
-  font-size: 14px;
-  white-space: nowrap;
-}
-.navlinks a:hover,
-.navlinks a.active {
-  color: var(--gold);
-  background: linear-gradient(135deg,#55432b,#181a38);
-}
-.gold-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 9px;
-  padding: 14px 22px;
-  border: 1px solid #fff0b0;
-  border-radius: 14px;
-  color: #17101c;
-  font-weight: 900;
-  background: linear-gradient(110deg,#ffe992,#ffca43,#efa62a);
-  box-shadow: 0 0 22px #ffc84b35;
-  transition: .2s;
-}
-.gold-btn:hover { transform: translateY(-2px); }
-.menu-toggle {
-  display: none;
-  color: var(--gold);
-  background: transparent;
-  border: 1px solid #ffffff44;
-  border-radius: 10px;
-  padding: 8px 12px;
-  font-size: 22px;
-}
+.menu-toggle{display:none}
 
-/* REFERENCE IMAGE HOME */
-.hero {
-  background: radial-gradient(ellipse at 50% 25%,#173b9c,#070d30 72%);
-  overflow: hidden;
-}
-.hero-art {
-  position: relative;
-  width: 100%;
-  max-width: 1024px;
-  margin: auto;
-}
-.hero-art img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-/* Clickable areas over menu and Join buttons in the image */
-.hotspot {
-  position: absolute;
-  z-index: 3;
-  display: block;
-  background: transparent;
-  border-radius: 10px;
-}
-.hotspot:focus-visible { outline: 3px solid var(--gold); }
-.hot-home   { left:24%; top:1%; width:9%; height:4%; }
-.hot-counter{ left:32%; top:1%; width:12%; height:4%; }
-.hot-zoom   { left:44%; top:1%; width:7%; height:4%; }
-.hot-social { left:51%; top:1%; width:17%; height:4%; }
-.hot-videos { left:68%; top:1%; width:12%; height:4%; }
-.hot-join-top { left:82%; top:1%; width:15%; height:4.5%; }
-.hot-join-main { left:24%; top:75%; width:52%; height:7%; }
+/* Reference image is the complete visual home design */
+.hero{background:#070d30;overflow:hidden}
+.hero-art{position:relative;width:100%;max-width:1024px;margin:auto}
+.hero-art img{display:block;width:100%;height:auto}
+.hotspot{position:absolute;z-index:3;display:block;background:transparent}
+.hot-home{left:24%;top:1%;width:9%;height:4%}
+.hot-counter{left:32%;top:1%;width:12%;height:4%}
+.hot-zoom{left:44%;top:1%;width:7%;height:4%}
+.hot-social{left:51%;top:1%;width:17%;height:4%}
+.hot-videos{left:68%;top:1%;width:12%;height:4%}
+.hot-join-top{left:82%;top:1%;width:15%;height:4.5%}
+.hot-join-main{left:24%;top:75%;width:52%;height:7%}
 
-/* PAGE SECTIONS */
-.content {
-  padding: 65px 0;
-  border-top: 1px solid #ffffff15;
-  background:
-    radial-gradient(ellipse at top,#17265a,transparent 70%),
-    #070d30;
+.content{
+ padding:60px 0;border-top:1px solid #ffffff15;
+ background:radial-gradient(ellipse at top,#17265a,transparent 70%),#070d30
 }
-.container { width: min(1100px,92%); margin: auto; }
-.title {
-  margin: 0;
-  text-align: center;
-  font-size: clamp(27px,4vw,40px);
-  font-weight: 900;
-}
-.title span { color: var(--gold); }
-.line {
-  width: 90px;
-  height: 3px;
-  margin: 18px auto 25px;
-  background: linear-gradient(90deg,transparent,var(--gold),transparent);
-}
-.intro {
-  max-width: 720px;
-  margin: 0 auto 32px;
-  color: #d1d8f3;
-  text-align: center;
-  line-height: 1.8;
-}
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3,minmax(0,1fr));
-  gap: 18px;
-}
-.card {
-  min-width: 0;
-  padding: 24px;
-  border: 1px solid #eac15c55;
-  border-radius: 18px;
-  background: linear-gradient(145deg,#121d4a,#0a102e);
-  overflow-wrap: anywhere;
-}
-.card h3 { margin: 0 0 12px; font-size: 20px; }
-.card p { color: #cbd2f3; font-size: 14px; line-height: 1.7; }
-.card .gold-btn { margin-top: 8px; }
-.icon { font-size: 28px; margin-bottom: 13px; }
-.link-list {
-  display: grid;
-  grid-template-columns: repeat(2,minmax(0,1fr));
-  gap: 12px;
-}
-.link-card {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 17px;
-  border: 1px solid #ffffff24;
-  border-radius: 13px;
-  background: #111a40;
-}
-.link-card:hover { border-color: var(--gold); }
-.link-card span:last-child { color: var(--gold); }
-.controls {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  margin: 22px 0;
-}
-.controls input, .controls select {
-  min-width: 130px;
-  max-width: 100%;
-  padding: 12px;
-  color: white;
-  background: #101a40;
-  border: 1px solid #eac15c66;
-  border-radius: 10px;
-}
-.stats {
-  display: grid;
-  grid-template-columns: repeat(3,minmax(0,1fr));
-  gap: 12px;
-}
-.stat {
-  padding: 20px 8px;
-  text-align: center;
-  border: 1px solid #eac15c50;
-  border-radius: 14px;
-  background: #10183c;
-}
-.stat strong {
-  display: block;
-  color: var(--gold);
-  font-size: clamp(22px,4vw,32px);
-  margin-bottom: 7px;
-}
-.stat span { font-size: 12px; color: #d4dcf8; }
-.status { color: #f8d97b; font-size: 13px; line-height: 1.7; }
-.quote {
-  max-width: 800px;
-  margin: 35px auto 0;
-  padding: 25px;
-  border: 1px solid #eac15c80;
-  border-radius: 18px;
-  background: #090f2b;
-  color: #ffdc79;
-  text-align: center;
-  font-size: clamp(18px,3vw,25px);
-  font-style: italic;
-  line-height: 1.6;
-}
-footer {
-  padding: 30px 16px;
-  border-top: 1px solid #eac15c50;
-  color: #c5cce6;
-  font-size: 13px;
-  line-height: 1.8;
-  text-align: center;
-}
-footer strong { color: var(--gold); }
-.back-top {
-  position: fixed;
-  bottom: 16px;
-  right: 16px;
-  z-index: 50;
-  width: 45px;
-  height: 45px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  background: var(--gold);
-  color: #111;
-  font-weight: 900;
-}
+.container{width:min(1100px,92%);margin:auto}
+.title{text-align:center;font-size:clamp(27px,4vw,40px);margin:0;font-weight:900}
+.title span{color:var(--gold)}
+.line{width:90px;height:3px;margin:18px auto 25px;background:var(--gold)}
+.intro{max-width:720px;margin:0 auto 30px;text-align:center;color:#d1d8f3;line-height:1.8}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.card{padding:23px;border:1px solid #eac15c55;border-radius:18px;background:linear-gradient(145deg,#121d4a,#0a102e);overflow-wrap:anywhere}
+.card h3{margin:0 0 12px}
+.card p{font-size:14px;line-height:1.7;color:#cbd2f3}
+.card .gold-btn{margin-top:8px}
+.icon{font-size:28px;margin-bottom:12px}
+.link-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.link-card{display:flex;justify-content:space-between;gap:12px;padding:17px;border:1px solid #ffffff24;border-radius:13px;background:#111a40}
+.link-card span:last-child{color:var(--gold)}
+.controls{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:22px 0}
+.controls input,.controls select{min-width:120px;padding:12px;background:#101a40;color:white;border:1px solid #eac15c66;border-radius:10px}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.stat{text-align:center;padding:20px 8px;border:1px solid #eac15c50;border-radius:14px;background:#10183c}
+.stat strong{display:block;color:var(--gold);font-size:28px;margin-bottom:7px}
+.stat span{font-size:12px;color:#d4dcf8}
+.status{color:#f8d97b;font-size:13px;line-height:1.7;overflow-wrap:anywhere}
+.quote{max-width:800px;margin:30px auto 0;padding:25px;border:1px solid #eac15c80;border-radius:18px;text-align:center;color:#ffdc79;font-size:22px;font-style:italic;line-height:1.6}
+footer{text-align:center;padding:30px 16px;border-top:1px solid #eac15c50;color:#c5cce6;font-size:13px;line-height:1.8}
+footer strong{color:var(--gold)}
+.back-top{position:fixed;right:16px;bottom:16px;z-index:50;width:45px;height:45px;display:grid;place-items:center;border-radius:50%;background:var(--gold);color:#111;font-weight:900}
 
-/* MOBILE: ONE HEADER, NO DUPLICATE NAV */
-@media(max-width:900px) {
-  .nav { flex-wrap: wrap; padding: 10px 0; }
-  .menu-toggle { display: block; margin-left: auto; }
-  .nav > .gold-btn { display: none; }
-  .navlinks {
-    display: none;
-    width: 100%;
-    order: 5;
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .navlinks.open { display: flex; }
-  .navlinks a { padding: 13px; }
-  .grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+/* Remove duplicate header on mobile: image already includes its own header */
+@media(max-width:900px){
+ header{display:none!important}
+ .navlinks{display:none!important}
+ .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
-@media(max-width:560px) {
-  .brand img { width: 39px; height: 39px; }
-  .brand-name { font-size: 19px; }
-  .brand-sub { font-size: 8px; letter-spacing: 2px; }
-  .content { padding: 46px 0; }
-  .grid,.link-list,.stats { grid-template-columns: 1fr; }
-  .card { padding: 20px; }
+@media(max-width:560px){
+ .content{padding:42px 0}
+ .grid,.link-list,.stats{grid-template-columns:1fr}
+ .card{padding:19px}
 }
 </style>
 </head>
-
 <body id="top">
 
 <header>
-  <nav class="nav" aria-label="Main navigation">
-    <a href="#home" class="brand" aria-label="B-TITAN Home">
-      <img src="btitan-logo-1.png" alt="B-TITAN logo">
-      <div>
-        <div class="brand-name">B-TITAN</div>
-        <div class="brand-sub">CHAMPIONS HUB</div>
-      </div>
-    </a>
-
-    <button class="menu-toggle" id="menuToggle"
-      aria-label="Toggle navigation" aria-expanded="false">☰</button>
-
-    <div class="navlinks" id="navLinks">
-      <a class="active" href="#home">Home</a>
-      <a href="#counter">Live Counter</a>
-      <a href="#zoom">Zoom</a>
-      <a href="#social">Social Media Hub</a>
-      <a href="#videos">All Videos</a>
-    </div>
-
-    <a class="gold-btn" href="https://btitan.net/register?id=10203"
-      target="_blank" rel="noopener noreferrer">Join Now ↗</a>
-  </nav>
+<nav class="nav">
+<a href="#home" class="brand">
+<img src="btitan-logo-1.png" alt="B-TITAN">
+<div><div class="brand-name">B-TITAN</div><div class="brand-sub">CHAMPIONS HUB</div></div>
+</a>
+<div class="navlinks">
+<a href="#home" class="active">Home</a>
+<a href="#counter">Live Counter</a>
+<a href="#zoom">Zoom</a>
+<a href="#social">Social Media Hub</a>
+<a href="#videos">All Videos</a>
+</div>
+<a class="gold-btn" href="https://btitan.net/register?id=10203" target="_blank" rel="noopener">Join Now ↗</a>
+</nav>
 </header>
 
 <main>
-  <section class="hero" id="home" aria-label="B-TITAN Champions Hub">
-    <div class="hero-art">
-      <img
-        src="file_00000000177c822f9f0e70a02fb46ba6.png"
-        alt="B-TITAN Champions Hub premium blue and gold home design"
-        fetchpriority="high">
+<section class="hero" id="home">
+<div class="hero-art">
+<img src="file_00000000177c822f9f0e70a02fb46ba6.png" alt="B-TITAN Champions Hub premium blue and gold home design">
+<a class="hotspot hot-home" href="#home" aria-label="Home"></a>
+<a class="hotspot hot-counter" href="#counter" aria-label="Live Counter"></a>
+<a class="hotspot hot-zoom" href="#zoom" aria-label="Zoom"></a>
+<a class="hotspot hot-social" href="#social" aria-label="Social Media Hub"></a>
+<a class="hotspot hot-videos" href="#videos" aria-label="All Videos"></a>
+<a class="hotspot hot-join-top" href="https://btitan.net/register?id=10203" target="_blank" rel="noopener" aria-label="Join Now"></a>
+<a class="hotspot hot-join-main" href="https://btitan.net/register?id=10203" target="_blank" rel="noopener" aria-label="Join B-TITAN"></a>
+</div>
+</section>
 
-      <a class="hotspot hot-home" href="#home" aria-label="Home"></a>
-      <a class="hotspot hot-counter" href="#counter" aria-label="Live Counter"></a>
-      <a class="hotspot hot-zoom" href="#zoom" aria-label="Zoom"></a>
-      <a class="hotspot hot-social" href="#social" aria-label="Social Media Hub"></a>
-      <a class="hotspot hot-videos" href="#videos" aria-label="All Videos"></a>
-      <a class="hotspot hot-join-top"
-        href="https://btitan.net/register?id=10203"
-        target="_blank" rel="noopener noreferrer" aria-label="Join Now"></a>
-      <a class="hotspot hot-join-main"
-        href="https://btitan.net/register?id=10203"
-        target="_blank" rel="noopener noreferrer" aria-label="Join B-TITAN Now"></a>
-    </div>
-  </section>
+<section class="content" id="counter">
+<div class="container">
+<h2 class="title">B-TITAN <span>Live Counter</span></h2><div class="line"></div>
+<p class="intro">Read publicly available contract data from BNB Smart Chain.</p>
+<div class="card">
+<h3>On-chain Slot Status</h3>
+<p>Contract: 0xD6759d47Fccdef7b8E318479cEC4D128366f2a44</p>
+<div class="controls">
+<select id="slotSelect" aria-label="Select slot">
+<option value="1">Slot 1</option><option value="2">Slot 2</option><option value="3">Slot 3</option><option value="4">Slot 4</option><option value="5">Slot 5</option><option value="6">Slot 6</option><option value="7">Slot 7</option><option value="8">Slot 8</option><option value="9">Slot 9</option><option value="10">Slot 10</option><option value="11">Slot 11</option><option value="12">Slot 12</option>
+</select>
+<input id="userIdInput" type="number" min="1" placeholder="User ID" aria-label="User ID">
+<button class="gold-btn" id="checkUserBtn">Check User</button>
+<button class="gold-btn" id="refreshBtn">Refresh Data</button>
+</div>
+<div class="stats">
+<div class="stat"><strong id="lastUserId">—</strong><span>Last User ID</span></div>
+<div class="stat"><strong id="initializedUsers">—</strong><span>Initialized Partners</span></div>
+<div class="stat"><strong id="slotResult">—</strong><span>Selected Slot Status</span></div>
+</div>
+<p class="status" id="counterStatus" role="status">Press Refresh Data to connect.</p>
+</div>
+</div>
+</section>
 
-  <section class="content" id="counter">
-    <div class="container">
-      <h2 class="title">B-TITAN <span>Live Counter</span></h2>
-      <div class="line"></div>
-      <p class="intro">Read publicly available contract data from BNB Smart Chain.</p>
-      <div class="card">
-        <h3>On-chain Slot Status</h3>
-        <p>Contract: 0xD6759d47Fccdef7b8E318479cEC4D128366f2a44</p>
-        <div class="controls">
-          <select id="slotSelect" aria-label="Select slot">
-            <option value="1">Slot 1</option><option value="2">Slot 2</option>
-            <option value="3">Slot 3</option><option value="4">Slot 4</option>
-            <option value="5">Slot 5</option><option value="6">Slot 6</option>
-            <option value="7">Slot 7</option><option value="8">Slot 8</option>
-            <option value="9">Slot 9</option><option value="10">Slot 10</option>
-            <option value="11">Slot 11</option><option value="12">Slot 12</option>
-          </select>
-          <input id="userIdInput" type="number" min="1" placeholder="User ID" aria-label="User ID">
-          <button class="gold-btn" id="checkUserBtn">Check User</button>
-          <button class="gold-btn" id="refreshBtn">Refresh Data</button>
-        </div>
-        <div class="stats">
-          <div class="stat"><strong id="lastUserId">—</strong><span>Last User ID</span></div>
-          <div class="stat"><strong id="initializedUsers">—</strong><span>Initialized Partners</span></div>
-          <div class="stat"><strong id="slotResult">—</strong><span>Selected Slot Status</span></div>
-        </div>
-        <p class="status" id="counterStatus" role="status">Press Refresh Data to connect.</p>
-      </div>
-    </div>
-  </section>
+<section class="content" id="zoom">
+<div class="container">
+<h2 class="title">Daily <span>Zoom Meetings</span></h2><div class="line"></div>
+<p class="intro">Join available online learning and community sessions.</p>
+<div class="grid">
+<article class="card"><div class="icon">🌅</div><h3>Morning Zoom</h3><p>Daily · 8:15 AM IST</p><a class="gold-btn" href="https://zoom.us/j/7890581048?pwd=0c3cExXWU7Xt1sBfLuvo0DlWej9xmV.1" target="_blank" rel="noopener">Join Morning Zoom ↗</a></article>
+<article class="card"><div class="icon">🌙</div><h3>Night Zoom</h3><p>Daily · 9:00 PM IST</p><a class="gold-btn" href="https://zoom.us/j/6053096493?pwd=v43dprpzbo7Xqc4omNKu95IJVx6pR9.1" target="_blank" rel="noopener">Join Night Zoom ↗</a></article>
+</div>
+</div>
+</section>
 
-  <section class="content" id="zoom">
-    <div class="container">
-      <h2 class="title">Daily <span>Zoom Meetings</span></h2>
-      <div class="line"></div>
-      <p class="intro">Join available online learning and community sessions.</p>
-      <div class="grid">
-        <article class="card">
-          <div class="icon">🌅</div><h3>Morning Zoom</h3>
-          <p>Daily · 8:15 AM IST</p>
-          <a class="gold-btn" href="https://zoom.us/j/7890581048?pwd=0c3cExXWU7Xt1sBfLuvo0DlWej9xmV.1" target="_blank" rel="noopener noreferrer">Join Morning Zoom ↗</a>
-        </article>
-        <article class="card">
-          <div class="icon">🌙</div><h3>Night Zoom</h3>
-          <p>Daily · 9:00 PM IST</p>
-          <a class="gold-btn" href="https://zoom.us/j/6053096493?pwd=v43dprpzbo7Xqc4omNKu95IJVx6pR9.1" target="_blank" rel="noopener noreferrer">Join Night Zoom ↗</a>
-        </article>
-      </div>
-    </div>
-  </section>
+<section class="content" id="social">
+<div class="container">
+<h2 class="title">Social Media <span>Hub</span></h2><div class="line"></div>
+<p class="intro">Connect through the available community links.</p>
+<div class="link-list">
+<a class="link-card" href="https://www.facebook.com/profile.php?id=61590478625779" target="_blank" rel="noopener"><span>📘 Facebook</span><span>Open ↗</span></a>
+<a class="link-card" href="https://youtube.com/@gautamdigitalacademy?si=yEkIv6-54rAN0h6e" target="_blank" rel="noopener"><span>▶️ YouTube</span><span>Open ↗</span></a>
+<a class="link-card" href="https://www.instagram.com/btitanchampions?psln=MzZheDgwdTUzcnJ0" target="_blank" rel="noopener"><span>📸 Instagram</span><span>Open ↗</span></a>
+<a class="link-card" href="https://wa.me/918368960385?text=Hello%20B-TITAN" target="_blank" rel="noopener"><span>💬 WhatsApp</span><span>Open ↗</span></a>
+<a class="link-card" href="https://beacons.ai/gsdigitalacademy" target="_blank" rel="noopener"><span>🌐 Community Resources</span><span>Open ↗</span></a>
+<a class="link-card" href="https://t.me/" target="_blank" rel="noopener"><span>✈️ Telegram</span><span>Open ↗</span></a>
+</div>
+</div>
+</section>
 
-  <section class="content" id="social">
-    <div class="container">
-      <h2 class="title">Social Media <span>Hub</span></h2>
-      <div class="line"></div>
-      <p class="intro">Connect through the available community links.</p>
-      <div class="link-list">
-        <a class="link-card" href="https://www.facebook.com/profile.php?id=61590478625779" target="_blank" rel="noopener noreferrer"><span>📘 Facebook</span><span>Open ↗</span></a>
-        <a class="link-card" href="https://youtube.com/@gautamdigitalacademy?si=yEkIv6-54rAN0h6e" target="_blank" rel="noopener noreferrer"><span>▶️ YouTube</span><span>Open ↗</span></a>
-        <a class="link-card" href="https://www.instagram.com/btitanchampions?psln=MzZheDgwdTUzcnJ0" target="_blank" rel="noopener noreferrer"><span>📸 Instagram</span><span>Open ↗</span></a>
-        <a class="link-card" href="https://wa.me/918368960385?text=Hello%20B-TITAN" target="_blank" rel="noopener noreferrer"><span>💬 WhatsApp</span><span>Open ↗</span></a>
-        <a class="link-card" href="https://beacons.ai/gsdigitalacademy" target="_blank" rel="noopener noreferrer"><span>🌐 Community Resources</span><span>Open ↗</span></a>
-        <a class="link-card" href="https://t.me/" target="_blank" rel="noopener noreferrer"><span>✈️ Telegram</span><span>Open ↗</span></a>
-      </div>
-    </div>
-  </section>
+<section class="content" id="videos">
+<div class="container">
+<h2 class="title">Videos & <span>Resources</span></h2><div class="line"></div>
+<p class="intro">Explore available videos and learning materials.</p>
+<div class="grid">
+<article class="card"><div class="icon">🎬</div><h3>Project Video</h3><p>Shared video resource.</p><a class="gold-btn" href="https://youtu.be/jg6a-Jo_acE" target="_blank" rel="noopener">Watch ↗</a></article>
+<article class="card"><div class="icon">📘</div><h3>Plan Presentation</h3><p>Presentation PDF.</p><a class="gold-btn" href="https://docs.google.com/presentation/d/1ZhQFHnTPKTx4Lqs4LjZRFQjwZjct5FGL/export/pdf" target="_blank" rel="noopener">View PDF ↗</a></article>
+<article class="card"><div class="icon">📚</div><h3>Learning Resource</h3><p>Additional resource.</p><a class="gold-btn" href="https://tinyurl.com/4u6jnrrw" target="_blank" rel="noopener">Open ↗</a></article>
+<article class="card"><div class="icon">▶️</div><h3>Training Video</h3><p>Video learning resource.</p><a class="gold-btn" href="https://youtu.be/HIxNEUneKYs" target="_blank" rel="noopener">Watch ↗</a></article>
+<article class="card"><div class="icon">📱</div><h3>Short Video</h3><p>YouTube Short.</p><a class="gold-btn" href="https://youtube.com/shorts/-fIVG9pZtEo?si=nclwN9l8L6Fo1tLa" target="_blank" rel="noopener">Watch ↗</a></article>
+<article class="card"><div class="icon">🎓</div><h3>More Learning</h3><p>Additional video resource.</p><a class="gold-btn" href="https://youtu.be/MCNicgjFkxA" target="_blank" rel="noopener">Watch ↗</a></article>
+</div>
+</div>
+</section>
 
-  <section class="content" id="videos">
-    <div class="container">
-      <h2 class="title">Videos & <span>Resources</span></h2>
-      <div class="line"></div>
-      <p class="intro">Explore available videos and learning materials.</p>
-      <div class="grid">
-        <article class="card"><div class="icon">🎬</div><h3>Project Video</h3><p>Shared video resource.</p><a class="gold-btn" href="https://youtu.be/jg6a-Jo_acE" target="_blank" rel="noopener noreferrer">Watch ↗</a></article>
-        <article class="card"><div class="icon">📘</div><h3>Plan Presentation</h3><p>Presentation PDF.</p><a class="gold-btn" href="https://docs.google.com/presentation/d/1ZhQFHnTPKTx4Lqs4LjZRFQjwZjct5FGL/export/pdf" target="_blank" rel="noopener noreferrer">View PDF ↗</a></article>
-        <article class="card"><div class="icon">📚</div><h3>Learning Resource</h3><p>Additional resource.</p><a class="gold-btn" href="https://tinyurl.com/4u6jnrrw" target="_blank" rel="noopener noreferrer">Open ↗</a></article>
-        <article class="card"><div class="icon">▶️</div><h3>Training Video</h3><p>Video learning resource.</p><a class="gold-btn" href="https://youtu.be/HIxNEUneKYs" target="_blank" rel="noopener noreferrer">Watch ↗</a></article>
-        <article class="card"><div class="icon">📱</div><h3>Short Video</h3><p>YouTube Short.</p><a class="gold-btn" href="https://youtube.com/shorts/-fIVG9pZtEo?si=nclwN9l8L6Fo1tLa" target="_blank" rel="noopener noreferrer">Watch ↗</a></article>
-        <article class="card"><div class="icon">🎓</div><h3>More Learning</h3><p>Additional video resource.</p><a class="gold-btn" href="https://youtu.be/MCNicgjFkxA" target="_blank" rel="noopener noreferrer">Watch ↗</a></article>
-      </div>
-    </div>
-  </section>
-
-  <section class="content" id="join">
-    <div class="container">
-      <h2 class="title">Welcome to <span>B-TITAN</span></h2>
-      <div class="line"></div>
-      <p class="intro">Review project details, terms and risks independently before deciding whether to participate.</p>
-      <div style="text-align:center">
-        <a class="gold-btn" href="https://btitan.net/register?id=10203" target="_blank" rel="noopener noreferrer">JOIN B-TITAN NOW ↗</a>
-        <p><a href="https://btitan.net/" target="_blank" rel="noopener noreferrer">Official Website ↗</a></p>
-      </div>
-      <div class="quote">“Dream Big. Learn Every Day.<br>Move Forward With Confidence.”</div>
-    </div>
-  </section>
+<section class="content" id="join">
+<div class="container">
+<h2 class="title">Welcome to <span>B-TITAN</span></h2><div class="line"></div>
+<p class="intro">Review project details, terms and risks independently before deciding whether to participate.</p>
+<div style="text-align:center">
+<a class="gold-btn" href="https://btitan.net/register?id=10203" target="_blank" rel="noopener">JOIN B-TITAN NOW ↗</a>
+<p><a href="https://btitan.net/" target="_blank" rel="noopener">Official Website ↗</a></p>
+</div>
+<div class="quote">“Dream Big. Learn Every Day.<br>Move Forward With Confidence.”</div>
+</div>
+</section>
 </main>
 
-<footer>
-  <strong>B-TITAN CHAMPIONS HUB</strong><br>
-  Community information and learning resources.<br>
-  Crypto assets involve significant risk. Verify claims independently.
-  No earnings are guaranteed.<br>
-  © <span id="year"></span> B-TITAN Champions Hub
-</footer>
-
+<footer><strong>B-TITAN CHAMPIONS HUB</strong><br>Community information and learning resources.<br>Crypto assets involve significant risk. Verify claims independently. No earnings are guaranteed.<br>© <span id="year"></span> B-TITAN Champions Hub</footer>
 <a class="back-top" href="#top" aria-label="Back to top">↑</a>
 
 <script>
-const menuToggle = document.getElementById("menuToggle");
-const navLinks = document.getElementById("navLinks");
+document.getElementById("year").textContent=new Date().getFullYear();
 
-menuToggle.addEventListener("click", () => {
-  const open = navLinks.classList.toggle("open");
-  menuToggle.setAttribute("aria-expanded", String(open));
-  menuToggle.textContent = open ? "✕" : "☰";
-});
-navLinks.querySelectorAll("a").forEach(link => {
-  link.addEventListener("click", () => {
-    navLinks.classList.remove("open");
-    menuToggle.setAttribute("aria-expanded", "false");
-    menuToggle.textContent = "☰";
-  });
-});
-document.getElementById("year").textContent = new Date().getFullYear();
-
-if ("IntersectionObserver" in window) {
-  const links = [...document.querySelectorAll(".navlinks a")];
-  const sections = links.map(a => document.querySelector(a.getAttribute("href"))).filter(Boolean);
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        links.forEach(a => a.classList.toggle("active", a.hash === "#" + entry.target.id));
-      }
-    });
-  }, {rootMargin:"-25% 0px -60% 0px"});
-  sections.forEach(section => observer.observe(section));
-}
-
-/* Read-only BNB Chain counter */
-const CONTRACT_ADDRESS = "0xD6759d47Fccdef7b8E318479cEC4D128366f2a44";
-const RPC_URL = "https://bsc-dataseed.binance.org/";
-const ABI = [
-  "function lastUserId() view returns (uint256)",
-  "function partnersInitialized() view returns (uint256)",
-  "function isUserSlotActive(uint256,uint8) view returns (bool)"
+const ADDRESS="0xD6759d47Fccdef7b8E318479cEC4D128366f2a44";
+const RPC="https://bsc-dataseed.binance.org/";
+const ABI=[
+ "function lastUserId() view returns (uint256)",
+ "function partnersInitialized() view returns (uint256)",
+ "function isUserSlotActive(uint256,uint8) view returns (bool)"
 ];
-let contract = null;
-const statusEl = document.getElementById("counterStatus");
-const setStatus = message => statusEl.textContent = message;
-
-async function initContract() {
-  if (!window.ethers) {
-    await new Promise((resolve, reject) => {
-      const script = document.createElement("script");
-      script.src = "https://cdn.jsdelivr.net/npm/ethers@6.13.5/dist/ethers.umd.min.js";
-      script.onload = resolve;
-      script.onerror = () => reject(new Error("Library load failed"));
-      document.head.appendChild(script);
-    });
-  }
-  const provider = new ethers.JsonRpcProvider(RPC_URL);
-  contract = new ethers.Contract(CONTRACT_ADDRESS, ABI, provider);
+let contract=null;
+const statusEl=document.getElementById("counterStatus");
+async function initContract(){
+ if(!window.ethers) await new Promise((resolve,reject)=>{
+  const s=document.createElement("script");
+  s.src="https://cdn.jsdelivr.net/npm/ethers@6.13.5/dist/ethers.umd.min.js";
+  s.onload=resolve;s.onerror=()=>reject(new Error("Could not load ethers"));
+  document.head.appendChild(s);
+ });
+ contract=new ethers.Contract(ADDRESS,ABI,new ethers.JsonRpcProvider(RPC));
 }
-async function refreshCounter() {
-  const button = document.getElementById("refreshBtn");
-  button.disabled = true;
-  setStatus("Connecting to BNB Smart Chain…");
-  try {
-    if (!contract) await initContract();
-    const [lastId, initialized] = await Promise.all([
-      contract.lastUserId(), contract.partnersInitialized()
-    ]);
-    document.getElementById("lastUserId").textContent = lastId.toString();
-    document.getElementById("initializedUsers").textContent = initialized.toString();
-    setStatus("Contract data loaded.");
-    if (document.getElementById("userIdInput").value) await checkUserSlot();
-  } catch (error) {
-    console.error(error);
-    setStatus("Unable to read contract. Check the RPC, contract address and ABI.");
-  } finally {
-    button.disabled = false;
-  }
+async function refreshCounter(){
+ const button=document.getElementById("refreshBtn");
+ button.disabled=true;statusEl.textContent="Connecting to BNB Smart Chain…";
+ try{
+  if(!contract) await initContract();
+  const [last,initialized]=await Promise.all([contract.lastUserId(),contract.partnersInitialized()]);
+  document.getElementById("lastUserId").textContent=last.toString();
+  document.getElementById("initializedUsers").textContent=initialized.toString();
+  statusEl.textContent="Contract data loaded.";
+  if(document.getElementById("userIdInput").value) await checkUser();
+ }catch(e){
+  console.error(e);statusEl.textContent="Unable to read contract. Check RPC, address and ABI.";
+ }finally{button.disabled=false;}
 }
-async function checkUserSlot() {
-  const userId = document.getElementById("userIdInput").value.trim();
-  const slot = Number(document.getElementById("slotSelect").value);
-  const button = document.getElementById("checkUserBtn");
-  if (!userId || !Number.isSafeInteger(Number(userId)) || Number(userId) < 1) {
-    document.getElementById("slotResult").textContent = "—";
-    setStatus("Enter a valid positive user ID.");
-    return;
-  }
-  button.disabled = true;
-  document.getElementById("slotResult").textContent = "…";
-  try {
-    if (!contract) await initContract();
-    const active = await contract.isUserSlotActive(BigInt(userId), slot);
-    document.getElementById("slotResult").textContent = active ? "ACTIVE" : "INACTIVE";
-    setStatus("Checked slot " + slot + " for user " + userId + ".");
-  } catch (error) {
-    console.error(error);
-    document.getElementById("slotResult").textContent = "ERROR";
-    setStatus("Slot check failed. The contract ABI or method may differ.");
-  } finally {
-    button.disabled = false;
-  }
+async function checkUser(){
+ const id=document.getElementById("userIdInput").value.trim();
+ const slot=Number(document.getElementById("slotSelect").value);
+ const button=document.getElementById("checkUserBtn");
+ if(!id||!Number.isSafeInteger(Number(id))||Number(id)<1){
+  document.getElementById("slotResult").textContent="—";
+  statusEl.textContent="Enter a valid positive user ID.";return;
+ }
+ button.disabled=true;document.getElementById("slotResult").textContent="…";
+ try{
+  if(!contract) await initContract();
+  const active=await contract.isUserSlotActive(BigInt(id),slot);
+  document.getElementById("slotResult").textContent=active?"ACTIVE":"INACTIVE";
+  statusEl.textContent="Checked slot "+slot+" for user "+id+".";
+ }catch(e){
+  console.error(e);document.getElementById("slotResult").textContent="ERROR";
+  statusEl.textContent="Slot check failed. Contract ABI or method may differ.";
+ }finally{button.disabled=false;}
 }
-document.getElementById("refreshBtn").addEventListener("click", refreshCounter);
-document.getElementById("checkUserBtn").addEventListener("click", checkUserSlot);
-document.getElementById("slotSelect").addEventListener("change", () => {
-  if (document.getElementById("userIdInput").value) checkUserSlot();
+document.getElementById("refreshBtn").addEventListener("click",refreshCounter);
+document.getElementById("checkUserBtn").addEventListener("click",checkUser);
+document.getElementById("slotSelect").addEventListener("change",()=>{
+ if(document.getElementById("userIdInput").value) checkUser();
 });
 </script>
 </body>
