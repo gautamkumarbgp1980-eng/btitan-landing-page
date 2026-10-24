@@ -1,623 +1,266 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#07164d">
-<meta name="description" content="B-TITAN - The Ultimate Bitcoin Rush">
-<title>B-TITAN | The Ultimate Bitcoin Rush</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#07152f">
+<title>B-TITAN | Official Website</title>
 <style>
-:root{--navy:#06152f;--gold:#ffd52e}
+:root{--gold:#ffd52e;--navy:#07152f;--blue:#082b87}
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:150px}
-body{font-family:Arial,Helvetica,sans-serif;background:var(--navy);color:#fff;overflow-x:hidden}
+html{scroll-behavior:smooth}
+body{font-family:Arial,sans-serif;background:var(--navy);color:white}
 a{text-decoration:none;color:inherit}
-button,input{font:inherit}
-button{cursor:pointer}
-
-.header{
-background:linear-gradient(110deg,#07194e,#082b87 70%,#310b78);
-border-bottom:1px solid #ffffff22;
-position:sticky;top:0;z-index:20
-}
-.header-top{
-min-height:90px;padding:10px 12px;
-display:flex;align-items:center;justify-content:space-between;gap:8px
-}
-.brand{display:flex;align-items:center;flex:1;min-width:0}
-.logo{
-display:block;width:100%;max-width:340px;max-height:85px;height:auto;
-object-fit:contain;object-position:left center;background:transparent;
-border:0;border-radius:0;box-shadow:none;mix-blend-mode:screen;flex-shrink:1
-}
-.header-actions{display:flex;align-items:center;flex-shrink:0}
-.menu-btn{
-width:49px;height:49px;border:1px solid #ffffff30;
-border-radius:13px;background:#ffffff0c;color:white;font-size:27px
-}
-.search-wrap{padding:0 16px 12px}
-.search{
-width:100%;height:56px;border-radius:40px;border:0;outline:none;
-padding:0 20px;background:white;color:#222;font-size:15px
-}
-.nav{
-display:flex;align-items:center;gap:7px;padding:5px 12px 13px;
-overflow-x:auto;scrollbar-width:none
-}
-.nav::-webkit-scrollbar{display:none}
-.nav a{
-flex-shrink:0;padding:12px 14px;border-radius:13px;
-font-size:13px;font-weight:700;white-space:nowrap
-}
-.nav a.active{background:var(--gold);color:#111}
-.nav a.bonanza-nav{border:1px solid #ffd52e80;color:#ffe17b}
-.nav a.bonanza-nav:hover{background:var(--gold);color:#111}
-
-.mobile-menu{
-display:none;padding:10px 16px 14px;
-background:#071744;border-top:1px solid #ffffff14
-}
-.mobile-menu.open{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.mobile-menu a{
-padding:11px;border-radius:9px;background:#ffffff12;font-size:13px
-}
-.mobile-menu a.bonanza-menu-link{color:#ffe17b;border:1px solid #ffd52e66}
-
-.hero{
-position:relative;overflow:hidden;padding:36px 25px 35px;
-background:
-radial-gradient(ellipse at 82% 20%,#9c00ffb5,transparent 48%),
-radial-gradient(ellipse at 20% 70%,#006cff66,transparent 50%),
-linear-gradient(115deg,#062e83,#101f9a 53%,#4d08b0)
-}
-.hero:before{
-content:"";position:absolute;width:380px;height:380px;
-border:1px solid #ffffff18;border-radius:50%;
-right:-100px;top:-80px;pointer-events:none
-}
-.welcome{
-display:inline-block;border:1px solid #ffd52e70;background:#ffffff0b;
-border-radius:30px;padding:11px 16px;color:#ffe16c;
-font-weight:700;font-size:14px
-}
-.hero h1{
-font-size:clamp(37px,7.4vw,68px);line-height:1.13;
-letter-spacing:-1.5px;margin:27px 0 13px;font-weight:900
-}
+header{position:sticky;top:0;z-index:10;background:#07194e;border-bottom:1px solid #ffffff30;padding:14px 5%}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:55px;height:55px;border:2px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-size:32px;font-weight:bold}
+.brand h2{font-size:19px}
+.brand p{font-size:10px;letter-spacing:2px;color:#e4eaff;margin-top:5px}
+.website-btn,.btn{display:inline-block;padding:13px 18px;border-radius:12px;background:var(--gold);color:#10152c;font-size:13px;font-weight:bold}
+.hero{text-align:center;padding:55px 20px 45px;background:radial-gradient(ellipse at top right,#6500b8,transparent 55%),linear-gradient(125deg,#062e83,#101f70,#230b58)}
+.welcome{display:inline-block;padding:10px 16px;border:1px solid #ffd52e88;border-radius:30px;color:var(--gold);font-weight:bold}
+.hero h1{font-size:clamp(35px,7vw,65px);line-height:1.15;margin:25px 0 15px}
 .hero h1 span{color:var(--gold)}
-.hero h2{font-size:clamp(21px,4vw,30px);margin-bottom:20px}
-.hero-desc{font-size:16px;line-height:1.8;color:#e5eaff;margin-bottom:25px}
-.features{display:flex;flex-wrap:wrap;gap:12px 18px;margin:22px 0 28px}
-.features span{font-size:13px;display:flex;align-items:center;gap:7px}
-.check{
-width:25px;height:25px;border-radius:50%;background:var(--gold);
-color:#14204c;display:inline-grid;place-items:center;font-weight:900
-}
-.hero-buttons{display:flex;flex-wrap:wrap;gap:12px}
-.btn{
-min-height:55px;padding:0 22px;border-radius:17px;
-display:inline-flex;align-items:center;justify-content:center;
-font-weight:800;font-size:14px;border:1px solid #ffffff45
-}
-.btn-gold{background:var(--gold);color:#101530;border:0}
-.btn-outline{background:#ffffff0a;color:white}
-.hero-foot{margin-top:24px;color:#d9e4ff;font-size:14px}
-
-.illustration{
-min-height:185px;max-width:660px;margin:18px auto 0;
-position:relative;display:flex;align-items:flex-end;justify-content:center
-}
-.person{
-width:175px;height:150px;position:relative;z-index:1;
-display:flex;justify-content:center
-}
-.hair{
-position:absolute;top:6px;width:138px;height:138px;
-background:#30282b;border-radius:70px 70px 42px 42px
-}
-.face{
-position:absolute;top:35px;width:100px;height:100px;
-background:#ffdfbf;border-radius:48% 48% 45% 45%;z-index:2
-}
-.eye{position:absolute;top:43px;width:13px;height:17px;border-radius:50%;background:#34313a}
-.eye.left{left:23px}.eye.right{right:23px}
-.smile{
-position:absolute;bottom:16px;left:37px;width:27px;height:12px;
-border-bottom:3px solid #ad6a57;border-radius:50%
-}
-.laptop{
-position:absolute;z-index:3;bottom:0;width:180px;height:67px;
-border-radius:12px 12px 3px 3px;background:#b9becb;
-border:5px solid #e5e7ef;text-align:center;color:#7e8492;
-font-size:26px;padding-top:10px
-}
-.orbit{
-position:absolute;width:90%;height:105px;bottom:12px;
-border:2px solid #f8d9698c;border-radius:50%;transform:rotate(-15deg)
-}
-.float-icon{
-position:absolute;z-index:4;width:48px;height:48px;
-border:1px solid #ffffff77;border-radius:50%;
-display:grid;place-items:center;font-size:23px;background:#ffffff10;
-box-shadow:0 0 18px #c077ff77
-}
-.float-icon.one{left:6%;bottom:47px}
-.float-icon.two{left:29%;bottom:55px}
-.float-icon.three{right:26%;bottom:48px}
-.float-icon.four{right:5%;bottom:52px}
-.create-badge{
-position:absolute;right:2%;top:4px;z-index:5;width:102px;height:102px;
-border:4px solid var(--gold);border-radius:50%;background:#071b56;
-display:flex;flex-direction:column;align-items:center;justify-content:center;
-text-align:center;font-size:12px;line-height:1.35
-}
-
-.dashboard{
-background:#f7f8ff;color:#111d3b;padding:13px 12px 35px;
-border-radius:27px 27px 0 0;position:relative;z-index:2;margin-top:-1px
-}
-.dashboard-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
-.dash-card{
-min-height:135px;padding:17px 6px 12px;display:flex;
-flex-direction:column;align-items:center;justify-content:center;text-align:center;
-background:linear-gradient(145deg,#fff,#eaf0ff);
-border:1px solid #e0e5f0;border-radius:20px;color:#111d3b
-}
-.dash-icon{font-size:31px;margin-bottom:7px}
+.hero h3{font-size:clamp(19px,4vw,28px);margin-bottom:18px}
+.hero p{max-width:650px;margin:0 auto 25px;line-height:1.8;color:#e2eaff;font-size:15px}
+.buttons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-outline{background:transparent;border:1px solid white;color:white}
+.features{display:flex;gap:12px 20px;justify-content:center;flex-wrap:wrap;margin-top:28px;font-size:13px}
+.dashboard{padding:22px 15px;background:#f5f7ff;color:#111d3b}
+.grid{max-width:950px;margin:auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.dash-card{padding:22px 8px;text-align:center;background:white;border:1px solid #dfe5f3;border-radius:16px;color:#14234a}
+.dash-card span{display:block;font-size:29px;margin-bottom:9px}
 .dash-card strong{font-size:13px}
-.dash-card small{font-size:11px;color:#637391;margin-top:6px}
-
-.section{padding:35px 16px}
-.section-head{text-align:center;margin-bottom:22px}
-.section-head small{font-size:10px;letter-spacing:2px;color:var(--gold);font-weight:900}
-.section-head h2{font-size:27px;margin:7px 0}
+.section{padding:40px 16px;max-width:1000px;margin:auto}
+.section-head{text-align:center;margin-bottom:24px}
+.section-head small{color:var(--gold);letter-spacing:2px;font-weight:bold}
+.section-head h2{font-size:27px;margin:9px 0}
 .section-head p{font-size:13px;color:#c5d0e8}
-
-.link-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.link-card{
-border:1px solid #ffffff20;border-radius:16px;padding:17px;
-background:linear-gradient(145deg,#122e54,#091a36);
-display:flex;flex-direction:column;align-items:flex-start;min-height:160px
-}
-.link-icon{font-size:25px;margin-bottom:7px}
-.link-card h3{font-size:15px;margin-bottom:6px}
-.link-card p{font-size:12px;color:#c1cde1;flex:1;margin-bottom:13px}
-.link-btn{
-padding:10px 13px;border-radius:10px;background:var(--gold);
-color:#121a32;font-weight:900;font-size:10px;display:inline-block
-}
-
-.zoom-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.zoom-card{padding:19px;border:1px solid #ffd52e55;border-radius:16px;background:#10264b}
-.zoom-card h3{font-size:17px}
-.zoom-time{color:var(--gold);font-weight:800;margin:7px 0}
-.zoom-card p{font-size:12px;color:#c1cde1;margin-bottom:14px}
-
-.social-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-.social-card{
-min-height:92px;border:1px solid #ffffff20;border-radius:15px;
-background:#11274b;display:flex;align-items:center;justify-content:center;
-flex-direction:column;gap:7px;font-size:12px;font-weight:800
-}
-.social-icon{font-size:27px;color:var(--gold)}
-
-/* B-TITAN BONANZA */
-.bonanza-section{
-position:relative;overflow:hidden;
-padding:40px 16px;
-background:
-radial-gradient(ellipse at 50% 0%,#5e421b66,transparent 60%),
-linear-gradient(145deg,#080b16,#171207 65%,#080b16);
-border-top:1px solid #ffd52e55;
-border-bottom:1px solid #ffd52e55;
-}
-.bonanza-wrap{max-width:850px;margin:0 auto;text-align:center}
-.bonanza-label{
-display:inline-block;border:1px solid #ffd52e70;border-radius:30px;
-padding:8px 14px;color:#ffe17b;font-size:11px;font-weight:900;
-letter-spacing:2px;background:#ffd52e0b
-}
-.bonanza-title{
-font-size:clamp(27px,6vw,43px);line-height:1.15;
-color:#ffdc67;margin:19px 0 12px;font-weight:900
-}
-.bonanza-subtitle{
-font-size:14px;line-height:1.8;color:#e1d9c5;max-width:600px;
-margin:0 auto 25px
-}
-.bonanza-grid{
-display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
-gap:13px;margin:25px 0
-}
-.bonanza-card{
-border:1px solid #b9943a;border-radius:16px;
-padding:24px 12px;background:linear-gradient(145deg,#201a0c,#100f0c);
-box-shadow:inset 0 1px #ffffff0a
-}
-.bonanza-card .slot{
-color:#f9dc7a;font-size:14px;font-weight:800;margin-bottom:12px
-}
-.bonanza-card .reward{
-color:#fff;font-size:clamp(25px,5vw,35px);font-weight:900
-}
-.bonanza-card .reward-caption{
-color:#cfc5aa;font-size:11px;margin-top:8px
-}
-.bonanza-card.pending{
-border-style:dashed;border-color:#8d7946;background:#17150f
-}
-.bonanza-card.pending .reward{
-font-size:19px;color:#f5d675;line-height:1.5
-}
-.bonanza-date{
-padding:17px 12px;border:1px solid #ffd52e70;border-radius:13px;
-background:#ffd52e0b;margin:20px 0
-}
-.bonanza-date strong{
-display:block;color:#ffdf75;font-size:15px;letter-spacing:.5px
-}
-.bonanza-date p{font-size:12px;line-height:1.7;color:#ded5bf;margin-top:8px}
-.bonanza-note{
-font-size:11px;line-height:1.8;color:#c7c1b2;
-max-width:720px;margin:0 auto 22px
-}
-.bonanza-btn{
-display:inline-flex;align-items:center;justify-content:center;
-min-height:49px;padding:0 23px;border-radius:12px;
-background:linear-gradient(100deg,#c3982e,#ffe17b);
-color:#171208;font-weight:900;font-size:13px
-}
-
-.footer{
-padding:22px 15px;text-align:center;background:#040d20;
-color:#bdc8df;font-size:11px
-}
-.footer strong{color:white;font-size:14px}
-
-.bottom-nav{
-display:none;position:fixed;bottom:0;left:0;right:0;z-index:30;
-background:#171e50;border-top:1px solid #ffffff1a;
-padding:7px 5px max(8px,env(safe-area-inset-bottom));
-grid-template-columns:repeat(5,1fr)
-}
-.bottom-nav a{
-display:flex;flex-direction:column;align-items:center;justify-content:center;
-gap:3px;padding:8px 2px;border-radius:13px;font-size:10px;color:#dce5ff
-}
-.bottom-nav a span{font-size:23px}
-.bottom-nav a.active{background:#ffffff18;color:#ffe18a}
-
-@media(max-width:650px){
-.header-top{min-height:90px;padding:10px 12px;gap:8px}
-.logo{max-width:250px;max-height:72px}
-.menu-btn{width:47px;height:47px}
-.nav{gap:5px;padding:4px 12px 12px}
-.nav a{padding:12px;font-size:12px}
-.search{height:58px;font-size:15px}
-.hero{padding:35px 24px 28px}
-.hero h1{font-size:clamp(36px,8.5vw,54px);margin-top:27px}
-.hero-desc{font-size:15px}
-.features{gap:11px 15px}
-.features span{font-size:12px}
-.btn{min-height:54px;padding:0 18px}
-.dashboard{padding:12px 12px 30px}
-.bottom-nav{display:grid}
-body{padding-bottom:75px}
-.bonanza-section{padding:32px 14px}
-.bonanza-grid{gap:10px}
-.bonanza-card{padding:20px 8px}
-.bonanza-date strong{font-size:13px}
-}
-@media(max-width:390px){
-.header-top{min-height:76px;padding:8px;gap:5px}
-.logo{max-width:190px;max-height:58px}
-.menu-btn{width:39px;height:41px;font-size:21px}
-.hero{padding:29px 17px 25px}
-.hero h1{font-size:35px}
-.hero h2{font-size:21px}
-.hero-desc{font-size:13px}
-.features{gap:9px}
-.features span{font-size:11px}
-.btn{font-size:11px;padding:0 13px}
-.illustration{min-height:155px}
-.create-badge{width:80px;height:80px;font-size:10px}
-.person{transform:scale(.85);transform-origin:bottom}
-.float-icon{width:36px;height:36px;font-size:18px}
-.dash-card{min-height:112px}
-.dash-icon{font-size:25px}
-.dash-card strong{font-size:10px}
-.dash-card small{font-size:9px}
-.bonanza-card .slot{font-size:12px}
-.bonanza-card .reward{font-size:25px}
+.link-grid,.social-grid,.zoom-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.link-card,.zoom-card,.social-card{background:linear-gradient(145deg,#122e54,#091a36);border:1px solid #ffffff22;border-radius:15px;padding:19px}
+.link-card{display:flex;flex-direction:column;align-items:flex-start;min-height:155px}
+.link-card .icon{font-size:25px;margin-bottom:9px}
+.link-card h3,.zoom-card h3{font-size:16px;margin-bottom:8px}
+.link-card p,.zoom-card p{font-size:12px;line-height:1.7;color:#c1cde1;margin-bottom:15px;flex:1}
+.link-btn{display:inline-block;padding:11px 13px;background:var(--gold);color:#10152c;border-radius:9px;font-size:11px;font-weight:bold}
+.zoom-time{color:var(--gold);font-weight:bold;margin:8px 0}
+.social-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.social-card{text-align:center;font-size:13px;font-weight:bold;padding:22px 6px}
+.social-card span{display:block;font-size:27px;color:var(--gold);margin-bottom:8px}
+.media-box{text-align:center;background:#10264b;padding:20px;border-radius:14px}
+input[type=file]{max-width:100%;margin-top:12px}
+.footer{text-align:center;background:#040d20;padding:28px 15px;color:#c1cde1;font-size:12px;line-height:1.8}
+.footer strong{font-size:18px;color:white}
+.footer a{color:var(--gold);font-weight:bold}
+.bottom-nav{display:none}
+@media(max-width:600px){
+ header{padding:12px}
+ .brand{gap:8px}.logo{width:44px;height:44px;font-size:26px}
+ .brand h2{font-size:14px}.brand p{font-size:8px;letter-spacing:1px}
+ .website-btn{padding:11px 10px;font-size:10px}
+ .hero{padding:40px 17px}.hero h1{font-size:36px}
+ .grid{gap:8px}.dash-card{padding:17px 4px}.dash-card strong{font-size:11px}
+ .link-grid,.zoom-grid{gap:9px}.link-card,.zoom-card{padding:13px}
+ .link-card h3,.zoom-card h3{font-size:13px}.link-card p,.zoom-card p{font-size:11px}
+ .social-grid{gap:8px}.social-card{font-size:11px;padding:17px 4px}
+ .section{padding:30px 12px}
+ .bottom-nav{display:grid;position:fixed;bottom:0;left:0;right:0;z-index:20;grid-template-columns:repeat(4,1fr);background:#101d4d;padding:9px 4px}
+ .bottom-nav a{text-align:center;font-size:11px;padding:7px 2px}
+ body{padding-bottom:55px}
 }
 </style>
 </head>
-
 <body>
-<header class="header" id="top">
-  <div class="header-top">
-    <a class="brand" href="#top" aria-label="B-TITAN Home">
-      <img class="logo" src="btitan-logo-1.png" alt="B-TITAN - The Ultimate Bitcoin Rush">
-    </a>
-    <div class="header-actions">
-      <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false">☰</button>
-    </div>
-  </div>
-
-  <div class="search-wrap">
-    <input class="search" id="searchInput" type="search"
-      placeholder="🔎 Search posts, media, platforms..." aria-label="Search">
-  </div>
-
-  <nav class="nav">
-    <a class="active" href="#top">⌂ Home</a>
-    <a href="#profile">👤 My Profile</a>
-    <a href="#promotion">🚀 Promotion Studio</a>
-    <a href="#bonanza" class="bonanza-nav">🏆 Bonanza</a>
-    <a href="#social">● Social Hub</a>
-    <a href="#media">▣ Media Library</a>
-  </nav>
-
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="#top">⌂ Home</a>
-    <a href="#profile">👤 My Profile</a>
-    <a href="#promotion">🚀 Promotion Studio</a>
-    <a href="#bonanza" class="bonanza-menu-link">🏆 B-TITAN Bonanza</a>
-    <a href="#social">● Social Hub</a>
-    <a href="#media">▣ Media Library</a>
-    <a href="#zoom">🎥 Zoom Meetings</a>
-  </div>
+<header id="top">
+ <div class="header-inner">
+  <a class="brand" href="#top">
+   <div class="logo">₿</div>
+   <div><h2>B-TITAN</h2><p>THE ULTIMATE BITCOIN RUSH</p></div>
+  </a>
+  <a class="website-btn" href="https://btitan.io/" target="_blank" rel="noopener noreferrer">B-TITAN WEBSITE ↗</a>
+ </div>
 </header>
 
 <main>
-<section class="hero" id="home">
-  <div class="welcome">👑 Welcome to B-TITAN</div>
-  <h1>THE ULTIMATE <span>BITCOIN RUSH</span></h1>
-  <h2>One Hub. Every Platform.</h2>
-  <p class="hero-desc">एक जगह पोस्ट तैयार करें, अपने सोशल मीडिया लिंक व्यवस्थित करें और आसानी से शेयर करें।</p>
-
-  <div class="features">
-    <span><b class="check">✓</b>Create Posts</span>
-    <span><b class="check">✓</b>Photo &amp; Video</span>
-    <span><b class="check">✓</b>Multi-Platform Sharing</span>
-    <span><b class="check">✓</b>Save Profile Links</span>
-    <span><b class="check">✓</b>One-Tap Share</span>
-    <span><b class="check">✓</b>Secure Setup</span>
-  </div>
-
-  <div class="hero-buttons">
-    <a class="btn btn-gold" href="#promotion">▶ Explore B-TITAN Links →</a>
-    <a class="btn btn-outline" href="#bonanza">🏆 View Bonanza →</a>
-  </div>
-
-  <div class="hero-foot">✨ Explore · Connect · Learn</div>
-
-  <div class="illustration" aria-label="Digital creator illustration">
-    <div class="orbit"></div>
-    <div class="float-icon one">₿</div>
-    <div class="float-icon two">◎</div>
-    <div class="float-icon three">▶</div>
-    <div class="float-icon four">✈</div>
-    <div class="person">
-      <div class="hair"></div>
-      <div class="face">
-        <span class="eye left"></span>
-        <span class="eye right"></span>
-        <span class="smile"></span>
-      </div>
-      <div class="laptop">₿</div>
-    </div>
-    <div class="create-badge">♛<br><strong>B-TITAN</strong><br>Explore<br>Connect<br>Learn</div>
-  </div>
+<section class="hero">
+ <div class="welcome">👑 Welcome to B-TITAN</div>
+ <h1>YOUR DIGITAL <span>WORLD</span></h1>
+ <h3>One Hub. Every Platform.</h3>
+ <p>एक जगह B-TITAN की जानकारी, जरूरी लिंक और सोशल मीडिया कम्युनिटी तक आसानी से पहुँचें। नवीनतम प्लान और नियमों की पुष्टि आधिकारिक वेबसाइट पर करें।</p>
+ <div class="buttons">
+  <a class="btn" href="https://btitan.io/" target="_blank" rel="noopener noreferrer">OPEN OFFICIAL WEBSITE ↗</a>
+  <a class="btn btn-outline" href="#links">IMPORTANT LINKS ↓</a>
+ </div>
+ <div class="features">
+  <span>✓ Official Website</span>
+  <span>✓ Community Links</span>
+  <span>✓ Learning Resources</span>
+  <span>✓ Easy Sharing</span>
+ </div>
 </section>
 
 <section class="dashboard" id="profile">
-  <div class="dashboard-grid">
-    <a class="dash-card" href="https://beacons.ai/gsdigitalacademy" target="_blank" rel="noopener">
-      <span class="dash-icon">👤</span><strong>My Profile</strong><small>Open Profile →</small>
-    </a>
-    <a class="dash-card" href="#promotion">
-      <span class="dash-icon">🚀</span><strong>Promotion Studio</strong><small>Explore Links →</small>
-    </a>
-    <a class="dash-card" href="#social">
-      <span class="dash-icon">🔗</span><strong>Social Hub</strong><small>All Links →</small>
-    </a>
-    <a class="dash-card" href="#media">
-      <span class="dash-icon">🖼️</span><strong>Photo &amp; Video</strong><small>Select Media →</small>
-    </a>
-    <button class="dash-card" id="copyMessage" type="button">
-      <span class="dash-icon">📄</span><strong>Copy Message</strong><small>Quick Copy →</small>
-    </button>
-    <button class="dash-card" id="shareApp" type="button">
-      <span class="dash-icon">📲</span><strong>Share Page</strong><small>Share Link →</small>
-    </button>
-  </div>
+ <div class="grid">
+  <a class="dash-card" href="#links"><span>🔗</span><strong>Important Links</strong></a>
+  <a class="dash-card" href="#zoom"><span>🎥</span><strong>Zoom Meetings</strong></a>
+  <a class="dash-card" href="#social"><span>🌐</span><strong>Social Hub</strong></a>
+  <a class="dash-card" href="https://btitan.io/" target="_blank" rel="noopener noreferrer"><span>₿</span><strong>B-TITAN Website</strong></a>
+  <button class="dash-card" id="copyMessage" type="button"><span>📋</span><strong>Copy Message</strong></button>
+  <button class="dash-card" id="sharePage" type="button"><span>📲</span><strong>Share Page</strong></button>
+ </div>
 </section>
 
-<!-- B-TITAN BONANZA -->
-<section class="bonanza-section" id="bonanza">
-  <div class="bonanza-wrap">
-    <span class="bonanza-label">B-TITAN CHAMPIONS HUB</span>
-
-    <h2 class="bonanza-title">🏆 SLOT ACHIEVEMENT BONANZA</h2>
-
-    <p class="bonanza-subtitle">
-      Achieve your qualifying slots and celebrate your milestone.
-      Check the official campaign conditions before participating.
-    </p>
-
-    <div class="bonanza-grid">
-      <article class="bonanza-card">
-        <div class="slot">3 SLOTS ACHIEVED</div>
-        <div class="reward">₹10,000</div>
-        <div class="reward-caption">Announced reward amount</div>
-      </article>
-
-      <article class="bonanza-card">
-        <div class="slot">4 SLOTS ACHIEVED</div>
-        <div class="reward">₹15,000</div>
-        <div class="reward-caption">Announced reward amount</div>
-      </article>
-
-      <article class="bonanza-card pending" style="grid-column:1/-1">
-        <div class="slot">5 SLOTS ACHIEVED</div>
-        <div class="reward">Reward details to be confirmed</div>
-        <div class="reward-caption">Final amount and eligibility terms will be published after confirmation.</div>
-      </article>
-    </div>
-
-    <div class="bonanza-date">
-      <strong>⏳ LAST DATE: 20 NOVEMBER 2026</strong>
-      <p>
-        Please verify slot achievement, eligibility, and the official campaign
-        terms with the campaign organiser before relying on a reward.
-      </p>
-    </div>
-
-    <p class="bonanza-note">
-      This section displays campaign information only. It does not verify
-      slot achievements, guarantee a reward, or process payments.
-      Participation is subject to applicable laws and official terms.
-      Digital assets involve risk; no income or profit is guaranteed.
-    </p>
-
-    <a class="bonanza-btn" href="https://btitan.net/" target="_blank" rel="noopener">
-      VISIT B-TITAN WEBSITE ↗
-    </a>
-  </div>
-</section>
-<!-- END B-TITAN BONANZA -->
-
-<section class="section" id="promotion">
-  <div class="section-head">
-    <small>QUICK ACCESS</small>
-    <h2>Important Links</h2>
-    <p>B-TITAN resources and important links</p>
-  </div>
-  <div class="link-grid">
-    <article class="link-card"><span class="link-icon">▶️</span><h3>Complete Plan Video</h3><p>Watch the plan presentation.</p><a class="link-btn" href="https://youtu.be/jg6a-Jo_acE" target="_blank" rel="noopener">WATCH VIDEO ↗</a></article>
-    <article class="link-card"><span class="link-icon">📄</span><h3>Plan Presentation PDF</h3><p>Open the plan presentation document.</p><a class="link-btn" href="https://docs.google.com/presentation/d/1ZhQFHnTPKTx4Lqs4LjZRFQjwZjct5FGL/export/pdf" target="_blank" rel="noopener">OPEN PDF ↗</a></article>
-    <article class="link-card"><span class="link-icon">🆔</span><h3>ID Activation Guide</h3><p>Open the ID activation guide.</p><a class="link-btn" href="https://tinyurl.com/4u6jnrrw" target="_blank" rel="noopener">OPEN GUIDE ↗</a></article>
-    <article class="link-card"><span class="link-icon">⚙️</span><h3>2×2 Matrix Guide</h3><p>Watch the matrix guide.</p><a class="link-btn" href="https://youtu.be/HIxNEUneKYs" target="_blank" rel="noopener">WATCH GUIDE ↗</a></article>
-    <article class="link-card"><span class="link-icon">⛓️</span><h3>Blockchain ID Video</h3><p>Learn about blockchain ID.</p><a class="link-btn" href="https://youtube.com/shorts/-fIVG9pZtEo?si=nclwN9l8L6Fo1tLa" target="_blank" rel="noopener">WATCH VIDEO ↗</a></article>
-    <article class="link-card"><span class="link-icon">🌐</span><h3>Decentralized System</h3><p>Watch the educational overview.</p><a class="link-btn" href="https://youtu.be/MCNicgjFkxA" target="_blank" rel="noopener">WATCH VIDEO ↗</a></article>
-    <article class="link-card"><span class="link-icon">₿</span><h3>B-TITAN Website</h3><p>Visit the website.</p><a class="link-btn" href="https://btitan.net/" target="_blank" rel="noopener">OPEN WEBSITE ↗</a></article>
-    <article class="link-card"><span class="link-icon">🚀</span><h3>B-TITAN Registration</h3><p>Open the registration page.</p><a class="link-btn" href="https://btitan.net/register?id=10203" target="_blank" rel="noopener">REGISTER ↗</a></article>
-  </div>
+<section class="section" id="links">
+ <div class="section-head">
+  <small>QUICK ACCESS</small>
+  <h2>Important Links</h2>
+  <p>B-TITAN website and learning resources</p>
+ </div>
+ <div class="link-grid">
+  <article class="link-card">
+   <span class="icon">₿</span><h3>B-TITAN Official Website</h3>
+   <p>Visit the updated official website and check the latest available information.</p>
+   <a class="link-btn" href="https://btitan.io/" target="_blank" rel="noopener noreferrer">OPEN WEBSITE ↗</a>
+  </article>
+  <article class="link-card">
+   <span class="icon">▶️</span><h3>Plan Video</h3>
+   <p>Open the existing plan presentation video.</p>
+   <a class="link-btn" href="https://youtu.be/jg6a-Jo_acE" target="_blank" rel="noopener noreferrer">WATCH VIDEO ↗</a>
+  </article>
+  <article class="link-card">
+   <span class="icon">📄</span><h3>Plan Presentation PDF</h3>
+   <p>Open the existing presentation document.</p>
+   <a class="link-btn" href="https://docs.google.com/presentation/d/1ZhQFHnTPKTx4Lqs4LjZRFQjwZjct5FGL/export/pdf" target="_blank" rel="noopener noreferrer">OPEN PDF ↗</a>
+  </article>
+  <article class="link-card">
+   <span class="icon">🆔</span><h3>ID Activation Guide</h3>
+   <p>Open the existing ID activation guide.</p>
+   <a class="link-btn" href="https://tinyurl.com/4u6jnrrw" target="_blank" rel="noopener noreferrer">OPEN GUIDE ↗</a>
+  </article>
+  <article class="link-card">
+   <span class="icon">⚙️</span><h3>2×2 Matrix Guide</h3>
+   <p>Watch the existing technical guide.</p>
+   <a class="link-btn" href="https://youtu.be/HIxNEUneKYs" target="_blank" rel="noopener noreferrer">WATCH GUIDE ↗</a>
+  </article>
+  <article class="link-card">
+   <span class="icon">⛓️</span><h3>Blockchain ID Video</h3>
+   <p>Open the blockchain ID explainer.</p>
+   <a class="link-btn" href="https://youtube.com/shorts/-fIVG9pZtEo" target="_blank" rel="noopener noreferrer">WATCH VIDEO ↗</a>
+  </article>
+  <article class="link-card">
+   <span class="icon">🌐</span><h3>Decentralized System</h3>
+   <p>Watch the existing educational overview.</p>
+   <a class="link-btn" href="https://youtu.be/MCNicgjFkxA" target="_blank" rel="noopener noreferrer">WATCH VIDEO ↗</a>
+  </article>
+  <article class="link-card">
+   <span class="icon">🎓</span><h3>Community Hub</h3>
+   <p>Open the community and learning hub.</p>
+   <a class="link-btn" href="https://beacons.ai/gsdigitalacademy" target="_blank" rel="noopener noreferrer">OPEN HUB ↗</a>
+  </article>
+ </div>
 </section>
 
 <section class="section" id="zoom">
-  <div class="section-head"><small>ONLINE MEETINGS</small><h2>Zoom Meetings</h2><p>Join the online sessions</p></div>
-  <div class="zoom-grid">
-    <article class="zoom-card"><h3>🌅 Morning Zoom</h3><div class="zoom-time">Daily · 9:00 AM IST</div><p>Morning meeting and team discussion.</p><a class="link-btn" href="https://zoom.us/j/7890581048?pwd=0c3cExXWU7Xt1sBfLuvo0DlWej9xmV.1" target="_blank" rel="noopener">JOIN ZOOM ↗</a></article>
-    <article class="zoom-card"><h3>🌙 Evening Zoom</h3><div class="zoom-time">Daily · 9:00 PM IST</div><p>Evening meeting and team discussion.</p><a class="link-btn" href="https://zoom.us/j/6053096493?pwd=v43dprpzbo7Xqc4omNKu95IJVx6pR9.1" target="_blank" rel="noopener">JOIN ZOOM ↗</a></article>
-  </div>
+ <div class="section-head">
+  <small>ONLINE MEETINGS</small><h2>Zoom Meetings</h2>
+  <p>Use the meeting links configured for your team.</p>
+ </div>
+ <div class="zoom-grid">
+  <article class="zoom-card">
+   <h3>🌅 Morning Zoom</h3>
+   <div class="zoom-time">Daily · 8:15 AM IST</div>
+   <p>Morning meeting and team discussion.</p>
+   <a class="link-btn" href="https://zoom.us/j/7890581048?pwd=0c3cExXWU7Xt1sBfLuvo0DlWej9xmV.1" target="_blank" rel="noopener noreferrer">JOIN ZOOM ↗</a>
+  </article>
+  <article class="zoom-card">
+   <h3>🌙 Evening Zoom</h3>
+   <div class="zoom-time">Daily · 9:00 PM IST</div>
+   <p>Evening meeting and team discussion.</p>
+   <a class="link-btn" href="https://zoom.us/j/6053096493?pwd=v43dprpzbo7Xqc4omNKu95IJVx6pR9.1" target="_blank" rel="noopener noreferrer">JOIN ZOOM ↗</a>
+  </article>
+ </div>
 </section>
 
 <section class="section" id="social">
-  <div class="section-head"><small>STAY CONNECTED</small><h2>Social Hub</h2><p>Connect with the community</p></div>
-  <div class="social-grid">
-    <a class="social-card" href="https://www.facebook.com/profile.php?id=61590478625779" target="_blank" rel="noopener"><span class="social-icon">f</span>Facebook</a>
-    <a class="social-card" href="https://youtube.com/@gautamdigitalacademy?si=yEkIv6-54rAN0h6e" target="_blank" rel="noopener"><span class="social-icon">▶</span>YouTube</a>
-    <a class="social-card" href="https://www.instagram.com/btitanchampions?psln=MzZheDgwdTUzcnJ0" target="_blank" rel="noopener"><span class="social-icon">◎</span>Instagram</a>
-    <a class="social-card" href="https://wa.me/918368960385?text=Hello%20B-TITAN" target="_blank" rel="noopener"><span class="social-icon">☏</span>WhatsApp</a>
-    <a class="social-card" href="https://beacons.ai/gsdigitalacademy" target="_blank" rel="noopener"><span class="social-icon">🔗</span>Community Hub</a>
-    <a class="social-card" href="https://t.me/" target="_blank" rel="noopener"><span class="social-icon">✈</span>Telegram</a>
-  </div>
+ <div class="section-head">
+  <small>STAY CONNECTED</small><h2>Social Hub</h2>
+  <p>Connect with the community</p>
+ </div>
+ <div class="social-grid">
+  <a class="social-card" href="https://www.facebook.com/profile.php?id=61590478625779" target="_blank" rel="noopener noreferrer"><span>f</span>Facebook</a>
+  <a class="social-card" href="https://youtube.com/@gautamdigitalacademy" target="_blank" rel="noopener noreferrer"><span>▶</span>YouTube</a>
+  <a class="social-card" href="https://www.instagram.com/btitanchampions/" target="_blank" rel="noopener noreferrer"><span>◎</span>Instagram</a>
+  <a class="social-card" href="https://wa.me/918368960385" target="_blank" rel="noopener noreferrer"><span>☏</span>WhatsApp</a>
+  <a class="social-card" href="https://beacons.ai/gsdigitalacademy" target="_blank" rel="noopener noreferrer"><span>🔗</span>Community Hub</a>
+  <a class="social-card" href="https://t.me/" target="_blank" rel="noopener noreferrer"><span>✈</span>Telegram</a>
+ </div>
 </section>
 
 <section class="section" id="media">
-  <div class="section-head"><small>MEDIA</small><h2>Photo &amp; Video</h2><p>Select media from your device to share.</p></div>
-  <div style="text-align:center">
-    <input type="file" id="mediaPicker" accept="image/*,video/*" multiple style="max-width:100%;background:#10264b;padding:14px;border-radius:12px;color:white">
-    <p id="mediaStatus" style="font-size:12px;color:#c5d0e8;margin-top:10px"></p>
-  </div>
+ <div class="section-head">
+  <small>MEDIA</small><h2>Photo &amp; Video</h2>
+  <p>Select media on your device. This does not automatically publish it to social platforms.</p>
+ </div>
+ <div class="media-box">
+  <label for="mediaPicker">Select photo or video</label><br>
+  <input type="file" id="mediaPicker" accept="image/*,video/*" multiple>
+  <p id="mediaStatus" style="font-size:12px;color:#c5d0e8;margin-top:12px"></p>
+ </div>
 </section>
 
 <footer class="footer">
-  <strong>B-TITAN</strong><br>THE ULTIMATE BITCOIN RUSH<br><br>
-  <a href="https://btitan.net/" style="color:#ffd52e;font-weight:900">₿ B-TITAN</a><br><br>
-  Digital assets involve risk. No income or profit is guaranteed.<br>© 2026 B-TITAN
+ <strong>B-TITAN</strong><br>
+ THE ULTIMATE BITCOIN RUSH<br><br>
+ <a href="https://btitan.io/" target="_blank" rel="noopener noreferrer">₿ VISIT OFFICIAL WEBSITE ↗</a><br><br>
+ Digital assets involve risk. No income or profit is guaranteed.<br>
+ © 2026 B-TITAN
 </footer>
 </main>
 
 <nav class="bottom-nav">
-  <a class="active" href="#top"><span>⌂</span>Home</a>
-  <a href="#profile"><span>👤</span>Profile</a>
-  <a href="#promotion"><span>🚀</span>Promote</a>
-  <a href="#bonanza"><span>🏆</span>Bonanza</a>
-  <a href="#social"><span>🌐</span>Social</a>
+ <a href="#top">⌂ Home</a>
+ <a href="#links">🔗 Links</a>
+ <a href="#zoom">🎥 Zoom</a>
+ <a href="#social">🌐 Social</a>
 </nav>
 
 <script>
-const menuBtn=document.getElementById('menuBtn');
-const mobileMenu=document.getElementById('mobileMenu');
+const message = 'B-TITAN — The Ultimate Bitcoin Rush\nOfficial Website: https://btitan.io/\nCommunity Hub: https://beacons.ai/gsdigitalacademy';
 
-menuBtn.addEventListener('click',()=>{
-  const open=mobileMenu.classList.toggle('open');
-  menuBtn.setAttribute('aria-expanded',String(open));
-});
-
-mobileMenu.querySelectorAll('a').forEach(a=>{
-  a.addEventListener('click',()=>{
-    mobileMenu.classList.remove('open');
-    menuBtn.setAttribute('aria-expanded','false');
-  });
-});
-
-document.getElementById('searchInput').addEventListener('input',function(){
-  const q=this.value.trim().toLowerCase();
-  document.querySelectorAll(
-    '.link-card,.zoom-card,.social-card,.dash-card,.bonanza-card'
-  ).forEach(c=>{
-    c.style.display=(!q||c.textContent.toLowerCase().includes(q))?'':'none';
-  });
-});
-
-document.getElementById('copyMessage').addEventListener('click',async()=>{
-  const msg='B-TITAN — The Ultimate Bitcoin Rush\nWebsite: https://btitan.net/\nCommunity Hub: https://beacons.ai/gsdigitalacademy\nBonanza details: '+location.href+'#bonanza';
-  try{
-    await navigator.clipboard.writeText(msg);
+document.getElementById('copyMessage').addEventListener('click', async () => {
+  try {
+    await navigator.clipboard.writeText(message);
     alert('Message copied!');
-  }catch(e){
-    prompt('Copy this message:',msg);
+  } catch (error) {
+    prompt('Copy this message:', message);
   }
 });
 
-async function sharePage(){
-  const data={
-    title:'B-TITAN',
-    text:'Visit B-TITAN — The Ultimate Bitcoin Rush',
-    url:location.href
+document.getElementById('sharePage').addEventListener('click', async () => {
+  const data = {
+    title: 'B-TITAN',
+    text: 'Visit the B-TITAN official website',
+    url: 'https://btitan.io/'
   };
-  if(navigator.share){
-    try{await navigator.share(data)}catch(e){}
-  }else{
-    try{
-      await navigator.clipboard.writeText(location.href);
-      alert('Page link copied!');
-    }catch(e){
-      prompt('Copy page link:',location.href);
+  if (navigator.share) {
+    try {
+      await navigator.share(data);
+    } catch (error) {}
+  } else {
+    try {
+      await navigator.clipboard.writeText(data.url);
+      alert('Website link copied!');
+    } catch (error) {
+      prompt('Copy website link:', data.url);
     }
   }
-}
-
-document.getElementById('shareApp').addEventListener('click',sharePage);
-
-document.getElementById('mediaPicker').addEventListener('change',function(){
-  document.getElementById('mediaStatus').textContent=
-    this.files.length
-      ?this.files.length+' file(s) selected. Sharing depends on your device and browser.'
-      :'';
 });
 
-document.querySelectorAll('.bottom-nav a').forEach(a=>{
-  a.addEventListener('click',()=>{
-    document.querySelectorAll('.bottom-nav a').forEach(x=>x.classList.remove('active'));
-    a.classList.add('active');
-  });
+document.getElementById('mediaPicker').addEventListener('change', function() {
+  document.getElementById('mediaStatus').textContent =
+    this.files.length ? this.files.length + ' file(s) selected.' : '';
 });
 </script>
 </body>
