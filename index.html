@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,36 +27,21 @@ min-height:90px;padding:10px 12px;
 display:flex;align-items:center;justify-content:space-between;gap:8px
 }
 .brand{display:flex;align-items:center;flex:1;min-width:0}
-
-/* B-TITAN LOGO */
 .logo{
-display:block;
-width:100%;
-max-width:340px;
-max-height:85px;
-height:auto;
-object-fit:contain;
-object-position:left center;
-background:transparent;
-border:0;
-border-radius:0;
-box-shadow:none;
-mix-blend-mode:screen;
-flex-shrink:1
+display:block;width:100%;max-width:340px;max-height:85px;height:auto;
+object-fit:contain;object-position:left center;background:transparent;
+border:0;border-radius:0;box-shadow:none;mix-blend-mode:screen;flex-shrink:1
 }
-
 .header-actions{display:flex;align-items:center;flex-shrink:0}
 .menu-btn{
 width:49px;height:49px;border:1px solid #ffffff30;
 border-radius:13px;background:#ffffff0c;color:white;font-size:27px
 }
-
 .search-wrap{padding:0 16px 12px}
 .search{
 width:100%;height:56px;border-radius:40px;border:0;outline:none;
 padding:0 20px;background:white;color:#222;font-size:15px
 }
-
 .nav{
 display:flex;align-items:center;gap:7px;padding:5px 12px 13px;
 overflow-x:auto;scrollbar-width:none
@@ -66,6 +52,8 @@ flex-shrink:0;padding:12px 14px;border-radius:13px;
 font-size:13px;font-weight:700;white-space:nowrap
 }
 .nav a.active{background:var(--gold);color:#111}
+.nav a.bonanza-nav{border:1px solid #ffd52e80;color:#ffe17b}
+.nav a.bonanza-nav:hover{background:var(--gold);color:#111}
 
 .mobile-menu{
 display:none;padding:10px 16px 14px;
@@ -75,6 +63,7 @@ background:#071744;border-top:1px solid #ffffff14
 .mobile-menu a{
 padding:11px;border-radius:9px;background:#ffffff12;font-size:13px
 }
+.mobile-menu a.bonanza-menu-link{color:#ffe17b;border:1px solid #ffd52e66}
 
 .hero{
 position:relative;overflow:hidden;padding:36px 25px 35px;
@@ -214,6 +203,73 @@ flex-direction:column;gap:7px;font-size:12px;font-weight:800
 }
 .social-icon{font-size:27px;color:var(--gold)}
 
+/* B-TITAN BONANZA */
+.bonanza-section{
+position:relative;overflow:hidden;
+padding:40px 16px;
+background:
+radial-gradient(ellipse at 50% 0%,#5e421b66,transparent 60%),
+linear-gradient(145deg,#080b16,#171207 65%,#080b16);
+border-top:1px solid #ffd52e55;
+border-bottom:1px solid #ffd52e55;
+}
+.bonanza-wrap{max-width:850px;margin:0 auto;text-align:center}
+.bonanza-label{
+display:inline-block;border:1px solid #ffd52e70;border-radius:30px;
+padding:8px 14px;color:#ffe17b;font-size:11px;font-weight:900;
+letter-spacing:2px;background:#ffd52e0b
+}
+.bonanza-title{
+font-size:clamp(27px,6vw,43px);line-height:1.15;
+color:#ffdc67;margin:19px 0 12px;font-weight:900
+}
+.bonanza-subtitle{
+font-size:14px;line-height:1.8;color:#e1d9c5;max-width:600px;
+margin:0 auto 25px
+}
+.bonanza-grid{
+display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+gap:13px;margin:25px 0
+}
+.bonanza-card{
+border:1px solid #b9943a;border-radius:16px;
+padding:24px 12px;background:linear-gradient(145deg,#201a0c,#100f0c);
+box-shadow:inset 0 1px #ffffff0a
+}
+.bonanza-card .slot{
+color:#f9dc7a;font-size:14px;font-weight:800;margin-bottom:12px
+}
+.bonanza-card .reward{
+color:#fff;font-size:clamp(25px,5vw,35px);font-weight:900
+}
+.bonanza-card .reward-caption{
+color:#cfc5aa;font-size:11px;margin-top:8px
+}
+.bonanza-card.pending{
+border-style:dashed;border-color:#8d7946;background:#17150f
+}
+.bonanza-card.pending .reward{
+font-size:19px;color:#f5d675;line-height:1.5
+}
+.bonanza-date{
+padding:17px 12px;border:1px solid #ffd52e70;border-radius:13px;
+background:#ffd52e0b;margin:20px 0
+}
+.bonanza-date strong{
+display:block;color:#ffdf75;font-size:15px;letter-spacing:.5px
+}
+.bonanza-date p{font-size:12px;line-height:1.7;color:#ded5bf;margin-top:8px}
+.bonanza-note{
+font-size:11px;line-height:1.8;color:#c7c1b2;
+max-width:720px;margin:0 auto 22px
+}
+.bonanza-btn{
+display:inline-flex;align-items:center;justify-content:center;
+min-height:49px;padding:0 23px;border-radius:12px;
+background:linear-gradient(100deg,#c3982e,#ffe17b);
+color:#171208;font-weight:900;font-size:13px
+}
+
 .footer{
 padding:22px 15px;text-align:center;background:#040d20;
 color:#bdc8df;font-size:11px
@@ -247,11 +303,13 @@ gap:3px;padding:8px 2px;border-radius:13px;font-size:10px;color:#dce5ff
 .features span{font-size:12px}
 .btn{min-height:54px;padding:0 18px}
 .dashboard{padding:12px 12px 30px}
-.dash-card{min-height:135px;padding:14px 3px}
 .bottom-nav{display:grid}
 body{padding-bottom:75px}
+.bonanza-section{padding:32px 14px}
+.bonanza-grid{gap:10px}
+.bonanza-card{padding:20px 8px}
+.bonanza-date strong{font-size:13px}
 }
-
 @media(max-width:390px){
 .header-top{min-height:76px;padding:8px;gap:5px}
 .logo{max-width:190px;max-height:58px}
@@ -271,6 +329,8 @@ body{padding-bottom:75px}
 .dash-icon{font-size:25px}
 .dash-card strong{font-size:10px}
 .dash-card small{font-size:9px}
+.bonanza-card .slot{font-size:12px}
+.bonanza-card .reward{font-size:25px}
 }
 </style>
 </head>
@@ -287,13 +347,15 @@ body{padding-bottom:75px}
   </div>
 
   <div class="search-wrap">
-    <input class="search" id="searchInput" type="search" placeholder="🔎 Search posts, media, platforms..." aria-label="Search">
+    <input class="search" id="searchInput" type="search"
+      placeholder="🔎 Search posts, media, platforms..." aria-label="Search">
   </div>
 
   <nav class="nav">
     <a class="active" href="#top">⌂ Home</a>
     <a href="#profile">👤 My Profile</a>
     <a href="#promotion">🚀 Promotion Studio</a>
+    <a href="#bonanza" class="bonanza-nav">🏆 Bonanza</a>
     <a href="#social">● Social Hub</a>
     <a href="#media">▣ Media Library</a>
   </nav>
@@ -302,6 +364,7 @@ body{padding-bottom:75px}
     <a href="#top">⌂ Home</a>
     <a href="#profile">👤 My Profile</a>
     <a href="#promotion">🚀 Promotion Studio</a>
+    <a href="#bonanza" class="bonanza-menu-link">🏆 B-TITAN Bonanza</a>
     <a href="#social">● Social Hub</a>
     <a href="#media">▣ Media Library</a>
     <a href="#zoom">🎥 Zoom Meetings</a>
@@ -326,7 +389,7 @@ body{padding-bottom:75px}
 
   <div class="hero-buttons">
     <a class="btn btn-gold" href="#promotion">▶ Explore B-TITAN Links →</a>
-    <a class="btn btn-outline" href="#social">▦ Explore Social Hub →</a>
+    <a class="btn btn-outline" href="#bonanza">🏆 View Bonanza →</a>
   </div>
 
   <div class="hero-foot">✨ Explore · Connect · Learn</div>
@@ -372,6 +435,60 @@ body{padding-bottom:75px}
     </button>
   </div>
 </section>
+
+<!-- B-TITAN BONANZA -->
+<section class="bonanza-section" id="bonanza">
+  <div class="bonanza-wrap">
+    <span class="bonanza-label">B-TITAN CHAMPIONS HUB</span>
+
+    <h2 class="bonanza-title">🏆 SLOT ACHIEVEMENT BONANZA</h2>
+
+    <p class="bonanza-subtitle">
+      Achieve your qualifying slots and celebrate your milestone.
+      Check the official campaign conditions before participating.
+    </p>
+
+    <div class="bonanza-grid">
+      <article class="bonanza-card">
+        <div class="slot">3 SLOTS ACHIEVED</div>
+        <div class="reward">₹10,000</div>
+        <div class="reward-caption">Announced reward amount</div>
+      </article>
+
+      <article class="bonanza-card">
+        <div class="slot">4 SLOTS ACHIEVED</div>
+        <div class="reward">₹15,000</div>
+        <div class="reward-caption">Announced reward amount</div>
+      </article>
+
+      <article class="bonanza-card pending" style="grid-column:1/-1">
+        <div class="slot">5 SLOTS ACHIEVED</div>
+        <div class="reward">Reward details to be confirmed</div>
+        <div class="reward-caption">Final amount and eligibility terms will be published after confirmation.</div>
+      </article>
+    </div>
+
+    <div class="bonanza-date">
+      <strong>⏳ LAST DATE: 20 NOVEMBER 2026</strong>
+      <p>
+        Please verify slot achievement, eligibility, and the official campaign
+        terms with the campaign organiser before relying on a reward.
+      </p>
+    </div>
+
+    <p class="bonanza-note">
+      This section displays campaign information only. It does not verify
+      slot achievements, guarantee a reward, or process payments.
+      Participation is subject to applicable laws and official terms.
+      Digital assets involve risk; no income or profit is guaranteed.
+    </p>
+
+    <a class="bonanza-btn" href="https://btitan.net/" target="_blank" rel="noopener">
+      VISIT B-TITAN WEBSITE ↗
+    </a>
+  </div>
+</section>
+<!-- END B-TITAN BONANZA -->
 
 <section class="section" id="promotion">
   <div class="section-head">
@@ -430,8 +547,8 @@ body{padding-bottom:75px}
   <a class="active" href="#top"><span>⌂</span>Home</a>
   <a href="#profile"><span>👤</span>Profile</a>
   <a href="#promotion"><span>🚀</span>Promote</a>
+  <a href="#bonanza"><span>🏆</span>Bonanza</a>
   <a href="#social"><span>🌐</span>Social</a>
-  <a href="#shareApp" id="bottomShare"><span>↗</span>Share</a>
 </nav>
 
 <script>
@@ -444,18 +561,23 @@ menuBtn.addEventListener('click',()=>{
 });
 
 mobileMenu.querySelectorAll('a').forEach(a=>{
-  a.addEventListener('click',()=>mobileMenu.classList.remove('open'));
+  a.addEventListener('click',()=>{
+    mobileMenu.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded','false');
+  });
 });
 
 document.getElementById('searchInput').addEventListener('input',function(){
   const q=this.value.trim().toLowerCase();
-  document.querySelectorAll('.link-card,.zoom-card,.social-card,.dash-card').forEach(c=>{
+  document.querySelectorAll(
+    '.link-card,.zoom-card,.social-card,.dash-card,.bonanza-card'
+  ).forEach(c=>{
     c.style.display=(!q||c.textContent.toLowerCase().includes(q))?'':'none';
   });
 });
 
 document.getElementById('copyMessage').addEventListener('click',async()=>{
-  const msg='B-TITAN — The Ultimate Bitcoin Rush\nWebsite: https://btitan.net/\nCommunity Hub: https://beacons.ai/gsdigitalacademy';
+  const msg='B-TITAN — The Ultimate Bitcoin Rush\nWebsite: https://btitan.net/\nCommunity Hub: https://beacons.ai/gsdigitalacademy\nBonanza details: '+location.href+'#bonanza';
   try{
     await navigator.clipboard.writeText(msg);
     alert('Message copied!');
@@ -470,7 +592,6 @@ async function sharePage(){
     text:'Visit B-TITAN — The Ultimate Bitcoin Rush',
     url:location.href
   };
-
   if(navigator.share){
     try{await navigator.share(data)}catch(e){}
   }else{
@@ -485,11 +606,6 @@ async function sharePage(){
 
 document.getElementById('shareApp').addEventListener('click',sharePage);
 
-document.getElementById('bottomShare').addEventListener('click',e=>{
-  e.preventDefault();
-  sharePage();
-});
-
 document.getElementById('mediaPicker').addEventListener('change',function(){
   document.getElementById('mediaStatus').textContent=
     this.files.length
@@ -498,7 +614,6 @@ document.getElementById('mediaPicker').addEventListener('change',function(){
 });
 
 document.querySelectorAll('.bottom-nav a').forEach(a=>{
-  if(a.id==='bottomShare')return;
   a.addEventListener('click',()=>{
     document.querySelectorAll('.bottom-nav a').forEach(x=>x.classList.remove('active'));
     a.classList.add('active');
